@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/general-mcp-architecture-and-security/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/web-mkdocs-material-custom-neumorphic-theme/">
       
       
-        <link rel="prev" href="../general-cowork-windows-limitations/">
+        <link rel="prev" href="../web-chrome-extension-realtime-subtitles/">
       
       
-        <link rel="next" href="../general-worldmonitor-osint-dashboard/">
+        <link rel="next" href="../general-claude-cowork-setup-and-features/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>MCP 協定完整解析：架構、安全風險與防護策略 - Mars 的知識庫</title>
+        <title>MkDocs Material 自訂 Neumorphic 主題：完整適配指南 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MCP 協定完整解析：架構、安全風險與防護策略
+              MkDocs Material 自訂 Neumorphic 主題：完整適配指南
             
           </span>
         </div>
@@ -628,6 +628,8 @@
                 
   
   
+    
+  
   
   
     
@@ -637,11 +639,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -662,7 +664,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -733,10 +735,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../web-mkdocs-material-custom-neumorphic-theme/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MkDocs Material 自訂 Neumorphic 主題：完整適配指南
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -752,6 +779,96 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        設計哲學適配原則
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-border-vs-soft-shadow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心判斷：hard border vs soft shadow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-material-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MkDocs Material CSS 覆寫架構
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        關鍵 CSS Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -769,8 +886,6 @@
                 
   
   
-    
-  
   
   
     
@@ -780,11 +895,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -805,7 +920,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -876,35 +991,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MCP 協定完整解析：架構、安全風險與防護策略
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../general-mcp-architecture-and-security/" class="md-nav__link">
         
   
   
@@ -920,107 +1010,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        為什麼需要 MCP
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        架構
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#202603" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        已知攻擊向量（截至 2026/03）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        防護最佳實踐
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重要研究資源
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1593,21 +1582,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        為什麼需要 MCP
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        架構
+        設計哲學適配原則
       
     </span>
   </a>
@@ -1615,10 +1593,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#202603" class="md-nav__link">
+  <a href="#hard-border-vs-soft-shadow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        已知攻擊向量（截至 2026/03）
+        核心判斷：hard border vs soft shadow
       
     </span>
   </a>
@@ -1626,10 +1604,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#mkdocs-material-css" class="md-nav__link">
     <span class="md-ellipsis">
       
-        防護最佳實踐
+        MkDocs Material CSS 覆寫架構
       
     </span>
   </a>
@@ -1637,10 +1615,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#css-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        重要研究資源
+        關鍵 CSS Variables
       
     </span>
   </a>
@@ -1673,100 +1651,123 @@
       
       
       
-        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
+        <a href="../../tags/#tag:css" class="md-tag">css</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:mcp" class="md-tag">mcp</a>
+        <a href="../../tags/#tag:mkdocs" class="md-tag">mkdocs</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:security" class="md-tag">security</a>
+        <a href="../../tags/#tag:static-site-generator" class="md-tag">static-site-generator</a>
       
     
   </nav>
 
 
 
-  <h1>MCP 協定完整解析：架構、安全風險與防護策略</h1>
+  <h1>MkDocs Material 自訂 Neumorphic 主題：完整適配指南</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>MCP（Model Context Protocol）是 AI 應用與外部工具的標準化連接協定，採 Host/Client/Server 三層架構，用 JSON-RPC 2.0 通訊</li>
-<li>最危險的攻擊是「致命三角」（Lethal Trifecta）：當一個 agent session 同時有 ① 私有資料存取 ② 不可信內容 ③ 對外通訊能力，就可能被攻破</li>
-<li>Tool Poisoning 攻擊成功率高達 36.5%（MCPTox benchmark）：惡意 Server 在 tool description 藏隱藏指令，LLM 看得到但使用者看不到</li>
-<li>Cross-Server 攻擊只需 25 行 Python 就能實作：多個 MCP Server 透過共享的 LLM 上下文間接存取彼此的工具</li>
-<li>Claude Code 的沙箱（bubblewrap）能隔離 process 層級，但 LLM 本身是跨 Server 的橋樑，無法靠沙箱阻止 cross-server 資料流</li>
+<li>MkDocs Material 的色彩系統靠 CSS variables（<code>--md-primary-fg-color</code>、<code>--md-default-bg-color</code> 等）控制，用 <code>[data-md-color-scheme="default"]</code> / <code>[data-md-color-scheme="slate"]</code> 分別覆寫 light/dark mode</li>
+<li>palette 設為 <code>primary: custom</code> + <code>accent: custom</code> 可完全由 CSS 接管色彩，避免內建 preset 覆蓋自訂值</li>
+<li><strong>Dark mode 必須完整設計</strong>——只設 CSS variables 不夠，每個元件（cards、tags、code blocks、search、header）都需要獨立的 dark mode 樣式規則，否則會 fallback 到 Material 預設的邊框/平色</li>
+<li>Tags plugin 需要 <code>tags_file: tags.md</code> 設定才會渲染標籤索引頁，否則頁面會是空的</li>
+<li>Sidebar sticky 延遲吸附的修法：<code>.md-main__inner { margin-top: 0 }</code> + <code>.md-content__inner { padding-top: 1.2rem }</code></li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="mcp">為什麼需要 MCP<a class="headerlink" href="#mcp" title="Permanent link">&para;</a></h3>
-<p>沒有 MCP 時，M 個 AI 應用 × N 個工具 = M×N 個客製整合。MCP 把這變成 M+N。Anthropic 2024/11 開源，2025/12 捐給 Linux Foundation 的 AAIF（OpenAI、Block 共同創辦）。目前 Claude Code、ChatGPT、Cursor、VS Code 等都支援。</p>
-<h3 id="_3">架構<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Host</strong>：最上層應用（如 Claude Code），管理多個 Client、控制安全政策</li>
-<li><strong>Client</strong>：每個 Client 對應一個 Server，維持 1:1 session。Server 之間彼此隔離</li>
-<li><strong>Server</strong>：提供 Tools（LLM 呼叫）、Resources（唯讀資料）、Prompts（使用者選用的模板）</li>
-</ul>
-<p>傳輸層：本地用 <strong>stdio</strong>（子程序），遠端用 <strong>Streamable HTTP</strong>。</p>
-<h3 id="202603">已知攻擊向量（截至 2026/03）<a class="headerlink" href="#202603" title="Permanent link">&para;</a></h3>
+<p>將個人首頁（marsantony.github.io）的 Silver Neumorphism 設計哲學移植到 MkDocs Material 知識庫網站。過程中踩到多個坑。</p>
+<h3 id="_3">設計哲學適配原則<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>同一設計語言在不同 context 的表達方式不同：</p>
 <table>
 <thead>
 <tr>
-<th>攻擊</th>
-<th>原理</th>
-<th>實際案例</th>
+<th>設計元素</th>
+<th>首頁（單欄）</th>
+<th>MkDocs（三欄 + framework）</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Tool Poisoning</td>
-<td>在 tool description 藏 <code>&lt;IMPORTANT&gt;</code> 隱藏指令</td>
-<td>Invariant Labs 用 <code>add</code> 工具偷 SSH key（2025/04）</td>
+<td>Section label 底線</td>
+<td>全寬橫跨，自然分隔</td>
+<td>Sidebar 窄空間會變「盒中盒」，改用純字體處理</td>
 </tr>
 <tr>
-<td>Cross-Server 外洩</td>
-<td>惡意 Server 透過 LLM 發現並呼叫其他 Server 的工具</td>
-<td>天氣 Server 偷銀行餘額（Trivial Trojans, 2025/07）</td>
+<td>毛玻璃 header</td>
+<td>小型浮動 nav 適合</td>
+<td>全寬 header 太透明反而髒，改用實色 + 陰影</td>
 </tr>
 <tr>
-<td>Rug Pull</td>
-<td>Server 在首次核准後悄悄改變工具行為</td>
-<td>Client 不會每次重新驗證 tool definition</td>
+<td>Mouse glow / card radial</td>
+<td>JS 互動特色</td>
+<td>MkDocs 無法注入，放棄</td>
 </tr>
 <tr>
-<td>Prompt Injection</td>
-<td>工具回傳的外部資料含攻擊者指令</td>
-<td>GitHub Issue 注入偷 private repo（2025/05）</td>
-</tr>
-<tr>
-<td>供應鏈攻擊</td>
-<td>惡意 npm/pip 套件偽裝成合法 MCP Server</td>
-<td>SmartLoader 木馬化 Oura Server（2026/02）</td>
+<td>Neumorphic shadow</td>
+<td>自由控制所有元素</td>
+<td>需要 <code>!important</code> 強制覆蓋 Material 預設 border</td>
 </tr>
 </tbody>
 </table>
-<h3 id="_4">防護最佳實踐<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>永遠不要同時湊齊致命三角</strong>——敏感資料 Server 和不可信內容 Server 分開</li>
-<li>安裝前審查原始碼，特別看 tool description 有無隱藏指令</li>
-<li>用 Claude Code 的 deny 規則封掉不需要的工具</li>
-<li>釘死 MCP Server 版本，不自動更新</li>
-<li>不要明文存 credential，用環境變數或 secret manager</li>
-<li>自己寫的 local stdio server 風險最低，優先從這裡開始</li>
-</ol>
-<h3 id="_5">重要研究資源<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<ul>
-<li>OWASP MCP Top 10（MCP01: Token Mismanagement 排第一）</li>
-<li>Simon Willison 的 Lethal Trifecta 分析（2025/06）</li>
-<li>MCPTox benchmark（arXiv:2508.14925）：20 個 LLM 的攻擊成功率測試</li>
-<li>Trivial Trojans（arXiv:2507.19880）：跨 Server 攻擊的 PoC</li>
-</ul>
+<h3 id="hard-border-vs-soft-shadow">核心判斷：hard border vs soft shadow<a class="headerlink" href="#hard-border-vs-soft-shadow" title="Permanent link">&para;</a></h3>
+<p>Neumorphism 的本質是<strong>柔和的光影深度</strong>，不是硬邊線。在 sidebar 標題加 <code>border-bottom</code> 會違反設計原則——sidebar 本身就是一個視覺區域，標題只需要用字體（monospace + uppercase + muted color + spacing）建立層次即可。</p>
+<h3 id="mkdocs-material-css">MkDocs Material CSS 覆寫架構<a class="headerlink" href="#mkdocs-material-css" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docs/stylesheets/custom.css    ← extra_css 載入
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── Light mode variables       ← [data-md-color-scheme=&quot;default&quot;]
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── Light mode components      ← header, search, code, tags, cards...
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── Dark mode variables        ← [data-md-color-scheme=&quot;slate&quot;]
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── Dark mode components       ← 每個元件都要獨立處理
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── Layout fixes               ← sidebar sticky, spacing
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>└── Shared                     ← 兩種模式共用的排版規則
+</code></pre></div>
+<h3 id="css-variables">關鍵 CSS Variables<a class="headerlink" href="#css-variables" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--md-default-bg-color</code></td>
+<td>頁面背景色</td>
+</tr>
+<tr>
+<td><code>--md-primary-fg-color</code></td>
+<td>Header 文字色</td>
+</tr>
+<tr>
+<td><code>--md-primary-bg-color</code></td>
+<td>Header 背景色</td>
+</tr>
+<tr>
+<td><code>--md-accent-fg-color</code></td>
+<td>強調色（連結、hover）</td>
+</tr>
+<tr>
+<td><code>--md-typeset-a-color</code></td>
+<td>連結色（需和 accent 同步）</td>
+</tr>
+<tr>
+<td><code>--md-code-bg-color</code></td>
+<td>程式碼區塊背景</td>
+</tr>
+<tr>
+<td><code>--md-footer-bg-color</code></td>
+<td>Footer 背景</td>
+</tr>
+</tbody>
+</table>
+<p>自訂 variables（用於 neumorphic shadow）：<code>--neu-dark</code>、<code>--neu-light</code>、<code>--neu-surface</code>、<code>--neu-raised</code>。</p>
 
 
 
