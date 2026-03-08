@@ -250,10 +250,30 @@
 
 .md-typeset a:hover { opacity: 0.85; }
 
+/* ── Sidebar titles: homepage section-label style ──
+   Grounded with a bottom border, acting as a section anchor
+   rather than floating text. Mirrors homepage .section-label. */
 .md-nav__title {
   font-family: var(--md-code-font);
   font-size: 0.7rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.12em;
+  color: var(--md-default-fg-color--lighter);
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid var(--neu-dark);
+}
+
+/* TOC 右側「目錄」同樣處理 */
+.md-nav--secondary .md-nav__title {
+  font-family: var(--md-code-font);
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--md-default-fg-color--lighter);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
+  border-bottom: 1px solid var(--neu-dark);
 }
