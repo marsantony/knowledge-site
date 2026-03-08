@@ -250,30 +250,40 @@
 
 .md-typeset a:hover { opacity: 0.85; }
 
-/* ── Sidebar titles: homepage section-label style ──
-   Grounded with a bottom border, acting as a section anchor
-   rather than floating text. Mirrors homepage .section-label. */
+/* ── Sidebar titles ──
+   Neumorphic = soft depth, no hard lines.
+   Sidebar is already a distinct zone; the title just needs
+   to recede and guide — monospace + muted + spacing is enough. */
 .md-nav__title {
-  font-family: var(--md-code-font);
-  font-size: 0.7rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--md-default-fg-color--lighter);
-  padding-bottom: 0.6rem;
-  margin-bottom: 0.4rem;
-  border-bottom: 1px solid var(--neu-dark);
-}
-
-/* TOC 右側「目錄」同樣處理 */
-.md-nav--secondary .md-nav__title {
   font-family: var(--md-code-font);
   font-size: 0.65rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--md-default-fg-color--lighter);
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.3rem;
-  border-bottom: 1px solid var(--neu-dark);
+  margin-bottom: 0.6rem;
+}
+
+/* ── Homepage hero ──
+   Mirrors marsantony.github.io hero: centered, clear hierarchy,
+   subtitle in muted monospace, generous spacing to cards below. */
+.md-typeset h1 {
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+
+/* Homepage-only: center the hero and add breathing room */
+[data-md-component="content"] > .md-typeset > h1:first-child {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Homepage description (first p after h1, before grid) */
+[data-md-component="content"] > .md-typeset > p:first-of-type {
+  text-align: center;
+  font-family: var(--md-code-font);
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--lighter);
+  letter-spacing: 0.03em;
+  margin-bottom: 2.5rem;
 }
