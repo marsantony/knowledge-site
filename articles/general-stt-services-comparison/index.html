@@ -539,6 +539,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../dev-tools-asr-postprocessing-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASR 轉錄品質提升：後處理 Pipeline 與幻覺過濾最佳實踐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../dev-tools-cli-tools-for-ai-agents/" class="md-nav__link">
         
   
@@ -1180,6 +1208,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cjk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CJK 專用開源引擎（離線轉錄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        台灣在地方案
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        商用 API 補充
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1703,6 +1764,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cjk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CJK 專用開源引擎（離線轉錄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        台灣在地方案
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        商用 API 補充
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1748,7 +1842,7 @@
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>英文最準</strong>：AssemblyAI Universal-3（5.9% WER）、Deepgram Nova-3（5.3-8.1% WER）</li>
-<li><strong>中日文最準</strong>：Whisper large-v3 仍是最強通用選項（中文 CER ~4%），Deepgram 中文支援不明確</li>
+<li><strong>中日文最準</strong>：SenseVoice-Small 宣稱比 Whisper 準 50%（zh/en/ja/ko/yue 五語），Breeze-ASR-25 在台灣中文 +19%、中英 code-switching +56%</li>
 <li><strong>Groq 免費額度</strong>：每天 8 小時免費轉錄，不需信用卡，但無串流 API（僅批次）</li>
 <li><strong>Whisper large-v3 的幻覺問題</strong>：靜音或雜音段落會生成假文字（如「感謝收看」），幻覺率是 v2 的 4 倍</li>
 <li><strong>即時串流 &lt;300ms</strong>：只有 Deepgram 和 AssemblyAI 提供原生 WebSocket 串流</li>
@@ -1925,6 +2019,124 @@
 </tbody>
 </table>
 <p>Transformers.js v3 支援 WebGPU，推理速度可提升最多 100 倍，但仍只能跑小模型。</p>
+<h3 id="cjk">CJK 專用開源引擎（離線轉錄）<a class="headerlink" href="#cjk" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>引擎</th>
+<th>架構</th>
+<th>中文準確度</th>
+<th>中英混合</th>
+<th>日文</th>
+<th>速度</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Breeze-ASR-25（聯發科）</td>
+<td>Whisper-large-v2 微調</td>
+<td>+19% zh-TW</td>
+<td><strong>+56% code-switch</strong></td>
+<td>❌</td>
+<td>同 Whisper</td>
+<td>台灣國語最佳化，Apache 2.0</td>
+</tr>
+<tr>
+<td>SenseVoice-Small（阿里巴巴）</td>
+<td>SAN-M + CTC（非 Whisper）</td>
+<td>+50%</td>
+<td>良好</td>
+<td>✅</td>
+<td>快 15 倍</td>
+<td>輸出簡體需 OpenCC 轉換，天生少幻覺</td>
+</tr>
+<tr>
+<td>Qwen3-ASR（阿里巴巴）</td>
+<td>Qwen2 base</td>
+<td>WER 4.97</td>
+<td>22 種中國方言</td>
+<td>✅</td>
+<td>未知</td>
+<td>2026 年新模型</td>
+</tr>
+<tr>
+<td>WhisperX</td>
+<td>faster-whisper + wav2vec2</td>
+<td>同 Whisper</td>
+<td>同上</td>
+<td>✅</td>
+<td>稍慢</td>
+<td>強制對齊改善斷句品質</td>
+</tr>
+</tbody>
+</table>
+<p><strong>SenseVoice vs Whisper 的根本差異</strong>：SenseVoice 用 CTC（非自回歸），一次 forward pass 輸出全部結果，不會在靜音時「亂講」。Whisper 的自回歸 decoder 必須持續生成 token，這是幻覺的根本原因。</p>
+<p><strong>Breeze-ASR-25 的定位</strong>：專為台灣國語設計，中英 code-switching（「check 一下」「放進 training」）改善最大。基於 Whisper 架構，可用 faster-whisper 跑。不支援台語（常被誤解）。</p>
+<h3 id="_5">台灣在地方案<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>國語</th>
+<th>台語</th>
+<th>客語</th>
+<th>開源</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Breeze-ASR-25</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+<td>台灣國語 + 中英混合</td>
+</tr>
+<tr>
+<td>Taiwan-Tongues-ASR-CE</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>政府開源，無 benchmark</td>
+</tr>
+<tr>
+<td>台灣大哥大 AI ASR</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>企業級，支援地端部署</td>
+</tr>
+</tbody>
+</table>
+<h3 id="api">商用 API 補充<a class="headerlink" href="#api" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>服務</th>
+<th>中文 WER</th>
+<th>每小時費用</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ElevenLabs Scribe v2</td>
+<td>~3-5%</td>
+<td>$0.40</td>
+<td>目前商用最準，支援台灣腔</td>
+</tr>
+<tr>
+<td>GPT-4o-transcribe</td>
+<td>~8.9%</td>
+<td>$0.36</td>
+<td>準確但貴</td>
+</tr>
+</tbody>
+</table>
 
 
 
