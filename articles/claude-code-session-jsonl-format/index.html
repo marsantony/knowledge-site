@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/dev-tools-image-hosting-best-practices/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/claude-code-session-jsonl-format/">
       
       
-        <link rel="prev" href="../dev-tools-cli-tools-for-ai-agents/">
+        <link rel="prev" href="../claude-code-awesome-skills-and-composio/">
       
       
-        <link rel="next" href="../dev-tools-linux-package-managers-for-ai-agents/">
+        <link rel="next" href="../claude-code-sharing-conversations/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>圖片託管策略：依用途選擇最佳方案 - Mars 的知識庫</title>
+        <title>Claude Code Session JSONL 格式與程式化讀取 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              圖片託管策略：依用途選擇最佳方案
+              Claude Code Session JSONL 格式與程式化讀取
             
           </span>
         </div>
@@ -318,6 +318,8 @@
                 
   
   
+    
+  
   
   
     
@@ -327,11 +329,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -352,7 +354,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -423,10 +425,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../claude-code-session-jsonl-format/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code Session JSONL 格式與程式化讀取
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -442,6 +469,79 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonl-entry-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSONL Entry Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        程式化讀取要點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常見陷阱
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -515,8 +615,6 @@
                 
   
   
-    
-  
   
   
     
@@ -526,11 +624,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -551,7 +649,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -622,35 +720,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    圖片託管策略：依用途選擇最佳方案
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../dev-tools-image-hosting-best-practices/" class="md-nav__link">
         
   
   
@@ -666,46 +739,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1773,7 +1806,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#jsonl-entry-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSONL Entry Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        程式化讀取要點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常見陷阱
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         背景
@@ -1804,58 +1870,81 @@
       
       
       
-        <a href="../../tags/#tag:git" class="md-tag">git</a>
+        <a href="../../tags/#tag:python" class="md-tag">python</a>
       
     
   </nav>
 
 
 
-  <h1>圖片託管策略：依用途選擇最佳方案</h1>
+  <h1>Claude Code Session JSONL 格式與程式化讀取</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>專案文件（README、docs）</strong>：圖片放 repo 內（<code>docs/images/</code> 或 <code>assets/</code>），跟程式碼一起版控，不會失連；大圖多圖用 Git LFS</li>
-<li><strong>臨時分享（Issue、PR、Discord）</strong>：GitHub Issue 拖拉上傳最方便，零設定直連；備案用 Catbox（200MB、無帳號、無廣告）</li>
-<li><strong>公開網站 / 部落格</strong>：圖片跟 source 一起進 repo，build 時一起部署；流量大才需要 Cloudflare R2 或 S3</li>
-<li><strong>GitHub Issue 圖床限制</strong>：單檔 10MB、不支援 SVG、上傳後無法刪除管理、private repo 的圖片連結其實是公開的</li>
-<li><strong>第三方圖床只適合不在意連結永久性的場景</strong>，正式內容不要依賴</li>
+<li>Session 檔案位置：<code>~/.claude/projects/&lt;project-path&gt;/&lt;session-uuid&gt;.jsonl</code></li>
+<li>Project path 轉換規則：CWD 的 <code>/</code> 換成 <code>-</code>（如 <code>/home/mars/claudeshare</code> → <code>-home-mars-claudeshare</code>）</li>
+<li>找當前 session：取該目錄下最近修改的 <code>.jsonl</code> 檔</li>
+<li>Subagent 對話存在 <code>&lt;session-uuid&gt;/subagents/agent-&lt;agent-id&gt;.jsonl</code></li>
+<li>另有 <code>~/.claude/history.jsonl</code> 存所有 session 的 metadata（display text、timestamp、sessionId）</li>
 </ul>
-<h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>Imgur 封鎖台灣 IP 後，需要替代方案。Postimages 雖有直連但強制顯示網頁 UI。</p>
-<p>調查後發現不需要執著於找「完美圖床」，而是依用途分流：</p>
+<h2 id="jsonl-entry-types">JSONL Entry Types<a class="headerlink" href="#jsonl-entry-types" title="Permanent link">&para;</a></h2>
+<p>每行是一個 JSON 物件，主要欄位：<code>type</code>、<code>uuid</code>、<code>sessionId</code>、<code>timestamp</code>、<code>parentUuid</code></p>
 <table>
 <thead>
 <tr>
+<th>type</th>
 <th>用途</th>
-<th>方案</th>
-<th>理由</th>
+<th>關鍵欄位</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>專案文件</td>
-<td>repo 內</td>
-<td>版控一致、永不失連</td>
+<td><code>user</code></td>
+<td>使用者訊息</td>
+<td><code>message.content[]</code>（含 <code>text</code>、<code>tool_result</code>）、<code>userType</code>（<code>external</code> 或 <code>internal</code>）</td>
 </tr>
 <tr>
-<td>臨時分享</td>
-<td>GitHub Issue 拖拉</td>
-<td>零設定、直連</td>
+<td><code>assistant</code></td>
+<td>Claude 回應</td>
+<td><code>message.content[]</code>（含 <code>text</code>、<code>thinking</code>、<code>tool_use</code>）、<code>message.model</code></td>
 </tr>
 <tr>
-<td>臨時分享（&gt;10MB）</td>
-<td>Catbox (catbox.moe)</td>
-<td>200MB、無廣告、直連</td>
+<td><code>progress</code></td>
+<td>Hook 執行</td>
+<td><code>data.hookEvent</code>、<code>data.command</code></td>
 </tr>
 <tr>
-<td>公開網站</td>
-<td>跟 source 一起部署</td>
-<td>不依賴外部服務</td>
+<td><code>queue-operation</code></td>
+<td>佇列操作</td>
+<td><code>operation</code>（enqueue）</td>
+</tr>
+<tr>
+<td><code>file-history-snapshot</code></td>
+<td>檔案快照</td>
+<td><code>snapshot.trackedFileBackups</code></td>
 </tr>
 </tbody>
 </table>
-<p>台灣可用的免費圖床備選：ImgBB（32MB、主流）、Catbox（200MB、最乾淨）、Imgpoi、圖鴨 (duk.tw)。但這些都有服務存續風險，正式用途不建議依賴。</p>
+<h2 id="_2">程式化讀取要點<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 找當前 session 的 JSONL</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">PROJECT_DIR</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;~/.claude/projects/</span><span class="si">{</span><span class="n">cwd</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># 最新修改的 .jsonl 就是當前 session</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># 判斷是否為使用者實際輸入（排除 tool_result 等系統訊息）</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">is_real_user_message</span><span class="p">(</span><span class="n">entry</span><span class="p">):</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">if</span> <span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;userType&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;internal&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">content</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="p">[])</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="k">return</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;tool_result&quot;</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">content</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">dict</span><span class="p">))</span>
+</code></pre></div>
+<h2 id="_3">常見陷阱<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>User 訊息中會混入 <code>&lt;system-reminder&gt;</code>、<code>&lt;ide_opened_file&gt;</code> 等系統標籤，匯出時需要用 regex 清除</li>
+<li><code>userType: "internal"</code> 的 user 訊息是 tool_result，不是使用者實際輸入</li>
+<li>Thinking blocks 有 <code>signature</code> 欄位，不應公開</li>
+</ul>
+<h2 id="_4">背景<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>建 <code>/share-chat</code> skill 時需要解析 JSONL 格式，逆向工程了 Claude Code 的 session 儲存結構。JSONL 是 append-only 的 JSON Lines 格式，每個 entry 有 <code>parentUuid</code> 串成對話鏈。</p>
 
 
 

@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/claude-code-sharing-conversations/">
       
       
-        <link rel="prev" href="../claude-code-awesome-skills-and-composio/">
+        <link rel="prev" href="../claude-code-session-jsonl-format/">
       
       
         <link rel="next" href="../claude-code-skills-vs-plugins/">
@@ -425,6 +425,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude-code-session-jsonl-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code Session JSONL 格式與程式化讀取
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -488,6 +516,17 @@
     <span class="md-ellipsis">
       
         重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Control 詳細操作
       
     </span>
   </a>
@@ -1745,6 +1784,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#remote-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote Control 詳細操作
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1776,11 +1826,48 @@
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Remote Control</strong>（<code>/remote-control</code> 或 <code>/rc</code>）：讓你從手機/瀏覽器繼續操控本地 CLI session，但對方也需要 Claude 訂閱才看得到</li>
+<li><strong>Remote Control</strong>（<code>/remote-control</code> 或 <code>/rc</code>）：從手機/瀏覽器繼續操控本地 CLI session，但對方也需要 Claude 訂閱才看得到</li>
 <li><strong>Claude Code on the Web</strong>（<code>claude --remote</code>）：在雲端建立新 session，可設定 Public/Team 可見性分享連結，但不能把現有本地 session 推上去</li>
 <li><strong><code>/share-chat</code> 自訂 skill</strong>：把當前對話轉成 Markdown 上傳 GitHub Gist，任何人都能看，不需要訂閱</li>
-<li>Web ↔ Terminal 是單向的：<code>--teleport</code> 可以把 Web session 拉回本地，但反過來不行</li>
+<li>Web → Terminal：<code>--teleport</code> 或 <code>/tp</code> 可拉回本地；Terminal → Web：無法推送現有 session</li>
 </ul>
+<h2 id="remote-control">Remote Control 詳細操作<a class="headerlink" href="#remote-control" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>指令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>現有 session 啟用</td>
+<td><code>/remote-control</code> 或 <code>/rc</code></td>
+</tr>
+<tr>
+<td>新建 Remote Control session</td>
+<td><code>claude remote-control</code></td>
+</tr>
+<tr>
+<td>從 Web 拉回本地</td>
+<td><code>/teleport</code> 或 <code>/tp</code></td>
+</tr>
+<tr>
+<td>從 CLI 指定 session 拉回</td>
+<td><code>claude --teleport &lt;session-id&gt;</code></td>
+</tr>
+<tr>
+<td>自動對所有 session 啟用</td>
+<td><code>/config</code> → Enable Remote Control → <code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>限制</strong>：
+- 需要 Max 方案（Pro 即將支援），API key 不支援
+- 一次只能有一個 remote session
+- Terminal 必須保持開啟，關掉就斷線
+- 斷網超過約 10 分鐘會 timeout
+- Session 跑在本地，Web/手機只是遠端視窗（與 Claude Code on the Web 不同）</p>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>Claude Code 本地 CLI 的對話沒有內建的公開分享功能。Remote Control 需要訂閱、Claude Code on the Web 需要訂閱才能看到分享的 session。</p>
 <p>為了解決「分享給非訂閱者」的需求，建了 <code>/share-chat</code> skill，用 <code>jsonl_to_md.py</code> 解析 session JSONL 檔轉成 Markdown，再用 <code>gh gist create --public</code> 上傳。Gist 任何人都能看。</p>
