@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/general-claude-cowork-setup-and-features/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/security-auth-middleware-public-fallback/">
       
       
-        <link rel="prev" href="../web-mkdocs-material-custom-neumorphic-theme/">
+        <link rel="prev" href="../learning-test-coverage-strategy/">
       
       
-        <link rel="next" href="../general-cowork-windows-limitations/">
+        <link rel="next" href="../security-bff-token-storage-architecture/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Claude Cowork 設定指南與功能概覽 - Mars 的知識庫</title>
+        <title>API 認證 middleware：公開存取 vs 認證失敗不降級 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Claude Cowork 設定指南與功能概覽
+              API 認證 middleware：公開存取 vs 認證失敗不降級
             
           </span>
         </div>
@@ -797,8 +797,6 @@
                 
   
   
-    
-  
   
   
     
@@ -808,11 +806,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -833,7 +831,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -848,35 +846,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Claude Cowork 設定指南與功能概覽
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../general-claude-cowork-setup-and-features/" class="md-nav__link">
         
   
   
@@ -892,74 +865,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        設定流程
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#claude-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        與 Claude Code 的關係
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1370,6 +1275,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1379,11 +1286,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
         
           
           <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
@@ -1404,7 +1311,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1559,10 +1466,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../security-auth-middleware-public-fallback/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 認證 middleware：公開存取 vs 認證失敗不降級
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1578,6 +1510,85 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Middleware 判斷邏輯
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handler 判斷邏輯
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        前端統一呼叫
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1785,10 +1796,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#middleware" class="md-nav__link">
     <span class="md-ellipsis">
       
-        設定流程
+        Middleware 判斷邏輯
       
     </span>
   </a>
@@ -1796,10 +1807,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#claude-code" class="md-nav__link">
+  <a href="#handler" class="md-nav__link">
     <span class="md-ellipsis">
       
-        與 Claude Code 的關係
+        Handler 判斷邏輯
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        前端統一呼叫
       
     </span>
   </a>
@@ -1832,43 +1854,71 @@
       
       
       
-        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
+        <a href="../../tags/#tag:cloudflare" class="md-tag">cloudflare</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:cowork" class="md-tag">cowork</a>
+        <a href="../../tags/#tag:javascript" class="md-tag">javascript</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:security" class="md-tag">security</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:system-design" class="md-tag">system-design</a>
       
     
   </nav>
 
 
 
-  <h1>Claude Cowork 設定指南與功能概覽</h1>
+  <h1>API 認證 middleware：公開存取 vs 認證失敗不降級</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Cowork 是 Claude Desktop App 裡的一個模式（Chat / Cowork / Code 切換），不是獨立 App</li>
-<li>需要 Pro 以上付費方案（$20/月），Cowork 任務比一般聊天耗 token 快很多（單任務可消耗 50-100+ 則訊息額度）</li>
-<li>五大功能：檔案系統存取、詢問使用者問題、Plugins、Instructions（Global + 資料夾）、Connectors</li>
-<li>Global Instructions 每次新 session 自動載入，彌補沒有跨 session 記憶的缺陷</li>
-<li>Context 檔案（aboutMe.md、brandVoice.md、workingStyle.md）放在工作資料夾，搭配 Global Instructions 中「開始任務前先讀資料夾所有檔案」的指令</li>
+<li><strong>「沒帶 token」和「token 壞掉」是兩種完全不同的情境</strong>，必須分開處理</li>
+<li>沒帶 token → 放行，回傳公開版資料（正常的未登入訪客）</li>
+<li>帶了 token 但驗證失敗 → 回 401/403 報錯，<strong>絕對不降級為公開版</strong>。靜默降級會讓前端無法察覺認證問題（例如 token 過期）</li>
+<li>Cloudflare Pages Functions 的 <code>context.data</code> 是內部物件，<strong>客戶端無法從外部注入</strong>。只有 middleware 能設定 <code>context.data.userEmail</code>，所以用它來判斷 public/private 是安全的</li>
+<li>同一個 API endpoint 根據認證狀態回傳不同版本的資料，前端不需要分兩條路徑呼叫</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>Claude Cowork 於 2026 年 1 月推出（Research Preview），將 Claude Code 的 agentic 能力重新包裝給非開發者使用。它能直接讀寫本地檔案、自主執行多步驟任務、產出 Excel/Word/PDF 等文件。</p>
-<h3 id="_3">設定流程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<ol>
-<li>從 claude.com/download 下載 Claude Desktop App</li>
-<li>建立 Context 資料夾（放在 <code>C:\Users\使用者\</code> 底下），放入 aboutMe.md、brandVoice.md、workingStyle.md</li>
-<li>Settings &gt; Cowork 設定 Global Instructions</li>
-<li>Settings &gt; Capabilities 開啟 Cloud code execution（預設已開）</li>
-<li>如需網路存取，開啟 Allow network egress 並設定 Domain allowlist</li>
-<li>處理 Office 文件需要 docx、xlsx、pdf skills（可從 plugin marketplace 安裝）</li>
-</ol>
-<h3 id="claude-code">與 Claude Code 的關係<a class="headerlink" href="#claude-code" title="Permanent link">&para;</a></h3>
-<p>兩者完全獨立，不共享 session、記憶或設定。無法互相指揮，唯一的協作方式是透過檔案手動中轉。CLAUDE.md 是 Claude Code 專用，Cowork 用自己的 Instructions 系統。</p>
+<p>dev-diary 網站有公開版和完整版（需登入）兩種日報內容。原本公開版靠靜態 JSON 檔，完整版靠認證 API。重構後統一走 API，需要讓同一個 endpoint 支援兩種存取模式。</p>
+<h3 id="middleware">Middleware 判斷邏輯<a class="headerlink" href="#middleware" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>沒有 Authorization header → context.next()（不設 userEmail）
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>有 Authorization header → 完整驗證 JWT
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  ├─ 合法 + email 在白名單 → 設 context.data.userEmail，context.next()
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  ├─ JWT 驗證失敗 → 401
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  └─ email 不在白名單 → 403
+</code></pre></div>
+<h3 id="handler">Handler 判斷邏輯<a class="headerlink" href="#handler" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">isAuthenticated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!!</span><span class="nx">context</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">userEmail</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">isAuthenticated</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;private&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;public&quot;</span><span class="si">}</span><span class="sb">:</span><span class="si">${</span><span class="nx">type</span><span class="si">}</span><span class="sb">:</span><span class="si">${</span><span class="nx">date</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="_3">前端統一呼叫<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>因為 middleware 已經處理了認證分流，前端只需要一個 <code>fetchData()</code> 函式，根據有無 <code>idToken</code> 自動帶 header：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">fetchData</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">idToken</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nx">opts</span><span class="p">.</span><span class="nx">headers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="nx">state</span><span class="p">.</span><span class="nx">idToken</span><span class="si">}</span><span class="sb">`</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">resp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="p">);</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">401</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">signOut</span><span class="p">();</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">resp</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">resp</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
+</code></pre></div>
+<p>不再需要分成 <code>fetchJSON()</code>（公開）和 <code>fetchAPI()</code>（認證）兩個函式。</p>
 
 
 

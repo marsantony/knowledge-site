@@ -113,11 +113,19 @@
          <lastmod>2026-03-13</lastmod>
     </url>
     <url>
+         <loc>https://marsantony.github.io/knowledge-site/articles/security-auth-middleware-public-fallback/</loc>
+         <lastmod>2026-03-13</lastmod>
+    </url>
+    <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/security-bff-token-storage-architecture/</loc>
          <lastmod>2026-03-13</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/security-oauth2-client-credentials-vs-auth-code/</loc>
+         <lastmod>2026-03-13</lastmod>
+    </url>
+    <url>
+         <loc>https://marsantony.github.io/knowledge-site/articles/system-design-data-pipeline-kv-vs-git-push/</loc>
          <lastmod>2026-03-13</lastmod>
     </url>
     <url>
