@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/general-rag-architecture-and-best-practices/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/dev-tools-stt-services-and-postprocessing/">
       
       
-        <link rel="prev" href="../general-knowledge-base-tagging/">
+        <link rel="prev" href="../claude-code-skills-vs-plugins/">
       
       
-        <link rel="next" href="../general-stt-services-comparison/">
+        <link rel="next" href="../dev-tools-cli-tools-for-ai-agents/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>RAG 完整架構與最佳實踐 - Mars 的知識庫</title>
+        <title>STT 完整指南：服務比較、後處理 Pipeline 與幻覺對策 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RAG 完整架構與最佳實踐
+              STT 完整指南：服務比較、後處理 Pipeline 與幻覺對策
             
           </span>
         </div>
@@ -487,6 +487,8 @@
                 
   
   
+    
+  
   
   
     
@@ -496,11 +498,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -521,7 +523,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -536,17 +538,42 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../dev-tools-asr-postprocessing-pipeline/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STT 完整指南：服務比較、後處理 Pipeline 與幻覺對策
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    ASR 轉錄品質提升：後處理 Pipeline 與幻覺過濾最佳實踐
+    STT 完整指南：服務比較、後處理 Pipeline 與幻覺對策
   
 
     
@@ -555,6 +582,201 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        英文準確度（WER，越低越好）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中文普通話
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定價比較
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Groq 免費方案細節
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whisper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Whisper 模型大小與瀏覽器可行性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cjk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CJK 專用開源引擎（離線轉錄）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        台灣在地方案
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        商用 API 補充
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        後處理 Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="後處理 Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whisper_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Whisper 幻覺的本質
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segment 合併
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpscpl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPS/CPL 字幕控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asr-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ASR + LLM 兩階段架構
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -825,8 +1047,6 @@
                 
   
   
-    
-  
   
   
     
@@ -836,11 +1056,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -861,7 +1081,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -879,14 +1099,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../general-claude-cowork-setup-and-features/" class="md-nav__link">
+      <a href="../general-claude-cowork-guide/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Claude Cowork 設定指南與功能概覽
+    Claude Cowork 設定指南、功能概覽與 Windows 限制
   
 
     
@@ -907,14 +1127,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../general-cowork-windows-limitations/" class="md-nav__link">
+      <a href="../general-rag-complete-guide/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Claude Cowork Windows 版已知限制與常見問題
+    RAG 完整指南：架構設計、Embedding 弱點與可靠性策略
   
 
     
@@ -1019,34 +1239,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../general-embedding-limitations-and-rag-reliability/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Embedding 模型的弱點與 RAG 可靠性策略
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../general-knowledge-base-tagging/" class="md-nav__link">
         
   
@@ -1055,188 +1247,6 @@
     
   
     知識庫分類設計：Category + Tags
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RAG 完整架構與最佳實踐
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RAG 完整架構與最佳實踐
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        事前準備（離線）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        每次查詢（線上）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        技術棧選擇
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        進階架構
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rag-vs-skilltool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        RAG vs Skill/Tool 的關鍵字搜尋
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../general-stt-services-comparison/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    STT 服務比較：品質、延遲、定價與語言支援
   
 
     
@@ -1846,10 +1856,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#wer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        英文準確度（WER，越低越好）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        事前準備（離線）
+        中文普通話
       
     </span>
   </a>
@@ -1860,7 +1881,40 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        每次查詢（線上）
+        定價比較
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Groq 免費方案細節
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whisper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Whisper 模型大小與瀏覽器可行性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cjk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CJK 專用開源引擎（離線轉錄）
       
     </span>
   </a>
@@ -1871,7 +1925,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        技術棧選擇
+        台灣在地方案
       
     </span>
   </a>
@@ -1879,10 +1933,38 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        進階架構
+        商用 API 補充
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        後處理 Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="後處理 Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whisper_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Whisper 幻覺的本質
       
     </span>
   </a>
@@ -1890,10 +1972,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rag-vs-skilltool" class="md-nav__link">
+  <a href="#segment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        RAG vs Skill/Tool 的關鍵字搜尋
+        Segment 合併
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpscpl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPS/CPL 字幕控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asr-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ASR + LLM 兩階段架構
       
     </span>
   </a>
@@ -1933,94 +2037,352 @@
       
       
       
-        <a href="../../tags/#tag:embedding" class="md-tag">embedding</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:rag" class="md-tag">rag</a>
+        <a href="../../tags/#tag:speech-to-text" class="md-tag">speech-to-text</a>
       
     
   </nav>
 
 
 
-  <h1>RAG 完整架構與最佳實踐</h1>
+  <h1>STT 完整指南：服務比較、後處理 Pipeline 與幻覺對策</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>RAG = 先把資料切段轉成向量存起來，查詢時用向量相似度找到最相關的段落，塞進 prompt 讓 LLM 看著回答</li>
-<li>完整 pipeline：Query 理解 → Hybrid Search（BM25 + Vector）→ Reranking → Context 組裝 → LLM 生成</li>
-<li>Chunking 是品質根基：RecursiveCharacterTextSplitter 400-512 tokens + 10-20% overlap 是務實起點</li>
-<li>Embedding 模型：Voyage-3-large 目前 benchmark 最強，OpenAI text-embedding-3-large 生態系最完整</li>
-<li>向量資料庫用 ANN（HNSW 演算法）做近似搜尋，1000 萬筆也只要 ~5ms</li>
+<li><strong>英文最準</strong>：AssemblyAI Universal-3（5.9% WER）、Deepgram Nova-3（5.3-8.1% WER）</li>
+<li><strong>中日文最準</strong>：SenseVoice-Small 宣稱比 Whisper 準 50%（zh/en/ja/ko/yue），Breeze-ASR-25 在台灣中文 +19%、中英 code-switching +56%</li>
+<li><strong>Groq 免費額度</strong>：每天 8 小時免費轉錄，不需信用卡，但無串流 API（僅批次）</li>
+<li><strong>Whisper 輸出品質差的主因是缺少 post-processing</strong>：成熟工具的流程是 ASR → 統計過濾 → segment 合併 → CPS/CPL 字幕控制 → 輸出</li>
+<li><strong>CTC 架構（如 SenseVoice）天生較少幻覺</strong>：非自回歸模型無法在靜音時「憑空生成」文字</li>
+<li><strong>ASR + LLM 兩階段是現代語音工具的標準架構</strong>（Typeless、Wispr Flow 等），LLM 負責去填充詞、修正 code-switching、加標點</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>RAG 解決的問題：LLM 不知道你的私有資料（公司文件、知識庫等）。相比 fine-tuning，RAG 便宜、即時、資料更新只需重新索引。</p>
-<h3 id="_3">事前準備（離線）<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>收集資料</strong>：PDF、Word、網頁、FAQ 等</li>
-<li><strong>Chunking</strong>：切成 400-512 token 的段落，保留 overlap 避免語意切斷</li>
-<li><strong>Embedding</strong>：用模型把每段轉成向量（如 3072 維的數字陣列）</li>
-<li><strong>存入 Vector DB</strong>：向量 + 原文 + metadata 一起存</li>
-</ol>
-<h3 id="_4">每次查詢（線上）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Query 處理</strong>：可做 query rewriting、HyDE 等增強（新手可跳過）</li>
-<li><strong>Hybrid Search</strong>：BM25 關鍵字搜尋 + Vector 語意搜尋，用 RRF 合併排序</li>
-<li><strong>Reranking</strong>：用 Cross-Encoder 對初步結果精排（+10-30% 精準度，~50-100ms 延遲）</li>
-<li><strong>組裝 Prompt</strong>：把 top-5 chunks + 使用者問題組成 prompt</li>
-<li><strong>LLM 生成</strong>：模型根據提供的 context 回答</li>
-</ol>
-<h3 id="_5">技術棧選擇<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>為 Chrome Extension 即時字幕功能評估各 STT 服務，同時研究如何提升 faster-whisper 轉錄品質。發現問題不只在引擎選擇，更在於後處理流程。</p>
+<h3 id="wer">英文準確度（WER，越低越好）<a class="headerlink" href="#wer" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>層級</th>
-<th>務實選擇</th>
+<th>服務</th>
+<th>WER</th>
+<th>備註</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Chunking</td>
-<td>LangChain RecursiveCharacterTextSplitter</td>
+<td>AssemblyAI Universal-3 Pro</td>
+<td>5.9%</td>
+<td>幻覺率最低</td>
 </tr>
 <tr>
-<td>Embedding</td>
-<td>OpenAI text-embedding-3-large 或 Voyage-3-large</td>
+<td>Deepgram Nova-3</td>
+<td>5.3-8.1%</td>
+<td>串流最快</td>
 </tr>
 <tr>
-<td>Vector DB</td>
-<td>小規模 ChromaDB/pgvector，大規模 Milvus/Qdrant</td>
+<td>Whisper large-v3</td>
+<td>6.5%</td>
+<td>幻覺較多</td>
 </tr>
 <tr>
-<td>Reranker</td>
-<td>Cohere Rerank v3.5</td>
+<td>Whisper turbo</td>
+<td>~8%</td>
+<td>速度快但略差</td>
 </tr>
 <tr>
-<td>框架</td>
-<td>LlamaIndex（純 RAG）、LangChain（需 agent 編排）</td>
+<td>瀏覽器 Whisper small</td>
+<td>~7-10%</td>
+<td>實際體感更差</td>
 </tr>
 <tr>
-<td>評估</td>
-<td>RAGAS（Context Relevance、Faithfulness、Hallucination Rate）</td>
+<td>瀏覽器 Whisper tiny</td>
+<td>~15-20%</td>
+<td>勉強堪用</td>
 </tr>
 </tbody>
 </table>
-<h3 id="_6">進階架構<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_3">中文普通話<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>服務</th>
+<th>CER</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Whisper large-v3</td>
+<td>~4%（乾淨音訊）</td>
+<td>通用最佳</td>
+</tr>
+<tr>
+<td>Whisper large-v3 微調</td>
+<td>~1.6%</td>
+<td>需自行訓練</td>
+</tr>
+<tr>
+<td>Deepgram Nova-3</td>
+<td>不確定</td>
+<td>語言擴展偏歐洲/南亞</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">定價比較<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>服務</th>
+<th>每小時費用</th>
+<th>免費額度</th>
+<th>串流支援</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Groq Whisper Turbo</td>
+<td>$0.04</td>
+<td>每天 8 小時</td>
+<td>無（批次）</td>
+</tr>
+<tr>
+<td>Groq Whisper large-v3</td>
+<td>$0.111</td>
+<td>每天 8 小時</td>
+<td>無（批次）</td>
+</tr>
+<tr>
+<td>Deepgram Nova-3 串流</td>
+<td>$0.462</td>
+<td>$200 credit</td>
+<td>WebSocket</td>
+</tr>
+<tr>
+<td>OpenAI Whisper API</td>
+<td>$0.36</td>
+<td>無</td>
+<td>無（批次）</td>
+</tr>
+<tr>
+<td>AssemblyAI</td>
+<td>$0.37</td>
+<td>有</td>
+<td>WebSocket</td>
+</tr>
+<tr>
+<td>Google Chirp 2</td>
+<td>$0.72-0.96</td>
+<td>$300 credit</td>
+<td>有</td>
+</tr>
+</tbody>
+</table>
+<h3 id="groq">Groq 免費方案細節<a class="headerlink" href="#groq" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>GraphRAG</strong>：結合 Knowledge Graph + Vector Search，適合需要實體關係推理的場景</li>
-<li><strong>Self-RAG</strong>：LLM 自己判斷何時需要檢索、評估品質</li>
-<li><strong>Agentic RAG</strong>：Agent 動態決定檢索策略和工具呼叫</li>
+<li>免費不需信用卡，超過限制回 429 不收費</li>
+<li>每小時可轉錄 2 小時音訊，每天上限 8 小時</li>
+<li>每分鐘 20 次請求</li>
+<li>處理速度 189x 即時（10 分鐘音訊 ~3-4 秒完成），但因為是批次 API，端到端延遲仍需 3-5 秒</li>
+<li>適合批次轉錄，不適合即時字幕</li>
 </ul>
-<h3 id="rag-vs-skilltool">RAG vs Skill/Tool 的關鍵字搜尋<a class="headerlink" href="#rag-vs-skilltool" title="Permanent link">&para;</a></h3>
+<h3 id="whisper">Whisper 模型大小與瀏覽器可行性<a class="headerlink" href="#whisper" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>參數</th>
+<th>英文 WER</th>
+<th>瀏覽器可行性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tiny</td>
+<td>39M</td>
+<td>~15-20%</td>
+<td>可行，品質差</td>
+</tr>
+<tr>
+<td>base</td>
+<td>74M</td>
+<td>~10-14%</td>
+<td>可行</td>
+</tr>
+<tr>
+<td>small</td>
+<td>244M</td>
+<td>~7-10%</td>
+<td>實用上限</td>
+</tr>
+<tr>
+<td>medium</td>
+<td>769M</td>
+<td>~5-8%</td>
+<td>勉強（WebGPU）</td>
+</tr>
+<tr>
+<td>large-v3</td>
+<td>1550M</td>
+<td>~6.5%</td>
+<td>不可行</td>
+</tr>
+</tbody>
+</table>
+<p>Transformers.js v3 支援 WebGPU，推理速度可提升最多 100 倍，但仍只能跑小模型。</p>
+<h3 id="cjk">CJK 專用開源引擎（離線轉錄）<a class="headerlink" href="#cjk" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>引擎</th>
+<th>架構</th>
+<th>中文準確度</th>
+<th>中英混合</th>
+<th>日文</th>
+<th>速度</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Breeze-ASR-25（聯發科）</td>
+<td>Whisper-large-v2 微調</td>
+<td>+19% zh-TW</td>
+<td><strong>+56% code-switch</strong></td>
+<td>❌</td>
+<td>同 Whisper</td>
+<td>台灣國語最佳化，Apache 2.0</td>
+</tr>
+<tr>
+<td>SenseVoice-Small（阿里巴巴）</td>
+<td>SAN-M + CTC（非 Whisper）</td>
+<td>+50%</td>
+<td>良好</td>
+<td>✅</td>
+<td>快 15 倍</td>
+<td>輸出簡體需 OpenCC 轉換，天生少幻覺</td>
+</tr>
+<tr>
+<td>Qwen3-ASR（阿里巴巴）</td>
+<td>Qwen2 base</td>
+<td>WER 4.97</td>
+<td>22 種中國方言</td>
+<td>✅</td>
+<td>未知</td>
+<td>2026 年新模型</td>
+</tr>
+<tr>
+<td>WhisperX</td>
+<td>faster-whisper + wav2vec2</td>
+<td>同 Whisper</td>
+<td>同上</td>
+<td>✅</td>
+<td>稍慢</td>
+<td>強制對齊改善斷句品質</td>
+</tr>
+</tbody>
+</table>
+<p><strong>SenseVoice vs Whisper 的根本差異</strong>：SenseVoice 用 CTC（非自回歸），一次 forward pass 輸出全部結果，不會在靜音時「亂講」。Whisper 的自回歸 decoder 必須持續生成 token，這是幻覺的根本原因。</p>
+<p><strong>Breeze-ASR-25 的定位</strong>：專為台灣國語設計，中英 code-switching（「check 一下」「放進 training」）改善最大。基於 Whisper 架構，可用 faster-whisper 跑。不支援台語（常被誤解）。</p>
+<h3 id="_5">台灣在地方案<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>國語</th>
+<th>台語</th>
+<th>客語</th>
+<th>開源</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Breeze-ASR-25</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+<td>台灣國語 + 中英混合</td>
+</tr>
+<tr>
+<td>Taiwan-Tongues-ASR-CE</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>政府開源，無 benchmark</td>
+</tr>
+<tr>
+<td>台灣大哥大 AI ASR</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>企業級，支援地端部署</td>
+</tr>
+</tbody>
+</table>
+<h3 id="api">商用 API 補充<a class="headerlink" href="#api" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>服務</th>
+<th>中文 WER</th>
+<th>每小時費用</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ElevenLabs Scribe v2</td>
+<td>~3-5%</td>
+<td>$0.40</td>
+<td>目前商用最準，支援台灣腔</td>
+</tr>
+<tr>
+<td>GPT-4o-transcribe</td>
+<td>~8.9%</td>
+<td>$0.36</td>
+<td>準確但貴</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="pipeline">後處理 Pipeline<a class="headerlink" href="#pipeline" title="Permanent link">&para;</a></h2>
+<h3 id="whisper_1">Whisper 幻覺的本質<a class="headerlink" href="#whisper_1" title="Permanent link">&para;</a></h3>
+<p>Whisper 的自回歸 decoder 在靜音或純音樂段落會生成假文字（如「ご視聴ありがとうございました」「感謝收看」），這是因為 decoder 必須持續生成 token，即使沒有語音輸入。幻覺率是 v2 的 4 倍。</p>
+<p>業界處理方式（非黑名單）：</p>
+<ol>
+<li><strong>推理時過濾</strong>（faster-whisper 內建參數）：</li>
+<li><code>compression_ratio_threshold=2.4</code>：用 zlib 壓縮偵測重複內容</li>
+<li><code>log_prob_threshold=-1.0</code>：低信心段落觸發 temperature fallback 重試</li>
+<li><code>no_speech_threshold=0.6</code>：no_speech 機率門檻</li>
+<li>
+<p><code>hallucination_silence_threshold=2.0</code>：靜音後段落的特殊處理（需要 <code>word_timestamps=True</code>）</p>
+</li>
+<li>
+<p><strong>後處理過濾</strong>（推理時漏掉的補充）：</p>
+</li>
+<li><code>no_speech_prob &gt; 0.6</code> 直接丟棄</li>
+<li><code>avg_logprob &lt; -1.0 且 no_speech_prob &gt; 0.4</code> 組合條件丟棄</li>
+<li>文字長度 &lt; 2 字元丟棄</li>
+</ol>
+<p><strong>重要</strong>：黑名單過濾幻覺不是業界做法。固定字串永遠列不完，且會誤殺合法語句。OpenAI Whisper 和 faster-whisper 都用統計門檻。</p>
+<h3 id="segment">Segment 合併<a class="headerlink" href="#segment" title="Permanent link">&para;</a></h3>
+<p>Whisper 的 segment 邊界基於 attention pattern，常產生 &lt; 1 秒的碎片（「當然」「就是」「OK」），作為字幕完全無法閱讀。需要合併邏輯：</p>
 <ul>
-<li>關鍵字搜尋（Grep）需要精確命中字詞，適合搜 code、明確範圍小的場景</li>
-<li>Vector 語意搜尋能找到「意思接近但用詞不同」的內容，適合資料量大、問題模糊的場景</li>
-<li>例：grep "壞掉" 會漏掉寫成 "故障"、"損壞"、"不能用" 的內容，但 vector search 全找得到</li>
+<li>碎片 segment（&lt; 1 秒）與相鄰 segment 合併</li>
+<li>合併後不超過上限（如 8 秒）</li>
+<li>間隔過大（&gt; 0.5 秒）的不合併</li>
 </ul>
+<h3 id="cpscpl">CPS/CPL 字幕控制<a class="headerlink" href="#cpscpl" title="Permanent link">&para;</a></h3>
+<p>專業字幕標準：
+- <strong>CPS（Characters Per Second）</strong>：≤ 15 CPS，超過則觀眾來不及讀
+- <strong>CPL（Characters Per Line）</strong>：≤ 42 字元/行，超過則斷行</p>
+<h3 id="asr-llm">ASR + LLM 兩階段架構<a class="headerlink" href="#asr-llm" title="Permanent link">&para;</a></h3>
+<p>Typeless 等語音輸入工具不是用更好的 ASR，而是在 ASR 之後加 LLM 後處理：
+- 移除填充詞（「嗯」「那個」）
+- 偵測口語自我修正，只保留最終意圖
+- 自動加標點、修正 code-switching</p>
+<p>注意：zero-shot LLM 校正有時會過度修正，最佳做法是只對 ASR 低信心片段做 LLM 校正。</p>
 
 
 

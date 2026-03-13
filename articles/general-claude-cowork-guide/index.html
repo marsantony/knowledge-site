@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/general-stt-services-comparison/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/general-claude-cowork-guide/">
       
       
-        <link rel="prev" href="../general-rag-architecture-and-best-practices/">
+        <link rel="prev" href="../web-mkdocs-material-custom-neumorphic-theme/">
       
       
-        <link rel="next" href="../general-anthropic-tos-oauth-ban-2026/">
+        <link rel="next" href="../general-rag-complete-guide/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>STT 服務比較：品質、延遲、定價與語言支援 - Mars 的知識庫</title>
+        <title>Claude Cowork 設定指南、功能概覽與 Windows 限制 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              STT 服務比較：品質、延遲、定價與語言支援
+              Claude Cowork 設定指南、功能概覽與 Windows 限制
             
           </span>
         </div>
@@ -539,14 +539,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../dev-tools-asr-postprocessing-pipeline/" class="md-nav__link">
+      <a href="../dev-tools-stt-services-and-postprocessing/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    ASR 轉錄品質提升：後處理 Pipeline 與幻覺過濾最佳實踐
+    STT 完整指南：服務比較、後處理 Pipeline 與幻覺對策
   
 
     
@@ -876,17 +876,42 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../general-claude-cowork-setup-and-features/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Cowork 設定指南、功能概覽與 Windows 限制
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Claude Cowork 設定指南與功能概覽
+    Claude Cowork 設定指南、功能概覽與 Windows 限制
   
 
     
@@ -895,6 +920,157 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        設定流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        與 Claude Code 的關係
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        適用場景判斷
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows 版已知限制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows 版已知限制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        資料夾限制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtiofsplan9-mount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        virtiofs/Plan9 mount 失敗
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugin-marketplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plugin marketplace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        網路存取
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他限制
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -907,14 +1083,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../general-cowork-windows-limitations/" class="md-nav__link">
+      <a href="../general-rag-complete-guide/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Claude Cowork Windows 版已知限制與常見問題
+    RAG 完整指南：架構設計、Embedding 弱點與可靠性策略
   
 
     
@@ -1019,34 +1195,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../general-embedding-limitations-and-rag-reliability/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Embedding 模型的弱點與 RAG 可靠性策略
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../general-knowledge-base-tagging/" class="md-nav__link">
         
   
@@ -1063,221 +1211,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../general-rag-architecture-and-best-practices/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RAG 完整架構與最佳實踐
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    STT 服務比較：品質、延遲、定價與語言支援
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    STT 服務比較：品質、延遲、定價與語言支援
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        英文準確度（WER，越低越好）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        中文普通話
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        定價比較
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#groq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Groq 免費方案細節
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#whisper" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Whisper 模型大小與瀏覽器可行性
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cjk" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CJK 專用開源引擎（離線轉錄）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        台灣在地方案
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        商用 API 補充
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1879,10 +1812,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#wer" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        英文準確度（WER，越低越好）
+        設定流程
       
     </span>
   </a>
@@ -1890,10 +1823,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#claude-code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        中文普通話
+        與 Claude Code 的關係
       
     </span>
   </a>
@@ -1904,51 +1837,35 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        定價比較
+        適用場景判斷
       
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#groq" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Groq 免費方案細節
+        Windows 版已知限制
       
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#whisper" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Whisper 模型大小與瀏覽器可行性
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cjk" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CJK 專用開源引擎（離線轉錄）
-      
-    </span>
-  </a>
-  
-</li>
+    <nav class="md-nav" aria-label="Windows 版已知限制">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        台灣在地方案
+        資料夾限制
       
     </span>
   </a>
@@ -1956,10 +1873,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
+  <a href="#virtiofsplan9-mount" class="md-nav__link">
     <span class="md-ellipsis">
       
-        商用 API 補充
+        virtiofs/Plan9 mount 失敗
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugin-marketplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plugin marketplace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        網路存取
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他限制
       
     </span>
   </a>
@@ -1999,313 +1949,69 @@
       
       
       
-        <a href="../../tags/#tag:speech-to-text" class="md-tag">speech-to-text</a>
+        <a href="../../tags/#tag:cowork" class="md-tag">cowork</a>
       
     
   </nav>
 
 
 
-  <h1>STT 服務比較：品質、延遲、定價與語言支援</h1>
+  <h1>Claude Cowork 設定指南、功能概覽與 Windows 限制</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>英文最準</strong>：AssemblyAI Universal-3（5.9% WER）、Deepgram Nova-3（5.3-8.1% WER）</li>
-<li><strong>中日文最準</strong>：SenseVoice-Small 宣稱比 Whisper 準 50%（zh/en/ja/ko/yue 五語），Breeze-ASR-25 在台灣中文 +19%、中英 code-switching +56%</li>
-<li><strong>Groq 免費額度</strong>：每天 8 小時免費轉錄，不需信用卡，但無串流 API（僅批次）</li>
-<li><strong>Whisper large-v3 的幻覺問題</strong>：靜音或雜音段落會生成假文字（如「感謝收看」），幻覺率是 v2 的 4 倍</li>
-<li><strong>即時串流 &lt;300ms</strong>：只有 Deepgram 和 AssemblyAI 提供原生 WebSocket 串流</li>
+<li>Cowork 是 Claude Desktop App 裡的一個模式（Chat / Cowork / Code 切換），不是獨立 App</li>
+<li>需要 Pro 以上付費方案（$20/月），Cowork 任務比一般聊天耗 token 快很多（單任務可消耗 50-100+ 則訊息額度）</li>
+<li>五大功能：檔案系統存取、詢問使用者問題、Plugins、Instructions（Global + 資料夾）、Connectors</li>
+<li>Global Instructions 每次新 session 自動載入，彌補沒有跨 session 記憶的缺陷</li>
+<li>Windows 版限制較多：資料夾只能選 <code>C:\Users\使用者\</code> 底下、virtiofs mount 失敗常見、Plugin marketplace 偶爾壞</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>為 Chrome Extension 即時字幕功能評估各 STT 服務的品質與適用性。</p>
-<h3 id="wer">英文準確度（WER，越低越好）<a class="headerlink" href="#wer" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>服務</th>
-<th>WER</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AssemblyAI Universal-3 Pro</td>
-<td>5.9%</td>
-<td>幻覺率最低</td>
-</tr>
-<tr>
-<td>Deepgram Nova-3</td>
-<td>5.3-8.1%</td>
-<td>串流最快</td>
-</tr>
-<tr>
-<td>Whisper large-v3</td>
-<td>6.5%</td>
-<td>幻覺較多</td>
-</tr>
-<tr>
-<td>Whisper turbo</td>
-<td>~8%</td>
-<td>速度快但略差</td>
-</tr>
-<tr>
-<td>瀏覽器 Whisper small</td>
-<td>~7-10%</td>
-<td>實際體感更差</td>
-</tr>
-<tr>
-<td>瀏覽器 Whisper tiny</td>
-<td>~15-20%</td>
-<td>勉強堪用</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_3">中文普通話<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>服務</th>
-<th>CER</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Whisper large-v3</td>
-<td>~4%（乾淨音訊）</td>
-<td>通用最佳</td>
-</tr>
-<tr>
-<td>Whisper large-v3 微調</td>
-<td>~1.6%</td>
-<td>需自行訓練</td>
-</tr>
-<tr>
-<td>Deepgram Nova-3</td>
-<td>不確定</td>
-<td>語言擴展偏歐洲/南亞</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_4">定價比較<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>服務</th>
-<th>每小時費用</th>
-<th>免費額度</th>
-<th>串流支援</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Groq Whisper Turbo</td>
-<td>$0.04</td>
-<td>每天 8 小時</td>
-<td>無（批次）</td>
-</tr>
-<tr>
-<td>Groq Whisper large-v3</td>
-<td>$0.111</td>
-<td>每天 8 小時</td>
-<td>無（批次）</td>
-</tr>
-<tr>
-<td>Deepgram Nova-3 串流</td>
-<td>$0.462</td>
-<td>$200 credit</td>
-<td>WebSocket</td>
-</tr>
-<tr>
-<td>OpenAI Whisper API</td>
-<td>$0.36</td>
-<td>無</td>
-<td>無（批次）</td>
-</tr>
-<tr>
-<td>AssemblyAI</td>
-<td>$0.37</td>
-<td>有</td>
-<td>WebSocket</td>
-</tr>
-<tr>
-<td>Google Chirp 2</td>
-<td>$0.72-0.96</td>
-<td>$300 credit</td>
-<td>有</td>
-</tr>
-</tbody>
-</table>
-<h3 id="groq">Groq 免費方案細節<a class="headerlink" href="#groq" title="Permanent link">&para;</a></h3>
+<p>Claude Cowork 於 2026 年 1 月推出（Research Preview），將 Claude Code 的 agentic 能力重新包裝給非開發者使用。它能直接讀寫本地檔案、自主執行多步驟任務、產出 Excel/Word/PDF 等文件。</p>
+<h3 id="_3">設定流程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>從 claude.com/download 下載 Claude Desktop App</li>
+<li>建立 Context 資料夾（放在 <code>C:\Users\使用者\</code> 底下），放入 aboutMe.md、brandVoice.md、workingStyle.md</li>
+<li>Settings &gt; Cowork 設定 Global Instructions</li>
+<li>Settings &gt; Capabilities 開啟 Cloud code execution（預設已開）</li>
+<li>如需網路存取，開啟 Allow network egress 並設定 Domain allowlist</li>
+<li>處理 Office 文件需要 docx、xlsx、pdf skills（可從 plugin marketplace 安裝）</li>
+</ol>
+<p>Context 檔案（aboutMe.md、brandVoice.md、workingStyle.md）放在工作資料夾，搭配 Global Instructions 中「開始任務前先讀資料夾所有檔案」的指令。</p>
+<h3 id="claude-code">與 Claude Code 的關係<a class="headerlink" href="#claude-code" title="Permanent link">&para;</a></h3>
+<p>兩者完全獨立，不共享 session、記憶或設定。無法互相指揮，唯一的協作方式是透過檔案手動中轉。CLAUDE.md 是 Claude Code 專用，Cowork 用自己的 Instructions 系統。</p>
+<h3 id="_4">適用場景判斷<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>Cowork 適合一次性的、不重複的知識工作（研究、分析、文件撰寫）。對於格式固定、邏輯固定的重複性任務（如每月報表），用 Claude Code 寫腳本自動化更快更穩定——寫一次之後每月秒跑，不用每次重新跑 Cowork session。</p>
+<hr />
+<h2 id="windows">Windows 版已知限制<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
+<p>Windows 版 Cowork 於 2026 年 2 月 10 日上線，比 macOS 版晚約一個月。由於較新，bug 相對較多。</p>
+<h3 id="_5">資料夾限制<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
-<li>免費不需信用卡，超過限制回 429 不收費</li>
-<li>每小時可轉錄 2 小時音訊，每天上限 8 小時</li>
-<li>每分鐘 20 次請求</li>
-<li>處理速度 189x 即時（10 分鐘音訊 ~3-4 秒完成），但因為是批次 API，端到端延遲仍需 3-5 秒</li>
-<li>適合批次轉錄，不適合即時字幕</li>
+<li>只能選 <code>C:\Users\使用者\</code> 底下，其他磁碟（D:、E:）和 Symlink/Junction 都被擋（GitHub issue #29583，未修復）</li>
 </ul>
-<h3 id="whisper">Whisper 模型大小與瀏覽器可行性<a class="headerlink" href="#whisper" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>模型</th>
-<th>參數</th>
-<th>英文 WER</th>
-<th>瀏覽器可行性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>tiny</td>
-<td>39M</td>
-<td>~15-20%</td>
-<td>可行，品質差</td>
-</tr>
-<tr>
-<td>base</td>
-<td>74M</td>
-<td>~10-14%</td>
-<td>可行</td>
-</tr>
-<tr>
-<td>small</td>
-<td>244M</td>
-<td>~7-10%</td>
-<td>實用上限</td>
-</tr>
-<tr>
-<td>medium</td>
-<td>769M</td>
-<td>~5-8%</td>
-<td>勉強（WebGPU）</td>
-</tr>
-<tr>
-<td>large-v3</td>
-<td>1550M</td>
-<td>~6.5%</td>
-<td>不可行</td>
-</tr>
-</tbody>
-</table>
-<p>Transformers.js v3 支援 WebGPU，推理速度可提升最多 100 倍，但仍只能跑小模型。</p>
-<h3 id="cjk">CJK 專用開源引擎（離線轉錄）<a class="headerlink" href="#cjk" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>引擎</th>
-<th>架構</th>
-<th>中文準確度</th>
-<th>中英混合</th>
-<th>日文</th>
-<th>速度</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Breeze-ASR-25（聯發科）</td>
-<td>Whisper-large-v2 微調</td>
-<td>+19% zh-TW</td>
-<td><strong>+56% code-switch</strong></td>
-<td>❌</td>
-<td>同 Whisper</td>
-<td>台灣國語最佳化，Apache 2.0</td>
-</tr>
-<tr>
-<td>SenseVoice-Small（阿里巴巴）</td>
-<td>SAN-M + CTC（非 Whisper）</td>
-<td>+50%</td>
-<td>良好</td>
-<td>✅</td>
-<td>快 15 倍</td>
-<td>輸出簡體需 OpenCC 轉換，天生少幻覺</td>
-</tr>
-<tr>
-<td>Qwen3-ASR（阿里巴巴）</td>
-<td>Qwen2 base</td>
-<td>WER 4.97</td>
-<td>22 種中國方言</td>
-<td>✅</td>
-<td>未知</td>
-<td>2026 年新模型</td>
-</tr>
-<tr>
-<td>WhisperX</td>
-<td>faster-whisper + wav2vec2</td>
-<td>同 Whisper</td>
-<td>同上</td>
-<td>✅</td>
-<td>稍慢</td>
-<td>強制對齊改善斷句品質</td>
-</tr>
-</tbody>
-</table>
-<p><strong>SenseVoice vs Whisper 的根本差異</strong>：SenseVoice 用 CTC（非自回歸），一次 forward pass 輸出全部結果，不會在靜音時「亂講」。Whisper 的自回歸 decoder 必須持續生成 token，這是幻覺的根本原因。</p>
-<p><strong>Breeze-ASR-25 的定位</strong>：專為台灣國語設計，中英 code-switching（「check 一下」「放進 training」）改善最大。基於 Whisper 架構，可用 faster-whisper 跑。不支援台語（常被誤解）。</p>
-<h3 id="_5">台灣在地方案<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>方案</th>
-<th>國語</th>
-<th>台語</th>
-<th>客語</th>
-<th>開源</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Breeze-ASR-25</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-<td>✅</td>
-<td>台灣國語 + 中英混合</td>
-</tr>
-<tr>
-<td>Taiwan-Tongues-ASR-CE</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-<td>政府開源，無 benchmark</td>
-</tr>
-<tr>
-<td>台灣大哥大 AI ASR</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-<td>企業級，支援地端部署</td>
-</tr>
-</tbody>
-</table>
-<h3 id="api">商用 API 補充<a class="headerlink" href="#api" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>服務</th>
-<th>中文 WER</th>
-<th>每小時費用</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ElevenLabs Scribe v2</td>
-<td>~3-5%</td>
-<td>$0.40</td>
-<td>目前商用最準，支援台灣腔</td>
-</tr>
-<tr>
-<td>GPT-4o-transcribe</td>
-<td>~8.9%</td>
-<td>$0.36</td>
-<td>準確但貴</td>
-</tr>
-</tbody>
-</table>
+<h3 id="virtiofsplan9-mount">virtiofs/Plan9 mount 失敗<a class="headerlink" href="#virtiofsplan9-mount" title="Permanent link">&para;</a></h3>
+<ul>
+<li>"bad address" 錯誤常見於 OneDrive 同步資料夾、Windows 特殊資料夾（下載、桌面）</li>
+<li>解法：用自建的普通資料夾</li>
+</ul>
+<h3 id="plugin-marketplace">Plugin marketplace<a class="headerlink" href="#plugin-marketplace" title="Permanent link">&para;</a></h3>
+<ul>
+<li>偶爾載入失敗（Marketplace not found），重啟 App 或 reinstall workspace 可解</li>
+</ul>
+<h3 id="_6">網路存取<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>靜態 Domain allowlist，不像 Claude Code 會互動式詢問，被擋就直接失敗不會提示</li>
+<li>Allow network egress 預設只允許 package managers，需要存取其他網域要手動加到 Additional allowed domains</li>
+<li>Domain allowlist 設定只影響 Cowork，不影響 Chat 模式和 Claude Code</li>
+<li>加完新網域後可能需要開新 session 才生效</li>
+<li>常用網域：<code>raw.githubusercontent.com</code>（GitHub 原始檔案）</li>
+</ul>
+<h3 id="_7">其他限制<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>沒有跨 session 記憶</li>
+<li>App 關掉任務中斷</li>
+<li>不支援行動裝置和跨裝置同步</li>
+</ul>
 
 
 
