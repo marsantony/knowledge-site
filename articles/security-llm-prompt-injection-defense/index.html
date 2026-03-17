@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-rust-ownership-and-comparison/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/security-llm-prompt-injection-defense/">
       
       
-        <link rel="prev" href="../learning-probiotics-selection-guide/">
+        <link rel="prev" href="../security-web-anti-bot-mechanisms/">
       
       
-        <link rel="next" href="../learning-test-coverage-strategy/">
+        <link rel="next" href="../security-auth-middleware-public-fallback/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Rust 語言核心概念：Ownership、Borrowing、Lifetime 與語言比較 - Mars 的知識庫</title>
+        <title>LLM Prompt Injection 防禦完整框架：從理論到實務 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Rust 語言核心概念：Ownership、Borrowing、Lifetime 與語言比較
+              LLM Prompt Injection 防禦完整框架：從理論到實務
             
           </span>
         </div>
@@ -1528,6 +1528,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1537,11 +1539,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
         
           
           <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
@@ -1562,7 +1564,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1605,10 +1607,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../security-llm-prompt-injection-defense/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM Prompt Injection 防禦完整框架：從理論到實務
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1624,6 +1651,129 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sanitization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼 Sanitization 是死路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 種核心防禦方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q-Agent 的真正價值
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-secret-scanning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URL Secret Scanning 的設計洞見
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        信任邊界的根本矛盾
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smartfetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整攻擊面分析（smartfetch 專案經驗）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-vs-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP vs CLI 的安全性比較
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1725,8 +1875,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1736,11 +1884,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
         
           
           <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
@@ -1761,7 +1909,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1860,35 +2008,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Rust 語言核心概念：Ownership、Borrowing、Lifetime 與語言比較
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../learning-rust-ownership-and-comparison/" class="md-nav__link">
         
   
   
@@ -1904,85 +2027,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        記憶體管理三種流派
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ownership-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ownership 的 C# 類比
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rust" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Rust 的實際影響力
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2218,10 +2262,54 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#sanitization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼 Sanitization 是死路
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 種核心防禦方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q-Agent 的真正價值
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url-secret-scanning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URL Secret Scanning 的設計洞見
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        記憶體管理三種流派
+        信任邊界的根本矛盾
       
     </span>
   </a>
@@ -2229,10 +2317,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ownership-c" class="md-nav__link">
+  <a href="#smartfetch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ownership 的 C# 類比
+        完整攻擊面分析（smartfetch 專案經驗）
       
     </span>
   </a>
@@ -2240,10 +2328,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rust" class="md-nav__link">
+  <a href="#mcp-vs-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rust 的實際影響力
+        MCP vs CLI 的安全性比較
       
     </span>
   </a>
@@ -2276,111 +2364,125 @@
       
       
       
-        <a href="../../tags/#tag:csharp" class="md-tag">csharp</a>
+        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:python" class="md-tag">python</a>
+        <a href="../../tags/#tag:mcp" class="md-tag">mcp</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:rust" class="md-tag">rust</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:system-design" class="md-tag">system-design</a>
+        <a href="../../tags/#tag:security" class="md-tag">security</a>
       
     
   </nav>
 
 
 
-  <h1>Rust 語言核心概念：Ownership、Borrowing、Lifetime 與語言比較</h1>
+  <h1>LLM Prompt Injection 防禦完整框架：從理論到實務</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Rust 用 Ownership + Borrow Checker 在編譯期管理記憶體，不需要 GC，也不像 C/C++ 要手動 malloc/free</li>
-<li>三大核心規則：每個值只有一個 owner；owner 離開作用域自動釋放；借用分為不可變 <code>&amp;</code>（可多個）和可變 <code>&amp;mut</code>（只能一個），不能同時存在</li>
-<li>Lifetime 標記 <code>'a</code> 是告訴編譯器「借用不能活得比資料更久」，大部分情況自動推導，只有函式回傳借用時需要手動標</li>
-<li>Rust vs Python：Rust 極快但學習曲線陡，Python 開發快但效能差；生態互補（系統工具 vs ML/資料分析）</li>
-<li>Rust vs C#：兩者都有強型別和 async/await，但 Rust 無 GC pause、編譯成單一 binary 無需 runtime；C# 在企業應用、Unity 遊戲、快速開發上更強</li>
+<li>Prompt injection 的本質是：<strong>LLM 無法可靠區分「資料」和「指令」</strong>。sanitization（strip hidden HTML、偵測 directive pattern）永遠是打地鼠，因為自然語言指令和自然語言正文長得一模一樣</li>
+<li><strong>Lethal Trifecta</strong>（致命三角）：① 存取敏感資料 + ② 接觸不受信任的內容 + ③ 對外溝通能力 — 三者同時成立才會造成傷害，打斷任一條即可防禦</li>
+<li>核心防禦方法有 6 種：Q-Agent（隔離 LLM）、HITL（人類確認）、Data Flow Tracking、Capability Restriction、Instruction Hierarchy、Structured Output — 它們都不試圖「清理」內容，而是改變架構讓 injection 成功也無法造成傷害</li>
+<li><strong>URL Secret Scanning 是針對 exfiltration 的確定性防護</strong>：API key 有明確格式（<code>sk-ant-*</code>、<code>ghp_*</code>），跟偵測自然語言 injection 不同，這是做得乾淨的。在 HTTP 請求發出前攔截，request 根本不會送出</li>
+<li>對個人工具來說，Claude Opus 的 1% ASR + HITL（permission 系統）+ URL secret scanning 三層組合已經非常扎實</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>從 GC 語言（C#/Python）的角度理解 Rust 的記憶體管理機制。</p>
-<h3 id="_3">記憶體管理三種流派<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="sanitization">為什麼 Sanitization 是死路<a class="headerlink" href="#sanitization" title="Permanent link">&para;</a></h3>
+<p>所有基於 pattern matching 的防禦（strip <code>display:none</code>、偵測 "ignore previous instructions"、Unicode 正規化）都在玩打地鼠。攻擊者可以無限改寫指令的措辭，因為自然語言的表達方式是無窮的。這些措施有用（擋掉最低級的自動化攻擊），但不是「核心解法」。</p>
+<h3 id="6">6 種核心防禦方法<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>方式</th>
-<th>語言</th>
-<th>優缺點</th>
+<th>方法</th>
+<th>原理</th>
+<th>打斷的是</th>
+<th>實用性</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>手動管理</td>
-<td>C/C++</td>
-<td>最大自由度，但容易 leak、double free、dangling pointer</td>
+<td><strong>Q-Agent</strong></td>
+<td>處理外部內容的 LLM 沒有 tools，被 inject 也做不了事</td>
+<td>③ 對外溝通</td>
+<td>每次 fetch 多一次 LLM 呼叫（成本 + 延遲 + 資訊有損）</td>
 </tr>
 <tr>
-<td>GC</td>
-<td>C#/Python/Java</td>
-<td>開發者無負擔，但有 runtime 成本和 GC pause</td>
+<td><strong>HITL</strong></td>
+<td>不阻止 injection，阻止 injection 的後果。使用者確認每個危險動作</td>
+<td>③ 對外溝通（需人批准）</td>
+<td>Claude Code 的 permission 系統已內建</td>
 </tr>
 <tr>
-<td>Ownership</td>
-<td>Rust</td>
-<td>零 runtime 成本 + 安全保證，但學習曲線陡峭</td>
+<td><strong>Data Flow Tracking</strong></td>
+<td>追蹤資料來源（trusted/untrusted），阻止 untrusted 資料驅動 trusted 動作</td>
+<td>①③ 之間的連結</td>
+<td>需要自訂 runtime（Google CaMeL），目前無 production 實作</td>
+</tr>
+<tr>
+<td><strong>Capability Restriction</strong></td>
+<td>最小權限原則，縮小爆炸半徑</td>
+<td>① 和 ③</td>
+<td>Claude Code sandbox 已有基礎</td>
+</tr>
+<tr>
+<td><strong>Instruction Hierarchy</strong></td>
+<td>模型訓練層面：system &gt; user &gt; tool result，低優先文字不當指令</td>
+<td>injection 本身</td>
+<td>Anthropic 已實作（Claude 1% ASR），我們做不了</td>
+</tr>
+<tr>
+<td><strong>Structured Output</strong></td>
+<td>強制 LLM 輸出特定 JSON schema，限制 injection 的表達能力</td>
+<td>injection 的表達</td>
+<td>搭配 Q-Agent 使用</td>
 </tr>
 </tbody>
 </table>
-<h3 id="ownership-c">Ownership 的 C# 類比<a class="headerlink" href="#ownership-c" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>C# 習慣</th>
-<th>Rust 做法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>多個變數指向同一個 object</td>
-<td>一個值只有一個 owner，要嘛 move 要嘛 borrow</td>
-</tr>
-<tr>
-<td>GC 自動追蹤 reference</td>
-<td>編譯器在 <code>}</code> 處自動插入釋放程式碼</td>
-</tr>
-<tr>
-<td>隨便傳 reference</td>
-<td>借用有嚴格的可變/不可變規則</td>
-</tr>
-<tr>
-<td>不用擔心 dangling reference</td>
-<td>Lifetime 檢查確保借用不會比 owner 活更久</td>
-</tr>
-<tr>
-<td>data race 靠 lock</td>
-<td>編譯期借用規則直接禁止</td>
-</tr>
-</tbody>
-</table>
-<h3 id="rust">Rust 的實際影響力<a class="headerlink" href="#rust" title="Permanent link">&para;</a></h3>
-<ul>
-<li>許多知名 CLI 工具是 Rust 寫的：ripgrep、fd、bat、delta、zoxide、uv</li>
-<li>用 Rust 重寫 Python/JS 工具是趨勢（速度差距 10-100 倍）</li>
-<li>Linux kernel 已開始接受 Rust 程式碼</li>
-<li>Stack Overflow 連續多年「最受喜愛語言」第一名</li>
-</ul>
+<h3 id="q-agent">Q-Agent 的真正價值<a class="headerlink" href="#q-agent" title="Permanent link">&para;</a></h3>
+<p>WebFetch 用 Haiku 閘門的真正原因不是「挑掉 injection」（Haiku 也挑不掉偽裝成正文的 injection），而是：</p>
+<ol>
+<li><strong>版權保護</strong>：Haiku 改寫內容，原文不進 Opus context → Anthropic 避免版權訴訟</li>
+<li><strong>省 token</strong>：50K tokens 的網頁壓縮成 500 tokens 的摘要 → 省 98% 費用</li>
+<li><strong>架構副產品</strong>：Haiku 沒有 tools，被 inject 也無害 + 內容被壓縮，攻擊面縮小</li>
+</ol>
+<p>Q-Agent 不是「辨識並移除 injection」，而是「縮小攻擊面 + 隔離能力」。</p>
+<h3 id="url-secret-scanning">URL Secret Scanning 的設計洞見<a class="headerlink" href="#url-secret-scanning" title="Permanent link">&para;</a></h3>
+<p>跟 sanitization 的根本差異：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>自然語言 injection 偵測 = 打地鼠（不可能完美）
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  &quot;ignore previous instructions&quot; 可以改寫成千百種說法
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>URL 中的 secret 偵測 = 精確匹配（可以做到完美）
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  sk-ant-api03-xxxxx 就是這個格式，正常 URL 不會出現
+</code></pre></div>
+<p>實作要點：
+- 掃描<strong>整個 URL</strong>（含 path、query、fragment、subdomain），不只 query params
+- 已知 pattern：Anthropic/OpenAI/GitHub/GitLab/Slack/Google/AWS key、JWT
+- 可疑 param name：<code>api_key</code>, <code>token</code>, <code>secret</code>, <code>password</code> 等
+- Base64 偵測：query param value 中 ≥20 字元的 <code>[A-Za-z0-9+/=]+</code>
+- Query string 長度限制（&gt;500 chars 封鎖）
+- 在 HTTP 請求<strong>發出前</strong>攔截 — 即使 Claude 被完全 inject，請求也不會送出</p>
+<h3 id="_3">信任邊界的根本矛盾<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Q-Agent 需要區分「信任的 URL」和「不信任的 URL」才能決定是否啟用。但：
+- 使用者維護白名單 → 不會維護（太煩）
+- 讓 Claude 判斷 → 被 inject 的 Claude 會判斷所有 URL 都「信任」
+- 域名信譽服務 → 偵測惡意軟體，不偵測 prompt injection</p>
+<p>結論：信任邊界劃不清 → Q-Agent 要嘛全開（太慢太損）要嘛全關 → 對個人工具來說不如用其他防線。</p>
+<h3 id="smartfetch">完整攻擊面分析（smartfetch 專案經驗）<a class="headerlink" href="#smartfetch" title="Permanent link">&para;</a></h3>
+<p>在 smartfetch 專案中完整盤點了 28 個攻擊向量：
+- <strong>15 個已解決</strong>（確定性防護）：SSRF、File URI、secret pattern、hidden HTML、Unicode 等
+- <strong>10 個部分解決</strong>（殘餘風險但已大幅降低）：多次小量外洩、Bash sandbox、supply chain 等
+- <strong>3 個無法解決</strong>（fundamental limitation）：自然語言 injection（靠 1% ASR）、其他工具 outbound、編碼繞過（靠多步驟攻擊難度）</p>
+<h3 id="mcp-vs-cli">MCP vs CLI 的安全性比較<a class="headerlink" href="#mcp-vs-cli" title="Permanent link">&para;</a></h3>
+<p>安全性<strong>完全相同</strong> — B6（其他工具 outbound）風險不因 smartfetch 是 MCP 還是 CLI 而改變。CLI 反而有一個優勢：可以在 Bash permission allowlist 中單獨 auto-approve 這個指令，比 MCP 的 auto-approve 更精確。</p>
 
 
 
