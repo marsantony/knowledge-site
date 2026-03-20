@@ -10,29 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/system-design-decentralized-nsfw-platform/">
       
       
+        <link rel="prev" href="../system-design-data-pipeline-kv-vs-git-push/">
       
-        <link rel="next" href="articles/claude-code-1m-extended-context/">
+      
+        <link rel="next" href="../system-design-gmail-digest-architecture/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>Mars 的知識庫</title>
+        <title>去平台化成人內容社群：技術可行，瓶頸在金流與法律 - Mars 的知識庫</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/custom.css">
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -94,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="頁首">
-    <a href="." title="Mars 的知識庫" class="md-header__button md-logo" aria-label="Mars 的知識庫" data-md-component="logo">
+    <a href="../.." title="Mars 的知識庫" class="md-header__button md-logo" aria-label="Mars 的知識庫" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              首頁
+              去平台化成人內容社群：技術可行，瓶頸在金流與法律
             
           </span>
         </div>
@@ -211,9 +213,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -222,7 +222,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="導覽列" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Mars 的知識庫" class="md-nav__button md-logo" aria-label="Mars 的知識庫" data-md-component="logo">
+    <a href="../.." title="Mars 的知識庫" class="md-nav__button md-logo" aria-label="Mars 的知識庫" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -237,19 +237,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -265,7 +256,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -274,8 +264,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -286,11 +278,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -311,7 +303,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -378,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/claude-code-1m-extended-context/" class="md-nav__link">
+      <a href="../claude-code-1m-extended-context/" class="md-nav__link">
         
   
   
@@ -406,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/claude-code-awesome-skills-and-composio/" class="md-nav__link">
+      <a href="../claude-code-awesome-skills-and-composio/" class="md-nav__link">
         
   
   
@@ -434,7 +426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/claude-code-session-jsonl-format/" class="md-nav__link">
+      <a href="../claude-code-session-jsonl-format/" class="md-nav__link">
         
   
   
@@ -462,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/claude-code-sharing-conversations/" class="md-nav__link">
+      <a href="../claude-code-sharing-conversations/" class="md-nav__link">
         
   
   
@@ -490,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/claude-code-skills-vs-plugins/" class="md-nav__link">
+      <a href="../claude-code-skills-vs-plugins/" class="md-nav__link">
         
   
   
@@ -518,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/claude-code-vscode-auto-attach-context/" class="md-nav__link">
+      <a href="../claude-code-vscode-auto-attach-context/" class="md-nav__link">
         
   
   
@@ -603,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/dev-tools-stt-services-and-postprocessing/" class="md-nav__link">
+      <a href="../dev-tools-stt-services-and-postprocessing/" class="md-nav__link">
         
   
   
@@ -631,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/dev-tools-cli-tools-for-ai-agents/" class="md-nav__link">
+      <a href="../dev-tools-cli-tools-for-ai-agents/" class="md-nav__link">
         
   
   
@@ -659,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/dev-tools-image-hosting-best-practices/" class="md-nav__link">
+      <a href="../dev-tools-image-hosting-best-practices/" class="md-nav__link">
         
   
   
@@ -687,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/dev-tools-linux-package-managers-for-ai-agents/" class="md-nav__link">
+      <a href="../dev-tools-linux-package-managers-for-ai-agents/" class="md-nav__link">
         
   
   
@@ -715,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/dev-tools-knowledge-website-frameworks/" class="md-nav__link">
+      <a href="../dev-tools-knowledge-website-frameworks/" class="md-nav__link">
         
   
   
@@ -743,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/dev-tools-repo-public-security-scan/" class="md-nav__link">
+      <a href="../dev-tools-repo-public-security-scan/" class="md-nav__link">
         
   
   
@@ -771,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/dev-tools-better-agent-terminal-vs-vscode/" class="md-nav__link">
+      <a href="../dev-tools-better-agent-terminal-vs-vscode/" class="md-nav__link">
         
   
   
@@ -856,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/web-bootstrap-4-to-5-migration/" class="md-nav__link">
+      <a href="../web-bootstrap-4-to-5-migration/" class="md-nav__link">
         
   
   
@@ -884,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/web-css-brushed-metal-background/" class="md-nav__link">
+      <a href="../web-css-brushed-metal-background/" class="md-nav__link">
         
   
   
@@ -912,7 +904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/web-chrome-extension-realtime-subtitles/" class="md-nav__link">
+      <a href="../web-chrome-extension-realtime-subtitles/" class="md-nav__link">
         
   
   
@@ -940,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/web-mkdocs-material-custom-neumorphic-theme/" class="md-nav__link">
+      <a href="../web-mkdocs-material-custom-neumorphic-theme/" class="md-nav__link">
         
   
   
@@ -1025,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/general-claude-cowork-guide/" class="md-nav__link">
+      <a href="../general-claude-cowork-guide/" class="md-nav__link">
         
   
   
@@ -1053,7 +1045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/general-rag-complete-guide/" class="md-nav__link">
+      <a href="../general-rag-complete-guide/" class="md-nav__link">
         
   
   
@@ -1081,7 +1073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/general-mcp-architecture-and-security/" class="md-nav__link">
+      <a href="../general-mcp-architecture-and-security/" class="md-nav__link">
         
   
   
@@ -1109,7 +1101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/general-worldmonitor-osint-dashboard/" class="md-nav__link">
+      <a href="../general-worldmonitor-osint-dashboard/" class="md-nav__link">
         
   
   
@@ -1137,7 +1129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/general-ai-app-monetization-strategies/" class="md-nav__link">
+      <a href="../general-ai-app-monetization-strategies/" class="md-nav__link">
         
   
   
@@ -1165,7 +1157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/general-knowledge-base-tagging/" class="md-nav__link">
+      <a href="../general-knowledge-base-tagging/" class="md-nav__link">
         
   
   
@@ -1193,7 +1185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/general-anthropic-tos-oauth-ban-2026/" class="md-nav__link">
+      <a href="../general-anthropic-tos-oauth-ban-2026/" class="md-nav__link">
         
   
   
@@ -1221,7 +1213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/general-portable-ai-agent-ecosystem-2026/" class="md-nav__link">
+      <a href="../general-portable-ai-agent-ecosystem-2026/" class="md-nav__link">
         
   
   
@@ -1249,7 +1241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/general-personal-algorithm-landscape-2026/" class="md-nav__link">
+      <a href="../general-personal-algorithm-landscape-2026/" class="md-nav__link">
         
   
   
@@ -1277,7 +1269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/general-system-design-learning-path/" class="md-nav__link">
+      <a href="../general-system-design-learning-path/" class="md-nav__link">
         
   
   
@@ -1305,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/general-taiwan-etf-dca-retirement/" class="md-nav__link">
+      <a href="../general-taiwan-etf-dca-retirement/" class="md-nav__link">
         
   
   
@@ -1390,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/gaming-ffxiv-crafting-tools-and-apis/" class="md-nav__link">
+      <a href="../gaming-ffxiv-crafting-tools-and-apis/" class="md-nav__link">
         
   
   
@@ -1418,7 +1410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/gaming-ffxiv-submarine-guide/" class="md-nav__link">
+      <a href="../gaming-ffxiv-submarine-guide/" class="md-nav__link">
         
   
   
@@ -1446,7 +1438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/gaming-ffxiv-gathering-collectables/" class="md-nav__link">
+      <a href="../gaming-ffxiv-gathering-collectables/" class="md-nav__link">
         
   
   
@@ -1531,7 +1523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/automation-discord-bot-wait-for-pattern/" class="md-nav__link">
+      <a href="../automation-discord-bot-wait-for-pattern/" class="md-nav__link">
         
   
   
@@ -1616,7 +1608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/security-web-anti-bot-mechanisms/" class="md-nav__link">
+      <a href="../security-web-anti-bot-mechanisms/" class="md-nav__link">
         
   
   
@@ -1644,7 +1636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/security-llm-prompt-injection-defense/" class="md-nav__link">
+      <a href="../security-llm-prompt-injection-defense/" class="md-nav__link">
         
   
   
@@ -1672,7 +1664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/security-auth-middleware-public-fallback/" class="md-nav__link">
+      <a href="../security-auth-middleware-public-fallback/" class="md-nav__link">
         
   
   
@@ -1700,7 +1692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/security-bff-token-storage-architecture/" class="md-nav__link">
+      <a href="../security-bff-token-storage-architecture/" class="md-nav__link">
         
   
   
@@ -1728,7 +1720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/security-oauth2-client-credentials-vs-auth-code/" class="md-nav__link">
+      <a href="../security-oauth2-client-credentials-vs-auth-code/" class="md-nav__link">
         
   
   
@@ -1756,7 +1748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/security-bff-pkce-dotnet8-implementation/" class="md-nav__link">
+      <a href="../security-bff-pkce-dotnet8-implementation/" class="md-nav__link">
         
   
   
@@ -1789,6 +1781,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1798,11 +1792,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
         
           
           <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
@@ -1823,7 +1817,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1841,7 +1835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/system-design-data-pipeline-kv-vs-git-push/" class="md-nav__link">
+      <a href="../system-design-data-pipeline-kv-vs-git-push/" class="md-nav__link">
         
   
   
@@ -1866,10 +1860,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="articles/system-design-decentralized-nsfw-platform/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    去平台化成人內容社群：技術可行，瓶頸在金流與法律
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1885,6 +1904,85 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        現有技術方案比較
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心洞察：問題不在技術層
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        比較可行的折衷模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1897,7 +1995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/system-design-gmail-digest-architecture/" class="md-nav__link">
+      <a href="../system-design-gmail-digest-architecture/" class="md-nav__link">
         
   
   
@@ -1925,7 +2023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/system-design-event-registration-time-gate/" class="md-nav__link">
+      <a href="../system-design-event-registration-time-gate/" class="md-nav__link">
         
   
   
@@ -2010,7 +2108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/learning-advent-of-agents-evaluation/" class="md-nav__link">
+      <a href="../learning-advent-of-agents-evaluation/" class="md-nav__link">
         
   
   
@@ -2038,7 +2136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/learning-nosql-database-types/" class="md-nav__link">
+      <a href="../learning-nosql-database-types/" class="md-nav__link">
         
   
   
@@ -2066,7 +2164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/learning-probiotics-selection-guide/" class="md-nav__link">
+      <a href="../learning-probiotics-selection-guide/" class="md-nav__link">
         
   
   
@@ -2094,7 +2192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/learning-rust-ownership-and-comparison/" class="md-nav__link">
+      <a href="../learning-rust-ownership-and-comparison/" class="md-nav__link">
         
   
   
@@ -2122,7 +2220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/learning-test-coverage-strategy/" class="md-nav__link">
+      <a href="../learning-test-coverage-strategy/" class="md-nav__link">
         
   
   
@@ -2150,7 +2248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/learning-knuth-claude-cycles-collaboration/" class="md-nav__link">
+      <a href="../learning-knuth-claude-cycles-collaboration/" class="md-nav__link">
         
   
   
@@ -2178,7 +2276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/learning-ai-impact-swe-career-framework/" class="md-nav__link">
+      <a href="../learning-ai-impact-swe-career-framework/" class="md-nav__link">
         
   
   
@@ -2206,7 +2304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/learning-decentralized-ai-compute-market/" class="md-nav__link">
+      <a href="../learning-decentralized-ai-compute-market/" class="md-nav__link">
         
   
   
@@ -2234,7 +2332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/learning-dotnet-di-lifetime-best-practices/" class="md-nav__link">
+      <a href="../learning-dotnet-di-lifetime-best-practices/" class="md-nav__link">
         
   
   
@@ -2262,7 +2360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="articles/learning-android-notification-listener-service/" class="md-nav__link">
+      <a href="../learning-android-notification-listener-service/" class="md-nav__link">
         
   
   
@@ -2305,7 +2403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tags/" class="md-nav__link">
+      <a href="../../tags/" class="md-nav__link">
         
   
   
@@ -2333,8 +2431,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -2344,8 +2440,75 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        現有技術方案比較
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心洞察：問題不在技術層
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        比較可行的折衷模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2359,37 +2522,86 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:monetization" class="md-tag">monetization</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:security" class="md-tag">security</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:system-design" class="md-tag">system-design</a>
+      
+    
+  </nav>
 
 
 
+  <h1>去平台化成人內容社群：技術可行，瓶頸在金流與法律</h1>
 
-<h1 id="_1">知識庫<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>從 Claude Code 對話中提取的學習筆記與技術知識。</p>
-<div class="grid cards">
+<h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg></span> <strong>通用知識</strong></p>
-<p>AI、系統設計、理財等跨領域知識</p>
-<p><a href="articles/general-rag-architecture-and-best-practices.md"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> 瀏覽</a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg></span> <strong>Claude Code</strong></p>
-<p>Claude Code 使用技巧與設定</p>
-<p><a href="articles/claude-code-skills-vs-plugins/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> 瀏覽</a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22.7 19-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4"/></svg></span> <strong>開發工具</strong></p>
-<p>CLI 工具、框架比較、套件管理</p>
-<p><a href="articles/dev-tools-knowledge-website-frameworks/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> 瀏覽</a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> <strong>學習筆記</strong></p>
-<p>Rust、System Design 等學習紀錄</p>
-<p><a href="articles/learning-rust-ownership-and-comparison/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> 瀏覽</a></p>
-</li>
+<li><strong>技術面完全可行</strong>：ActivityPub（Mastodon）、IPFS/Arweave、Nostr 等協議都已證明可以承載 NSFW 內容，Mastodon 上已有運作中的 NSFW instance</li>
+<li><strong>真正的瓶頸是金流</strong>：Visa/Mastercard 會直接對平台施壓（OnlyFans 2021 事件），加密貨幣支付可繞過但大幅降低用戶基數和創作者收入穩定性</li>
+<li><strong>法律責任無法去中心化</strong>：年齡驗證、CSAM 過濾需要可歸責主體，大多數國家法律要求有人負責。每個 node 營運者都可能承擔法律風險</li>
+<li><strong>內容審核兩難</strong>：完全無審核 → 非法內容湧入 → 執法關注 → 污名化整個網路；有審核 → 需要人力成本 → 回到「誰來管」的老問題</li>
+<li><strong>務實方向是聯邦式架構</strong>：每個 instance 有自己的規則和法律主體，內容可跨 instance 流通，兼顧去中心化與合規</li>
 </ul>
-</div>
+<h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">現有技術方案比較<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>技術</th>
+<th>優勢</th>
+<th>限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ActivityPub/Mastodon</td>
+<td>已有成熟生態、聯邦式治理</td>
+<td>Instance 營運者仍需承擔法律責任</td>
+</tr>
+<tr>
+<td>IPFS/Arweave</td>
+<td>內容無法被單一平台下架</td>
+<td>也無法下架非法內容，法律風險極高</td>
+</tr>
+<tr>
+<td>Nostr</td>
+<td>純 relay 架構、無中央審核</td>
+<td>金流整合困難、discovery 弱</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">核心洞察：問題不在技術層<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>成人內容平台被「去平台化」的壓力來源：</p>
+<ol>
+<li><strong>金流管道</strong>（Visa/Mastercard）— 有權拒絕為特定類型商家處理交易</li>
+<li><strong>法律合規</strong>（各國法規）— 要求平台主動過濾非法內容並有可歸責主體</li>
+<li><strong>App Store 政策</strong>（Apple/Google）— 禁止 NSFW 內容的 app 上架</li>
+</ol>
+<p>這三個都不是純技術能解決的問題，所以 IPFS、blockchain 等技術方案只解決了「內容儲存」，沒解決「可持續營運」。</p>
+<h3 id="_5">比較可行的折衷模式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>聯邦式架構</strong>（Mastodon 模式）：分散法律風險，每個 instance 自行決定合規策略</li>
+<li><strong>創作者自主託管 + 聚合發現層</strong>：內容在創作者自己的空間，平台只做索引</li>
+<li><strong>多平台分散風險</strong>：不依賴單一平台，但也不完全去中心化</li>
+</ul>
 
 
 
@@ -2402,8 +2614,6 @@
 
 
 
-
-  
 
 
 
@@ -2468,10 +2678,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
