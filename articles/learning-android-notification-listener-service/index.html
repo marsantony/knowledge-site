@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/dev-tools-knowledge-website-frameworks/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-android-notification-listener-service/">
       
       
-        <link rel="prev" href="../dev-tools-linux-package-managers-for-ai-agents/">
+        <link rel="prev" href="../learning-dotnet-di-lifetime-best-practices/">
       
       
-        <link rel="next" href="../dev-tools-repo-public-security-scan/">
+        <link rel="next" href="../../tags/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>個人知識網站框架比較：Quartz vs MkDocs Material vs VitePress - Mars 的知識庫</title>
+        <title>Android 通知保存 APP 技術研究：NotificationListenerService 完整指南 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              個人知識網站框架比較：Quartz vs MkDocs Material vs VitePress
+              Android 通知保存 APP 技術研究：NotificationListenerService 完整指南
             
           </span>
         </div>
@@ -543,8 +543,6 @@
                 
   
   
-    
-  
   
   
     
@@ -554,11 +552,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -579,7 +577,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -706,35 +704,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    個人知識網站框架比較：Quartz vs MkDocs Material vs VitePress
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../dev-tools-knowledge-website-frameworks/" class="md-nav__link">
         
   
   
@@ -750,85 +723,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        詳細比較
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        代表範例
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        建議路線
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2000,6 +1894,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2009,11 +1905,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" checked>
         
           
           <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
@@ -2034,7 +1930,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2301,10 +2197,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../learning-android-notification-listener-service/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android 通知保存 APP 技術研究：NotificationListenerService 完整指南
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2320,6 +2241,212 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apinotificationlistenerservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心 API：NotificationListenerService
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="核心 API：NotificationListenerService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        運作流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manifest 宣告
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        可取得的資料欄位
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onnotificationremoved-reason" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onNotificationRemoved 的 reason 值
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android 版本差異
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        儲存方案
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        技術挑戰
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="技術挑戰">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景存活
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        隱私與安全
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-play" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Play 上架
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2025-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推薦技術棧（2025-2026）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        開源參考
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        開發階段建議
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2411,14 +2538,36 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="背景">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apinotificationlistenerservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心 API：NotificationListenerService
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="核心 API：NotificationListenerService">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        詳細比較
+        運作流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manifest 宣告
       
     </span>
   </a>
@@ -2429,7 +2578,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        代表範例
+        可取得的資料欄位
       
     </span>
   </a>
@@ -2437,10 +2586,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#onnotificationremoved-reason" class="md-nav__link">
     <span class="md-ellipsis">
       
-        建議路線
+        onNotificationRemoved 的 reason 值
       
     </span>
   </a>
@@ -2449,6 +2598,111 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android 版本差異
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        儲存方案
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        技術挑戰
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="技術挑戰">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景存活
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        隱私與安全
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-play" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Play 上架
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2025-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推薦技術棧（2025-2026）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        開源參考
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        開發階段建議
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2473,103 +2727,312 @@
       
       
       
-        <a href="../../tags/#tag:knowledge-management" class="md-tag">knowledge-management</a>
+        <a href="../../tags/#tag:android" class="md-tag">android</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:static-site-generator" class="md-tag">static-site-generator</a>
+        <a href="../../tags/#tag:app-development" class="md-tag">app-development</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:database" class="md-tag">database</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:kotlin" class="md-tag">kotlin</a>
       
     
   </nav>
 
 
 
-  <h1>個人知識網站框架比較：Quartz vs MkDocs Material vs VitePress</h1>
+  <h1>Android 通知保存 APP 技術研究：NotificationListenerService 完整指南</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Quartz</strong>：Obsidian 筆記轉靜態網站，內建知識圖譜與雙向連結，適合「探索式閱讀」的 Digital Garden 風格</li>
-<li><strong>MkDocs Material</strong>：業界最多人用的文件網站框架，搜尋極強（原生支援 jieba 中文分詞），適合結構化參考手冊</li>
-<li><strong>VitePress</strong>：Vue 生態，建構速度極快，客製化自由度最高，但中文搜尋需額外處理</li>
-<li>三者都是純 Markdown 來源、都能部署到 GitHub Pages / Cloudflare Pages，未來換框架成本低</li>
-<li>選擇關鍵：想讓讀者「順連結探索」選 Quartz，想讓讀者「按目錄查找」選 MkDocs Material</li>
+<li>Android 的 <code>NotificationListenerService</code> 是系統級 API（API 18+），系統主動 bind 你的 Service，每當通知發出/移除時觸發回調，可取得標題、內文、APP 名稱、時間、Channel ID、圖示等完整欄位</li>
+<li>權限不是一般的 runtime permission，必須使用者手動到「設定 &gt; 通知存取權」開啟，APP 只能引導跳轉到設定頁</li>
+<li><strong>Android 15 重大限制</strong>：含 OTP/2FA 的通知會被標記為 sensitive，第三方 APP 只能看到 "sensitive notification content hidden"，無法繞過</li>
+<li>儲存方案推薦 Room Database + 圖示存檔案（DB 存路徑），搭配 WorkManager 定期清理；NLS 本身不受 Doze mode 影響，但各廠商 ROM（小米、華為、OPPO）可能強制殺掉服務</li>
+<li>最值得參考的開源專案：<a href="https://github.com/Alfio010/notification-listener-android">notification-listener-android</a>（Kotlin、持續更新、已上架 Play Store 和 F-Droid）</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>評估個人公開知識網站的框架選型，需求是將學習筆記、文章分析整理成可分享的網站。</p>
-<h3 id="_3">詳細比較<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>手機通知滑掉就消失，重要資訊容易遺失。Android 11+ 雖有內建通知歷史，但只保留 24 小時。因此研究如何開發一個自動保存所有通知的 APP。</p>
+<h2 id="apinotificationlistenerservice">核心 API：NotificationListenerService<a class="headerlink" href="#apinotificationlistenerservice" title="Permanent link">&para;</a></h2>
+<h3 id="_3">運作流程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>使用者在系統設定授權 → 系統 bind Service → onListenerConnected()
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>→ 持續接收 onNotificationPosted() / onNotificationRemoved() 回調
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>→ 使用者取消授權或系統回收 → onListenerDisconnected()
+</code></pre></div>
+<h3 id="manifest">Manifest 宣告<a class="headerlink" href="#manifest" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;service</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="na">android:name=</span><span class="s">&quot;.NotificationListener&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="na">android:exported=</span><span class="s">&quot;false&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="na">android:permission=</span><span class="s">&quot;android.permission.BIND_NOTIFICATION_LISTENER_SERVICE&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&lt;intent-filter&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.service.notification.NotificationListenerService&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&lt;/intent-filter&gt;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nt">&lt;/service&gt;</span>
+</code></pre></div>
+<h3 id="_4">可取得的資料欄位<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><strong>StatusBarNotification 層級：</strong></p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th>Quartz</th>
-<th>MkDocs Material</th>
-<th>VitePress</th>
+<th>欄位</th>
+<th>說明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>知識圖譜</td>
-<td>內建</td>
-<td>無</td>
-<td>無</td>
+<td><code>packageName</code></td>
+<td>發送通知的 APP 套件名</td>
 </tr>
 <tr>
-<td>雙向連結</td>
-<td>內建</td>
-<td>無</td>
-<td>需插件</td>
+<td><code>postTime</code></td>
+<td>通知發出時間（epoch ms）</td>
 </tr>
 <tr>
-<td>中文搜尋</td>
-<td>需設定 CJK 斷詞</td>
-<td>一行設定（jieba）</td>
-<td>需額外處理</td>
+<td><code>key</code></td>
+<td>通知唯一 key</td>
 </tr>
 <tr>
-<td>上手難度</td>
-<td>中</td>
-<td>低</td>
-<td>中高</td>
+<td><code>id</code> / <code>tag</code></td>
+<td>APP 設定的通知 ID 和 tag</td>
 </tr>
 <tr>
-<td>客製自由度</td>
-<td>中（TSX）</td>
-<td>中（Jinja2 + CSS）</td>
-<td>高（Vue）</td>
-</tr>
-<tr>
-<td>寫作工具</td>
-<td>Obsidian</td>
-<td>任意編輯器</td>
-<td>任意編輯器</td>
-</tr>
-<tr>
-<td>適合內容</td>
-<td>碎片知識、連結探索</td>
-<td>結構化文件</td>
-<td>技術部落格</td>
-</tr>
-<tr>
-<td>生態</td>
-<td>社群維護</td>
-<td>非常活躍</td>
-<td>Vue 官方</td>
+<td><code>isClearable</code> / <code>isOngoing</code></td>
+<td>是否可清除 / 持續性</td>
 </tr>
 </tbody>
 </table>
-<h3 id="_4">代表範例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><strong>Notification extras Bundle：</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EXTRA_TITLE</code></td>
+<td>標題</td>
+</tr>
+<tr>
+<td><code>EXTRA_TEXT</code></td>
+<td>內文</td>
+</tr>
+<tr>
+<td><code>EXTRA_BIG_TEXT</code></td>
+<td>展開後完整文字</td>
+</tr>
+<tr>
+<td><code>EXTRA_SUB_TEXT</code></td>
+<td>副標題</td>
+</tr>
+<tr>
+<td><code>EXTRA_PICTURE</code></td>
+<td>大圖（Bitmap）</td>
+</tr>
+<tr>
+<td><code>EXTRA_TEXT_LINES</code></td>
+<td>Inbox 樣式的文字行</td>
+</tr>
+</tbody>
+</table>
+<p>其他：<code>channelId</code>（API 26+）、<code>category</code>、<code>group</code>、<code>smallIcon</code>、<code>getLargeIcon()</code>。</p>
+<h3 id="onnotificationremoved-reason">onNotificationRemoved 的 reason 值<a class="headerlink" href="#onnotificationremoved-reason" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>常數</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>REASON_CLICK</td>
+<td>使用者點擊</td>
+</tr>
+<tr>
+<td>2</td>
+<td>REASON_CANCEL</td>
+<td>使用者滑掉</td>
+</tr>
+<tr>
+<td>3</td>
+<td>REASON_CANCEL_ALL</td>
+<td>使用者清除全部</td>
+</tr>
+<tr>
+<td>8</td>
+<td>REASON_APP_CANCEL</td>
+<td>APP 自行取消</td>
+</tr>
+<tr>
+<td>17</td>
+<td>REASON_CHANNEL_BANNED</td>
+<td>Channel 被停用</td>
+</tr>
+</tbody>
+</table>
+<h2 id="android">Android 版本差異<a class="headerlink" href="#android" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>API</th>
+<th>影響</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.3</td>
+<td>18</td>
+<td>NLS 首次引入</td>
+</tr>
+<tr>
+<td>7.0</td>
+<td>24</td>
+<td><code>onNotificationRemoved</code> 加入 reason 參數</td>
+</tr>
+<tr>
+<td><strong>8.0</strong></td>
+<td><strong>26</strong></td>
+<td><strong>Notification Channel 強制</strong>，可取得 <code>channelId</code></td>
+</tr>
+<tr>
+<td><strong>13</strong></td>
+<td><strong>33</strong></td>
+<td><code>POST_NOTIFICATIONS</code> 權限（發送通知用，不影響 NLS 讀取）</td>
+</tr>
+<tr>
+<td><strong>15</strong></td>
+<td><strong>35</strong></td>
+<td><strong>OTP/2FA 通知內容被隱藏</strong>，第三方 NLS 無法取得</td>
+</tr>
+</tbody>
+</table>
+<p>Android 15 的 <code>RECEIVE_SENSITIVE_NOTIFICATIONS</code> 權限只授予系統簽章 APP 或持有特定 Role（如 COMPANION_DEVICE_WATCH）的 APP。</p>
+<h2 id="_5">儲存方案<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><strong>推薦 Room Database。</strong> 原因：型別安全、編譯期驗證、與 Flow/LiveData 整合、自動 migration。</p>
+<p>關鍵設計決策：
+- <strong>圖示不存 DB</strong>：壓縮成 WebP 存 internal storage，DB 只存路徑。避免 DB 膨脹
+- <strong>APP 圖示只存一次</strong>：用 <code>packageName</code> 當 cache key
+- <strong>BigPicture 要限制大小</strong>：壓縮或設定最大尺寸
+- <strong>建立複合索引</strong>：<code>(packageName, postTime)</code> 加速常見查詢</p>
+<p>清理策略：WorkManager 定期執行，依時間（保留 N 天）和數量（最多 N 筆）清理，同時清除孤立的圖示檔案。</p>
+<h2 id="_6">技術挑戰<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">背景存活<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>NLS 是系統 bind 的 Service，<strong>不受 Doze mode 影響</strong>。但：
+- 某些廠商 ROM 會強制殺掉 NLS 且不重啟
+- 解法：<code>onListenerDisconnected()</code> 中呼叫 <code>requestRebind()</code>（API 24+）
+- 需引導使用者到各廠商的「自啟動管理」白名單設定
+- 可參考 <a href="https://github.com/nicholasgasior/android-autostarter">AutoStarter</a> 函式庫跳轉到對應設定頁</p>
+<h3 id="_8">隱私與安全<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Quartz：<a href="https://jzhao.xyz/">jzhao.xyz</a>（作者本人）、<a href="https://vault.ssp.sh/">vault.ssp.sh</a>（Data Engineering Vault）</li>
-<li>MkDocs Material：<a href="https://squidfunk.github.io/mkdocs-material/">官方文件站</a>（本身就是最佳展示）</li>
+<li>NLS 能看到所有 APP 的通知（訊息、郵件、銀行通知等）</li>
+<li>必要措施：資料完全本地化、加密資料庫（SQLCipher）、APP 鎖定（指紋/PIN）、APP 排除清單、明確隱私政策</li>
 </ul>
-<h3 id="_5">建議路線<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="google-play">Google Play 上架<a class="headerlink" href="#google-play" title="Permanent link">&para;</a></h3>
+<ul>
+<li>需填寫「權限宣告表單」說明為何需要 <code>BIND_NOTIFICATION_LISTENER_SERVICE</code></li>
+<li>通知存取必須是 APP 核心功能</li>
+<li>必須提供公開隱私政策連結</li>
+</ul>
+<h2 id="2025-2026">推薦技術棧（2025-2026）<a class="headerlink" href="#2025-2026" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>選擇</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>語言</td>
+<td>Kotlin</td>
+<td>Google 官方首選，協程原生支援</td>
+</tr>
+<tr>
+<td>UI</td>
+<td>Jetpack Compose</td>
+<td>宣告式 UI，Google 主力方向</td>
+</tr>
+<tr>
+<td>架構</td>
+<td>MVVM + Repository</td>
+<td>ViewModel + StateFlow</td>
+</tr>
+<tr>
+<td>資料庫</td>
+<td>Room</td>
+<td>官方推薦，與 Coroutines/Flow 完美整合</td>
+</tr>
+<tr>
+<td>DI</td>
+<td>Hilt</td>
+<td>標準 Android DI 方案</td>
+</tr>
+<tr>
+<td>非同步</td>
+<td>Coroutines + Flow</td>
+<td>Kotlin 原生</td>
+</tr>
+<tr>
+<td>排程</td>
+<td>WorkManager</td>
+<td>定期清理任務</td>
+</tr>
+<tr>
+<td>圖片載入</td>
+<td>Coil</td>
+<td>Kotlin-first 圖片庫</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_9">開源參考<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>專案</th>
+<th>亮點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/Alfio010/notification-listener-android">notification-listener-android</a></td>
+<td><strong>最推薦</strong>。Kotlin、持續更新、已上架 Play Store/F-Droid，功能完整</td>
+</tr>
+<tr>
+<td><a href="https://github.com/interactionlab/android-notification-log">android-notification-log</a></td>
+<td>學術研究導向，記錄完整元資料</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Miihir79/NotificationTracker">NotificationTracker</a></td>
+<td>Kotlin、通知追蹤與統計分析</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_10">開發階段建議<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <ol>
-<li>先決定風格：探索式（Quartz）或手冊式（MkDocs Material）</li>
-<li>內容都是純 Markdown，養成「讀完就寫一篇」的習慣比選工具重要</li>
-<li>知識量大了再加 AI 語意搜尋（Obsidian Smart Connections 或 NotebookLM）</li>
+<li><strong>MVP</strong>：NLS 接收通知 → Room 存資料 → 列表頁面 → 權限引導</li>
+<li><strong>核心功能</strong>：APP 分類、搜尋、詳情頁、圖示快取</li>
+<li><strong>進階功能</strong>：設定頁、自動清理、深色模式、APP 鎖定、匯出</li>
+<li><strong>上架準備</strong>：隱私政策、Play Store 權限宣告、截圖、CI/CD</li>
 </ol>
 
 
