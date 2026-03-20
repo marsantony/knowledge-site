@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/system-design-data-pipeline-kv-vs-git-push/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/system-design-event-registration-time-gate/">
       
       
-        <link rel="prev" href="../security-bff-pkce-dotnet8-implementation/">
+        <link rel="prev" href="../system-design-gmail-digest-architecture/">
       
       
-        <link rel="next" href="../system-design-gmail-digest-architecture/">
+        <link rel="next" href="../learning-advent-of-agents-evaluation/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>自動化資料管道：走資料層（KV/DB）而非 git push - Mars 的知識庫</title>
+        <title>活動登錄時間閘門：Server-side 防繞過與高吞吐量快取設計 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              自動化資料管道：走資料層（KV/DB）而非 git push
+              活動登錄時間閘門：Server-side 防繞過與高吞吐量快取設計
             
           </span>
         </div>
@@ -1804,6 +1804,62 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-design-data-pipeline-kv-vs-git-push/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自動化資料管道：走資料層（KV/DB）而非 git push
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-design-gmail-digest-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gmail 程式化存取的架構選擇與安全取捨
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1821,7 +1877,7 @@
   <span class="md-ellipsis">
     
   
-    自動化資料管道：走資料層（KV/DB）而非 git push
+    活動登錄時間閘門：Server-side 防繞過與高吞吐量快取設計
   
 
     
@@ -1839,7 +1895,7 @@
   <span class="md-ellipsis">
     
   
-    自動化資料管道：走資料層（KV/DB）而非 git push
+    活動登錄時間閘門：Server-side 防繞過與高吞吐量快取設計
   
 
     
@@ -1886,10 +1942,32 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#filter-vs-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        架構選型：Filter vs Middleware
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        考慮過的方案
+        快取策略比較
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-stampede" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cache Stampede 防護
       
     </span>
   </a>
@@ -1900,7 +1978,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        遷移注意事項
+        時區處理
       
     </span>
   </a>
@@ -1916,62 +1994,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../system-design-gmail-digest-architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Gmail 程式化存取的架構選擇與安全取捨
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../system-design-event-registration-time-gate/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    活動登錄時間閘門：Server-side 防繞過與高吞吐量快取設計
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -2348,10 +2370,32 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#filter-vs-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        架構選型：Filter vs Middleware
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        考慮過的方案
+        快取策略比較
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-stampede" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cache Stampede 防護
       
     </span>
   </a>
@@ -2362,7 +2406,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        遷移注意事項
+        時區處理
       
     </span>
   </a>
@@ -2395,72 +2439,106 @@
       
       
       
-        <a href="../../tags/#tag:ci-cd" class="md-tag">ci-cd</a>
+        <a href="../../tags/#tag:csharp" class="md-tag">csharp</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:cloudflare" class="md-tag">cloudflare</a>
+        <a href="../../tags/#tag:performance" class="md-tag">performance</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:system-design" class="md-tag">system-design</a>
+        <a href="../../tags/#tag:security" class="md-tag">security</a>
       
     
   </nav>
 
 
 
-  <h1>自動化資料管道：走資料層（KV/DB）而非 git push</h1>
+  <h1>活動登錄時間閘門：Server-side 防繞過與高吞吐量快取設計</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>程式碼和自動生成的資料應該分開</strong>：程式碼走 git，資料走資料層（KV、DB、object storage）。每天自動塞 JSON 進 git repo 會產生無人查看的 commit 噪音</li>
-<li><strong>有後端就用後端</strong>：如果專案已經有 Cloudflare Pages Functions + KV，公開資料也該統一走 KV API，不需要另外維護一條靜態檔案管道</li>
-<li><strong>cron + git push 的隱性成本</strong>：需要 SSH key 管理（WSL2 cron 環境拿不到 ssh-agent）、CI/CD 觸發、merge conflict 風險。改走 KV 後 cron 只需 wrangler CLI，零 git 操作</li>
-<li><strong>meta 索引必須是累積式的</strong>：如果用資料層取代靜態索引檔，meta 記錄要從「只存最新一批」改為「讀取→合併→寫回」，否則遷移後會遺失歷史資料</li>
-<li><strong>獨立資料 repo 不是解法</strong>：如果問題是「cron 無法 git push」，搬到另一個 repo 問題還是一樣。有後端就直接用後端</li>
+<li>前端只隱藏按鈕/倒數計時不夠，知道活動代碼就能直接 POST 繞過，<strong>時間檢查必須在 server 端</strong></li>
+<li>用 <code>IAsyncActionFilter</code>（<code>ServiceFilter</code>）在請求進 Channel 前攔截，比 Middleware 精準（只套需要的 Action）</li>
+<li>快取策略選擇：能主動撈全部活動用 BackgroundService + in-memory；不能的話靠業務流程被動更新（查活動列表時順便寫快取）</li>
+<li>Cache Stampede 防護：Semaphore 加鎖只讓一個 thread 查 DB，或用 stale-while-revalidate 零等待</li>
+<li><code>DateTime.Now</code> 在雲端預設是 UTC，用 <code>TimeZoneInfo.ConvertTimeFromUtc</code> + <code>"Asia/Taipei"</code> 明確轉換，.NET 6 跨 Linux/Windows 都支援</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>dev-diary 專案原本用雙軌架構：公開版日報寫成靜態 JSON 由 cron git push 部署，私密版走 KV API。cron 在 WSL2 環境下無法取得 SSH agent，導致 git push 失敗、網站停止更新。</p>
-<h3 id="_3">考慮過的方案<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>活動登錄系統有「熱門時段」機制，前端在指定時間前才開放登錄按鈕。但 server 端 API 沒有驗證時間，使用者記住活動代碼後可以直接打 POST 提前登錄。系統在尖峰時段吞吐量很大（使用 Redis + Channel + Worker 架構），修正方案需要兼顧安全性與效能。</p>
+<h3 id="filter-vs-middleware">架構選型：Filter vs Middleware<a class="headerlink" href="#filter-vs-middleware" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>方案</th>
-<th>問題</th>
+<th></th>
+<th>Filter</th>
+<th>Middleware</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Deploy Key（無密碼 SSH key）</td>
-<td>解決 SSH 問題，但每天 commit 的噪音還在</td>
+<td>作用範圍</td>
+<td>標在特定 Action 上</td>
+<td>所有請求都經過</td>
 </tr>
 <tr>
-<td>獨立資料 repo</td>
-<td>SSH 問題沒消失，多一個 repo 要維護</td>
+<td>存取 Action 參數</td>
+<td>可直接拿 <code>ActionArguments</code></td>
+<td>要自己解析 request</td>
 </tr>
 <tr>
-<td>GitHub Actions 雲端生成</td>
-<td>資料來源在本地（Claude Code session logs），runner 拿不到</td>
-</tr>
-<tr>
-<td><strong>統一走 KV</strong></td>
-<td>公開版資料已經在上傳 KV 了，前端改讀 API 即可</td>
+<td>適合情境</td>
+<td>特定 endpoint 驗證</td>
+<td>全域通用邏輯（logging、auth）</td>
 </tr>
 </tbody>
 </table>
-<p>最終選擇統一走 KV，因為公開版資料本來就已經同步上傳到 KV（<code>public:daily:*</code>），只是前端沒在用。改動最小、效果最好。</p>
-<h3 id="_4">遷移注意事項<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ul>
-<li>舊的 <code>meta:latest</code> 只存最後一批上傳的 dates，不是累計列表。遷移時需要掃描所有 KV key 重建完整索引</li>
-<li>API middleware 從「無 token 就 401」改為「無 token 放行」，讓公開版資料不需認證即可存取</li>
-</ul>
+<p>結論：用 <code>IAsyncActionFilter</code> + <code>ServiceFilter</code>。<code>ServiceFilter</code> 優於 <code>TypeFilter</code>，因為生命週期由 DI 明確控制（Scoped/Singleton），看 code 就知道。</p>
+<h3 id="_3">快取策略比較<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>做法</th>
+<th>適用條件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BackgroundService</td>
+<td>定時撈全部活動寫 in-memory，熱門時段暫停更新</td>
+<td>能不帶個資撈全部活動</td>
+</tr>
+<tr>
+<td>被動更新</td>
+<td>使用者查活動列表時順便寫快取</td>
+<td>必須帶身分證等個資才能查</td>
+</tr>
+</tbody>
+</table>
+<p>被動更新的關鍵認知：<strong>能打 POST 的人一定先查過活動列表（否則不知道活動代碼），所以快取一定有資料。沒有快取 = 沒查過列表 = 異常請求，直接拒絕。</strong></p>
+<p>多台機器（load balance）時用 Redis 共享；單機用 <code>ConcurrentDictionary</code> 即可。</p>
+<h3 id="cache-stampede">Cache Stampede 防護<a class="headerlink" href="#cache-stampede" title="Permanent link">&para;</a></h3>
+<p>TTL 過期瞬間大量請求同時 cache miss 會全打 DB。三種解法：</p>
+<ol>
+<li><strong>Semaphore 加鎖</strong>：只有一個 thread 查 DB，其他等鎖後 double-check cache</li>
+<li><strong>Stale-while-revalidate</strong>：過期後繼續回舊資料，背景非同步更新，零等待</li>
+<li><strong>背景定時更新</strong>：完全不依賴請求觸發，最乾淨但需要能主動撈資料</li>
+</ol>
+<h3 id="_4">時區處理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><code>DateTime.Now</code> 在雲端機器拿到的是 UTC。明確轉換：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">TimeZoneInfo</span><span class="w"> </span><span class="n">TaiwanTz</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">TimeZoneInfo</span><span class="p">.</span><span class="n">FindSystemTimeZoneById</span><span class="p">(</span><span class="s">&quot;Asia/Taipei&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kt">var</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeZoneInfo</span><span class="p">.</span><span class="n">ConvertTimeFromUtc</span><span class="p">(</span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span><span class="p">,</span><span class="w"> </span><span class="n">TaiwanTz</span><span class="p">);</span>
+</code></pre></div>
+<p><code>"Asia/Taipei"</code> 是 IANA 格式，.NET 6 在 Linux 和 Windows 都自動識別。微軟沒有提供時區 ID 的 enum/const（因為 IANA 資料庫會更新），實務上自己包 <code>static class TimeZones</code> 搭配 IntelliSense 避免打錯。</p>
 
 
 
