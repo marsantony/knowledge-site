@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-advent-of-agents-evaluation/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/automation-cdp-existing-session-detection-risk/">
       
       
-        <link rel="prev" href="../system-design-event-registration-time-gate/">
+        <link rel="prev" href="../gaming-ffxiv-gathering-collectables/">
       
       
-        <link rel="next" href="../learning-nosql-database-types/">
+        <link rel="next" href="../automation-discord-bot-wait-for-pattern/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Google Advent of Agents 2025 評估分析 - Mars 的知識庫</title>
+        <title>瀏覽器自動化接入既有 Chrome Session：CDP 方案與平台偵測風險 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Google Advent of Agents 2025 評估分析
+              瀏覽器自動化接入既有 Chrome Session：CDP 方案與平台偵測風險
             
           </span>
         </div>
@@ -1527,6 +1527,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1536,11 +1538,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
         
           
           <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
@@ -1561,7 +1563,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1576,10 +1578,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../automation-cdp-existing-session-detection-risk/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    瀏覽器自動化接入既有 Chrome Session：CDP 方案與平台偵測風險
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1595,6 +1622,96 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cdp-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼用 CDP 接入既有 Session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        平台偵測機制比較
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        風險控制策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        與 HTTP Client 方案的差異
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2062,8 +2179,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2073,11 +2188,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
         
           
           <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
@@ -2098,7 +2213,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2113,35 +2228,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Google Advent of Agents 2025 評估分析
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../learning-advent-of-agents-evaluation/" class="md-nav__link">
         
   
   
@@ -2157,63 +2247,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        課程結構參考
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2617,10 +2650,43 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#cdp-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼用 CDP 接入既有 Session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        課程結構參考
+        平台偵測機制比較
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        風險控制策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        與 HTTP Client 方案的差異
       
     </span>
   </a>
@@ -2653,46 +2719,93 @@
       
       
       
-        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
+        <a href="../../tags/#tag:security" class="md-tag">security</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:learning" class="md-tag">learning</a>
+        <a href="../../tags/#tag:social-media" class="md-tag">social-media</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:web-scraping" class="md-tag">web-scraping</a>
       
     
   </nav>
 
 
 
-  <h1>Google Advent of Agents 2025 評估分析</h1>
+  <h1>瀏覽器自動化接入既有 Chrome Session：CDP 方案與平台偵測風險</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Advent of Agents 是 Google Cloud 於 2025/12 推出的 25 天免費 AI Agent 教學計畫，使用 Gemini 3 + ADK + Vertex AI Agent Engine</li>
-<li>課程從 no-code YAML 設定起步，進階到 A2A 協定、MCP、LangGraph、Durable Agents 等主題</li>
-<li><strong>深度綁定 Google Cloud 生態系</strong>，學到的工具操作不易移植到其他平台（Claude、Cloudflare 等）</li>
-<li>對已有 API 整合和自動化實戰經驗的開發者來說，前半段（Day 1-10）幾乎沒有新東西</li>
-<li>值得獨立學習的通用概念：A2A（Agent-to-Agent）協定設計、MCP 整合模式、Durable Agent 架構</li>
+<li>用 <code>chrome --remote-debugging-port=9222</code> 啟動 Chrome，再用 Playwright/Puppeteer 的 <code>connectOverCDP</code> 接入，即可共用已登入的 session（cookie、localStorage、擴充功能全都在）</li>
+<li>這比 headless browser 從零登入安全得多——不需要儲存密碼/token，也不會觸發「新裝置登入」警告</li>
+<li><strong>Facebook 偵測最積極</strong>：會檢查 <code>navigator.webdriver</code>、CDP 啟用痕跡、行為模式（操作頻率、滑鼠軌跡規律性），後果可能是要求驗證甚至停權</li>
+<li><strong>X (Twitter) 相對寬鬆</strong>：讀取操作的偵測較弱，但批量操作仍會觸發 rate limit 或暫時限制</li>
+<li>降低風險的關鍵：隨機化操作間隔（避免機器般的規律性）、以讀取為主避免寫入操作、控制總請求量</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>評估是否值得投入時間完成整個 25 天課程。結論是 ROI 不高，原因：</p>
+<h3 id="cdp-session">為什麼用 CDP 接入既有 Session<a class="headerlink" href="#cdp-session" title="Permanent link">&para;</a></h3>
+<p>一般瀏覽器自動化（Playwright/Puppeteer）會開一個全新的 browser context，沒有任何登入狀態。要操作需要登入的網站，得另外處理認證（注入 cookie、走 OAuth flow 等），而且會產生「新裝置登入」的記錄。</p>
+<p>CDP（Chrome DevTools Protocol）允許外部程式連接到一個已經在運行的 Chrome 實例。流程：</p>
 <ol>
-<li><strong>技術棧不匹配</strong>：課程綁 Google Cloud（Gemini + Vertex AI），而非 Claude + Cloudflare</li>
-<li><strong>起點太低</strong>：標榜 no-code、5 分鐘上手，對有實戰經驗的人浪費時間</li>
-<li><strong>實用門檻</strong>：學完後要實際應用需付費使用 Google Cloud 服務</li>
+<li>帶 <code>--remote-debugging-port=9222</code> 重新啟動 Chrome</li>
+<li>正常使用 Chrome 登入各網站</li>
+<li>Playwright 用 <code>browser = await playwright.chromium.connect_over_cdp("http://localhost:9222")</code> 接入</li>
+<li>取得現有的 page/context，直接操作已登入的頁面</li>
 </ol>
-<p><strong>更好的替代方案</strong>：直接研究通用概念（A2A 協定、MCP 規格）的官方文件，跳過平台綁定的操作練習。如果目標是讓現有自動化工具升級成 AI Agent（LLM 自主決策），研究自己已在用的工具鏈（如 Claude Agent SDK）更有效率。</p>
-<h3 id="_3">課程結構參考<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_3">平台偵測機制比較<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>面向</th>
+<th>Facebook</th>
+<th>X (Twitter)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>navigator.webdriver</code> 檢查</td>
+<td>有，會標記為自動化</td>
+<td>較少依賴此信號</td>
+</tr>
+<tr>
+<td>CDP 啟用偵測</td>
+<td>有跡象顯示會偵測</td>
+<td>未有明確報告</td>
+</tr>
+<tr>
+<td>行為模式分析</td>
+<td>非常精細（滑鼠、鍵盤、捲動）</td>
+<td>主要看請求頻率</td>
+</tr>
+<tr>
+<td>寫入操作敏感度</td>
+<td>極高（按讚、留言、發文）</td>
+<td>高（發推、追蹤）</td>
+</tr>
+<tr>
+<td>偵測後果</td>
+<td>驗證碼 → 暫時鎖定 → 停權</td>
+<td>Rate limit → 暫時限制</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">風險控制策略<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Day 1-5：基礎（概念、YAML、搜尋、部署、監控）</li>
-<li>Day 6-10：開發（IDE、程式執行、Context 管理、快取）</li>
-<li>Day 11-15：整合（MCP、多模態、API、A2A、UI）</li>
-<li>Day 16-20：進階（LangGraph、Flash Thinking、API Registry、Enterprise、Security）</li>
-<li>Day 21-25：收尾（Capstone、Guardrails、Durable Agents、萬物 Agent 化、Finale）</li>
+<li><strong>讀取 vs 寫入</strong>：純讀取（抓頁面內容）風險遠低於寫入操作（按讚、留言、發文）</li>
+<li><strong>隨機延遲</strong>：操作之間加 random delay（2-8 秒），避免固定間隔的機器模式</li>
+<li><strong>頻率控制</strong>：不要短時間大量翻頁，模擬人類的瀏覽節奏</li>
+<li><strong>先用測試帳號</strong>：在不怕被鎖的帳號上驗證安全性，再用主帳號</li>
 </ul>
+<h3 id="http-client">與 HTTP Client 方案的差異<a class="headerlink" href="#http-client" title="Permanent link">&para;</a></h3>
+<p><a href="../security-web-anti-bot-mechanisms/">反爬蟲機制分層解析</a> 討論的是 HTTP client 層級（curl_cffi、TLS 指紋偽裝），適合抓公開網頁內容。CDP 接入既有 session 適合的場景不同：需要登入狀態、要操作的網站有 JS challenge、或者目標平台（如 Facebook）幾乎完全封鎖非瀏覽器存取。兩者是互補關係，不是替代。</p>
 
 
 
