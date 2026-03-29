@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-ai-coding-tools-evidence-vs-hype/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-autoresearch-agent-feedback-loop/">
       
       
-        <link rel="prev" href="../learning-ai-coding-skill-formation-anthropic-study/">
+        <link rel="prev" href="../learning-ai-coding-tools-evidence-vs-hype/">
       
       
-        <link rel="next" href="../learning-autoresearch-agent-feedback-loop/">
+        <link rel="next" href="../../tags/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>AI 程式碼工具：實證數據 vs 媒體宣稱 - Mars 的知識庫</title>
+        <title>autoresearch：讓 Agent 自主研究的 Feedback Loop 設計模式 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AI 程式碼工具：實證數據 vs 媒體宣稱
+              autoresearch：讓 Agent 自主研究的 Feedback Loop 設計模式
             
           </span>
         </div>
@@ -2618,6 +2618,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-ai-coding-tools-evidence-vs-hype/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 程式碼工具：實證數據 vs 媒體宣稱
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2635,7 +2663,7 @@
   <span class="md-ellipsis">
     
   
-    AI 程式碼工具：實證數據 vs 媒體宣稱
+    autoresearch：讓 Agent 自主研究的 Feedback Loop 設計模式
   
 
     
@@ -2653,7 +2681,7 @@
   <span class="md-ellipsis">
     
   
-    AI 程式碼工具：實證數據 vs 媒體宣稱
+    autoresearch：讓 Agent 自主研究的 Feedback Loop 設計模式
   
 
     
@@ -2696,144 +2724,115 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        事件脈絡
+        三個檔案的分工
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#programmd-agent-sop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        program.md：寫給 Agent 的 SOP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        研究數據整理
+        固定時間預算的設計
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="研究數據整理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#val_bpb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        評估指標：val_bpb
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git 作為實驗管理系統
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        生產力（最關鍵指標）
+        這個模式能套用在哪裡
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#has-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        技術細節（#has-advanced）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        程式碼品質
+        限制
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#fork" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        延伸 Fork
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        採用率
+        原始資料
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        雙方論點對照
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="雙方論點對照">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#matt-shumer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Matt Shumer 的主張
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cal-newport" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cal Newport 的反駁
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        其他重要批評者
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        媒體識讀框架：評估 AI 宣稱
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        平衡觀點
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2841,34 +2840,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../learning-autoresearch-agent-feedback-loop/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    autoresearch：讓 Agent 自主研究的 Feedback Loop 設計模式
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -2960,144 +2931,115 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        事件脈絡
+        三個檔案的分工
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#programmd-agent-sop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        program.md：寫給 Agent 的 SOP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        研究數據整理
+        固定時間預算的設計
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="研究數據整理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#val_bpb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        評估指標：val_bpb
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git 作為實驗管理系統
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        生產力（最關鍵指標）
+        這個模式能套用在哪裡
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#has-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        技術細節（#has-advanced）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        程式碼品質
+        限制
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#fork" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        延伸 Fork
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        採用率
+        原始資料
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        雙方論點對照
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="雙方論點對照">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#matt-shumer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Matt Shumer 的主張
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cal-newport" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cal Newport 的反駁
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        其他重要批評者
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        媒體識讀框架：評估 AI 宣稱
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        平衡觀點
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3129,203 +3071,122 @@
       
       
       
-        <a href="../../tags/#tag:learning" class="md-tag">learning</a>
+        <a href="../../tags/#tag:system-design" class="md-tag">system-design</a>
       
     
   </nav>
 
 
 
-  <h1>AI 程式碼工具：實證數據 vs 媒體宣稱</h1>
+  <h1>autoresearch：讓 Agent 自主研究的 Feedback Loop 設計模式</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>感知與現實落差</strong>：METR 研究發現資深開發者用 AI 後慢了 19%，但他們自認快了 20%——這個感知落差說明業界自評的生產力數字可能系統性高估</li>
-<li><strong>METR benchmark 門檻問題</strong>：Shumer 引用的 METR 能力評估使用 <strong>50% 準確度門檻</strong>（而非 100%），多數企業不接受一半機率出錯的系統</li>
-<li><strong>品質隱患</strong>：AI 程式碼的問題密度是人類的 1.7 倍；程式碼流失率高 41%；29-45% AI 生成程式碼含安全漏洞</li>
-<li><strong>信任落差</strong>：開發者採用率高達 84%，但僅 33% 信任 AI 輸出，46% 積極不信任</li>
-<li><strong>媒體識讀框架</strong>：評估 AI 宣稱時，問三個問題：具體的任務是什麼？聲稱者有無利益衝突？有無可複現的數據支撐？</li>
+<li>Karpathy 的 autoresearch（58k+ stars）展示了一個可複用的設計模式：把問題切成 agent 能穩定跑的閉環，讓它在你睡覺時自主試錯</li>
+<li>核心四要素：<strong>限制動作範圍、固定評估指標、設計時間預算、結果不好就回退</strong>——缺一不可</li>
+<li><code>program.md</code> 是本質上的新型管理文件：人不再直接改程式碼，而是寫 agent 的研究規則（guardrail、keep/discard 邏輯、工作 SOP）</li>
+<li>這個模式不限 ML 研究，只要場景有明確 metric 都能套用（Landing Page 速度、SQL 效能、bundle size...）</li>
+<li>實際效果：83 次實驗、15 次保留改進，val_bpb 從 0.998 降到 0.976，約 2.2% 的改善</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">事件脈絡<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>2026 年 2 月 9 日，OthersideAI CEO Matt Shumer 發表「Something Big Is Happening」，獲逾 8,000 萬瀏覽，引爆 AI 取代論討論。2026 年 2 月 26 日，喬治城大學 CS 教授 Cal Newport（《Deep Work》作者）發布影片回應，稱相關說法為「grade-A nonsense」，自稱「AI 現實主義者」。</p>
-<h3 id="_4">研究數據整理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<h4 id="_5">生產力（最關鍵指標）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th>研究</th>
-<th>來源</th>
-<th>關鍵發現</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GitHub 控制實驗（2023）</td>
-<td>arXiv 2302.06590，GitHub 資助</td>
-<td>任務完成快 <strong>55.8%</strong></td>
-</tr>
-<tr>
-<td>Bain &amp; Company（2025/9）</td>
-<td>企業調查</td>
-<td>實際 <strong>10-15% 生產力提升</strong>，稱「不起眼」</td>
-</tr>
-<tr>
-<td><strong>METR 研究（2025/7）</strong></td>
-<td>arXiv 2507.09089，最嚴謹</td>
-<td>資深開發者慢 <strong>19%</strong>，但自認快 20%</td>
-</tr>
-<tr>
-<td>開發者自評</td>
-<td>Stack Overflow 2025</td>
-<td>初階 21-40%；資深僅 7-16%</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>METR 研究細節：16 位開發者在有 22k+ stars、100 萬行程式碼的大型專案上隨機分組，發現有 AI 反而更慢，但感知是快的。</p>
-</blockquote>
-<h4 id="_6">程式碼品質<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th>指標</th>
-<th>數據來源</th>
-<th>數字</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>問題密度</td>
-<td>CodeRabbit，470 個 PR</td>
-<td>AI PR 10.83 issues vs 人類 6.45（<strong>1.7 倍</strong>）</td>
-</tr>
-<tr>
-<td>程式碼流失率</td>
-<td>GitClear 2025</td>
-<td>AI 程式碼高 <strong>41%</strong></td>
-</tr>
-<tr>
-<td>程式碼複製率</td>
-<td>GitClear</td>
-<td>8.3% → 12.3%（程式碼克隆 4 倍）</td>
-</tr>
-<tr>
-<td>安全漏洞</td>
-<td>系統回顧</td>
-<td><strong>29-45%</strong> AI 程式碼含漏洞；Java 最嚴重達 72%</td>
-</tr>
-<tr>
-<td>變更失敗率</td>
-<td>Cortex</td>
-<td>AI 引入後<strong>增加 30%</strong></td>
-</tr>
-<tr>
-<td>Copilot 正確率</td>
-<td>ACM PROMISE 2022，164 題</td>
-<td>28.7% 完全正確，20.1% 完全錯誤</td>
-</tr>
-</tbody>
-</table>
-<h4 id="_7">採用率<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>Andrej Karpathy（OpenAI 早期成員、前 Tesla 自駕 AI 主管）在 2026/3 發布 autoresearch，目的是讓 AI agent 自動跑 LLM 訓練實驗——修改程式碼、訓練 5 分鐘、看結果、保留或回退，無限迴圈。人類去睡覺，agent 繼續研究。</p>
+<h2 id="_3">三個檔案的分工<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>prepare.py  ← 人類鎖定不動（資料準備、評估函式、固定常數）
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>train.py    ← agent 唯一能動的地方（模型架構、optimizer、超參數）
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>program.md  ← 人類寫的 agent 工作 SOP（最關鍵的設計）
+</code></pre></div>
+<p>設計哲學：把 agent 的 search space 限縮到最小，讓實驗結果可比較、可回退。</p>
+<h2 id="programmd-agent-sop">program.md：寫給 Agent 的 SOP<a class="headerlink" href="#programmd-agent-sop" title="Permanent link">&para;</a></h2>
+<p>這是整個 repo 最值得學的部分。它定義了 agent 的完整研究工作流：</p>
+<p><strong>Setup 流程</strong>（與人類確認後執行一次）：
+1. 約定 run tag，建立 git branch
+2. 讀完所有相關檔案
+3. 建立 <code>results.tsv</code> 紀錄表</p>
+<p><strong>無限實驗迴圈</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>看 git 狀態
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>→ 修改 train.py（一個想法）
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>→ git commit
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>→ uv run train.py &gt; run.log 2&gt;&amp;1
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>→ grep 結果
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>→ 紀錄到 results.tsv
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>→ 有改善 → keep（保留 commit）
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>→ 沒改善 → git reset
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>→ 回到開頭
+</code></pre></div></p>
+<p><strong>關鍵規則</strong>：
+- <strong>NEVER STOP</strong>：agent 不准暫停詢問是否繼續，人類可能在睡覺
+- <strong>超過 10 分鐘就 kill</strong>：防止 hang 住
+- <strong>Simplicity criterion</strong>：微小改善 + 大量複雜度 = 不值得；刪程式碼還能持平 = 保留</p>
+<h2 id="_4">固定時間預算的設計<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>每次訓練固定跑 5 分鐘（wall clock），不論 agent 改了什麼。這個設計有兩個優點：</p>
+<ol>
+<li>不同實驗可公平比較（agent 改了 batch size 或 model size 都不影響比較基準）</li>
+<li>agent 自動找到「在這個 time budget 下最優的模型設定」</li>
+</ol>
+<p>缺點：你的結果跟其他人的硬體不可比。</p>
+<h2 id="val_bpb">評估指標：val_bpb<a class="headerlink" href="#val_bpb" title="Permanent link">&para;</a></h2>
+<p>用 <strong>Bits Per Byte (BPB)</strong> 而非 loss 或 perplexity：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">val_bpb</span> <span class="o">=</span> <span class="n">total_nats</span> <span class="o">/</span> <span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">total_bytes</span><span class="p">)</span>
+</code></pre></div>
+<p>與 vocabulary size 無關，所以 agent 就算改了 tokenizer 大小，指標仍然可比。越低越好。</p>
+<h2 id="git">Git 作為實驗管理系統<a class="headerlink" href="#git" title="Permanent link">&para;</a></h2>
 <ul>
-<li>開發者使用或計畫使用 AI 工具：<strong>84%</strong>（Stack Overflow 2025，49,000+ 人）</li>
-<li>全球 2025 年 AI 生成程式碼佔比：約 <strong>41%</strong></li>
-<li>Microsoft：20-30%；Google：&gt;25%；Walmart：&gt;40%</li>
-<li>對 AI 輸出的正面感受：從 2024 年 72% 降至 <strong>60%</strong>（年減）</li>
+<li>有效改進 → 保留 commit，branch 向前推進</li>
+<li>無效嘗試 → <code>git reset</code> 回到上次成功的 commit</li>
+<li><code>results.tsv</code> 保持 untracked（只紀錄結果，不進 git）</li>
 </ul>
-<h3 id="_8">雙方論點對照<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<h4 id="matt-shumer">Matt Shumer 的主張<a class="headerlink" href="#matt-shumer" title="Permanent link">&para;</a></h4>
+<p>比 W&amp;B 或 MLflow 更輕量，而且回退機制天然存在。</p>
+<h2 id="_5">這個模式能套用在哪裡<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>只要場景符合以下條件：</p>
 <table>
 <thead>
 <tr>
-<th>主張</th>
-<th>內容</th>
-<th>問題</th>
+<th>條件</th>
+<th>說明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>全自動開發</td>
-<td>「下提示、離開 4 小時回來工作就完成了」</td>
-<td>未說明是什麼專案、規模、是否需修正</td>
+<td>動作範圍可限制</td>
+<td>agent 只能改特定檔案或特定參數</td>
 </tr>
 <tr>
-<td>指數級成長</td>
-<td>AI 自主工作能力每 7 個月翻倍</td>
-<td>METR benchmark 門檻為 50%，非 100%</td>
+<td>有單一量化指標</td>
+<td>明確的 better/worse 判斷</td>
 </tr>
 <tr>
-<td>遞歸自我改進</td>
-<td>GPT-5.3-Codex「instrumental in creating itself」</td>
-<td>Newport：無任何模型能發明新 ML 架構</td>
+<td>可快速執行</td>
+<td>每次迭代時間夠短（分鐘級）</td>
 </tr>
 <tr>
-<td>COVID 類比</td>
-<td>「We're in the 'this seems overblown' phase of something bigger than Covid」</td>
-<td>類比陷阱：不同意 = 否認疫情的人？</td>
+<td>失敗可回退</td>
+<td>改壞了能還原</td>
 </tr>
 </tbody>
 </table>
-<p><strong>背景注意</strong>：Shumer 2024 年曾宣稱 Reflection 70B 是世界頂級開源模型，但第三方無法復現 benchmark，被質疑是 Claude 3.5 Sonnet 的薄包裝。</p>
-<h4 id="cal-newport">Cal Newport 的反駁<a class="headerlink" href="#cal-newport" title="Permanent link">&para;</a></h4>
+<p><strong>實際案例</strong>：有人把 Landing Page 開啟速度交給這個框架，20 多輪後提升 80%。</p>
+<p>其他可能的應用：SQL query 優化（用 execution time 當指標）、前端 bundle size 優化、自動化測試覆蓋率提升。</p>
+<h2 id="has-advanced">技術細節（#has-advanced）<a class="headerlink" href="#has-advanced" title="Permanent link">&para;</a></h2>
+<p>train.py 實作了一個從 nanochat 簡化的 GPT：RMSNorm、Rotary Position Embedding、Flash Attention 3、Sliding window attention（SSSL pattern）、Value Embedding (ResFormer)、Logit softcap。Optimizer 是 MuonAdamW（2D 矩陣用 Muon + polar express orthogonalization，其他參數用 AdamW）。</p>
+<h2 id="_6">限制<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ul>
-<li>AI 公司專攻程式碼是因為有訂閱市場收入，程式碼是「語言模型的迪士尼樂園」——高度結構化的文字</li>
-<li>軟體開發的自動化特性（編譯器、單元測試）不能推論到法律、醫療等其他知識工作</li>
-<li>250-350 位專業工程師調查：AI 用於重複性任務，但需要高度監督、精確規格說明</li>
-<li>約 1/5 機率 AI 完全無法理解需求，工程師最終手動撰寫</li>
+<li><strong>Metric ≠ 實際效果</strong>：val_bpb 改善不代表下游任務一定更好</li>
+<li><strong>局部最優</strong>：agent 做的是 hill climbing，容易困在 local minimum</li>
+<li><strong>燒 Token</strong>：每次 agent 改完程式碼呼叫 LLM 都有成本</li>
+<li><strong>需要 GPU</strong>：預設要 NVIDIA H100（有 macOS/MLX fork 可在 Apple Silicon 上跑）</li>
+<li><strong>不會提出新問題</strong>：agent 只在給定框架內搜索，不會跳出框架思考</li>
 </ul>
-<h4 id="_9">其他重要批評者<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th>批評者</th>
-<th>身份</th>
-<th>核心觀點</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Gary Marcus</td>
-<td>NYU 認知科學名譽教授</td>
-<td>「武器化的炒作」；METR 用 50% 門檻非 100%</td>
-</tr>
-<tr>
-<td>Fortune (Jeremy Kahn)</td>
-<td>科技記者</td>
-<td>軟體自動化特性不能泛化到所有知識工作</td>
-</tr>
-<tr>
-<td>Ralph Losey</td>
-<td>法律科技專家</td>
-<td>GPT-4 律師考試作文僅第 15 百分位；法律引用仍頻繁幻覺</td>
-</tr>
-</tbody>
-</table>
-<h3 id="ai">媒體識讀框架：評估 AI 宣稱<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h3>
-<p><strong>1. 要求具體性</strong></p>
-<p>「離開 4 小時回來工作就完成了」——什麼專案？多少程式碼？需不需要修正？缺乏具體性的宣稱無法驗證也無法反駁。</p>
-<p><strong>2. 查利益衝突</strong></p>
-<p>Shumer 是 AI 公司 CEO 兼 AI 基金 GP。文章第一條建議：「訂閱付費 AI 工具」。Forbes 評論：「讀起來像業配。」</p>
-<p><strong>3. 區分事實與推論</strong></p>
+<h2 id="fork">延伸 Fork<a class="headerlink" href="#fork" title="Permanent link">&para;</a></h2>
 <ul>
-<li>事實：AI 工具已廣泛採用，能處理重複性任務</li>
-<li>跳躍推論：因此 AI 即將取代所有螢幕前的工作</li>
+<li><a href="https://github.com/miolini/autoresearch-macos">miolini/autoresearch-macos</a>（macOS）</li>
+<li><a href="https://github.com/trevin-creator/autoresearch-mlx">trevin-creator/autoresearch-mlx</a>（Apple Silicon MLX）</li>
+<li><a href="https://github.com/jsegov/autoresearch-win-rtx">jsegov/autoresearch-win-rtx</a>（Windows）</li>
+<li><a href="https://github.com/andyluo7/autoresearch">andyluo7/autoresearch</a>（AMD）</li>
 </ul>
-<p><strong>4. 警惕類比陷阱</strong></p>
-<p>COVID 類比把「不同意」等同於「否認疫情」，是修辭技巧，不是論證。</p>
-<p><strong>5. 感知 ≠ 現實</strong></p>
-<p>METR 研究：開發者自認快 20%，實際慢 19%。自身體驗不等於客觀數據。</p>
-<p><strong>6. 留意可信度紀錄</strong></p>
-<p>過去的宣稱是否成真？Reflection 70B 的前例提供了評估 Shumer 後續宣稱的參考基準。</p>
-<h3 id="_10">平衡觀點<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>AI 程式碼工具已改變日常工作流程，但：</p>
+<h2 id="_7">原始資料<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
-<li>改變性質是<strong>助手而非替代</strong>——消除繁瑣任務，核心判斷仍需人</li>
-<li>生產力提升<strong>真實但溫和</strong>（10-15%），非指數級</li>
-<li><strong>品質問題不容忽視</strong>：更多 bug、安全漏洞、維護負擔</li>
-<li>初階開發者獲益最多（21-40%），資深開發者最少（7-16%）</li>
-<li>2025 年業界進入「炒作修正期」：正面情緒從 72% 降至 60%</li>
+<li>Repo：<a href="https://github.com/karpathy/autoresearch">karpathy/autoresearch</a></li>
+<li>建立時間：2026-03-06，不到一個月 58k+ stars</li>
 </ul>
 
 
