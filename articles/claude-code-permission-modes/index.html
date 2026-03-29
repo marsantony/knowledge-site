@@ -16,7 +16,7 @@
         <link rel="prev" href="../claude-code-vscode-auto-attach-context/">
       
       
-        <link rel="next" href="../dev-tools-stt-services-and-postprocessing/">
+        <link rel="next" href="../claude-code-skill-as-workflow-gate/">
       
       
         
@@ -685,6 +685,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pretooluse-hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PreToolUse Hook 技術格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sandbox-cache" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -704,6 +715,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude-code-skill-as-workflow-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用 Skill 作為工作流程強制入口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2313,6 +2352,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-design-two-phase-ai-judgment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    兩階段 AI 判斷模式：規則過濾 + LLM 備援
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2862,6 +2929,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pretooluse-hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PreToolUse Hook 技術格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sandbox-cache" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3044,6 +3122,61 @@
 <li><strong>結果</strong>：日常 90%+ 的操作零確認，只有跨出 sandbox 的危險操作（git push、wrangler deploy、外部 API 呼叫）才需要人工確認</li>
 </ul>
 <p>這個組合的效果等同「全開 + 危險攔截」，但安全方向是白名單（fail-safe）而非黑名單（fail-open）。不需要 <code>--dangerously-skip-permissions</code>。</p>
+<h3 id="pretooluse-hook">PreToolUse Hook 技術格式<a class="headerlink" href="#pretooluse-hook" title="Permanent link">&para;</a></h3>
+<p>Hook 腳本透過 <strong>stdin 接收 JSON</strong>，輸出 JSON 控制行為：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 讀取工具輸入</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">INPUT</span><span class="o">=</span><span class="k">$(</span>cat<span class="k">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">COMMAND</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$INPUT</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="s2">import sys, json</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="s2">d = json.load(sys.stdin)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="s2">print(d.get(&#39;tool_input&#39;, {}).get(&#39;command&#39;, &#39;&#39;))</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="s2">&quot;</span><span class="k">)</span>
+</code></pre></div>
+<p><strong>三種輸出模式：</strong></p>
+<table>
+<thead>
+<tr>
+<th>行為</th>
+<th>做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>允許（無訊息）</td>
+<td><code>exit 0</code></td>
+</tr>
+<tr>
+<td>Block + 告知 Claude</td>
+<td><code>exit 2</code>，stderr 訊息會顯示給 Claude</td>
+</tr>
+<tr>
+<td>允許 + 加入提醒 context</td>
+<td><code>exit 0</code> + stdout 輸出 JSON <code>permissionDecision: "allow"</code> + <code>additionalContext</code></td>
+</tr>
+<tr>
+<td>Deny + 告知 Claude</td>
+<td><code>exit 0</code> + stdout 輸出 JSON <code>permissionDecision: "deny"</code> + <code>permissionDecisionReason</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;hookSpecificOutput&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;hookEventName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PreToolUse&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;permissionDecision&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;allow&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;additionalContext&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;提醒訊息，Claude 會看到&quot;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+</code></pre></div>
+<p>settings.json 設定格式：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;hooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;PreToolUse&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="nt">&quot;matcher&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bash&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="nt">&quot;hooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;command&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/hook.sh&quot;</span><span class="w"> </span><span class="p">}]</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="p">}]</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</code></pre></div>
 <h3 id="sandbox-cache">常見 Sandbox 調整：工具 cache 路徑<a class="headerlink" href="#sandbox-cache" title="Permanent link">&para;</a></h3>
 <p>當某個工具頻繁被 sandbox 擋住，通常是因為它的 cache 目錄不在 sandbox 的寫入白名單內。常見案例：</p>
 <table>
@@ -3063,13 +3196,13 @@
 </tbody>
 </table>
 <p>解法：在 <code>settings.json</code> 的 <code>sandbox.filesystem.write.allow</code> 加入 cache 路徑：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&quot;sandbox&quot;: {
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  &quot;filesystem&quot;: {
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &quot;write&quot;: {
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>      &quot;allow&quot;: [&quot;~/.cache/uv&quot;]
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    }
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  }
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&quot;sandbox&quot;: {
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  &quot;filesystem&quot;: {
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    &quot;write&quot;: {
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>      &quot;allow&quot;: [&quot;~/.cache/uv&quot;]
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    }
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  }
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>}
 </code></pre></div>
 <p>加入後，該工具的 Bash 指令會走 <code>autoAllowBashIfSandboxed</code> 自動通過，不再跳確認。遇到其他工具的類似問題時，同樣模式處理即可。</p>
 
