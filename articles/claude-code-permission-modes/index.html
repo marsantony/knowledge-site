@@ -684,6 +684,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sandbox-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常見 Sandbox 調整：工具 cache 路徑
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2850,6 +2861,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sandbox-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常見 Sandbox 調整：工具 cache 路徑
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3022,6 +3044,34 @@
 <li><strong>結果</strong>：日常 90%+ 的操作零確認，只有跨出 sandbox 的危險操作（git push、wrangler deploy、外部 API 呼叫）才需要人工確認</li>
 </ul>
 <p>這個組合的效果等同「全開 + 危險攔截」，但安全方向是白名單（fail-safe）而非黑名單（fail-open）。不需要 <code>--dangerously-skip-permissions</code>。</p>
+<h3 id="sandbox-cache">常見 Sandbox 調整：工具 cache 路徑<a class="headerlink" href="#sandbox-cache" title="Permanent link">&para;</a></h3>
+<p>當某個工具頻繁被 sandbox 擋住，通常是因為它的 cache 目錄不在 sandbox 的寫入白名單內。常見案例：</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>Cache 路徑</th>
+<th>症狀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>uv</strong>（Python 套件管理）</td>
+<td><code>~/.cache/uv</code></td>
+<td>每次 <code>uv run</code> 都要確認 <code>dangerouslyDisableSandbox</code></td>
+</tr>
+</tbody>
+</table>
+<p>解法：在 <code>settings.json</code> 的 <code>sandbox.filesystem.write.allow</code> 加入 cache 路徑：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&quot;sandbox&quot;: {
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  &quot;filesystem&quot;: {
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &quot;write&quot;: {
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>      &quot;allow&quot;: [&quot;~/.cache/uv&quot;]
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    }
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  }
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>}
+</code></pre></div>
+<p>加入後，該工具的 Bash 指令會走 <code>autoAllowBashIfSandboxed</code> 自動通過，不再跳確認。遇到其他工具的類似問題時，同樣模式處理即可。</p>
 
 
 
