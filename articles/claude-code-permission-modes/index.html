@@ -652,6 +652,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-dangerously-skip-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        --dangerously-skip-permissions 的逐項風險分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        白名單 vs 黑名單策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2796,6 +2818,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#-dangerously-skip-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        --dangerously-skip-permissions 的逐項風險分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        白名單 vs 黑名單策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2918,11 +2962,66 @@
 <li>開啟 <strong>"Allow dangerously skip permissions"</strong> toggle</li>
 <li>右下角 mode selector 會多出 <code>Auto</code> 和 <code>Bypass permissions</code></li>
 </ol>
+<h3 id="-dangerously-skip-permissions"><code>--dangerously-skip-permissions</code> 的逐項風險分析<a class="headerlink" href="#-dangerously-skip-permissions" title="Permanent link">&para;</a></h3>
+<p>開了之後，所有工具呼叫（包括 <code>dangerouslyDisableSandbox</code> 的 Bash）都會自動放行。以下是各操作類型的實際風險：</p>
+<table>
+<thead>
+<tr>
+<th>操作類型</th>
+<th>風險</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Edit / Write</strong></td>
+<td>🟢 低</td>
+<td>有 git 可 revert，而且你通常會看 diff</td>
+</tr>
+<tr>
+<td><strong>git push</strong></td>
+<td>🟡 中</td>
+<td>可能 push 半成品或 force push 覆蓋遠端，solo dev 影響較小但仍難回溯</td>
+</tr>
+<tr>
+<td><strong>GitHub 寫入</strong>（gh issue/pr create/merge/close）</td>
+<td>🟡 中</td>
+<td>可能誤建 issue 或合併未就緒的 PR，但事後可修</td>
+</tr>
+<tr>
+<td><strong>Cloudflare 操作</strong>（wrangler deploy/d1/kv）</td>
+<td>🔴 高</td>
+<td>部署到 production、改資料庫/KV，花錢且難回滾</td>
+</tr>
+<tr>
+<td><strong>Discord Bot 操作</strong></td>
+<td>🟡 中</td>
+<td>可能啟停 bot 或透過 token 發訊息</td>
+</tr>
+<tr>
+<td><strong>外部網路請求</strong></td>
+<td>🟡 中</td>
+<td>sandbox 網路限制被繞過，可打任何外部 API</td>
+</tr>
+</tbody>
+</table>
+<p>關鍵洞察：sandbox 管「能不能碰」（OS 級隔離），permission 管「該不該做」（人類審批）。<code>--dangerously-skip-permissions</code> 拿掉的是第二層，而 Claude 又能用 <code>dangerouslyDisableSandbox</code> 繞過第一層——等於<strong>兩層都沒了</strong>。</p>
+<h3 id="vs">白名單 vs 黑名單策略<a class="headerlink" href="#vs" title="Permanent link">&para;</a></h3>
+<p>想用「全開 + 黑名單攔危險操作」（透過 PreToolUse hook）的做法有根本性問題：</p>
+<ul>
+<li><strong>白名單漏掉</strong> → 多按一次確認（小麻煩）</li>
+<li><strong>黑名單漏掉</strong> → 直接執行，沒有第二次機會（不可逆）</li>
+</ul>
+<p>黑名單無法窮舉所有危險操作：<code>curl -X POST</code>、<code>python -c "import requests; ..."</code>、新工具出現等都可能繞過關鍵字檢查。</p>
 <h3 id="_4">實務建議<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>對個人方案用戶，最佳平衡點是 <strong>Accept Edits + 適當的 sandbox 白名單</strong>：
-- 檔案編輯不被打斷
-- Bash 指令在 sandbox 白名單內自動通過，超出範圍才確認
-- 被 sandbox 擋住時用 <code>dangerouslyDisableSandbox</code> 單次重試即可</p>
+<p>對個人方案用戶，最佳平衡點是 <strong>Accept Edits + <code>autoAllowBashIfSandboxed</code> + PreToolUse hook</strong>：</p>
+<ul>
+<li><strong>Accept Edits</strong>：檔案編輯不被打斷（最高頻操作）</li>
+<li><strong><code>autoAllowBashIfSandboxed: true</code></strong>：sandbox 內的 Bash 自動通過</li>
+<li><strong>PreToolUse hook</strong>：Read / Glob / Grep / WebSearch / WebFetch 自動放行</li>
+<li><strong>結果</strong>：日常 90%+ 的操作零確認，只有跨出 sandbox 的危險操作（git push、wrangler deploy、外部 API 呼叫）才需要人工確認</li>
+</ul>
+<p>這個組合的效果等同「全開 + 危險攔截」，但安全方向是白名單（fail-safe）而非黑名單（fail-open）。不需要 <code>--dangerously-skip-permissions</code>。</p>
 
 
 
