@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/system-design-decentralized-nsfw-platform/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/dev-tools-github-branch-protection-free-plan/">
       
       
-        <link rel="prev" href="../system-design-data-pipeline-kv-vs-git-push/">
+        <link rel="prev" href="../dev-tools-uv-run-project-flag/">
       
       
-        <link rel="next" href="../system-design-gmail-digest-architecture/">
+        <link rel="next" href="../web-bootstrap-4-to-5-migration/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>去平台化成人內容社群：技術可行，瓶頸在金流與法律 - Mars 的知識庫</title>
+        <title>GitHub Branch Protection：Free 方案限制與 Solo 開發者實用設定 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              去平台化成人內容社群：技術可行，瓶頸在金流與法律
+              GitHub Branch Protection：Free 方案限制與 Solo 開發者實用設定
             
           </span>
         </div>
@@ -599,6 +599,8 @@
                 
   
   
+    
+  
   
   
     
@@ -608,11 +610,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -633,7 +635,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -872,10 +874,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../dev-tools-github-branch-protection-free-plan/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Branch Protection：Free 方案限制與 Solo 開發者實用設定
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -891,6 +918,85 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整的 protection 設定組合
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-trigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow trigger 注意事項
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Private Repo 的替代策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2034,8 +2140,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2045,11 +2149,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
         
           
           <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
@@ -2070,7 +2174,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2141,35 +2245,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    去平台化成人內容社群：技術可行，瓶頸在金流與法律
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../system-design-decentralized-nsfw-platform/" class="md-nav__link">
         
   
   
@@ -2185,85 +2264,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        現有技術方案比較
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        核心洞察：問題不在技術層
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        比較可行的折衷模式
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2948,10 +2948,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#protection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        現有技術方案比較
+        完整的 protection 設定組合
       
     </span>
   </a>
@@ -2959,10 +2959,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#workflow-trigger" class="md-nav__link">
     <span class="md-ellipsis">
       
-        核心洞察：問題不在技術層
+        Workflow trigger 注意事項
       
     </span>
   </a>
@@ -2970,10 +2970,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#private-repo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        比較可行的折衷模式
+        Private Repo 的替代策略
       
     </span>
   </a>
@@ -3006,79 +3006,94 @@
       
       
       
-        <a href="../../tags/#tag:monetization" class="md-tag">monetization</a>
+        <a href="../../tags/#tag:ci-cd" class="md-tag">ci-cd</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:security" class="md-tag">security</a>
+        <a href="../../tags/#tag:git" class="md-tag">git</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:system-design" class="md-tag">system-design</a>
+        <a href="../../tags/#tag:github-actions" class="md-tag">github-actions</a>
       
     
   </nav>
 
 
 
-  <h1>去平台化成人內容社群：技術可行，瓶頸在金流與法律</h1>
+  <h1>GitHub Branch Protection：Free 方案限制與 Solo 開發者實用設定</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>技術面完全可行</strong>：ActivityPub（Mastodon）、IPFS/Arweave、Nostr 等協議都已證明可以承載 NSFW 內容，Mastodon 上已有運作中的 NSFW instance</li>
-<li><strong>真正的瓶頸是金流</strong>：Visa/Mastercard 會直接對平台施壓（OnlyFans 2021 事件），加密貨幣支付可繞過但大幅降低用戶基數和創作者收入穩定性</li>
-<li><strong>法律責任無法去中心化</strong>：年齡驗證、CSAM 過濾需要可歸責主體，大多數國家法律要求有人負責。每個 node 營運者都可能承擔法律風險</li>
-<li><strong>內容審核兩難</strong>：完全無審核 → 非法內容湧入 → 執法關注 → 污名化整個網路；有審核 → 需要人力成本 → 回到「誰來管」的老問題</li>
-<li><strong>務實方向是聯邦式架構</strong>：每個 instance 有自己的規則和法律主體，內容可跨 instance 流通，兼顧去中心化與合規</li>
+<li><strong>GitHub Free 方案的 private repo 無法設定 branch protection</strong>，API 回 403 "Upgrade to GitHub Pro"。只有 public repo 可免費使用</li>
+<li>Branch protection 的核心不是「禁止 push」，而是<strong>禁止不合格的變更進入 main</strong>——需搭配「禁止直接 push」+「require status checks」才完整</li>
+<li>Solo 開發者最值得開的兩項：<strong>禁止 force push</strong>（防手滑毀歷史）和 <strong>require status checks</strong>（讓 CI 真正成為守門員）</li>
+<li>Workflow 必須有 <code>pull_request</code> trigger，branch protection 的 status check 才能偵測到 CI 結果</li>
+<li>若 private repo 無法設 protection，替代方案是透過工作流程規範（如 CLAUDE.md 的「push 必須確認」）來補償</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">現有技術方案比較<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>檢查了所有 GitHub repo 的 branch protection 狀態，發現大部分 private repo 顯示「有保護」其實是誤判——API 回 403 並非「有保護」，而是「Free 方案不支援」。</p>
+<h3 id="protection">完整的 protection 設定組合<a class="headerlink" href="#protection" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>技術</th>
-<th>優勢</th>
-<th>限制</th>
+<th>設定</th>
+<th>效果</th>
+<th>重要性</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>ActivityPub/Mastodon</td>
-<td>已有成熟生態、聯邦式治理</td>
-<td>Instance 營運者仍需承擔法律責任</td>
+<td>Restrict direct push</td>
+<td>所有改動必須走 PR</td>
+<td>高</td>
 </tr>
 <tr>
-<td>IPFS/Arweave</td>
-<td>內容無法被單一平台下架</td>
-<td>也無法下架非法內容，法律風險極高</td>
+<td>Require status checks to pass</td>
+<td>merge 前 CI 必須綠燈</td>
+<td>高</td>
 </tr>
 <tr>
-<td>Nostr</td>
-<td>純 relay 架構、無中央審核</td>
-<td>金流整合困難、discovery 弱</td>
+<td>Require branches to be up to date</td>
+<td>merge 前必須 rebase 到最新 main</td>
+<td>中</td>
+</tr>
+<tr>
+<td>Disallow force push</td>
+<td>禁止 <code>git push --force</code> 覆蓋歷史</td>
+<td>高</td>
+</tr>
+<tr>
+<td>Disallow deletion</td>
+<td>禁止刪除 main branch</td>
+<td>低</td>
+</tr>
+<tr>
+<td>Require PR review</td>
+<td>需要 reviewer 批准（solo 通常設 bypass）</td>
+<td>低（solo）</td>
 </tr>
 </tbody>
 </table>
-<h3 id="_4">核心洞察：問題不在技術層<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>成人內容平台被「去平台化」的壓力來源：</p>
-<ol>
-<li><strong>金流管道</strong>（Visa/Mastercard）— 有權拒絕為特定類型商家處理交易</li>
-<li><strong>法律合規</strong>（各國法規）— 要求平台主動過濾非法內容並有可歸責主體</li>
-<li><strong>App Store 政策</strong>（Apple/Google）— 禁止 NSFW 內容的 app 上架</li>
-</ol>
-<p>這三個都不是純技術能解決的問題，所以 IPFS、blockchain 等技術方案只解決了「內容儲存」，沒解決「可持續營運」。</p>
-<h3 id="_5">比較可行的折衷模式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>聯邦式架構</strong>（Mastodon 模式）：分散法律風險，每個 instance 自行決定合規策略</li>
-<li><strong>創作者自主託管 + 聚合發現層</strong>：內容在創作者自己的空間，平台只做索引</li>
-<li><strong>多平台分散風險</strong>：不依賴單一平台，但也不完全去中心化</li>
-</ul>
+<p>光設 status checks 但沒擋直接 push，還是可以繞過——兩者要一起開。</p>
+<h3 id="workflow-trigger">Workflow trigger 注意事項<a class="headerlink" href="#workflow-trigger" title="Permanent link">&para;</a></h3>
+<p>若要讓 protection 的 status check 生效，GitHub Actions workflow 必須包含 <code>pull_request</code> trigger：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">on</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span><span class="w">      </span><span class="c1"># 不能少，否則 protection 偵測不到 check</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<h3 id="private-repo">Private Repo 的替代策略<a class="headerlink" href="#private-repo" title="Permanent link">&para;</a></h3>
+<p>GitHub Pro 月費 $4，若不想付費，private repo 的防線就靠流程規範：
+- push 前人工確認（如 CLAUDE.md 的「必須確認」層級）
+- CI 仍有價值（push 後通知失敗），只是無法擋住 merge</p>
 
 
 
