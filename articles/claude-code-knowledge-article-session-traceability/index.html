@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/general-anthropic-tos-oauth-ban-2026/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/claude-code-knowledge-article-session-traceability/">
       
       
-        <link rel="prev" href="../general-knowledge-base-tagging/">
+        <link rel="prev" href="../claude-code-skill-as-workflow-gate/">
       
       
-        <link rel="next" href="../general-portable-ai-agent-ecosystem-2026/">
+        <link rel="next" href="../dev-tools-stt-services-and-postprocessing/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Anthropic 2026 年 TOS 更新：訂閱 OAuth 禁用於第三方工具 - Mars 的知識庫</title>
+        <title>知識庫文章與對話的 Session ID 可追溯性 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Anthropic 2026 年 TOS 更新：訂閱 OAuth 禁用於第三方工具
+              知識庫文章與對話的 Session ID 可追溯性
             
           </span>
         </div>
@@ -318,6 +318,8 @@
                 
   
   
+    
+  
   
   
     
@@ -327,11 +329,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -352,7 +354,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -591,10 +593,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../claude-code-knowledge-article-session-traceability/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    知識庫文章與對話的 Session ID 可追溯性
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -610,6 +637,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        批次回填既有文章的技巧
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs-material-template-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MkDocs Material Template Override
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1133,8 +1222,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1144,11 +1231,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -1169,7 +1256,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1352,35 +1439,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Anthropic 2026 年 TOS 更新：訂閱 OAuth 禁用於第三方工具
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../general-anthropic-tos-oauth-ban-2026/" class="md-nav__link">
         
   
   
@@ -1396,79 +1458,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        合規判斷表
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#claude-bot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        第三方 Claude Bot 的計費模式
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        個人使用的灰色地帶
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2989,7 +2978,18 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        背景
+        批次回填既有文章的技巧
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs-material-template-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MkDocs Material Template Override
       
     </span>
   </a>
@@ -3000,29 +3000,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        合規判斷表
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#claude-bot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        第三方 Claude Bot 的計費模式
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        個人使用的灰色地帶
+        背景
       
     </span>
   </a>
@@ -3051,90 +3029,50 @@
       
       
       
-        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
+        <a href="../../tags/#tag:knowledge-management" class="md-tag">knowledge-management</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:oauth" class="md-tag">oauth</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:security" class="md-tag">security</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:system-design" class="md-tag">system-design</a>
+        <a href="../../tags/#tag:mkdocs" class="md-tag">mkdocs</a>
       
     
   </nav>
 
 
 
-  <h1>Anthropic 2026 年 TOS 更新：訂閱 OAuth 禁用於第三方工具</h1>
+  <h1>知識庫文章與對話的 Session ID 可追溯性</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>2026/01/09 起，Anthropic 在伺服器端封鎖訂閱制 OAuth token 用於非官方產品；2026/02/17-19 正式寫入 TOS</li>
-<li><strong>TOS 3.7 核心規則</strong>：禁止透過自動化或非人類方式存取服務，除非透過 API Key 或 Anthropic 明確允許的方式（官方 Claude Code CLI、claude.ai）</li>
-<li><strong>Agent SDK + 訂閱 OAuth 也被禁止</strong>——TOS 明確寫了「including the Agent SDK」，即使它是 Anthropic 官方套件</li>
-<li><strong>官方 Claude Code CLI 二進位檔</strong>（<code>claude</code> 指令）明確豁免，用訂閱跑 <code>claude --print</code> 或 <code>--output-format stream-json</code> 等自動化用法完全合規</li>
-<li>違規後果：帳號暫停/封鎖，且 OAuth token 會在技術層面被伺服器拒絕</li>
+<li>每篇知識庫文章在 frontmatter 加上 <code>session_id</code>，記錄產出該文章的 Claude Code 對話 UUID</li>
+<li>回看原始對話：<code>claude --resume &lt;session_id&gt;</code></li>
+<li><code>/save-knowledge</code> skill 已內建自動取得當前 session ID 的步驟，不需手動操作</li>
+<li>MkDocs Material template override 在文章底部顯示 <code>📎 源對話：claude --resume &lt;session_id&gt;</code>，方便從網頁直接複製指令</li>
+<li>Session ID 是本機 UUID，僅對本機有意義，公開無安全風險</li>
 </ul>
-<h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>OpenClaw、NanoClaw 等第三方工具讓用戶用訂閱跑無限量 agentic workload，繞過 API 按量計費，導致 Anthropic 虧損。因此一刀切封鎖所有訂閱 OAuth 在非官方產品的使用。</p>
-<h2 id="_3">合規判斷表<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>使用方式</th>
-<th>是否允許</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>claude.ai 網頁</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>官方 Claude Code CLI（含 subprocess 呼叫）</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>API Key（Console 或雲端供應商）</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>OpenRouter 等按 token 計費的中繼</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Agent SDK + 訂閱 OAuth</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>第三方工具用訂閱 OAuth（OpenClaw、Cline、RooCode）</td>
-<td>❌</td>
-</tr>
-</tbody>
-</table>
-<h2 id="claude-bot">第三方 Claude Bot 的計費模式<a class="headerlink" href="#claude-bot" title="Permanent link">&para;</a></h2>
+<h2 id="_2">批次回填既有文章的技巧<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>67 篇既有文章透過以下策略自動配對 session ID：</p>
 <ol>
-<li><strong>BYOK（Bring Your Own Key）</strong>：用戶自備 API Key，直接付 Anthropic 按 token 計費 ✅</li>
-<li><strong>平台代付 API</strong>：平台方拿自己的 API Key，用戶付錢給平台（加價轉賣）✅</li>
-<li><strong>偷用訂閱 OAuth</strong>：讓用戶用 Pro/Max 訂閱登入，工具抽 OAuth token 打 API ❌</li>
+<li><strong>取得每篇文章的 git commit 訊息與時間戳</strong>（<code>git log -1 --format="%at|%s" -- &lt;article&gt;</code>）</li>
+<li><strong>用 commit 訊息在 session JSONL 中搜尋</strong>（<code>grep -l "&lt;commit_msg&gt;" ~/.claude/projects/&lt;project&gt;/*.jsonl</code>）</li>
+<li><strong>用時間戳篩選正確 session</strong> — 優先選 commit 後 1 小時內修改的 JSONL 檔</li>
+<li><strong>內容驗證</strong> — 確認 session JSONL 中包含該文章檔名（出現次數 &gt; 0 才算配對成功）</li>
 </ol>
-<h2 id="_4">個人使用的灰色地帶<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>如果只是個人在自己電腦上用 Agent SDK 遙控 Claude CLI（例如透過 Discord/Telegram），實際被封殺的機率極低——Anthropic 的執法目標是大規模濫用。但 TOS 文字確實涵蓋了這種用法。</p>
-<p><strong>最安全的替代方案</strong>：將 Agent SDK 呼叫改為直接 subprocess 呼叫 <code>claude</code> CLI 二進位檔，功能幾乎等價（CLI 支援 <code>--output-format stream-json</code> 串流、<code>--allowedTools</code> 權限控制、<code>--resume</code> session 續接），且 TOS 明確允許。</p>
+<p>結果：67 篇全部配對成功，其中 62 篇時間精確、5 篇時間模糊但內容驗證通過。</p>
+<h2 id="mkdocs-material-template-override">MkDocs Material Template Override<a class="headerlink" href="#mkdocs-material-template-override" title="Permanent link">&para;</a></h2>
+<p>在文章底部顯示 session 資訊的最簡做法：</p>
+<ul>
+<li>建立 <code>docs/overrides/main.html</code>，用 <code>{% extends "base.html" %}</code> 覆寫 <code>content</code> block</li>
+<li>透過 <code>page.meta.session_id</code> 讀取 frontmatter 的 session ID</li>
+<li><code>mkdocs.yml</code> 加上 <code>custom_dir: docs/overrides</code></li>
+<li>CSS 用 <code>user-select: all</code> 讓使用者一鍵全選指令文字</li>
+</ul>
+<h2 id="_3">背景<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>知識庫文章是從對話中萃取的摘要，但有時需要回看完整對話脈絡（例如確認取捨的討論過程、查看被省略的細節）。加上 session ID 後，文章與原始對話之間有了明確的連結，不再需要靠記憶或搜尋來找對話。</p>
+<p>配對策略利用了 Claude Code 的兩個特性：(1) <code>/save-knowledge</code> 的 git commit 訊息包含文章標題，(2) session JSONL 完整記錄了所有工具呼叫，包括 git commit 的輸出。兩者交叉比對就能精確定位。</p>
 
 
 
@@ -3153,7 +3091,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 93f43407-d9cd-4f6f-bf80-9dd30970874f</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume afc24c7e-d31e-48d1-a35b-8032b0d830e5</code></p>
 </div>
 
 
