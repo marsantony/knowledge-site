@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ super() }}
+{% if page.meta and page.meta.session_id %}
+<div class="session-reference">
+  <p class="session-text">📎 源對話：<code>claude --resume {{ page.meta.session_id }}</code></p>
+</div>
+{% endif %}
+{% endblock %}
