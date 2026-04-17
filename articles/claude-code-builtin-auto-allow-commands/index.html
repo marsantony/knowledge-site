@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/web-mkdocs-material-custom-neumorphic-theme/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/claude-code-builtin-auto-allow-commands/">
       
       
-        <link rel="prev" href="../web-chrome-extension-realtime-subtitles/">
+        <link rel="prev" href="../claude-code-permission-modes/">
       
       
-        <link rel="next" href="../general-claude-cowork-guide/">
+        <link rel="next" href="../claude-code-skill-as-workflow-gate/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>MkDocs Material 自訂 Neumorphic 主題：完整適配指南 - Mars 的知識庫</title>
+        <title>Claude Code 內建 auto-allow 指令清單：別浪費 allowlist 重複宣告 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MkDocs Material 自訂 Neumorphic 主題：完整適配指南
+              Claude Code 內建 auto-allow 指令清單：別浪費 allowlist 重複宣告
             
           </span>
         </div>
@@ -318,6 +318,8 @@
                 
   
   
+    
+  
   
   
     
@@ -327,11 +329,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -352,7 +354,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -563,10 +565,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../claude-code-builtin-auto-allow-commands/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code 內建 auto-allow 指令清單：別浪費 allowlist 重複宣告
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -582,6 +609,118 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-allow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        內建 auto-allow 清單（不需手動加）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allowlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        禁止 allowlist 的類型（即使唯讀）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allowlist_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        值得 allowlist 的範例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 寫法技巧
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 的真實故事
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分析來源
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1020,8 +1159,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1031,11 +1168,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -1056,7 +1193,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1155,35 +1292,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MkDocs Material 自訂 Neumorphic 主題：完整適配指南
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../web-mkdocs-material-custom-neumorphic-theme/" class="md-nav__link">
         
   
   
@@ -1199,96 +1311,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        設計哲學適配原則
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hard-border-vs-soft-shadow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        核心判斷：hard border vs soft shadow
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mkdocs-material-css" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MkDocs Material CSS 覆寫架構
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#css-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        關鍵 CSS Variables
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3183,43 +3205,65 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#auto-allow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        內建 auto-allow 清單（不需手動加）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allowlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        禁止 allowlist 的類型（即使唯讀）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allowlist_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        值得 allowlist 的範例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 寫法技巧
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 的真實故事
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        設計哲學適配原則
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hard-border-vs-soft-shadow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        核心判斷：hard border vs soft shadow
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mkdocs-material-css" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MkDocs Material CSS 覆寫架構
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#css-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        關鍵 CSS Variables
+        分析來源
       
     </span>
   </a>
@@ -3253,123 +3297,127 @@
       
       
       
-        <a href="../../tags/#tag:css" class="md-tag">css</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:mkdocs" class="md-tag">mkdocs</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:static-site-generator" class="md-tag">static-site-generator</a>
+        <a href="../../tags/#tag:security" class="md-tag">security</a>
       
     
   </nav>
 
 
 
-  <h1>MkDocs Material 自訂 Neumorphic 主題：完整適配指南</h1>
+  <h1>Claude Code 內建 auto-allow 指令清單：別浪費 allowlist 重複宣告</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>MkDocs Material 的色彩系統靠 CSS variables（<code>--md-primary-fg-color</code>、<code>--md-default-bg-color</code> 等）控制，用 <code>[data-md-color-scheme="default"]</code> / <code>[data-md-color-scheme="slate"]</code> 分別覆寫 light/dark mode</li>
-<li>palette 設為 <code>primary: custom</code> + <code>accent: custom</code> 可完全由 CSS 接管色彩，避免內建 preset 覆蓋自訂值</li>
-<li><strong>Dark mode 必須完整設計</strong>——只設 CSS variables 不夠，每個元件（cards、tags、code blocks、search、header）都需要獨立的 dark mode 樣式規則，否則會 fallback 到 Material 預設的邊框/平色</li>
-<li>Tags plugin 需要 <code>tags_file: tags.md</code> 設定才會渲染標籤索引頁，否則頁面會是空的</li>
-<li>Sidebar sticky 延遲吸附的修法：<code>.md-main__inner { margin-top: 0 }</code> + <code>.md-content__inner { padding-top: 1.2rem }</code></li>
+<li>Claude Code 內建一份<strong>無需 allowlist 就自動放行的唯讀指令清單</strong>，常見的 <code>cat</code>/<code>ls</code>/<code>grep</code>/<code>find</code>/<code>cd</code>/<code>echo</code> 等都在其中</li>
+<li><code>git</code> 和 <code>gh</code> 的所有唯讀子指令（view / list / log / show / diff / status / branch / api GET 等）全部自動放行</li>
+<li>真正需要手動加入 <code>.claude/settings.json</code> 的只有<strong>內建清單外的唯讀指令</strong>（例如 <code>crontab -l</code>、某些 <code>dotnet --list-*</code>）</li>
+<li><strong>禁止 allowlist 的類型</strong>：任意程式碼執行（<code>python -c</code>、<code>bash -c</code>、<code>npx *</code>、<code>uv run *</code>、<code>node</code>、<code>eval</code>、<code>ssh</code> 等）— 政策層面不該加</li>
+<li>高頻 Bash 指令做過分析後，大部分都是「已內建 auto-allow」或「非唯讀/任意執行」，真正值得加的很少（常見不到 5 條）</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>將個人首頁（marsantony.github.io）的 Silver Neumorphism 設計哲學移植到 MkDocs Material 知識庫網站。過程中踩到多個坑。</p>
-<h3 id="_3">設計哲學適配原則<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>同一設計語言在不同 context 的表達方式不同：</p>
+<p><code>/less-permission-prompts</code> skill 掃描最近 50 份 transcript 做 Bash 呼叫頻率分析，產出 allowlist 建議。實測 50 份對話中，高頻項目（count ≥ 3）大多落入以下三類：</p>
+<ol>
+<li><strong>已內建 auto-allow</strong> — 不需加，加了也沒效果</li>
+<li><strong>非唯讀</strong>（<code>rm -rf</code>、<code>mkdir</code>、<code>dotnet test|build</code>、<code>npm install</code>）— 不該加</li>
+<li><strong>任意程式碼執行</strong>（<code>npx wrangler kv *</code>、<code>uv run *</code>、<code>python3 -c *</code>）— 政策禁止加</li>
+</ol>
+<p>結果 50 份 transcript 通常只找出 1~2 條值得加的規則，避免盲目擴張 allowlist。</p>
+<h3 id="auto-allow">內建 auto-allow 清單（不需手動加）<a class="headerlink" href="#auto-allow" title="Permanent link">&para;</a></h3>
+<p><strong>任何參數都放行</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cat, head, tail, wc, stat, strings, hexdump, od, nl,
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>id, uname, free, df, du, locale, groups, nproc,
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>basename, dirname, realpath, cut, paste, tr, column,
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>tac, rev, fold, expand, unexpand, fmt, comm, cmp,
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>numfmt, readlink, diff, true, false, sleep,
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>which, type, expr, test, getconf, seq, tsort, pr,
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>echo, printf, ls, cd, find
+</code></pre></div></p>
+<p><strong>零參數才放行</strong>：<code>pwd</code>、<code>whoami</code>、<code>alias</code></p>
+<p><strong>帶安全 flag 才放行</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>xargs, file, sed (唯讀表達式), sort, man, help,
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>netstat, ps, base64, grep, egrep, fgrep,
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>sha256sum, sha1sum, md5sum, tree, date, hostname,
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>info, lsof, pgrep, tput, ss, fd, fdfind,
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>rg, jq, uniq, history, arch, ifconfig, pyright
+</code></pre></div></p>
+<p><strong>Git 唯讀子指令（全部放行）</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git status, git log, git diff, git show, git blame,
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git branch, git tag, git remote, git ls-files,
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>git ls-remote, git config --get, git rev-parse,
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>git describe, git stash list, git reflog, git shortlog,
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>git cat-file, git for-each-ref, git worktree list
+</code></pre></div></p>
+<p><strong>gh 唯讀子指令（全部放行）</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>gh pr view|list|diff|checks|status,
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>gh issue view|list|status,
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>gh run view|list,
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>gh workflow list|view,
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>gh repo view,
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>gh release view|list,
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>gh api (僅 GET),
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>gh auth status
+</code></pre></div></p>
+<p><strong>Docker 唯讀</strong>：<code>docker ps</code>、<code>docker images</code>、<code>docker logs</code>、<code>docker inspect</code></p>
+<h3 id="allowlist">禁止 allowlist 的類型（即使唯讀）<a class="headerlink" href="#allowlist" title="Permanent link">&para;</a></h3>
+<p>以下是「等同任意程式碼執行」的類型，<strong>絕對不能</strong> allowlist（一條 <code>Bash(python3:*)</code> 就等於完全放開）：</p>
+<ul>
+<li><strong>直譯器</strong>：<code>python</code>/<code>python3</code>、<code>node</code>、<code>bun</code>、<code>deno</code>、<code>ruby</code>、<code>perl</code>、<code>php</code>、<code>lua</code></li>
+<li><strong>Shell</strong>：<code>bash</code>、<code>sh</code>、<code>zsh</code>、<code>fish</code>、<code>eval</code>、<code>exec</code>、<code>ssh</code></li>
+<li><strong>套件執行器</strong>：<code>npx</code>、<code>bunx</code>、<code>uvx</code>、<code>uv run</code></li>
+<li><strong>Task-runner wildcards</strong>：<code>npm run *</code>、<code>yarn run *</code>、<code>pnpm run *</code>、<code>bun run *</code>、<code>make *</code>、<code>just *</code>、<code>cargo run *</code>、<code>go run *</code></li>
+<li>例外：<code>Bash(bun run typecheck)</code> 精確形式可以，<code>Bash(bun run *)</code> 不行</li>
+</ul>
+<h3 id="allowlist_1">值得 allowlist 的範例<a class="headerlink" href="#allowlist_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>設計元素</th>
-<th>首頁（單欄）</th>
-<th>MkDocs（三欄 + framework）</th>
+<th>Pattern</th>
+<th>原因</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Section label 底線</td>
-<td>全寬橫跨，自然分隔</td>
-<td>Sidebar 窄空間會變「盒中盒」，改用純字體處理</td>
+<td><code>Bash(crontab -l)</code></td>
+<td>唯讀、不在內建清單</td>
 </tr>
 <tr>
-<td>毛玻璃 header</td>
-<td>小型浮動 nav 適合</td>
-<td>全寬 header 太透明反而髒，改用實色 + 陰影</td>
+<td><code>Bash(crontab -l *)</code></td>
+<td>涵蓋 <code>crontab -l 2&gt;/dev/null</code> 等 redirect 變體</td>
 </tr>
 <tr>
-<td>Mouse glow / card radial</td>
-<td>JS 互動特色</td>
-<td>MkDocs 無法注入，放棄</td>
+<td><code>Bash(dotnet --list-sdks)</code></td>
+<td>唯讀、exact form</td>
 </tr>
 <tr>
-<td>Neumorphic shadow</td>
-<td>自由控制所有元素</td>
-<td>需要 <code>!important</code> 強制覆蓋 Material 預設 border</td>
+<td><code>Bash(dotnet --version)</code></td>
+<td>唯讀、exact form</td>
 </tr>
 </tbody>
 </table>
-<h3 id="hard-border-vs-soft-shadow">核心判斷：hard border vs soft shadow<a class="headerlink" href="#hard-border-vs-soft-shadow" title="Permanent link">&para;</a></h3>
-<p>Neumorphism 的本質是<strong>柔和的光影深度</strong>，不是硬邊線。在 sidebar 標題加 <code>border-bottom</code> 會違反設計原則——sidebar 本身就是一個視覺區域，標題只需要用字體（monospace + uppercase + muted color + spacing）建立層次即可。</p>
-<h3 id="mkdocs-material-css">MkDocs Material CSS 覆寫架構<a class="headerlink" href="#mkdocs-material-css" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docs/stylesheets/custom.css    ← extra_css 載入
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── Light mode variables       ← [data-md-color-scheme=&quot;default&quot;]
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── Light mode components      ← header, search, code, tags, cards...
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── Dark mode variables        ← [data-md-color-scheme=&quot;slate&quot;]
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── Dark mode components       ← 每個元件都要獨立處理
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── Layout fixes               ← sidebar sticky, spacing
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>└── Shared                     ← 兩種模式共用的排版規則
+<h3 id="pattern">Pattern 寫法技巧<a class="headerlink" href="#pattern" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Exact</strong>：<code>Bash(foo)</code> — 只匹配完全相等的指令</li>
+<li><strong>Prefix wildcard</strong>：<code>Bash(foo *)</code> — <strong><code>*</code> 前要有空格</strong>才會正確匹配 <code>foo bar</code>、<code>foo --flag</code> 等</li>
+<li><strong>整個 tool 放行</strong>：<code>Read</code>、<code>Grep</code>（但這已是內建行為，不需寫）</li>
+</ul>
+<h3 id="pattern_1">Pattern 的真實故事<a class="headerlink" href="#pattern_1" title="Permanent link">&para;</a></h3>
+<p>遇到帶 redirect 的指令（<code>crontab -l 2&gt;/dev/null</code>、<code>crontab -l 2&gt;&amp;1</code>），需要同時加 exact 和 prefix 兩條才能完整覆蓋：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;permissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;allow&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="s2">&quot;Bash(crontab -l)&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="s2">&quot;Bash(crontab -l *)&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p">]</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="css-variables">關鍵 CSS Variables<a class="headerlink" href="#css-variables" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Variable</th>
-<th>用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--md-default-bg-color</code></td>
-<td>頁面背景色</td>
-</tr>
-<tr>
-<td><code>--md-primary-fg-color</code></td>
-<td>Header 文字色</td>
-</tr>
-<tr>
-<td><code>--md-primary-bg-color</code></td>
-<td>Header 背景色</td>
-</tr>
-<tr>
-<td><code>--md-accent-fg-color</code></td>
-<td>強調色（連結、hover）</td>
-</tr>
-<tr>
-<td><code>--md-typeset-a-color</code></td>
-<td>連結色（需和 accent 同步）</td>
-</tr>
-<tr>
-<td><code>--md-code-bg-color</code></td>
-<td>程式碼區塊背景</td>
-</tr>
-<tr>
-<td><code>--md-footer-bg-color</code></td>
-<td>Footer 背景</td>
-</tr>
-</tbody>
-</table>
-<p>自訂 variables（用於 neumorphic shadow）：<code>--neu-dark</code>、<code>--neu-light</code>、<code>--neu-surface</code>、<code>--neu-raised</code>。</p>
+<h3 id="_3">分析來源<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Claude Code 的內建放行邏輯在兩個檔案：</p>
+<ul>
+<li><code>src/tools/BashTool/readOnlyValidation.ts</code> — <code>READONLY_COMMANDS</code>、<code>READONLY_NOARGS</code>、<code>READONLY_EXACT</code>、<code>COMMAND_ALLOWLIST</code></li>
+<li><code>src/utils/shell/readOnlyCommandValidation.ts</code> — <code>GIT_READ_ONLY_COMMANDS</code>、<code>GH_READ_ONLY_COMMANDS</code>、<code>DOCKER_READ_ONLY_COMMANDS</code>、<code>RIPGREP_READ_ONLY_COMMANDS</code>、<code>PYRIGHT_READ_ONLY_COMMANDS</code></li>
+</ul>
+<p>跑 <code>/less-permission-prompts</code> 時會自動比對這份清單，已內建的指令會被跳過。</p>
 
 
 
@@ -3388,7 +3436,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 34939177-b836-4426-a764-7c55ce218632</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume ff4df479-14bd-4d3e-b6fe-d8902da614e3</code></p>
 </div>
 
 

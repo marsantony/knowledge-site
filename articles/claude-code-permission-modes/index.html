@@ -16,7 +16,7 @@
         <link rel="prev" href="../claude-code-vscode-auto-attach-context/">
       
       
-        <link rel="next" href="../claude-code-skill-as-workflow-gate/">
+        <link rel="next" href="../claude-code-builtin-auto-allow-commands/">
       
       
         
@@ -717,6 +717,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#auto-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto Mode 的安全機制（深入）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effort-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effort Level（思考深度）設定
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -726,6 +748,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude-code-builtin-auto-allow-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code 內建 auto-allow 指令清單：別浪費 allowlist 重複宣告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -3308,6 +3358,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#auto-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto Mode 的安全機制（深入）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effort-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effort Level（思考深度）設定
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3596,6 +3668,46 @@
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>}
 </code></pre></div>
 <p>加入後，該工具的 Bash 指令會走 <code>autoAllowBashIfSandboxed</code> 自動通過，不再跳確認。遇到其他工具的類似問題時，同樣模式處理即可。</p>
+<h3 id="auto-mode">Auto Mode 的安全機制（深入）<a class="headerlink" href="#auto-mode" title="Permanent link">&para;</a></h3>
+<p>Auto mode 不是盲跑，而是「預設放行 + 動態風險攔截」，核心是背景分類器 + 兩層防護：</p>
+<p><strong>分類器本身</strong>
+- 用 Sonnet 4.6 作為分類器模型
+- <strong>關鍵設計</strong>：輸入只看「使用者訊息 + Claude 的工具呼叫」，<strong>刻意隔離 Claude 的回應內容與先前工具執行結果</strong>
+- 用意：讓惡意檔案內容、網頁 injection 無法影響分類結果（classifier 看不到那些內容）
+- 官方坦承無法 100% 安全：意圖模糊或 context 不足時會漏（false negative）；過度謹慎時會導向替代方案而非直接拒絕（false positive）</p>
+<p><strong>兩層防護架構</strong>
+- <strong>輸入層（Input guardrail）</strong>：掃描工具輸出（檔案讀取、網頁抓取、Shell 結果），偵測 injection 跡象（如偽裝指令），加警告標籤給主 agent
+- <strong>輸出層（Transcript classifier）</strong>：每次工具呼叫前評估，檢查三個維度 — <strong>任務範疇偏離</strong>、<strong>目標信任度</strong>、<strong>意圖轉變</strong>；高風險才回到權限提示</p>
+<p><strong>實務含意</strong>
+- Auto mode 仍會擋：下載執行程式、敏感資料外傳、production deploy、大量刪除、權限修改
+- 與 bypass mode 差別：bypass 是零防線，auto 有智能安全層
+- 不是零風險：隔離環境（Container/VM）跑 untrusted 任務仍建議用 <code>bypass + sandbox</code> 組合</p>
+<h3 id="effort-level">Effort Level（思考深度）設定<a class="headerlink" href="#effort-level" title="Permanent link">&para;</a></h3>
+<p>除了權限模式，<code>effortLevel</code> 控制模型的 reasoning budget，也可持久化：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;effortLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xhigh&quot;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>可用模型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>low</code> / <code>medium</code> / <code>high</code> / <code>max</code></td>
+<td>Opus 4.6、Sonnet 4.6</td>
+</tr>
+<tr>
+<td><code>xhigh</code></td>
+<td><strong>僅 Opus 4.7</strong>（Opus 4.7 預設就是 xhigh）</td>
+</tr>
+</tbody>
+</table>
+<p>CLI 替代：<code>claude --effort xhigh</code>；環境變數：<code>CLAUDE_CODE_EFFORT_LEVEL=xhigh</code>。</p>
+<p>Opus 4.7 若無特殊需求不用手動設，<code>xhigh</code> 是它的預設。</p>
 
 
 
@@ -3614,7 +3726,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 08d9ff44-4498-4a35-81ec-7d4b48b5f22a</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume ff4df479-14bd-4d3e-b6fe-d8902da614e3</code></p>
 </div>
 
 
