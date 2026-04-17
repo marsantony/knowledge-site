@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-nosql-database-types/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-csharp-oce-cancellation-patterns/">
       
       
-        <link rel="prev" href="../learning-advent-of-agents-evaluation/">
+        <link rel="prev" href="../learning-devops-ai-disruption-analysis/">
       
       
-        <link rel="next" href="../learning-probiotics-selection-guide/">
+        <link rel="next" href="../learning-csharp-inheritance-virtual-required/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>NoSQL 資料庫類型比較：Key-Value vs 文件型 - Mars 的知識庫</title>
+        <title>C# OperationCanceledException 完整處理模式：catch 順序、exception filter 與 CancellationToken 本質 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NoSQL 資料庫類型比較：Key-Value vs 文件型
+              C# OperationCanceledException 完整處理模式：catch 順序、exception filter 與 CancellationToken 本質
             
           </span>
         </div>
@@ -2450,35 +2450,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NoSQL 資料庫類型比較：Key-Value vs 文件型
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../learning-nosql-database-types/" class="md-nav__link">
         
   
   
@@ -2494,46 +2469,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2935,10 +2870,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../learning-csharp-oce-cancellation-patterns/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C# OperationCanceledException 完整處理模式：catch 順序、exception filter 與 CancellationToken 本質
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2954,6 +2914,118 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ct-c-catch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心誤解：ct 不會繞過 C# 的 catch 語法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼不 log、不留訊息？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三種可用的等價寫法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancellationtoken-readonly-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CancellationToken 是 readonly struct — 為什麼函式庫要創新的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OCE 家族繼承鏈
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        實務建議
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3101,6 +3173,78 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ct-c-catch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心誤解：ct 不會繞過 C# 的 catch 語法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼不 log、不留訊息？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三種可用的等價寫法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancellationtoken-readonly-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CancellationToken 是 readonly struct — 為什麼函式庫要創新的
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OCE 家族繼承鏈
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        實務建議
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3125,7 +3269,7 @@
       
       
       
-        <a href="../../tags/#tag:database" class="md-tag">database</a>
+        <a href="../../tags/#tag:csharp" class="md-tag">csharp</a>
       
     
       
@@ -3139,21 +3283,85 @@
 
 
 
-  <h1>NoSQL 資料庫類型比較：Key-Value vs 文件型</h1>
+  <h1>C# OperationCanceledException 完整處理模式：catch 順序、exception filter 與 CancellationToken 本質</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>NoSQL 是大分類，底下有 Key-Value（Redis）、文件型（Firestore/MongoDB）、寬欄型（Cassandra）、圖型（Neo4j）四種</li>
-<li><strong>Redis</strong>：資料存記憶體，&lt;1ms 回應，結構極簡（key→value），適合快取、速率限制、session；重啟可能遺失</li>
-<li><strong>Firestore</strong>：資料存硬碟，~10-50ms，支援巢狀 JSON 結構和條件查詢；永久保存，有免費額度（每天 50K 讀 / 20K 寫）</li>
-<li><strong>Firestore 的查詢速度保證</strong>：每個查詢必須有對應索引，沒索引就報錯不給查；因此查詢時間只跟結果數量成正比，跟總資料量無關</li>
-<li>Firestore 寫入時自動為每個欄位建立索引（拆散投影），document 本身反而像「全局索引」；代價是寫入比 RDBMS 更貴</li>
-<li>複合查詢（多欄位條件）需手動建複合索引；不支援 JOIN、GROUP BY、全文搜尋</li>
+<li><strong>傳 <code>CancellationToken</code> 只負責「拋」，catch 負責「接」</strong>——兩個獨立機制，傳 ct 不會幫你繞過 catch 語法</li>
+<li><code>catch (OperationCanceledException) { throw; }</code> 必要的場景：下游有 <code>catch (Exception ex)</code> 會把 OCE 吃掉，導致假 retry、假告警、髒 log</li>
+<li>更乾淨的等價寫法：<code>catch (Exception ex) when (ex is not OperationCanceledException)</code> — <strong>exception filter 在 stack unwind 前評估</strong>，不觸發 debugger 的 "exception caught" 事件</li>
+<li>OCE 不是錯誤，是<strong>正常控制流程</strong>。不該 log、不該告警。重啟服務本身就會產生 OCE，log 它只會污染監控</li>
+<li><code>CancellationToken</code> 是 <strong>readonly struct</strong>，第三方函式庫無法對你的 ct 追加條件（例如 timeout），只能用 <code>CreateLinkedTokenSource</code> 做出新的 token——所以函式庫拋的 OCE 裡的 <code>.CancellationToken</code> 可能不是你傳進去的那個</li>
+<li><code>OperationCanceledException</code> ← <code>TaskCanceledException</code>（繼承關係）。<code>Task.Delay</code>、<code>HttpClient</code> 拋的是子類 <code>TaskCanceledException</code>，catch 父類就能接到兩者</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>在討論 GetSteamStatus 的 in-memory 快取（ConcurrentDictionary）在多 instance 下會失效時，探討了外部化狀態的方案。</p>
-<p>GCP 上 Redis（Cloud Memorystore）沒有免費方案（~$35/月），Firestore 有慷慨的免費額度。對個人專案而言，Firestore 是更務實的選擇，即使速率限制場景 Redis 更精確。</p>
-<p>Firestore 的核心設計哲學是「寫入時多做事，查詢時少做事」，與 RDBMS（預設不建索引，寫入快但查詢可能掃全表）正好相反。這解釋了為什麼文件型 DB 能在不犧牲查詢速度的情況下支援彈性 schema。</p>
+<p>寫 .NET BackgroundService 的排程 retry 邏輯時，會頻繁遇到這個模式：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">try</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nf">DoWorkAsync</span><span class="p">(</span><span class="n">triggeredTime</span><span class="p">,</span><span class="w"> </span><span class="n">ct</span><span class="p">);</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">OperationCanceledException</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">throw</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">   </span><span class="c1">// ← 為什麼要寫這行？</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">logger</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Task failed...&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">attempt</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">_maxRetry</span><span class="p">)</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">SendFailureNotificationAsync</span><span class="p">(...);</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="n">_retryInterval</span><span class="p">,</span><span class="w"> </span><span class="n">ct</span><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
+</code></pre></div>
+<p>「我都有把 <code>ct</code> 一路傳下去了，為什麼還需要這個看起來多此一舉的 catch？」這是個很直覺的疑問，也是理解 C# 取消機制的關鍵切入點。</p>
+<h3 id="ct-c-catch">核心誤解：<code>ct</code> 不會繞過 C# 的 catch 語法<a class="headerlink" href="#ct-c-catch" title="Permanent link">&para;</a></h3>
+<p>C# 的 catch 匹配規則是<strong>由上往下照繼承鏈匹配</strong>。因為 <code>OperationCanceledException</code> 繼承自 <code>Exception</code>，沒有第一個 catch 攔截時：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w">   </span><span class="c1">// ← OCE 繼承自 Exception，會掉進這裡</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">logger</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Task failed...&quot;</span><span class="p">);</span><span class="w">          </span><span class="c1">// 假錯誤 log</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">attempt</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">_maxRetry</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nf">SendFailureNotificationAsync</span><span class="p">(...);</span><span class="w">    </span><span class="c1">// 假告警通知</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(...,</span><span class="w"> </span><span class="n">ct</span><span class="p">);</span><span class="w">                      </span><span class="c1">// 又拋 OCE，又被 catch...</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+</code></pre></div>
+<p>後果：服務關機時發出假失敗通知，延遲 graceful shutdown，污染 log。</p>
+<h3 id="log">為什麼不 log、不留訊息？<a class="headerlink" href="#log" title="Permanent link">&para;</a></h3>
+<p>OCE 只在一種情況發生：<strong>有人觸發了 <code>CancellationToken</code></strong>——在 BackgroundService 脈絡下就是 host 正在 shutdown（Ctrl+C、<code>systemctl stop</code>、<code>docker stop</code>、k8s 刪 Pod）。</p>
+<p>正常關機不是錯誤。如果在這裡 <code>logger.LogWarning(...)</code>，<strong>每次部署重啟都會噴一條 Warning</strong>，觸發告警、污染 log、on-call 被叫起來查不存在的問題。</p>
+<h3 id="_3">三種可用的等價寫法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><strong>Pattern A — 傳統雙 catch</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">OperationCanceledException</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">throw</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* retry 邏輯 */</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+可讀性最高，但 debugger 會在 <code>throw;</code> 觸發 "exception caught" 事件，且多一個什麼都沒做的 block。</p>
+<p><strong>Pattern B — Exception filter（<code>dotnet/runtime</code> 偏好）</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="n">ex</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">OperationCanceledException</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">logger</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Task failed...&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="c1">// retry 邏輯</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+</code></pre></div>
+<code>when</code> 在 <strong>stack unwind 之前</strong>評估。如果是 OCE，這個 catch <strong>根本不會進入</strong>，例外直接穿透往上走。</p>
+<p>優點：不觸發 debugger 的 "exception caught"、完整保留原始 stack trace、少一個 catch block。</p>
+<p><strong>Pattern C — 進場檢查搭配 filter</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ct</span><span class="p">.</span><span class="n">IsCancellationRequested</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">DoWorkAsync</span><span class="p">(</span><span class="n">ct</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="p">(</span><span class="n">ex</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">OperationCanceledException</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* retry */</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+在 retry 迴圈每輪開頭先檢查 ct，連進 try 都不進，省掉一次例外成本。</p>
+<h3 id="cancellationtoken-readonly-struct">CancellationToken 是 readonly struct — 為什麼函式庫要創新的<a class="headerlink" href="#cancellationtoken-readonly-struct" title="Permanent link">&para;</a></h3>
+<p>HttpClient、Polly 等函式庫常常在內部用 <code>CancellationTokenSource.CreateLinkedTokenSource(yourCt)</code> 再搭自己的 timeout token，產生一個<strong>新的</strong> linked token 傳給下游。</p>
+<p>原因：<code>CancellationToken</code> 是 readonly struct，你拿到它只能讀狀態，不能加條件。函式庫需要「你叫我停 OR 我 timeout 了」兩個條件 OR 起來，唯一做法就是做出新的 token。</p>
+<p><strong>後果</strong>：函式庫拋出 OCE 時，<code>ex.CancellationToken</code> 不一定是你傳進去的那個。這也是為什麼要區分「shutdown OCE」vs「timeout OCE」時，要比對 <code>ex.CancellationToken == myCt</code>，而不是直接 <code>catch (OperationCanceledException)</code>。</p>
+<h3 id="oce">OCE 家族繼承鏈<a class="headerlink" href="#oce" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Exception
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  └─ SystemException
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>       └─ OperationCanceledException    ← 有 .CancellationToken 屬性
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>            └─ TaskCanceledException     ← Task.Delay、HttpClient 拋這個
+</code></pre></div>
+<p><code>Task.Delay(ct)</code> 實際拋的是 <code>TaskCanceledException</code>，但因為它繼承自 OCE，<code>catch (OperationCanceledException)</code> 一樣接得到。</p>
+<h3 id="_4">實務建議<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>新程式碼優先用 Pattern B（exception filter）</li>
+<li>既有 Pattern A 的程式碼不急著改，可讀性差距不大</li>
+<li>絕對不要 <code>catch (Exception) { log }</code> 而不處理 OCE——這是最常見的 BackgroundService bug</li>
+<li>想區分「我的 ct 觸發」vs「別人的 ct 觸發」時用 <code>ex.CancellationToken == myCt</code> 比對</li>
+</ul>
 
 
 
@@ -3172,7 +3380,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 3537ae01-ae68-421e-b52b-df9d573cddf8</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 0026af16-9408-4ba5-8d03-312694ea79c2</code></p>
 </div>
 
 

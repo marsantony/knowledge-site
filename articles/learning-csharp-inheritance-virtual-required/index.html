@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-nosql-database-types/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-csharp-inheritance-virtual-required/">
       
       
-        <link rel="prev" href="../learning-advent-of-agents-evaluation/">
+        <link rel="prev" href="../learning-csharp-oce-cancellation-patterns/">
       
       
-        <link rel="next" href="../learning-probiotics-selection-guide/">
+        <link rel="next" href="../learning-dotnet-backgroundservice-testing-timeprovider/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>NoSQL 資料庫類型比較：Key-Value vs 文件型 - Mars 的知識庫</title>
+        <title>C# 繼承設計：資料型成員不該 virtual，改用 constructor required 參數 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NoSQL 資料庫類型比較：Key-Value vs 文件型
+              C# 繼承設計：資料型成員不該 virtual，改用 constructor required 參數
             
           </span>
         </div>
@@ -2450,35 +2450,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NoSQL 資料庫類型比較：Key-Value vs 文件型
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../learning-nosql-database-types/" class="md-nav__link">
         
   
   
@@ -2494,46 +2469,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2963,10 +2898,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../learning-csharp-inheritance-virtual-required/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C# 繼承設計：資料型成員不該 virtual，改用 constructor required 參數
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2982,6 +2942,129 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-of-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        問題：兩個 source of truth 會打架
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        資料型 vs 行為型的判斷準則
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        「用 virtual 當告示牌」是迷思
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-virtual-discoverability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用 required 取代 virtual 做 discoverability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-virtualreadonly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        語言限制：field 不能 virtual、readonly 不能在子類改
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refused-bequest-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refused Bequest：什麼時候該改 base，不該改子類
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primary-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary constructor 的取捨
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3101,6 +3184,89 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-of-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        問題：兩個 source of truth 會打架
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        資料型 vs 行為型的判斷準則
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        「用 virtual 當告示牌」是迷思
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-virtual-discoverability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用 required 取代 virtual 做 discoverability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-virtualreadonly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        語言限制：field 不能 virtual、readonly 不能在子類改
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refused-bequest-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refused Bequest：什麼時候該改 base，不該改子類
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primary-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary constructor 的取捨
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3125,7 +3291,7 @@
       
       
       
-        <a href="../../tags/#tag:database" class="md-tag">database</a>
+        <a href="../../tags/#tag:csharp" class="md-tag">csharp</a>
       
     
       
@@ -3139,21 +3305,113 @@
 
 
 
-  <h1>NoSQL 資料庫類型比較：Key-Value vs 文件型</h1>
+  <h1>C# 繼承設計：資料型成員不該 virtual，改用 constructor required 參數</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>NoSQL 是大分類，底下有 Key-Value（Redis）、文件型（Firestore/MongoDB）、寬欄型（Cassandra）、圖型（Neo4j）四種</li>
-<li><strong>Redis</strong>：資料存記憶體，&lt;1ms 回應，結構極簡（key→value），適合快取、速率限制、session；重啟可能遺失</li>
-<li><strong>Firestore</strong>：資料存硬碟，~10-50ms，支援巢狀 JSON 結構和條件查詢；永久保存，有免費額度（每天 50K 讀 / 20K 寫）</li>
-<li><strong>Firestore 的查詢速度保證</strong>：每個查詢必須有對應索引，沒索引就報錯不給查；因此查詢時間只跟結果數量成正比，跟總資料量無關</li>
-<li>Firestore 寫入時自動為每個欄位建立索引（拆散投影），document 本身反而像「全局索引」；代價是寫入比 RDBMS 更貴</li>
-<li>複合查詢（多欄位條件）需手動建複合索引；不支援 JOIN、GROUP BY、全文搜尋</li>
+<li><strong>「資料型」成員不需要 virtual；「行為型」成員才考慮 virtual</strong>——這是最關鍵的判斷準則</li>
+<li>資料型（排程時間、retry 次數、config 值）→ 透過 constructor 參數流動，子類 <code>: base(不同值)</code> 即可</li>
+<li>行為型（<code>DoWorkAsync</code>、<code>SendFailureNotificationAsync</code>）→ 才是 virtual 的適用場景</li>
+<li>用 virtual 當「告示牌」給繼承者看的想法是反模式：<code>virtual</code> 不是註解，它是功能性承諾（vtable slot、base class 要永遠容忍所有合理覆寫）</li>
+<li><strong>想讓繼承者知道「必須決定什麼」</strong> → 用 <code>required</code> 修飾 constructor 參數，編譯器會強制子類填</li>
+<li>Field 不能 <code>virtual</code>（沒有 vtable dispatch 機制）；想 virtual 只能放 property/method/indexer/event</li>
+<li><code>readonly</code> field 只能在<strong>宣告它的那個 class</strong> 的 constructor 初始化，子類 constructor 改不到——這是刻意的 immutability 保證</li>
+<li>子類大量 override 基底核心行為 = Fowler 點名的 <strong>Refused Bequest</strong> code smell，訊號是「該改 base，不是改子類」</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>在討論 GetSteamStatus 的 in-memory 快取（ConcurrentDictionary）在多 instance 下會失效時，探討了外部化狀態的方案。</p>
-<p>GCP 上 Redis（Cloud Memorystore）沒有免費方案（~$35/月），Firestore 有慷慨的免費額度。對個人專案而言，Firestore 是更務實的選擇，即使速率限制場景 Redis 更精確。</p>
-<p>Firestore 的核心設計哲學是「寫入時多做事，查詢時少做事」，與 RDBMS（預設不建索引，寫入快但查詢可能掃全表）正好相反。這解釋了為什麼文件型 DB 能在不犧牲查詢速度的情況下支援彈性 schema。</p>
+<p>設計 <code>BackgroundService</code> 的 base class 給多個排程任務繼承時，會遇到：每個子類排程時間不同、retry 策略不同、實際工作邏輯不同。很自然會想「那就把時間、retry 設定全部開 virtual 讓子類 override 啊」。</p>
+<p>實際動手後發現事情沒那麼單純。</p>
+<h3 id="source-of-truth">問題：兩個 source of truth 會打架<a class="headerlink" href="#source-of-truth" title="Permanent link">&para;</a></h3>
+<p>原本的設計：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Worker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BackgroundService</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">TimeOnly</span><span class="p">[]</span><span class="w"> </span><span class="n">_scheduledTimes</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">Worker</span><span class="p">(</span><span class="n">IOptions</span><span class="o">&lt;</span><span class="n">ScheduleOptions</span><span class="o">&gt;</span><span class="w"> </span><span class="n">options</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="n">_scheduledTimes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ParseTimes</span><span class="p">(</span><span class="n">options</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="n">Times</span><span class="p">);</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="n">TimeOnly</span><span class="p">[]</span><span class="w"> </span><span class="n">ScheduledTimes</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_scheduledTimes</span><span class="p">;</span><span class="w">    </span><span class="c1">// ← virtual 資料</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="n">TimeOnly</span><span class="p">[]</span><span class="w"> </span><span class="nf">ParseTimes</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">raw</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w">      </span><span class="c1">// ← virtual 解析</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
+</code></pre></div>
+<p>兩個覆寫入口會打架：子類 override <code>ScheduledTimes</code> 但 <code>_scheduledTimes</code> 還是走 base 的 <code>ParseTimes</code> 塞的值。這種「資料」跟「解析」兩條 virtual 路徑實際上是重疊的。</p>
+<h3 id="vs">資料型 vs 行為型的判斷準則<a class="headerlink" href="#vs" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>資料型成員（時間、次數、config 值）
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    → constructor 參數流動
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    → 子類 `: base(不同值)` 或自己塞 field
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    → 不需要任何 virtual 擴充點
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>行為型成員（DoWorkAsync、SendNotification）
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    → 定義抽象介面，base 提供預設實作
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    → 子類 override 改行為
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    → virtual / abstract 是合適的
+</code></pre></div>
+<h3 id="virtual">「用 virtual 當告示牌」是迷思<a class="headerlink" href="#virtual" title="Permanent link">&para;</a></h3>
+<p>直覺想法：「把 <code>ScheduledTimes</code> 開 virtual，繼承者看 base class 就知道這裡可以改。」</p>
+<p>實務上不這樣做：</p>
+<ol>
+<li><strong>virtual 不是註解，是功能性承諾</strong>：vtable slot、runtime dispatch（現代 JIT 大多會 devirtualize，但語意仍在）</li>
+<li><strong>Base class 要永遠容忍所有合理覆寫</strong>：一旦開放，所有實作細節都被迫變合約</li>
+<li><strong>可發現性有更好的工具</strong>：<code>required</code> 修飾 constructor 參數，編譯器直接強制你填</li>
+</ol>
+<h3 id="required-virtual-discoverability">用 <code>required</code> 取代 virtual 做 discoverability<a class="headerlink" href="#required-virtual-discoverability" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Worker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BackgroundService</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">TimeOnly</span><span class="p">[]</span><span class="w"> </span><span class="n">_scheduledTimes</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="nf">Worker</span><span class="p">(</span><span class="n">TimeOnly</span><span class="p">[]</span><span class="w"> </span><span class="n">scheduledTimes</span><span class="p">)</span><span class="w">     </span><span class="c1">// ← 抬到簽章</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="n">_scheduledTimes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scheduledTimes</span><span class="p">;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ReportWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Worker</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">{</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">ReportWorker</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">([</span><span class="k">new</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)])</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="c1">//                      ^^^^^ 編譯器強制你填，不翻 base class 也知道要填</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">}</span>
+</code></pre></div>
+<p>繼承者一打 <code>: base(</code> 就知道需要傳什麼，IDE 會自動提示參數名稱與型別。比 virtual property 的 discoverability 更強——因為這是<strong>編譯時期</strong>強制的，不填直接 CS error。</p>
+<h3 id="field-virtualreadonly">語言限制：field 不能 virtual、readonly 不能在子類改<a class="headerlink" href="#field-virtualreadonly" title="Permanent link">&para;</a></h3>
+<p>兩條 C# 規則常搞混：</p>
+<p><strong>Field 不能 virtual</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">protected</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="n">TimeOnly</span><span class="p">[]</span><span class="w"> </span><span class="n">_times</span><span class="p">;</span><span class="w">   </span><span class="c1">// ❌ CS0621</span>
+</code></pre></div>
+Field 沒有 dispatch 機制（直接讀記憶體 offset），要 polymorphism 必須走 method call。Property 本質上是 <code>get_Xxx()</code> / <code>set_Xxx()</code> 的語法糖，所以 property 可以 virtual。</p>
+<p><strong>readonly field 只能在宣告 class 的 constructor 改</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Base</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">TimeOnly</span><span class="p">[]</span><span class="w"> </span><span class="n">_times</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">}</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Derived</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Base</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">{</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">Derived</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">_times</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="k">new</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)];</span><span class="w"> </span><span class="p">}</span><span class="w">   </span><span class="c1">// ❌ CS0191</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
+</code></pre></div>
+這是刻意的 immutability 保證：跨越類別邊界後就不能修改。子類想客製化 → constructor 參數傳給 base，base 自己塞進自己的 readonly field。</p>
+<h3 id="refused-bequest-base">Refused Bequest：什麼時候該改 base，不該改子類<a class="headerlink" href="#refused-bequest-base" title="Permanent link">&para;</a></h3>
+<p>Fowler 在《Refactoring》點名的 smell：<strong>當子類大量 override 基底的核心行為，代表它不想繼承這些東西，抽象錯了。</strong></p>
+<p>情境：已有 <code>DailyUpdateServiceBase</code> 處理單一時間 + retry，三個子類運作正常。現在新需求是「某個子類要變成多時間」。</p>
+<p><strong>方案 1（只改子類）</strong>：在那個子類 override 排程+retry 邏輯
+- 等於從頭再做一次，為何還繼承？
+- Fowler 診斷：這是 Refused Bequest</p>
+<p><strong>方案 2（改 base）</strong>：把 base 的單一時間改成 array
+- 把單值當成「array 長度 = 1」的特例
+- 既有三個子類保持相容（用 <code>base(singleTime)</code> 包成 array）
+- 新子類傳 array</p>
+<p>業界慣例（Quartz.NET、Hangfire、ASP.NET Core）都是方案 2：<strong>成長出更一般化的基底</strong>。安全網是 characterization tests——先為既有三個子類寫行為快照測試，再改 base，確保既有行為不變。</p>
+<h3 id="primary-constructor">Primary constructor 的取捨<a class="headerlink" href="#primary-constructor" title="Permanent link">&para;</a></h3>
+<p>C# 12 primary constructor 很甜但有限制：<strong>class 沒有 body</strong>，所有初始化邏輯被逼進 field initializer。想要 <code>_scheduledTimes</code> 用 constructor 參數初始化 + 用 logger 記錄解析 warning：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">Worker</span><span class="p">(</span><span class="n">ILogger</span><span class="o">&lt;</span><span class="n">Worker</span><span class="o">&gt;</span><span class="w"> </span><span class="n">logger</span><span class="p">,</span><span class="w"> </span><span class="n">IOptions</span><span class="o">&lt;</span><span class="n">ScheduleOptions</span><span class="o">&gt;</span><span class="w"> </span><span class="n">options</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BackgroundService</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">TimeOnly</span><span class="p">[]</span><span class="w"> </span><span class="n">_scheduledTimes</span><span class="w"> </span><span class="o">=</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="n">ParseTimes</span><span class="p">(</span><span class="n">options</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="n">Times</span><span class="p">,</span><span class="w"> </span><span class="n">logger</span><span class="p">);</span><span class="w">   </span><span class="c1">// ← 必須 static，因為 field initializer 不能用 this</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">TimeOnly</span><span class="p">[]</span><span class="w"> </span><span class="nf">ParseTimes</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="o">?</span><span class="w"> </span><span class="n">raw</span><span class="p">,</span><span class="w"> </span><span class="n">ILogger</span><span class="o">&lt;</span><span class="n">Worker</span><span class="o">&gt;</span><span class="w"> </span><span class="n">logger</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="c1">//             ^^^^^^ 被迫 static，logger 要從外面傳進來</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
+</code></pre></div>
+<p>想要繼承 + <code>ParseTimes</code> 變 <code>protected virtual</code> + 直接用 <code>_logger</code> field → 只能放棄 primary constructor，用傳統寫法。取捨：簡潔（primary ctor）vs 可繼承性（傳統 ctor）。</p>
 
 
 
@@ -3172,7 +3430,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 3537ae01-ae68-421e-b52b-df9d573cddf8</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 0026af16-9408-4ba5-8d03-312694ea79c2</code></p>
 </div>
 
 

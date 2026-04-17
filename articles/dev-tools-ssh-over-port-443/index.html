@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-nosql-database-types/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/dev-tools-ssh-over-port-443/">
       
       
-        <link rel="prev" href="../learning-advent-of-agents-evaluation/">
+        <link rel="prev" href="../claude-code-knowledge-article-session-traceability/">
       
       
-        <link rel="next" href="../learning-probiotics-selection-guide/">
+        <link rel="next" href="../dev-tools-stt-services-and-postprocessing/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>NoSQL 資料庫類型比較：Key-Value vs 文件型 - Mars 的知識庫</title>
+        <title>SSH over Port 443：防火牆擋 Port 22 時的解法 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NoSQL 資料庫類型比較：Key-Value vs 文件型
+              SSH over Port 443：防火牆擋 Port 22 時的解法
             
           </span>
         </div>
@@ -627,6 +627,8 @@
                 
   
   
+    
+  
   
   
     
@@ -636,11 +638,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -661,7 +663,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -676,10 +678,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../dev-tools-ssh-over-port-443/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH over Port 443：防火牆擋 Port 22 時的解法
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -695,6 +722,85 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        設定方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-443" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼 SSH 不預設走 443
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全性比較
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2371,8 +2477,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2382,11 +2486,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
         
           
           <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
@@ -2407,7 +2511,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2450,35 +2554,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NoSQL 資料庫類型比較：Key-Value vs 文件型
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../learning-nosql-database-types/" class="md-nav__link">
         
   
   
@@ -2494,46 +2573,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3101,6 +3140,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        設定方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-443" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼 SSH 不預設走 443
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全性比較
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3125,35 +3203,51 @@
       
       
       
-        <a href="../../tags/#tag:database" class="md-tag">database</a>
+        <a href="../../tags/#tag:git" class="md-tag">git</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:system-design" class="md-tag">system-design</a>
+        <a href="../../tags/#tag:linux" class="md-tag">linux</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:security" class="md-tag">security</a>
       
     
   </nav>
 
 
 
-  <h1>NoSQL 資料庫類型比較：Key-Value vs 文件型</h1>
+  <h1>SSH over Port 443：防火牆擋 Port 22 時的解法</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>NoSQL 是大分類，底下有 Key-Value（Redis）、文件型（Firestore/MongoDB）、寬欄型（Cassandra）、圖型（Neo4j）四種</li>
-<li><strong>Redis</strong>：資料存記憶體，&lt;1ms 回應，結構極簡（key→value），適合快取、速率限制、session；重啟可能遺失</li>
-<li><strong>Firestore</strong>：資料存硬碟，~10-50ms，支援巢狀 JSON 結構和條件查詢；永久保存，有免費額度（每天 50K 讀 / 20K 寫）</li>
-<li><strong>Firestore 的查詢速度保證</strong>：每個查詢必須有對應索引，沒索引就報錯不給查；因此查詢時間只跟結果數量成正比，跟總資料量無關</li>
-<li>Firestore 寫入時自動為每個欄位建立索引（拆散投影），document 本身反而像「全局索引」；代價是寫入比 RDBMS 更貴</li>
-<li>複合查詢（多欄位條件）需手動建複合索引；不支援 JOIN、GROUP BY、全文搜尋</li>
+<li>WiFi / 防火牆封鎖 port 22 時，可改走 GitHub 提供的 <code>ssh.github.com:443</code>，連線協議仍是 SSH，安全性完全不變</li>
+<li>測試指令：<code>ssh -T -p 443 git@ssh.github.com</code></li>
+<li>在 <code>~/.ssh/config</code> 加入設定後，所有 <code>git@github.com:</code> 開頭的 remote 自動走 443，不需改任何 repo</li>
+<li>Port 443 在任何網路環境都能用（因為擋 443 等於擋 HTTPS），可以直接留著不還原</li>
+<li>首次連線會出現 host key 確認提示和 <code>Permanently added</code> warning，都是正常行為</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>在討論 GetSteamStatus 的 in-memory 快取（ConcurrentDictionary）在多 instance 下會失效時，探討了外部化狀態的方案。</p>
-<p>GCP 上 Redis（Cloud Memorystore）沒有免費方案（~$35/月），Firestore 有慷慨的免費額度。對個人專案而言，Firestore 是更務實的選擇，即使速率限制場景 Redis 更精確。</p>
-<p>Firestore 的核心設計哲學是「寫入時多做事，查詢時少做事」，與 RDBMS（預設不建索引，寫入快但查詢可能掃全表）正好相反。這解釋了為什麼文件型 DB 能在不犧牲查詢速度的情況下支援彈性 schema。</p>
+<p>在特定 WiFi 環境下，port 22 被封鎖導致 <code>git push</code> 失敗。GitHub 官方提供 <code>ssh.github.com:443</code> 作為替代方案，讓使用者在不切換 HTTPS remote 的情況下繼續用 SSH。</p>
+<h3 id="_3">設定方式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><code>~/.ssh/config</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Host github.com
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    Hostname ssh.github.com
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    Port 443
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    User git
+</code></pre></div>
+<p>還原方式：刪除 <code>~/.ssh/config</code>（如果原本沒有這個檔案）或移除上述區塊。</p>
+<h3 id="ssh-443">為什麼 SSH 不預設走 443<a class="headerlink" href="#ssh-443" title="Permanent link">&para;</a></h3>
+<p>Port 號由 IANA 標準分配：22 給 SSH、443 給 HTTPS。GitHub 的 <code>github.com:443</code> 已在跑 HTTPS 服務，無法同時跑 SSH，所以另開 <code>ssh.github.com:443</code> 處理。這是備案而非正規做法——如果所有人都走 443 跑 SSH，防火牆就無法靠 port 區分流量，port 機制會失去意義。</p>
+<h3 id="_4">安全性比較<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>Port 22 和 443 走的都是相同的 SSH 加密協議，差別只在傳輸埠號。沒有安全性上的差異，443 的優勢純粹是穿透力較強。</p>
 
 
 
@@ -3172,7 +3266,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 3537ae01-ae68-421e-b52b-df9d573cddf8</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 08d9ff44-4498-4a35-81ec-7d4b48b5f22a</code></p>
 </div>
 
 

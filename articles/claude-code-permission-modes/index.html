@@ -677,6 +677,17 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
+        預設模式持久化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         實務建議
       
     </span>
@@ -832,6 +843,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-tools-ssh-over-port-443/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH over Port 443：防火牆擋 Port 22 時的解法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2464,6 +2503,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-design-dotnet-backgroundservice-retry-yield/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    .NET BackgroundService 多時間點排程 + Retry 讓位機制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2969,6 +3036,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-csharp-oce-cancellation-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C# OperationCanceledException 完整處理模式：catch 順序、exception filter 與 CancellationToken 本質
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-csharp-inheritance-virtual-required/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C# 繼承設計：資料型成員不該 virtual，改用 constructor required 參數
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-dotnet-backgroundservice-testing-timeprovider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    .NET BackgroundService 排程測試：TimeProvider + FakeTimeProvider 讓 8 小時測試變毫秒
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3117,6 +3268,17 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
+        預設模式持久化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         實務建議
       
     </span>
@@ -3187,6 +3349,7 @@
 <li>Claude Code 有兩層安全機制：<strong>Sandbox</strong>（OS 級的檔案/網路隔離）和 <strong>Permission Modes</strong>（工具呼叫的審批流程），兩者獨立運作</li>
 <li>權限模式由寬鬆到嚴格：<code>bypassPermissions</code> &gt; <code>auto</code> &gt; <code>acceptEdits</code> &gt; <code>default</code>（ask before edit）</li>
 <li>VSCode 右下角預設只顯示 <code>ask before edit</code>、<code>Edit auto</code>、<code>plan mode</code>；要看到 <code>Auto</code> 和 <code>Bypass permissions</code>，需到 VSCode Settings 開啟 <strong>"Allow dangerously skip permissions"</strong></li>
+<li><strong>預設模式持久化</strong>：在 <code>~/.claude/settings.json</code> 設定 <code>permissions.defaultMode: "acceptEdits"</code> 即可讓每次新對話預設為 Edit automatically（CLI + VSCode 都生效）</li>
 <li><code>auto</code> mode 需要 <strong>Team plan</strong> + <strong>Sonnet 4.6 或 Opus 4.6</strong> + <strong>組織 admin 啟用</strong>，個人方案目前無法使用</li>
 <li><code>bypassPermissions</code> 只適合隔離環境（Container、VM），在一般開發機上使用等於零防線</li>
 </ul>
@@ -3310,7 +3473,38 @@
 <li><strong>黑名單漏掉</strong> → 直接執行，沒有第二次機會（不可逆）</li>
 </ul>
 <p>黑名單無法窮舉所有危險操作：<code>curl -X POST</code>、<code>python -c "import requests; ..."</code>、新工具出現等都可能繞過關鍵字檢查。</p>
-<h3 id="_4">實務建議<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_4">預設模式持久化<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>VSCode UI 右下角切換模式只影響當前 session。要讓預設模式跨 session 持久生效，有兩個設定位置：</p>
+<table>
+<thead>
+<tr>
+<th>設定位置</th>
+<th>Key</th>
+<th>影響範圍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>~/.claude/settings.json</code></td>
+<td><code>permissions.defaultMode</code></td>
+<td><strong>全域</strong>（CLI + VSCode + Desktop 都吃）</td>
+</tr>
+<tr>
+<td>VSCode Settings (<code>settings.json</code>)</td>
+<td><code>claudeCode.initialPermissionMode</code></td>
+<td>僅 VSCode 擴充的新對話</td>
+</tr>
+</tbody>
+</table>
+<p>推薦用全域設定，一次搞定：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;permissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;defaultMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;acceptEdits&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>可用的值：<code>"default"</code> / <code>"acceptEdits"</code> / <code>"plan"</code> / <code>"auto"</code> / <code>"bypassPermissions"</code></p>
+<h3 id="_5">實務建議<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>對個人方案用戶，最佳平衡點是 <strong>Accept Edits + <code>autoAllowBashIfSandboxed</code> + PreToolUse hook</strong>：</p>
 <ul>
 <li><strong>Accept Edits</strong>：檔案編輯不被打斷（最高頻操作）</li>
@@ -3321,13 +3515,13 @@
 <p>這個組合的效果等同「全開 + 危險攔截」，但安全方向是白名單（fail-safe）而非黑名單（fail-open）。不需要 <code>--dangerously-skip-permissions</code>。</p>
 <h3 id="pretooluse-hook">PreToolUse Hook 技術格式<a class="headerlink" href="#pretooluse-hook" title="Permanent link">&para;</a></h3>
 <p>Hook 腳本透過 <strong>stdin 接收 JSON</strong>，輸出 JSON 控制行為：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 讀取工具輸入</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">INPUT</span><span class="o">=</span><span class="k">$(</span>cat<span class="k">)</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">COMMAND</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$INPUT</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="s2">import sys, json</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="s2">d = json.load(sys.stdin)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="s2">print(d.get(&#39;tool_input&#39;, {}).get(&#39;command&#39;, &#39;&#39;))</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="s2">&quot;</span><span class="k">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 讀取工具輸入</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">INPUT</span><span class="o">=</span><span class="k">$(</span>cat<span class="k">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">COMMAND</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$INPUT</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s2">import sys, json</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="s2">d = json.load(sys.stdin)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="s2">print(d.get(&#39;tool_input&#39;, {}).get(&#39;command&#39;, &#39;&#39;))</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="s2">&quot;</span><span class="k">)</span>
 </code></pre></div>
 <p><strong>三種輸出模式：</strong></p>
 <table>
@@ -3356,23 +3550,23 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;hookSpecificOutput&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;hookEventName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PreToolUse&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;permissionDecision&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;allow&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;additionalContext&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;提醒訊息，Claude 會看到&quot;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;hookSpecificOutput&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;hookEventName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PreToolUse&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;permissionDecision&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;allow&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;additionalContext&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;提醒訊息，Claude 會看到&quot;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
 </code></pre></div>
 <p>settings.json 設定格式：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;hooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;PreToolUse&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="nt">&quot;matcher&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bash&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="nt">&quot;hooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;command&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/hook.sh&quot;</span><span class="w"> </span><span class="p">}]</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="p">}]</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;hooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;PreToolUse&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="nt">&quot;matcher&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bash&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">&quot;hooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;command&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/hook.sh&quot;</span><span class="w"> </span><span class="p">}]</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="p">}]</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="sandbox-cache">常見 Sandbox 調整：工具 cache 路徑<a class="headerlink" href="#sandbox-cache" title="Permanent link">&para;</a></h3>
 <p>當某個工具頻繁被 sandbox 擋住，通常是因為它的 cache 目錄不在 sandbox 的寫入白名單內。常見案例：</p>
@@ -3393,13 +3587,13 @@
 </tbody>
 </table>
 <p>解法：在 <code>settings.json</code> 的 <code>sandbox.filesystem.write.allow</code> 加入 cache 路徑：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&quot;sandbox&quot;: {
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  &quot;filesystem&quot;: {
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    &quot;write&quot;: {
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>      &quot;allow&quot;: [&quot;~/.cache/uv&quot;]
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    }
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  }
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&quot;sandbox&quot;: {
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  &quot;filesystem&quot;: {
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    &quot;write&quot;: {
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>      &quot;allow&quot;: [&quot;~/.cache/uv&quot;]
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    }
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>  }
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>}
 </code></pre></div>
 <p>加入後，該工具的 Bash 指令會走 <code>autoAllowBashIfSandboxed</code> 自動通過，不再跳確認。遇到其他工具的類似問題時，同樣模式處理即可。</p>
 
@@ -3420,7 +3614,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 5d692ce5-82bf-444d-a9d2-17bfb1bdc206</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 08d9ff44-4498-4a35-81ec-7d4b48b5f22a</code></p>
 </div>
 
 

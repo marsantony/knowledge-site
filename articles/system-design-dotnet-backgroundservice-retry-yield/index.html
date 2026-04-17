@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-nosql-database-types/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/system-design-dotnet-backgroundservice-retry-yield/">
       
       
-        <link rel="prev" href="../learning-advent-of-agents-evaluation/">
+        <link rel="prev" href="../system-design-two-phase-ai-judgment/">
       
       
-        <link rel="next" href="../learning-probiotics-selection-guide/">
+        <link rel="next" href="../learning-advent-of-agents-evaluation/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>NoSQL 資料庫類型比較：Key-Value vs 文件型 - Mars 的知識庫</title>
+        <title>.NET BackgroundService 多時間點排程 + Retry 讓位機制 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NoSQL 資料庫類型比較：Key-Value vs 文件型
+              .NET BackgroundService 多時間點排程 + Retry 讓位機制
             
           </span>
         </div>
@@ -2118,6 +2118,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2127,11 +2129,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" checked>
         
           
           <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
@@ -2152,7 +2154,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2335,121 +2337,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../system-design-dotnet-backgroundservice-retry-yield/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    .NET BackgroundService 多時間點排程 + Retry 讓位機制
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    學習筆記
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_10">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    學習筆記
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../learning-advent-of-agents-evaluation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Google Advent of Agents 2025 評估分析
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -2467,7 +2354,7 @@
   <span class="md-ellipsis">
     
   
-    NoSQL 資料庫類型比較：Key-Value vs 文件型
+    .NET BackgroundService 多時間點排程 + Retry 讓位機制
   
 
     
@@ -2485,7 +2372,7 @@
   <span class="md-ellipsis">
     
   
-    NoSQL 資料庫類型比較：Key-Value vs 文件型
+    .NET BackgroundService 多時間點排程 + Retry 讓位機制
   
 
     
@@ -2528,12 +2415,208 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心挑戰：Retry 會撞到下一個排程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        解法：Retry 前判斷是否撞到下一個排程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多時間點排程：算下一個時間
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        時間格式防呆
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        取捨：Config 向後相容
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整範例（整合後）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用情境
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    學習筆記
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    學習筆記
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-advent-of-agents-evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google Advent of Agents 2025 評估分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-nosql-database-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NoSQL 資料庫類型比較：Key-Value vs 文件型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -3101,6 +3184,89 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心挑戰：Retry 會撞到下一個排程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retry_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        解法：Retry 前判斷是否撞到下一個排程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多時間點排程：算下一個時間
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        時間格式防呆
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        取捨：Config 向後相容
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整範例（整合後）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用情境
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3125,7 +3291,7 @@
       
       
       
-        <a href="../../tags/#tag:database" class="md-tag">database</a>
+        <a href="../../tags/#tag:csharp" class="md-tag">csharp</a>
       
     
       
@@ -3139,21 +3305,165 @@
 
 
 
-  <h1>NoSQL 資料庫類型比較：Key-Value vs 文件型</h1>
+  <h1>.NET BackgroundService 多時間點排程 + Retry 讓位機制</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>NoSQL 是大分類，底下有 Key-Value（Redis）、文件型（Firestore/MongoDB）、寬欄型（Cassandra）、圖型（Neo4j）四種</li>
-<li><strong>Redis</strong>：資料存記憶體，&lt;1ms 回應，結構極簡（key→value），適合快取、速率限制、session；重啟可能遺失</li>
-<li><strong>Firestore</strong>：資料存硬碟，~10-50ms，支援巢狀 JSON 結構和條件查詢；永久保存，有免費額度（每天 50K 讀 / 20K 寫）</li>
-<li><strong>Firestore 的查詢速度保證</strong>：每個查詢必須有對應索引，沒索引就報錯不給查；因此查詢時間只跟結果數量成正比，跟總資料量無關</li>
-<li>Firestore 寫入時自動為每個欄位建立索引（拆散投影），document 本身反而像「全局索引」；代價是寫入比 RDBMS 更貴</li>
-<li>複合查詢（多欄位條件）需手動建複合索引；不支援 JOIN、GROUP BY、全文搜尋</li>
+<li>多時間點排程：用 <code>TimeOnly[]</code> 配排序，主 loop 每次算「下一個還沒到的時間」，跨日就接明天第一個</li>
+<li>Retry 撞到下一個排程時<strong>主動讓位</strong>，判斷條件：<code>DateTime.Now + retryInterval &gt;= nextRun</code> 為真就放棄 retry</li>
+<li>這樣可以避免「密集排程」場景下 retry 卡住下一輪任務：例如 <code>02:01:00</code> 失敗，下一個排程在 <code>02:02:00</code>，retry 間隔 60 秒等於直接撞到，應該放棄 retry 給新任務</li>
+<li>設定時間用 <code>TimeOnly.TryParseExact</code> 搭配明確格式（如 <code>"HHmmss"</code>），invalid 值跳過但不中斷 service</li>
+<li>向後相容小技巧：欄位型別宣告為 <code>JsonElement</code>，<code>ValueKind</code> 判斷是 <code>String</code> 還 <code>Array</code> 分別解析，可讓同一個 config key 接受單值或陣列——但大多數情況<strong>直接新增欄位名稱</strong>會更乾淨，別為了相容硬用</li>
+<li>測試策略見 <a href="../learning-dotnet-backgroundservice-testing-timeprovider/">.NET BackgroundService 排程測試：TimeProvider + FakeTimeProvider</a></li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>在討論 GetSteamStatus 的 in-memory 快取（ConcurrentDictionary）在多 instance 下會失效時，探討了外部化狀態的方案。</p>
-<p>GCP 上 Redis（Cloud Memorystore）沒有免費方案（~$35/月），Firestore 有慷慨的免費額度。對個人專案而言，Firestore 是更務實的選擇，即使速率限制場景 Redis 更精確。</p>
-<p>Firestore 的核心設計哲學是「寫入時多做事，查詢時少做事」，與 RDBMS（預設不建索引，寫入快但查詢可能掃全表）正好相反。這解釋了為什麼文件型 DB 能在不犧牲查詢速度的情況下支援彈性 schema。</p>
+<p>需求：BackgroundService 每天在多個時間點觸發任務，每個時間點失敗要 retry，retry 次數到上限寄通知信。時間點用陣列從 config 傳入。</p>
+<h3 id="retry">核心挑戰：Retry 會撞到下一個排程<a class="headerlink" href="#retry" title="Permanent link">&para;</a></h3>
+<p>單純的 retry loop 在密集排程下會出事。想像設定：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;Times&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;020100&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;020200&quot;</span><span class="p">],</span><span class="w"> </span><span class="nt">&quot;RetryIntervalSeconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;MaxRetry&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>02:01 失敗後開始 retry，每次等 60 秒。<strong>這一等就直接跨到 02:02</strong>——下一個排程時間到了，但 retry loop 還在自己跑自己的，新任務被擋住。</p>
+<h3 id="retry_1">解法：Retry 前判斷是否撞到下一個排程<a class="headerlink" href="#retry_1" title="Permanent link">&para;</a></h3>
+<p>每次要等 retry 前，算 <code>retryAt = now + retryInterval</code>，跟 <code>GetNextRunTime</code> 算出的下一個排程比。如果 retry 時間 &gt;= 下個排程，直接放棄 retry 回主 loop：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">retryAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">AddSeconds</span><span class="p">(</span><span class="n">_retryInterval</span><span class="p">);</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">var</span><span class="w"> </span><span class="p">(</span><span class="n">nextRun</span><span class="p">,</span><span class="w"> </span><span class="n">nextTime</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetNextRunTime</span><span class="p">(</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">);</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">retryAt</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">nextRun</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">logger</span><span class="p">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s">&quot;Retry aborted — next schedule {Next} takes priority&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nextTime</span><span class="p">);</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w">  </span><span class="c1">// 回主 loop，等 nextRun 觸發新任務</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="n">_retryInterval</span><span class="p">),</span><span class="w"> </span><span class="n">ct</span><span class="p">);</span>
+</code></pre></div>
+<p>時序：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>02:01:00  觸發 Times[0] → 失敗
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>          retryAt = 02:02:00，nextRun = 02:02:00 → 放棄 retry
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>02:02:00  主 loop 觸發 Times[1] → 執行新任務
+</code></pre></div>
+<h3 id="_3">多時間點排程：算下一個時間<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>核心是個排序好的 <code>TimeOnly[]</code>，每次找「比現在晚的最近一個」，全過了就接明天第一個：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">private</span><span class="w"> </span><span class="p">(</span><span class="n">DateTime</span><span class="w"> </span><span class="n">nextRun</span><span class="p">,</span><span class="w"> </span><span class="n">TimeOnly</span><span class="w"> </span><span class="n">scheduledTime</span><span class="p">)</span><span class="w"> </span><span class="n">GetNextRunTime</span><span class="p">(</span><span class="n">DateTime</span><span class="w"> </span><span class="n">now</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">currentTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeOnly</span><span class="p">.</span><span class="n">FromDateTime</span><span class="p">(</span><span class="n">now</span><span class="p">);</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">today</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateOnly</span><span class="p">.</span><span class="n">FromDateTime</span><span class="p">(</span><span class="n">now</span><span class="p">);</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">_scheduledTimes</span><span class="p">)</span><span class="w">   </span><span class="c1">// 已排序</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">currentTime</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">today</span><span class="p">.</span><span class="n">ToDateTime</span><span class="p">(</span><span class="n">time</span><span class="p">),</span><span class="w"> </span><span class="n">time</span><span class="p">);</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="c1">// 全過了，接明天第一個</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">today</span><span class="p">.</span><span class="n">AddDays</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">ToDateTime</span><span class="p">(</span><span class="n">_scheduledTimes</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="w"> </span><span class="n">_scheduledTimes</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="_4">時間格式防呆<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>使用 <code>HHmmss</code> 格式（例如 <code>"020100"</code>），用 <code>TryParseExact</code> 嚴格解析：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">Times</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">TimeOnly</span><span class="p">.</span><span class="n">TryParseExact</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;HHmmss&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">t</span><span class="p">))</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="n">valid</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="k">else</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Warning: ignored invalid time &#39;{s}&#39;&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="k">return</span><span class="w"> </span><span class="n">valid</span><span class="p">.</span><span class="n">Distinct</span><span class="p">().</span><span class="n">OrderBy</span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">).</span><span class="n">ToArray</span><span class="p">();</span>
+</code></pre></div>
+<p>解析失敗跳過但不丟例外，service 不會因為一筆錯字死掉。全部 invalid 的話建構式那邊 <code>Length == 0</code> 擋下。</p>
+<h3 id="config">取捨：Config 向後相容<a class="headerlink" href="#config" title="Permanent link">&para;</a></h3>
+<p>舊設定 <code>{ "Time": "080000" }</code>，新設計要支援 <code>{ "Times": ["080000", "143000"] }</code>。兩種思路：</p>
+<ol>
+<li>
+<p><strong>用 <code>JsonElement</code> 接同一個欄位</strong>：保持 key 名稱不變，<code>ValueKind</code> 判斷是字串還陣列
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">public</span><span class="w"> </span><span class="n">JsonElement</span><span class="w"> </span><span class="n">Time</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kt">var</span><span class="w"> </span><span class="n">times</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Time</span><span class="p">.</span><span class="n">ValueKind</span><span class="w"> </span><span class="k">switch</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">{</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="n">JsonValueKind</span><span class="p">.</span><span class="n">String</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">Time</span><span class="p">.</span><span class="n">GetString</span><span class="p">()</span><span class="o">!</span><span class="p">],</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="n">JsonValueKind</span><span class="p">.</span><span class="n">Array</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Time</span><span class="p">.</span><span class="n">EnumerateArray</span><span class="p">().</span><span class="n">Select</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">GetString</span><span class="p">()</span><span class="o">!</span><span class="p">).</span><span class="n">ToArray</span><span class="p">(),</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArgumentException</span><span class="p">(</span><span class="s">&quot;...&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">};</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>直接換成 <code>string[] Times</code></strong>：舊設定改一下 key 名稱就好</p>
+</li>
+</ol>
+<p>兩個都能動，但 #1 的複雜度換來的只是「舊 config 不用動一個字」，而實務上 config 版本控制本來就該更新。除非真的不能動舊 config（例如給第三方用），否則 #2 更乾淨。</p>
+<h3 id="_5">完整範例（整合後）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ScheduleOptions</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">Times</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">RetryIntervalSeconds</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MaxRetry</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">TimeOnly</span><span class="p">[]</span><span class="w"> </span><span class="nf">GetScheduledTimes</span><span class="p">()</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">TimeOnly</span><span class="o">&gt;</span><span class="p">();</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">Times</span><span class="p">)</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">TimeOnly</span><span class="p">.</span><span class="n">TryParseExact</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;HHmmss&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">t</span><span class="p">))</span><span class="w"> </span><span class="n">valid</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">valid</span><span class="p">.</span><span class="n">Distinct</span><span class="p">().</span><span class="n">OrderBy</span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">).</span><span class="n">ToArray</span><span class="p">();</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="p">}</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">Worker</span><span class="p">(</span><span class="n">ILogger</span><span class="o">&lt;</span><span class="n">Worker</span><span class="o">&gt;</span><span class="w"> </span><span class="n">logger</span><span class="p">,</span><span class="w"> </span><span class="n">IOptions</span><span class="o">&lt;</span><span class="n">ScheduleOptions</span><span class="o">&gt;</span><span class="w"> </span><span class="n">options</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BackgroundService</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="p">{</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">TimeOnly</span><span class="p">[]</span><span class="w"> </span><span class="n">_times</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">options</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="n">GetScheduledTimes</span><span class="p">();</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">_retryInterval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">options</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="n">RetryIntervalSeconds</span><span class="p">;</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">_maxRetry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">options</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="n">MaxRetry</span><span class="p">;</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">ExecuteAsync</span><span class="p">(</span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">stoppingToken</span><span class="p">)</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">stoppingToken</span><span class="p">.</span><span class="n">IsCancellationRequested</span><span class="p">)</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">;</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="p">(</span><span class="n">nextRun</span><span class="p">,</span><span class="w"> </span><span class="n">scheduledTime</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetNextRunTime</span><span class="p">(</span><span class="n">now</span><span class="p">);</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="n">nextRun</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">now</span><span class="p">,</span><span class="w"> </span><span class="n">stoppingToken</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="w">            </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">OperationCanceledException</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="nf">ExecuteWithRetryAsync</span><span class="p">(</span><span class="n">scheduledTime</span><span class="p">,</span><span class="w"> </span><span class="n">stoppingToken</span><span class="p">);</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">ExecuteWithRetryAsync</span><span class="p">(</span><span class="n">TimeOnly</span><span class="w"> </span><span class="n">triggeredTime</span><span class="p">,</span><span class="w"> </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">ct</span><span class="p">)</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">attempt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">attempt</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">_maxRetry</span><span class="p">;</span><span class="w"> </span><span class="n">attempt</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a><span class="w">            </span><span class="k">try</span>
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a><span class="w">                </span><span class="k">await</span><span class="w"> </span><span class="nf">DoWorkAsync</span><span class="p">(</span><span class="n">triggeredTime</span><span class="p">,</span><span class="w"> </span><span class="n">ct</span><span class="p">);</span>
+<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a><span class="w">                </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a><span class="w">            </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">OperationCanceledException</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">throw</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a><span class="w">            </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span>
+<a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a><span class="w">            </span><span class="p">{</span>
+<a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a><span class="w">                </span><span class="n">logger</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Failed (attempt {N}/{Max})&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">attempt</span><span class="p">,</span><span class="w"> </span><span class="n">_maxRetry</span><span class="p">);</span>
+<a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a>
+<a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">attempt</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">_maxRetry</span><span class="p">)</span>
+<a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a><span class="w">                </span><span class="p">{</span>
+<a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a><span class="w">                    </span><span class="k">await</span><span class="w"> </span><span class="nf">SendFailureNotificationAsync</span><span class="p">(</span><span class="n">triggeredTime</span><span class="p">,</span><span class="w"> </span><span class="n">ct</span><span class="p">);</span>
+<a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a><span class="w">                    </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a><span class="w">                </span><span class="p">}</span>
+<a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a>
+<a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a><span class="w">                </span><span class="kt">var</span><span class="w"> </span><span class="n">retryAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">AddSeconds</span><span class="p">(</span><span class="n">_retryInterval</span><span class="p">);</span>
+<a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a><span class="w">                </span><span class="kt">var</span><span class="w"> </span><span class="p">(</span><span class="n">nextRun</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetNextRunTime</span><span class="p">(</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">);</span>
+<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">retryAt</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">nextRun</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w">  </span><span class="c1">// 讓位給下個排程</span>
+<a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a>
+<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a><span class="w">                </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="n">_retryInterval</span><span class="p">),</span><span class="w"> </span><span class="n">ct</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a><span class="w">                </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">OperationCanceledException</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">throw</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-6-63" name="__codelineno-6-63" href="#__codelineno-6-63"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-64" name="__codelineno-6-64" href="#__codelineno-6-64"></a>
+<a id="__codelineno-6-65" name="__codelineno-6-65" href="#__codelineno-6-65"></a><span class="w">    </span><span class="c1">// GetNextRunTime, DoWorkAsync, SendFailureNotificationAsync 略</span>
+<a id="__codelineno-6-66" name="__codelineno-6-66" href="#__codelineno-6-66"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="_6">使用情境<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✓ 每日多時間點排程（例如日結、月結任務）</li>
+<li>✓ 需要 retry 但不能卡下一輪任務的場景</li>
+<li>✓ 時間點設定頻繁調整（寫死在 code 不合適）</li>
+<li>✗ 只需要固定間隔（用 <code>PeriodicTimer</code> 就好）</li>
+<li>✗ 需要 cron 級別彈性（考慮 <a href="https://github.com/HangfireIO/Cronos">Cronos</a> 之類的函式庫）</li>
+</ul>
 
 
 
@@ -3172,7 +3482,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 3537ae01-ae68-421e-b52b-df9d573cddf8</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 741fb3ae-1709-4888-8141-234e45c92245</code></p>
 </div>
 
 

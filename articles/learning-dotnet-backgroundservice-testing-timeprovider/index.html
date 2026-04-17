@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-nosql-database-types/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-dotnet-backgroundservice-testing-timeprovider/">
       
       
-        <link rel="prev" href="../learning-advent-of-agents-evaluation/">
+        <link rel="prev" href="../learning-csharp-inheritance-virtual-required/">
       
       
-        <link rel="next" href="../learning-probiotics-selection-guide/">
+        <link rel="next" href="../../tags/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>NoSQL 資料庫類型比較：Key-Value vs 文件型 - Mars 的知識庫</title>
+        <title>.NET BackgroundService 排程測試：TimeProvider + FakeTimeProvider 讓 8 小時測試變毫秒 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NoSQL 資料庫類型比較：Key-Value vs 文件型
+              .NET BackgroundService 排程測試：TimeProvider + FakeTimeProvider 讓 8 小時測試變毫秒
             
           </span>
         </div>
@@ -2450,35 +2450,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NoSQL 資料庫類型比較：Key-Value vs 文件型
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../learning-nosql-database-types/" class="md-nav__link">
         
   
   
@@ -2494,46 +2469,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2991,10 +2926,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../learning-dotnet-backgroundservice-testing-timeprovider/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    .NET BackgroundService 排程測試：TimeProvider + FakeTimeProvider 讓 8 小時測試變毫秒
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3010,6 +2970,118 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        解法：把時間抽象化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#di" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DI 註冊
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        測試套件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        踩過的坑
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        整體架構圖
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什麼時候值得導入
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3101,6 +3173,78 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        解法：把時間抽象化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#di" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DI 註冊
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        測試套件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        踩過的坑
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        整體架構圖
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什麼時候值得導入
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3125,7 +3269,7 @@
       
       
       
-        <a href="../../tags/#tag:database" class="md-tag">database</a>
+        <a href="../../tags/#tag:csharp" class="md-tag">csharp</a>
       
     
       
@@ -3135,25 +3279,116 @@
         <a href="../../tags/#tag:system-design" class="md-tag">system-design</a>
       
     
+      
+      
+      
+      
+        <a href="../../tags/#tag:testing" class="md-tag">testing</a>
+      
+    
   </nav>
 
 
 
-  <h1>NoSQL 資料庫類型比較：Key-Value vs 文件型</h1>
+  <h1>.NET BackgroundService 排程測試：TimeProvider + FakeTimeProvider 讓 8 小時測試變毫秒</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>NoSQL 是大分類，底下有 Key-Value（Redis）、文件型（Firestore/MongoDB）、寬欄型（Cassandra）、圖型（Neo4j）四種</li>
-<li><strong>Redis</strong>：資料存記憶體，&lt;1ms 回應，結構極簡（key→value），適合快取、速率限制、session；重啟可能遺失</li>
-<li><strong>Firestore</strong>：資料存硬碟，~10-50ms，支援巢狀 JSON 結構和條件查詢；永久保存，有免費額度（每天 50K 讀 / 20K 寫）</li>
-<li><strong>Firestore 的查詢速度保證</strong>：每個查詢必須有對應索引，沒索引就報錯不給查；因此查詢時間只跟結果數量成正比，跟總資料量無關</li>
-<li>Firestore 寫入時自動為每個欄位建立索引（拆散投影），document 本身反而像「全局索引」；代價是寫入比 RDBMS 更貴</li>
-<li>複合查詢（多欄位條件）需手動建複合索引；不支援 JOIN、GROUP BY、全文搜尋</li>
+<li><code>BackgroundService</code> 用 <code>DateTime.Now</code> + <code>Task.Delay</code> 寫的排程邏輯<strong>完全沒辦法測</strong>——真跑下去測一天排程要 24 小時</li>
+<li>.NET 8 內建 <code>TimeProvider</code> 是官方時間抽象，配合 <code>Microsoft.Extensions.TimeProvider.Testing</code> 的 <code>FakeTimeProvider</code> 可<strong>瞬間跳過 <code>Task.Delay</code></strong></li>
+<li>改寫三處：constructor 注入 <code>TimeProvider</code>、取當下時間用 <code>timeProvider.GetLocalNow()</code>、延遲用 <code>Task.Delay(ts, timeProvider, ct)</code>（三參數多載）</li>
+<li><strong>測試時序陷阱</strong>：<code>FakeTimeProvider.Advance()</code> 必須在 worker 註冊完 <code>Task.Delay</code> 之後才有效。先 <code>await Task.Yield()</code> 讓 worker 進入第一個 await，再 Advance</li>
+<li>Production 用 <code>TimeProvider.System</code>（DI 註冊 <code>services.AddSingleton(TimeProvider.System)</code>），測試用 <code>FakeTimeProvider</code>，worker 程式碼完全不變</li>
+<li>Timezone 在測試中是額外複雜度來源——直接用 UTC 設 <code>FakeTimeProvider</code> 初始時間，避開 timezone 轉換的 bug</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>在討論 GetSteamStatus 的 in-memory 快取（ConcurrentDictionary）在多 instance 下會失效時，探討了外部化狀態的方案。</p>
-<p>GCP 上 Redis（Cloud Memorystore）沒有免費方案（~$35/月），Firestore 有慷慨的免費額度。對個人專案而言，Firestore 是更務實的選擇，即使速率限制場景 Redis 更精確。</p>
-<p>Firestore 的核心設計哲學是「寫入時多做事，查詢時少做事」，與 RDBMS（預設不建索引，寫入快但查詢可能掃全表）正好相反。這解釋了為什麼文件型 DB 能在不犧牲查詢速度的情況下支援彈性 schema。</p>
+<p>寫 BackgroundService 跑每日排程（09:00、18:00 觸發任務），傳統寫法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">ExecuteAsync</span><span class="p">(</span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">ct</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ct</span><span class="p">.</span><span class="n">IsCancellationRequested</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">nextRun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CalculateNextRun</span><span class="p">(</span><span class="n">now</span><span class="p">);</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="n">nextRun</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">now</span><span class="p">,</span><span class="w"> </span><span class="n">ct</span><span class="p">);</span><span class="w">   </span><span class="c1">// ← 可能等 16 小時</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nf">DoWorkAsync</span><span class="p">(</span><span class="n">ct</span><span class="p">);</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
+</code></pre></div>
+<p>這段程式碼的問題：想測「09:00 觸發」+「失敗 retry」+「跨日邏輯」——真跑要等好幾小時。</p>
+<h3 id="_3">解法：把時間抽象化<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>.NET 8 起內建 <code>TimeProvider</code> 作為時間介面：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Worker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BackgroundService</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">TimeProvider</span><span class="w"> </span><span class="n">_timeProvider</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">Worker</span><span class="p">(</span><span class="n">ILogger</span><span class="o">&lt;</span><span class="n">Worker</span><span class="o">&gt;</span><span class="w"> </span><span class="n">logger</span><span class="p">,</span><span class="w"> </span><span class="n">IOptions</span><span class="o">&lt;</span><span class="n">ScheduleOptions</span><span class="o">&gt;</span><span class="w"> </span><span class="n">options</span><span class="p">,</span><span class="w"> </span><span class="n">TimeProvider</span><span class="w"> </span><span class="n">timeProvider</span><span class="p">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="n">_timeProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timeProvider</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">ExecuteAsync</span><span class="p">(</span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">ct</span><span class="p">)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ct</span><span class="p">.</span><span class="n">IsCancellationRequested</span><span class="p">)</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_timeProvider</span><span class="p">.</span><span class="n">GetLocalNow</span><span class="p">();</span><span class="w">              </span><span class="c1">// ← 取代 DateTime.Now</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">nextRun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CalculateNextRun</span><span class="p">(</span><span class="n">now</span><span class="p">);</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="n">nextRun</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">now</span><span class="p">,</span><span class="w"> </span><span class="n">_timeProvider</span><span class="p">,</span><span class="w"> </span><span class="n">ct</span><span class="p">);</span><span class="w"> </span><span class="c1">// ← 三參數多載</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">            </span><span class="k">await</span><span class="w"> </span><span class="nf">DoWorkAsync</span><span class="p">(</span><span class="n">ct</span><span class="p">);</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>關鍵：<code>Task.Delay</code> 有三參數多載</strong> <code>Task.Delay(TimeSpan, TimeProvider, CancellationToken)</code>。傳 <code>TimeProvider</code> 進去之後，<code>FakeTimeProvider.Advance()</code> 才能跳過延遲。只傳兩參數的 <code>Task.Delay(TimeSpan, ct)</code> 不吃 FakeTimeProvider，測試會真的等。</p>
+<h3 id="di">DI 註冊<a class="headerlink" href="#di" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Program.cs</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="p">(</span><span class="n">TimeProvider</span><span class="p">.</span><span class="n">System</span><span class="p">);</span><span class="w">   </span><span class="c1">// ← production 用系統時間</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">services</span><span class="p">.</span><span class="n">AddHostedService</span><span class="o">&lt;</span><span class="n">Worker</span><span class="o">&gt;</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="_4">測試套件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>NuGet 裝 <code>Microsoft.Extensions.TimeProvider.Testing</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="na">[TestMethod]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">Worker_Triggers_At_Scheduled_Time</span><span class="p">()</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">{</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">fakeTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FakeTimeProvider</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">DateTimeOffset</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">59</span><span class="p">,</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">Zero</span><span class="p">));</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">worker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TestableWorker</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span><span class="w"> </span><span class="n">options</span><span class="p">,</span><span class="w"> </span><span class="n">fakeTime</span><span class="p">);</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">cts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CancellationTokenSource</span><span class="p">();</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">executeTask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">worker</span><span class="p">.</span><span class="n">StartAsync</span><span class="p">(</span><span class="n">cts</span><span class="p">.</span><span class="n">Token</span><span class="p">);</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Yield</span><span class="p">();</span><span class="w">                                 </span><span class="c1">// ← 關鍵：讓 worker 註冊 Task.Delay</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="n">fakeTime</span><span class="p">.</span><span class="n">Advance</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span><span class="w">         </span><span class="c1">// 推進到 09:00:05</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Yield</span><span class="p">();</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="n">Assert</span><span class="p">.</span><span class="n">AreEqual</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">worker</span><span class="p">.</span><span class="n">WorkInvokedCount</span><span class="p">);</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="_5">踩過的坑<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><strong>坑 1：Advance 沒效果</strong></p>
+<p>一開始測試失敗：Advance 10 秒但 worker 沒觸發。原因：worker 的 <code>ExecuteAsync</code> 還在同步執行部分（讀 config、算 next run），還沒進到 <code>await Task.Delay</code>。<code>FakeTimeProvider</code> 只對「已經註冊」的 delay 有效。</p>
+<p>解法：<code>await Task.Yield()</code> 把控制權讓出去，等 worker 進入第一個 await 點之後，再 Advance。</p>
+<p><strong>坑 2：Timezone 變數</strong></p>
+<p><code>GetLocalNow()</code> 回傳的時間受測試機器 timezone 影響。CI 跑在 UTC 容器裡、開發機跑在 UTC+8，同樣程式碼行為不同。</p>
+<p>解法：測試中統一用 <code>DateTimeOffset(year, month, day, hour, min, sec, TimeSpan.Zero)</code> 明確指定 offset，不依賴環境。生產環境如果必須用 local time，另外注入 <code>TimeZoneInfo</code> 做明確轉換。</p>
+<h3 id="_6">整體架構圖<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Program.cs
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    services.AddSingleton(TimeProvider.System)       ← production
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>         ↓
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Worker (DI 注入 TimeProvider)
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    _timeProvider.GetLocalNow()
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    Task.Delay(ts, _timeProvider, ct)                ← 三參數多載
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>         ↓
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>Test
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    new FakeTimeProvider(...)                        ← 測試時替換
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    fakeTime.Advance(...)                            ← 跳時間
+</code></pre></div>
+<p>Worker 的程式碼在 production 與 test 完全一致——這正是 <code>TimeProvider</code> 抽象的價值。</p>
+<h3 id="_7">什麼時候值得導入<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✓ 排程邏輯涉及具體時間點（每日 09:00、每週一、跨日邊界）</li>
+<li>✓ 有 retry + 等待間隔的測試需求</li>
+<li>✓ 要驗證 shutdown 時序（例如「收到 cancellation 後 10 秒內優雅結束」）</li>
+<li>✗ 只是用 <code>Task.Delay(100)</code> 做 throttle 的簡單場景——不值得為此引入抽象</li>
+</ul>
 
 
 
@@ -3172,7 +3407,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 3537ae01-ae68-421e-b52b-df9d573cddf8</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 0026af16-9408-4ba5-8d03-312694ea79c2</code></p>
 </div>
 
 

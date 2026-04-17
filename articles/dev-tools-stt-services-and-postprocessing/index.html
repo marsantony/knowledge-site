@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/dev-tools-stt-services-and-postprocessing/">
       
       
-        <link rel="prev" href="../claude-code-knowledge-article-session-traceability/">
+        <link rel="prev" href="../dev-tools-ssh-over-port-443/">
       
       
         <link rel="next" href="../dev-tools-cli-tools-for-ai-agents/">
@@ -678,6 +678,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-tools-ssh-over-port-443/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH over Port 443：防火牆擋 Port 22 時的解法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -902,6 +930,45 @@
     <span class="md-ellipsis">
       
         ASR + LLM 兩階段架構
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuda-oom-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        長音檔 CUDA OOM 與 Alignment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="長音檔 CUDA OOM 與 Alignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        問題
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        解法
       
     </span>
   </a>
@@ -2525,6 +2592,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-design-dotnet-backgroundservice-retry-yield/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    .NET BackgroundService 多時間點排程 + Retry 讓位機制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3030,6 +3125,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-csharp-oce-cancellation-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C# OperationCanceledException 完整處理模式：catch 順序、exception filter 與 CancellationToken 本質
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-csharp-inheritance-virtual-required/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C# 繼承設計：資料型成員不該 virtual，改用 constructor required 參數
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-dotnet-backgroundservice-testing-timeprovider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    .NET BackgroundService 排程測試：TimeProvider + FakeTimeProvider 讓 8 小時測試變毫秒
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3262,6 +3441,45 @@
     <span class="md-ellipsis">
       
         ASR + LLM 兩階段架構
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuda-oom-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        長音檔 CUDA OOM 與 Alignment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="長音檔 CUDA OOM 與 Alignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        問題
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        解法
       
     </span>
   </a>
@@ -3648,6 +3866,21 @@
 - 偵測口語自我修正，只保留最終意圖
 - 自動加標點、修正 code-switching</p>
 <p>注意：zero-shot LLM 校正有時會過度修正，最佳做法是只對 ASR 低信心片段做 LLM 校正。</p>
+<hr />
+<h2 id="cuda-oom-alignment">長音檔 CUDA OOM 與 Alignment<a class="headerlink" href="#cuda-oom-alignment" title="Permanent link">&para;</a></h2>
+<h3 id="_6">問題<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>SenseVoice + forced alignment（wav2vec2）處理長音檔（如 YouTube 完整影片 1 小時+）時，alignment 步驟會嘗試一次載入整段音訊，導致 CUDA OOM：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>torch.OutOfMemoryError: Tried to allocate 30.04 GiB. GPU has 11.94 GiB total.
+</code></pre></div>
+<p>SenseVoice 轉錄本身沒問題（它會分段處理），但 alignment 模型（torchaudio wav2vec2）需要一次處理整段音訊的 waveform。</p>
+<h3 id="_7">解法<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>使用 <code>--no-align</code> 跳過 forced alignment：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>uv<span class="w"> </span>run<span class="w"> </span>whisper-transcribe<span class="w"> </span>--url<span class="w"> </span><span class="s2">&quot;URL&quot;</span><span class="w"> </span>--no-align<span class="w"> </span>--no-srt
+</code></pre></div>
+<p>取捨：
+- 失去字元級時間戳（只有 segment 級，通常 ~30-60 秒一段）
+- SRT 字幕品質會較差（時間戳精度不足）
+- 但轉錄文字內容不受影響，適合只需要逐字稿的場景</p>
 
 
 
@@ -3666,7 +3899,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume f48d60dd-7a81-446d-81df-95743829d0d8</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 08d9ff44-4498-4a35-81ec-7d4b48b5f22a</code></p>
 </div>
 
 
