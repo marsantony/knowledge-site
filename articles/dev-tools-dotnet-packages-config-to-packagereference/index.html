@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/dev-tools-github-branch-protection-free-plan/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/dev-tools-dotnet-packages-config-to-packagereference/">
       
       
-        <link rel="prev" href="../dev-tools-uv-run-project-flag/">
+        <link rel="prev" href="../dev-tools-powershell-upgrade-methods/">
       
       
-        <link rel="next" href="../dev-tools-powershell-upgrade-methods/">
+        <link rel="next" href="../web-bootstrap-4-to-5-migration/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>GitHub Branch Protection：Free 方案限制與 Solo 開發者實用設定 - Mars 的知識庫</title>
+        <title>.NET Framework 遷移 packages.config 到 PackageReference：Before/After 對照與踩雷清單 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GitHub Branch Protection：Free 方案限制與 Solo 開發者實用設定
+              .NET Framework 遷移 packages.config 到 PackageReference：Before/After 對照與踩雷清單
             
           </span>
         </div>
@@ -958,6 +958,62 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-tools-github-branch-protection-free-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Branch Protection：Free 方案限制與 Solo 開發者實用設定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-tools-powershell-upgrade-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PowerShell 7 安裝與升級方式比較
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -975,7 +1031,7 @@
   <span class="md-ellipsis">
     
   
-    GitHub Branch Protection：Free 方案限制與 Solo 開發者實用設定
+    .NET Framework 遷移 packages.config 到 PackageReference：Before/After 對照與踩雷清單
   
 
     
@@ -993,7 +1049,7 @@
   <span class="md-ellipsis">
     
   
-    GitHub Branch Protection：Free 方案限制與 Solo 開發者實用設定
+    .NET Framework 遷移 packages.config 到 PackageReference：Before/After 對照與踩雷清單
   
 
     
@@ -1040,10 +1096,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#protection" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        完整的 protection 設定組合
+        兩種格式差異
       
     </span>
   </a>
@@ -1051,10 +1107,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#workflow-trigger" class="md-nav__link">
+  <a href="#beforepackagesconfig-csproj" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workflow trigger 注意事項
+        Before：packages.config + 肥大的 .csproj
       
     </span>
   </a>
@@ -1062,10 +1118,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#private-repo" class="md-nav__link">
+  <a href="#after-csproj-packagereference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Private Repo 的替代策略
+        After：只剩 .csproj 乾淨 PackageReference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        可能踩到的坑
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        實際遷移步驟
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什麼時候值得遷移
       
     </span>
   </a>
@@ -1081,62 +1170,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dev-tools-powershell-upgrade-methods/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PowerShell 7 安裝與升級方式比較
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dev-tools-dotnet-packages-config-to-packagereference/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    .NET Framework 遷移 packages.config 到 PackageReference：Before/After 對照與踩雷清單
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -3200,10 +3233,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#protection" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        完整的 protection 設定組合
+        兩種格式差異
       
     </span>
   </a>
@@ -3211,10 +3244,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#workflow-trigger" class="md-nav__link">
+  <a href="#beforepackagesconfig-csproj" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workflow trigger 注意事項
+        Before：packages.config + 肥大的 .csproj
       
     </span>
   </a>
@@ -3222,10 +3255,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#private-repo" class="md-nav__link">
+  <a href="#after-csproj-packagereference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Private Repo 的替代策略
+        After：只剩 .csproj 乾淨 PackageReference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        可能踩到的坑
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        實際遷移步驟
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什麼時候值得遷移
       
     </span>
   </a>
@@ -3259,94 +3325,167 @@
       
       
       
-        <a href="../../tags/#tag:ci-cd" class="md-tag">ci-cd</a>
+        <a href="../../tags/#tag:csharp" class="md-tag">csharp</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:git" class="md-tag">git</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:github-actions" class="md-tag">github-actions</a>
+        <a href="../../tags/#tag:package-manager" class="md-tag">package-manager</a>
       
     
   </nav>
 
 
 
-  <h1>GitHub Branch Protection：Free 方案限制與 Solo 開發者實用設定</h1>
+  <h1>.NET Framework 遷移 packages.config 到 PackageReference：Before/After 對照與踩雷清單</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>GitHub Free 方案的 private repo 無法設定 branch protection</strong>，API 回 403 "Upgrade to GitHub Pro"。只有 public repo 可免費使用</li>
-<li>Branch protection 的核心不是「禁止 push」，而是<strong>禁止不合格的變更進入 main</strong>——需搭配「禁止直接 push」+「require status checks」才完整</li>
-<li>Solo 開發者最值得開的兩項：<strong>禁止 force push</strong>（防手滑毀歷史）和 <strong>require status checks</strong>（讓 CI 真正成為守門員）</li>
-<li>Workflow 必須有 <code>pull_request</code> trigger，branch protection 的 status check 才能偵測到 CI 結果</li>
-<li>若 private repo 無法設 protection，替代方案是透過工作流程規範（如 CLAUDE.md 的「push 必須確認」）來補償</li>
+<li><code>packages.config</code> 是 .NET Framework 舊式 NuGet 管理格式，<code>PackageReference</code> 是新式（寫在 <code>.csproj</code>）——<strong>新專案不要再用 packages.config</strong></li>
+<li>.NET Framework 4.5.1 <strong>可以</strong>遷移到 PackageReference（VS 2017 15.7+ / NuGet 4.6+ 支援），非 SDK-style 的傳統 <code>.csproj</code> 也吃得下</li>
+<li>Visual Studio 右鍵專案 → <strong>Migrate packages.config to PackageReference</strong> 一鍵轉換，轉完 build 一次確認沒壞</li>
+<li>遷移後大幅瘦身：<code>packages.config</code> 刪除、<code>packages/</code> 資料夾刪除（加進 <code>.gitignore</code>）、<code>.csproj</code> 套件相關行數砍 2/3</li>
+<li>同一 solution 內不同專案可各用各的格式，但<strong>同一個專案不能混用</strong></li>
+<li><strong>不能遷移的情況</strong>：套件依賴 <code>install.ps1</code> / <code>uninstall.ps1</code>、套件用舊式 <code>content/</code> 資料夾複製檔案、套件含 <code>Web.config.transform</code> / <code>App.config.transform</code>——PackageReference 都不支援</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>檢查了所有 GitHub repo 的 branch protection 狀態，發現大部分 private repo 顯示「有保護」其實是誤判——API 回 403 並非「有保護」，而是「Free 方案不支援」。</p>
-<h3 id="protection">完整的 protection 設定組合<a class="headerlink" href="#protection" title="Permanent link">&para;</a></h3>
+<h3 id="_3">兩種格式差異<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>設定</th>
-<th>效果</th>
-<th>重要性</th>
+<th></th>
+<th><code>packages.config</code></th>
+<th><code>PackageReference</code>（建議）</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Restrict direct push</td>
-<td>所有改動必須走 PR</td>
-<td>高</td>
+<td>格式</td>
+<td>獨立 XML 檔</td>
+<td>寫在 <code>.csproj</code> 裡</td>
 </tr>
 <tr>
-<td>Require status checks to pass</td>
-<td>merge 前 CI 必須綠燈</td>
-<td>高</td>
+<td>適用</td>
+<td>.NET Framework 舊專案</td>
+<td>.NET Core / .NET 5+ / 新 Framework 專案</td>
 </tr>
 <tr>
-<td>Require branches to be up to date</td>
-<td>merge 前必須 rebase 到最新 main</td>
-<td>中</td>
+<td>套件還原</td>
+<td>複製到 <code>packages/</code> 資料夾</td>
+<td>全域快取（<code>%userprofile%\.nuget\packages</code>）不佔專案空間</td>
 </tr>
 <tr>
-<td>Disallow force push</td>
-<td>禁止 <code>git push --force</code> 覆蓋歷史</td>
-<td>高</td>
+<td>傳遞相依性</td>
+<td>手動管理（每個都要寫）</td>
+<td>自動解析</td>
 </tr>
 <tr>
-<td>Disallow deletion</td>
-<td>禁止刪除 main branch</td>
-<td>低</td>
-</tr>
-<tr>
-<td>Require PR review</td>
-<td>需要 reviewer 批准（solo 通常設 bypass）</td>
-<td>低（solo）</td>
+<td>版本鎖定</td>
+<td><code>packages.config</code> 鎖死</td>
+<td><code>PackageReference</code> 支援 floating version</td>
 </tr>
 </tbody>
 </table>
-<p>光設 status checks 但沒擋直接 push，還是可以繞過——兩者要一起開。</p>
-<h3 id="workflow-trigger">Workflow trigger 注意事項<a class="headerlink" href="#workflow-trigger" title="Permanent link">&para;</a></h3>
-<p>若要讓 protection 的 status check 生效，GitHub Actions workflow 必須包含 <code>pull_request</code> trigger：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">on</span><span class="p">:</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span><span class="w">      </span><span class="c1"># 不能少，否則 protection 偵測不到 check</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
+<h3 id="beforepackagesconfig-csproj">Before：packages.config + 肥大的 .csproj<a class="headerlink" href="#beforepackagesconfig-csproj" title="Permanent link">&para;</a></h3>
+<p><code>packages.config</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">&lt;packages&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&lt;package</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;Newtonsoft.Json&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;13.0.3&quot;</span><span class="w"> </span><span class="na">targetFramework=</span><span class="s">&quot;net451&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&lt;package</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;log4net&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;2.0.15&quot;</span><span class="w"> </span><span class="na">targetFramework=</span><span class="s">&quot;net451&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&lt;package</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;Dapper&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;2.0.123&quot;</span><span class="w"> </span><span class="na">targetFramework=</span><span class="s">&quot;net451&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">&lt;/packages&gt;</span>
 </code></pre></div>
-<h3 id="private-repo">Private Repo 的替代策略<a class="headerlink" href="#private-repo" title="Permanent link">&para;</a></h3>
-<p>GitHub Pro 月費 $4，若不想付費，private repo 的防線就靠流程規範：
-- push 前人工確認（如 CLAUDE.md 的「必須確認」層級）
-- CI 仍有價值（push 後通知失敗），只是無法擋住 merge</p>
+<p><code>.csproj</code>（節選）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;Project</span><span class="w"> </span><span class="na">ToolsVersion=</span><span class="s">&quot;12.0&quot;</span><span class="w"> </span><span class="na">DefaultTargets=</span><span class="s">&quot;Build&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&lt;ItemGroup&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&lt;Reference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, ...&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">&lt;HintPath&gt;</span>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll<span class="nt">&lt;/HintPath&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&lt;/Reference&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&lt;Reference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;log4net, Version=2.0.15.0, Culture=neutral, ...&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="nt">&lt;HintPath&gt;</span>..\packages\log4net.2.0.15\lib\net45\log4net.dll<span class="nt">&lt;/HintPath&gt;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">&lt;/Reference&gt;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nt">&lt;Reference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Dapper&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">      </span><span class="nt">&lt;HintPath&gt;</span>..\packages\Dapper.2.0.123\lib\net451\Dapper.dll<span class="nt">&lt;/HintPath&gt;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nt">&lt;/Reference&gt;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nt">&lt;Reference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;System&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">&lt;Reference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;System.Core&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="nt">&lt;/ItemGroup&gt;</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="nt">&lt;Import</span><span class="w"> </span><span class="na">Project=</span><span class="s">&quot;..\packages\Newtonsoft.Json.13.0.3\build\Newtonsoft.Json.targets&quot;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">          </span><span class="na">Condition=</span><span class="s">&quot;Exists(&#39;...&#39;)&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="nt">&lt;Target</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;EnsureNuGetPackageBuildImports&quot;</span><span class="w"> </span><span class="na">BeforeTargets=</span><span class="s">&quot;PrepareForBuild&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nt">&lt;Error</span><span class="w"> </span><span class="na">Condition=</span><span class="s">&quot;!Exists(&#39;...&#39;)&quot;</span><span class="w"> </span><span class="na">Text=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span><span class="nt">&lt;/Target&gt;</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="nt">&lt;/Project&gt;</span>
+</code></pre></div>
+<p>每個套件 3-4 行、<code>packages/</code> 資料夾每個套件完整複製一份 dll、底部還有一堆 NuGet 自動產生的 <code>Import</code> 和 <code>EnsureNuGetPackageBuildImports</code> target。</p>
+<h3 id="after-csproj-packagereference">After：只剩 .csproj 乾淨 PackageReference<a class="headerlink" href="#after-csproj-packagereference" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;Project</span><span class="w"> </span><span class="na">ToolsVersion=</span><span class="s">&quot;12.0&quot;</span><span class="w"> </span><span class="na">DefaultTargets=</span><span class="s">&quot;Build&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;...&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&lt;ItemGroup&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Newtonsoft.Json&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;13.0.3&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;log4net&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;2.0.15&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Dapper&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;2.0.123&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">&lt;/ItemGroup&gt;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">&lt;ItemGroup&gt;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nt">&lt;Reference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;System&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">&lt;Reference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;System.Core&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="nt">&lt;/ItemGroup&gt;</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="nt">&lt;/Project&gt;</span>
+</code></pre></div>
+<p>差異：</p>
+<ul>
+<li><code>packages.config</code> 整個刪除</li>
+<li><code>HintPath</code> 的 <code>&lt;Reference&gt;</code> 全部移除，改成 <code>&lt;PackageReference Include=... Version=... /&gt;</code> 一行</li>
+<li>系統參考（<code>System</code>, <code>System.Core</code>）不動</li>
+<li>底部的 <code>EnsureNuGetPackageBuildImports</code> target 和 <code>packages/.../build/*.targets</code> import 全部移除</li>
+<li><code>packages/</code> 資料夾可以整個刪掉，加進 <code>.gitignore</code></li>
+</ul>
+<h3 id="_4">可能踩到的坑<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>問題</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>install.ps1</code> / <code>uninstall.ps1</code></td>
+<td>PackageReference 不執行這些腳本，只支援 <code>init.ps1</code>。依賴它們做額外設定的套件會壞</td>
+</tr>
+<tr>
+<td><code>content</code> 資料夾</td>
+<td>舊式 NuGet 套件用 <code>content/</code> 複製檔案到專案，PackageReference 不支援，只認 <code>contentFiles/</code></td>
+</tr>
+<tr>
+<td><code>Web.config</code> / <code>App.config</code> transform</td>
+<td>舊套件的 <code>.transform</code> 檔不會自動套用</td>
+</tr>
+<tr>
+<td><code>allowedVersions</code> 語法</td>
+<td>PackageReference 改用 floating version（<code>13.0.*</code>）和區間語法（<code>[13.0.0,14.0.0)</code>），行為略有不同</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">實際遷移步驟<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Visual Studio 右鍵專案 → <strong>Migrate packages.config to PackageReference</strong></li>
+<li>看系統提示哪些套件可能不相容（有不支援的腳本會標出來）</li>
+<li>遷移完 build 看有沒有錯誤，跑一次完整測試</li>
+<li>刪除 <code>packages/</code> 資料夾，加進 <code>.gitignore</code></li>
+<li>如果某些套件不相容，可以 revert——兩者不能混用在同一個專案，但<strong>同一個 solution 內不同專案可以各用各的</strong></li>
+</ol>
+<h3 id="_6">什麼時候值得遷移<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✓ 專案套件數多、<code>.csproj</code> 被塞爆</li>
+<li>✓ 想減少 repo 體積（不再需要 commit <code>packages/</code>）</li>
+<li>✓ 要升級 CI/CD 或換新版 Visual Studio / MSBuild</li>
+<li>✗ 專案已經要淘汰，不值得花時間</li>
+<li>✗ 依賴大量有 <code>install.ps1</code> 的古老套件（先評估相容性）</li>
+</ul>
 
 
 
@@ -3365,7 +3504,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume f177b4c0-379d-4db4-b837-059114f5d18c</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume be73dbe6-963a-4bb9-a654-358ac3045b3e</code></p>
 </div>
 
 
