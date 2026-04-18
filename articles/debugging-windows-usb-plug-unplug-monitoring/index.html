@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/web-chrome-extension-realtime-subtitles/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/debugging-windows-usb-plug-unplug-monitoring/">
       
       
-        <link rel="prev" href="../web-css-brushed-metal-background/">
+        <link rel="prev" href="../debugging-gcp-artifact-registry-cost-trap/">
       
       
-        <link rel="next" href="../web-mkdocs-material-custom-neumorphic-theme/">
+        <link rel="next" href="../automation-cdp-existing-session-detection-risk/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Chrome Extension 即時字幕：架構方案與音訊擷取 - Mars 的知識庫</title>
+        <title>Windows USB 插拔事件監測：三種方法診斷接觸不良 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chrome Extension 即時字幕：架構方案與音訊擷取
+              Windows USB 插拔事件監測：三種方法診斷接觸不良
             
           </span>
         </div>
@@ -1048,8 +1048,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1059,11 +1057,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -1084,7 +1082,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1155,35 +1153,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chrome Extension 即時字幕：架構方案與音訊擷取
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../web-chrome-extension-realtime-subtitles/" class="md-nav__link">
         
   
   
@@ -1199,85 +1172,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mv3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MV3 音訊擷取流程
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        STT 引擎選項比較
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        參考專案
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1885,6 +1779,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1894,11 +1790,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
         
           
           <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
@@ -1919,7 +1815,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1962,10 +1858,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../debugging-windows-usb-plug-unplug-monitoring/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows USB 插拔事件監測：三種方法診斷接觸不良
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1981,6 +1902,107 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方案比較
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PowerShell 範例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        診斷流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        取捨
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        參考資源
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3256,32 +3278,43 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mv3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MV3 音訊擷取流程
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        STT 引擎選項比較
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        參考專案
+        方案比較
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PowerShell 範例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        診斷流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        取捨
       
     </span>
   </a>
@@ -3290,6 +3323,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        參考資源
+      
+    </span>
+  </a>
   
 </li>
       
@@ -3315,103 +3359,89 @@
       
       
       
-        <a href="../../tags/#tag:chrome-extension" class="md-tag">chrome-extension</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:javascript" class="md-tag">javascript</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:speech-to-text" class="md-tag">speech-to-text</a>
+        <a href="../../tags/#tag:windows" class="md-tag">windows</a>
       
     
   </nav>
 
 
 
-  <h1>Chrome Extension 即時字幕：架構方案與音訊擷取</h1>
+  <h1>Windows USB 插拔事件監測：三種方法診斷接觸不良</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Chrome Extension 擷取分頁音訊用 <code>chrome.tabCapture</code> API，MV3 下必須搭配 <strong>Offscreen Document</strong>（Service Worker 無法存取 MediaStream）</li>
-<li>擷取音訊後原始音訊會靜音，需用 <code>AudioContext</code> 的 <code>createMediaStreamSource</code> + <code>connect(destination)</code> 重新播放</li>
-<li><code>tabCapture</code> 需要 user gesture 觸發（點擊 Extension icon），不能自動啟動</li>
-<li>即時字幕架構的前端（音訊擷取 + 字幕顯示）和後端（STT 引擎）應解耦，引擎做成可抽換</li>
-<li>Web Speech API 只能用麥克風，<strong>無法接收 tabCapture 的 MediaStream</strong>，不適合分頁字幕場景</li>
+<li><strong>USBLogView</strong>（NirSoft 免費工具）是零門檻首選，背景常駐記錄 Plug/Unplug 事件、時間、VID/PID、序號；可 minimize 到 tray，也能 <code>winget install NirSoft.USBLogView</code>。同裝置短時間反覆出現 = 元兇。</li>
+<li><strong>內建 Event Viewer</strong> 路徑：<code>Applications and Services Logs → Microsoft → Windows → DriverFrameworks-UserMode → Operational</code>，<strong>預設關閉要手動 Enable Log</strong>。關鍵 Event ID：2003（連接）、2100（中間斷線）、2102（最終斷線）。</li>
+<li><strong>PowerShell + WMI</strong>：<code>Register-WmiEvent -Class Win32_DeviceChangeEvent</code>，EventType=2 arrival、3 removal。適合做客製警報（例如 30 秒內插拔 3 次就通知）。</li>
+<li>三大常見兇手：Generic USB Hub 韌體/驅動抽瘋（最常見）、藍牙裝置、實體接觸不良（線／接頭／port）。</li>
+<li>治標方案：<code>Settings → Sound → Device Connect/Disconnect → (None)</code> 關音效；但還是得找根因。</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>研究 Chrome Extension 即時字幕功能的實現方式。核心架構一致：<code>tabCapture → Offscreen Document → AudioWorklet (PCM chunks) → STT 引擎 → Content Script 字幕疊加層</code>。</p>
-<h3 id="mv3">MV3 音訊擷取流程<a class="headerlink" href="#mv3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Service Worker                    Offscreen Document
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>     |                                  |
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>     |-- chrome.tabCapture              |
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>     |   .getMediaStreamId() ---------&gt; |
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>     |                                  |-- navigator.mediaDevices.getUserMedia({
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>     |                                  |     audio: { mandatory: {
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>     |                                  |       chromeMediaSource: &#39;tab&#39;,
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>     |                                  |       chromeMediaSourceId: streamId
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>     |                                  |     }}
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>     |                                  |   })
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>     |                                  |-- AudioWorklet 切 PCM chunks
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>     |                                  |-- 送到 STT 引擎
-</code></pre></div>
-<p>manifest.json 需要的權限：<code>tabCapture</code>、<code>offscreen</code>、<code>activeTab</code>。</p>
-<h3 id="stt">STT 引擎選項比較<a class="headerlink" href="#stt" title="Permanent link">&para;</a></h3>
+<p>朋友實況時反覆出現 Windows USB 插入/移除音效，懷疑接觸不良。要確認到底是哪個裝置在跳。</p>
+<h3 id="_3">方案比較<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>方案</th>
-<th>延遲</th>
-<th>中日文品質</th>
-<th>費用</th>
-<th>串流支援</th>
+<th>難度</th>
+<th>優點</th>
+<th>缺點</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>自架 faster-whisper + WebSocket</td>
-<td>~0.5-1s</td>
-<td>最佳（large-v3）</td>
-<td>GPU 成本</td>
-<td>自行實作</td>
+<td>USBLogView</td>
+<td>低</td>
+<td>免安裝、欄位完整、可常駐</td>
+<td>只在執行期間紀錄</td>
 </tr>
 <tr>
-<td>Deepgram Nova-3 串流</td>
-<td>&lt;300ms</td>
-<td>英文佳，中文不確定</td>
-<td>$0.0077/min</td>
-<td>原生 WebSocket</td>
+<td>Event Viewer</td>
+<td>中</td>
+<td>系統內建、有歷史紀錄</td>
+<td>預設關閉、log 欄位較原始</td>
 </tr>
 <tr>
-<td>Groq Whisper API</td>
-<td>3-5s</td>
-<td>好（large-v3）</td>
-<td>免費額度</td>
-<td>僅批次，無串流</td>
-</tr>
-<tr>
-<td>瀏覽器內 Transformers.js</td>
-<td>2-5s</td>
-<td>差（只能跑小模型）</td>
-<td>免費</td>
-<td>N/A</td>
+<td>PowerShell WMI</td>
+<td>高</td>
+<td>可客製邏輯（阈值警報）</td>
+<td>要自己寫 + 維護 script</td>
 </tr>
 </tbody>
 </table>
-<p><strong>關鍵發現</strong>：要同時滿足「&lt;1s 延遲 + 中日文高品質 + 一般使用者可用」，目前沒有現成雲端方案。自架 faster-whisper 串流是唯一能兼顧的路線。</p>
-<h3 id="_3">參考專案<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="powershell">PowerShell 範例<a class="headerlink" href="#powershell" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Register-WmiEvent</span> <span class="n">-Class</span> <span class="n">Win32_DeviceChangeEvent</span> <span class="n">-SourceIdentifier</span> <span class="n">USBWatch</span> <span class="n">-Action</span> <span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="nv">$e</span> <span class="p">=</span> <span class="nv">$Event</span><span class="p">.</span><span class="n">SourceEventArgs</span><span class="p">.</span><span class="n">NewEvent</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="nv">$line</span> <span class="p">=</span> <span class="s2">&quot;{0}  EventType={1}&quot;</span> <span class="o">-f</span> <span class="p">(</span><span class="nb">Get-Date</span> <span class="n">-Format</span> <span class="s2">&quot;HH:mm:ss.fff&quot;</span><span class="p">),</span> <span class="nv">$e</span><span class="p">.</span><span class="n">EventType</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="nb">Add-Content</span> <span class="s2">&quot;$env:USERPROFILE\Desktop\usb.log&quot;</span> <span class="nv">$line</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c"># 停止：Unregister-Event -SourceIdentifier USBWatch</span>
+</code></pre></div>
+<p>EventType 對照：
+- <code>1</code> = Configuration changed
+- <code>2</code> = Device arrival（插入）
+- <code>3</code> = Device removal（移除）
+- <code>4</code> = Docking</p>
+<h3 id="_4">診斷流程<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>掛 USBLogView 錄一場實況 → 找出兇手 VID/PID</li>
+<li>VID/PID 反查（usb-ids.com 或 Device Manager）→ 確認具體裝置</li>
+<li><strong>同一裝置短時間反覆跳</strong> → 大機率接觸不良，換線 / 換 port / 換 hub</li>
+<li><strong>Generic USB Hub 每秒跳一次且無對應外接裝置</strong> → 驅動問題，Device Manager 解除安裝後重啟讓它重裝</li>
+<li><strong>完全找不到 Plug/Unplug 事件但有聲音</strong> → 檢查藍牙裝置、或是其他程式觸發系統音效</li>
+</ol>
+<h3 id="_5">取捨<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="https://github.com/alesaccoia/VoiceStreamAI">VoiceStreamAI</a> — faster-whisper + WebSocket 串流伺服器</li>
-<li><a href="https://github.com/QuentinFuxa/WhisperLiveKit">WhisperLiveKit</a> — 智慧緩衝串流</li>
-<li><a href="https://github.com/yashrajbharti/captions-on-the-fly">Captions on the Fly</a> — 瀏覽器內 Transformers.js 實作</li>
-<li><a href="https://github.com/gajananpp/captioner">Captioner</a> — Deepgram API Chrome Extension</li>
+<li>若只是要「抓兇手一次」→ USBLogView 最省事</li>
+<li>若要「長期監控 + 告警」→ PowerShell WMI + 寫入 log 檔，搭配 Task Scheduler 開機自動跑</li>
+<li>若要「事後調查歷史紀錄」→ Event Viewer 是唯一選擇（其他方案只記當下）</li>
+</ul>
+<h2 id="_6">參考資源<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.nirsoft.net/utils/usb_log_view.html">USBLogView @ NirSoft</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-devicechangeevent">Win32_DeviceChangeEvent 類別 - Microsoft Learn</a></li>
+<li><a href="https://www.leeholmes.com/responding-to-usb-devices-in-powershell/">Responding to USB Devices in PowerShell - Lee Holmes</a></li>
+<li><a href="https://learn.microsoft.com/en-us/answers/questions/4228438/continually-makes-the-usb-removed-noise">Continually makes the "USB removed" noise - Microsoft Q&amp;A</a></li>
 </ul>
 
 
@@ -3431,7 +3461,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 389fdf7d-a49f-495a-b9fc-322a526cf2a7</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 9c9d5b69-fa92-405f-a231-e696bfe5fb61</code></p>
 </div>
 
 
