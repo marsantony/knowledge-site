@@ -1621,6 +1621,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../general-mesh-agent-system-marketing-vs-reality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    破解「Mesh 系統」包裝術：原生 ChatGPT/Claude 上的 agentic workflow 實際做不做得到
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../general-personal-algorithm-landscape-2026/" class="md-nav__link">
         
   
@@ -3319,6 +3347,7 @@
 <li>User 訊息中會混入 <code>&lt;system-reminder&gt;</code>、<code>&lt;ide_opened_file&gt;</code> 等系統標籤，匯出時需要用 regex 清除</li>
 <li><code>userType: "internal"</code> 的 user 訊息是 tool_result，不是使用者實際輸入</li>
 <li>Thinking blocks 有 <code>signature</code> 欄位，不應公開</li>
+<li><strong>Export 工具會看到自己的 tool calls</strong>：JSONL 是 append-only 且 tool_use 在發起時就寫入，所以從 JSONL 跑 export 的腳本，讀到的最後幾筆會包含「export 自己正在執行」的 Bash 呼叫。處理方式：找到觸發 export 的 user message（例如 <code>&lt;command-name&gt;/share-chat&lt;/command-name&gt;</code>），從那筆截斷——比事後清理 trailing tool-only assistant entry 更可靠</li>
 </ul>
 <h2 id="_4">背景<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>建 <code>/share-chat</code> skill 時需要解析 JSONL 格式，逆向工程了 Claude Code 的 session 儲存結構。JSONL 是 append-only 的 JSON Lines 格式，每個 entry 有 <code>parentUuid</code> 串成對話鏈。</p>
@@ -3340,7 +3369,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 738f9050-134b-4f6a-9e06-037c3b9bee05</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume fbf7ad69-4802-4903-a61c-4b8d8820b842</code></p>
 </div>
 
 
