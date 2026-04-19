@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/general-mesh-agent-system-marketing-vs-reality/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/system-design-tauri-svelte-rust-music-player/">
       
       
-        <link rel="prev" href="../general-mcp-is-dead-debate-and-alternatives/">
+        <link rel="prev" href="../system-design-dotnet-backgroundservice-retry-yield/">
       
       
-        <link rel="next" href="../general-ai-agent-expectation-vs-reality-2026/">
+        <link rel="next" href="../learning-advent-of-agents-evaluation/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>破解「Mesh 系統」包裝術：原生 ChatGPT/Claude 上的 agentic workflow 實際做不做得到 - Mars 的知識庫</title>
+        <title>Tauri 2 + Svelte 5 + Rust 桌面應用架構案例（Lyra Music） - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              破解「Mesh 系統」包裝術：原生 ChatGPT/Claude 上的 agentic workflow 實際做不做得到
+              Tauri 2 + Svelte 5 + Rust 桌面應用架構案例（Lyra Music）
             
           </span>
         </div>
@@ -1245,8 +1245,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1256,11 +1254,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -1281,7 +1279,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1548,35 +1546,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    破解「Mesh 系統」包裝術：原生 ChatGPT/Claude 上的 agentic workflow 實際做不做得到
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../general-mesh-agent-system-marketing-vs-reality/" class="md-nav__link">
         
   
   
@@ -1592,112 +1565,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        「美好描述」vs「實際做得到」拆解
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#memory" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        最常見的誇大：「Memory 越做越準」
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#agentic-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        在原生介面做 agentic workflow 的真實限制
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#framework" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        什麼時候該升級到 framework
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        白話總結
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        相關文章
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2447,6 +2314,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2456,11 +2325,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" checked>
         
           
           <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
@@ -2481,7 +2350,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2692,10 +2561,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../system-design-tauri-svelte-rust-music-player/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tauri 2 + Svelte 5 + Rust 桌面應用架構案例（Lyra Music）
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2711,6 +2605,118 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        技術棧配比
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPC 架構
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        關鍵架構決策
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        實用技巧彙整
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD 品質管線（先快後慢原則）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        可改善之處
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3383,62 +3389,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        「美好描述」vs「實際做得到」拆解
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#memory" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        最常見的誇大：「Memory 越做越準」
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#agentic-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        在原生介面做 agentic workflow 的真實限制
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#framework" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        什麼時候該升級到 framework
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        白話總結
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         背景
@@ -3446,16 +3397,77 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        相關文章
+        技術棧配比
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPC 架構
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        關鍵架構決策
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        實用技巧彙整
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD 品質管線（先快後慢原則）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        可改善之處
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3481,112 +3493,153 @@
       
       
       
-        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
+        <a href="../../tags/#tag:app-development" class="md-tag">app-development</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:system-design" class="md-tag">system-design</a>
+        <a href="../../tags/#tag:rust" class="md-tag">rust</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:testing" class="md-tag">testing</a>
       
     
   </nav>
 
 
 
-  <h1>破解「Mesh 系統」包裝術：原生 ChatGPT/Claude 上的 agentic workflow 實際做不做得到</h1>
+  <h1>Tauri 2 + Svelte 5 + Rust 桌面應用架構案例（Lyra Music）</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>行銷上稱「Mesh 系統」「Node 協作」「AI 會學習」的設計，本質是業界的 <strong>agentic workflow / multi-agent orchestration</strong>——LangGraph、AutoGen、CrewAI、n8n 早已實作</li>
-<li>跑在原生 ChatGPT/Claude（不用 API、不架站）做得到的：<strong>prompt chain</strong>——同一對話視窗裡 LLM 按 system prompt 一步步走</li>
-<li>跑在原生介面做不到的：<strong>真自動化</strong>（cron、webhook、被動觸發）。所有流程都要使用者手動戳一下，「Node 自動傳給下一個」實際上是 LLM 照 system prompt 跑分支</li>
-<li>「Memory 會學習」是行銷話術——把過往結果存在 Sheet/Notion 下次當 context 餵回，這是 RAG/few-shot 的手刻版，<strong>LLM 權重沒變</strong>，不是真的 learning</li>
-<li>真有價值的核心觀念：把 prompt 邏輯（system prompt、persona）跟執行平台解耦（<strong>separation of concerns</strong>），這個老觀念但很多人 prompt 一團亂沒做到</li>
-<li>「Wi-Fi Mesh」類比偏了——真 Mesh 是 peer-to-peer 自組織，這類設計實際是中心化 orchestrator + 子 agent</li>
+<li>Tauri 2 比 Electron 輕量（不綁 Chromium），前後端透過 <code>invoke()</code> 做 IPC，後端可透過 <code>emit()</code> 主動推事件給前端</li>
+<li>音訊引擎用純 Rust 的 <strong>rodio</strong> 可達到「零外部依賴」（不需裝 FFmpeg / GStreamer），下載二進位即可執行</li>
+<li><strong>Gapless Playback</strong> 的簡潔實作：預先解碼下一首 decoder，<code>sink.append()</code> 到同一個 rodio sink，不需要雙 buffer 切換</li>
+<li>音量控制套用<strong>二次曲線映射</strong>（<code>actual = ui²</code>），UI 上 0.5 對應實際振幅 0.25，符合人耳對數感知</li>
+<li>Seek 失敗 fallback：MP3 等格式不支援向後 seek 時，重新載入檔案再 seek 到目標位置</li>
+<li>整個專案 <code>#![forbid(unsafe_code)]</code>，Tauri 的 CSP + capabilities 最小權限原則提供多層安全</li>
 </ul>
-<h2 id="vs">「美好描述」vs「實際做得到」拆解<a class="headerlink" href="#vs" title="Permanent link">&para;</a></h2>
+<h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>研究 <a href="https://github.com/twtrubiks/lyra-music">twtrubiks/lyra-music</a> 這個用 Tauri 2 + Svelte 5 + Rust 寫的桌面音樂播放器（v0.1.2，43 commits，MIT），作為學習 Rust 桌面應用架構的案例。</p>
+<h3 id="_3">技術棧配比<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>行銷描述</th>
-<th>實際做得到</th>
-<th>落差</th>
+<th>層級</th>
+<th>技術</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Node 自動傳給下一個</td>
-<td>system prompt 寫好流程，LLM 按步驟跑</td>
-<td>是 prompt chain，不是真自動化——還要使用者手動觸發</td>
+<td>前端</td>
+<td>Svelte 5.45 + TypeScript + Vite 7</td>
 </tr>
 <tr>
-<td>Memory 會學習</td>
-<td>Sheet 存歷史結果，下次當 context 餵回</td>
-<td>是 RAG/few-shot 的手刻版，模型權重沒變</td>
+<td>桌面框架</td>
+<td>Tauri 2</td>
 </tr>
 <tr>
-<td>自然語言 Parser 判斷意圖</td>
-<td>LLM 讀 system prompt 裡的指令清單挑分支</td>
-<td>LLM 本來就會做意圖分類，不是新發明</td>
+<td>音訊引擎</td>
+<td>rodio 0.21</td>
 </tr>
 <tr>
-<td>一個範本 N 個系統</td>
-<td>Custom GPT / Claude Project 複製一份換 persona</td>
-<td>真的可行，這部分不誇大</td>
+<td>元資料</td>
+<td>lofty 0.23（ID3v2 / Vorbis / MP4 atoms）</td>
 </tr>
 <tr>
-<td>Extension 取代 MCP</td>
-<td>大概是 Custom GPT Action（OpenAPI）或 Claude Desktop Extension（.dxt）</td>
-<td>「資料夾丟進去安裝」只符合 Claude Desktop Extension，ChatGPT 不是這樣</td>
+<td>資料庫</td>
+<td>rusqlite 0.38 (bundled, WAL mode)</td>
 </tr>
 <tr>
-<td>跑在原生介面、零 API 費用</td>
-<td>真的——只有訂閱費</td>
-<td>代價是沒辦法 cron、webhook、被動觸發</td>
+<td>檔案監視</td>
+<td>notify 8</td>
 </tr>
 </tbody>
 </table>
-<h2 id="memory">最常見的誇大：「Memory 越做越準」<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h2>
-<p>LLM 自己沒有記憶，每次對話都是空白。所謂「累積」本質是「把上次結果手動或半自動撈出，下次當 context 塞進去」。</p>
+<h3 id="ipc">IPC 架構<a class="headerlink" href="#ipc" title="Permanent link">&para;</a></h3>
+<p>前端 → 後端：透過 <strong>~40 個 Tauri commands</strong> 分三類（playback 8 個、library 20 個、playlist 13 個）。
+後端 → 前端：透過 event system（<code>emit("player-state-changed", ...)</code>），由背景 polling 執行緒每 250ms 推送一次。</p>
+<h3 id="_4">關鍵架構決策<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><strong>1. 前端三層分離</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>components/  ← UI 渲染
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>state/       ← Svelte 5 runes 狀態管理
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>logic/       ← 純函式業務邏輯（可獨立測試）
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>api/         ← Tauri invoke 薄封裝
+</code></pre></div>
+<p><code>logic/</code> 下的每個檔案都有對應 <code>.test.ts</code>，業務邏輯完全不依賴 DOM。</p>
+<p><strong>2. Rust 後端 Repository Pattern</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>commands/    ← 薄薄一層，負責鎖 mutex 並委派
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>storage/*_repo.rs  ← 封裝所有 SQL 操作
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>audio/       ← 音訊引擎
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>metadata/    ← 元資料讀寫
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>scanner/     ← 檔案掃描與監視
+</code></pre></div>
+<p><strong>3. Svelte 5 Runes 封裝式狀態管理</strong></p>
+<p>不直接 export <code>$state</code>，而是用工廠函式包一層：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getPlayerState</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">currentTrack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$state</span><span class="o">&lt;</span><span class="nx">Track</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">isPlaying</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$state</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">currentTrack</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">currentTrack</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">currentTrack</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">currentTrack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">isPlaying</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">isPlaying</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nx">play</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">isPlaying</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
+</code></pre></div>
+<p>外部只能透過定義好的介面存取狀態，debug 時好追蹤。</p>
+<h3 id="_5">實用技巧彙整<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>技巧</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Symlink 無限迴圈偵測</td>
+<td>用 <code>HashSet&lt;PathBuf&gt;</code> 記錄 canonicalized 路徑</td>
+</tr>
+<tr>
+<td>批次 SQL 操作</td>
+<td>每 500 筆一批（避免 SQLite query 長度限制）+ transaction</td>
+</tr>
+<tr>
+<td>檔案事件 debounce</td>
+<td>notify 事件累積 2 秒批次處理</td>
+</tr>
+<tr>
+<td>虛擬捲動</td>
+<td>固定行高 37px + overscan 10 行，自己實作 ~50 行</td>
+</tr>
+<tr>
+<td>拖放匯入</td>
+<td>Tauri native drag-drop + HTML5 fallback 雙機制</td>
+</tr>
+<tr>
+<td>統一錯誤型別</td>
+<td><code>AppError</code> enum 實作自定義 <code>Serialize</code>，所有 error 轉字串回前端</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cicd">CI/CD 品質管線（先快後慢原則）<a class="headerlink" href="#cicd" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Prettier → ESLint → Stylelint → TypeScript check → Vitest
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>→ rustfmt → Clippy pedantic → cargo test
+</code></pre></div>
+<p>快的檢查（格式化、lint）先跑，失敗時能最快回報；慢的（測試、編譯）放後面。Husky pre-commit hook + GitHub Actions CI 雙保險。</p>
+<p>Release 用 <code>tauri-apps/tauri-action</code> 自動建置 AppImage / deb / rpm，以 tag <code>v*</code> 觸發，發佈前驗證 Git tag / tauri.conf.json / Cargo.toml 三版本一致。</p>
+<h3 id="_6">可改善之處<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ul>
-<li>真 learning：模型參數變了，下次同樣 prompt 給不一樣答案</li>
-<li>這套：prompt 變了，模型沒變</li>
-<li>在 RAG 領域叫 retrieval-augmented generation，不是 learning</li>
-</ul>
-<p>差別重要：因為「學習」暗示系統會自己變強，但實際上是「使用者把好結果手動標出來餵回去」——強的還是使用者。</p>
-<h2 id="agentic-workflow">在原生介面做 agentic workflow 的真實限制<a class="headerlink" href="#agentic-workflow" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>必須有人觸發每一步</strong>：沒有 cron、沒有 webhook trigger、沒有 background daemon</li>
-<li><strong>「自動切 Agent」其實是切 Custom GPT / Claude Project</strong>：使用者要手動切視窗，不是無縫接續</li>
-<li><strong>跨工具呼叫綁平台能力</strong>：ChatGPT 的 Custom GPT Action（OpenAPI）、Claude 的 Connectors（Gmail/Calendar/Drive）、Claude Desktop Extension（.dxt）——各平台規格不同</li>
-<li><strong>記憶要自己管</strong>：要嘛每次手動貼 Sheet 內容，要嘛靠 Action 讀取（受 platform rate limit），要嘛當 Knowledge file 上傳（不會自動更新）</li>
-</ul>
-<h2 id="framework">什麼時候該升級到 framework<a class="headerlink" href="#framework" title="Permanent link">&para;</a></h2>
-<p>如果出現以下情況，原生介面的 prompt chain 會撐不住：</p>
-<ul>
-<li>需要被動觸發（時間到自動跑、收到 email 自動處理）</li>
-<li>需要 parallel sub-agent（同時跑 5 個分析再合併）</li>
-<li>需要嚴謹的 state machine（不能每次都靠 LLM「記得」自己在哪一步）</li>
-<li>需要可重現的測試（同樣輸入要每次得到同樣輸出）</li>
-</ul>
-<p>這時候選 LangGraph（嚴謹 state graph）、n8n（視覺化 workflow + 整合一堆服務）、CrewAI（多 agent 協作）等。</p>
-<h2 id="_2">白話總結<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>可以想成：把「每次都從頭跟 AI 解釋一遍」改成「事先寫好一本員工手冊，AI 照著做」。手冊裡規定好誰負責什麼、做完交給誰、結果記在哪本筆記本。</p>
-<p>這比一般人亂打 prompt 高明，但：
-- <strong>沒有「自動」</strong>：你還是要每次自己開對話、按按鈕、貼東西
-- <strong>沒有「學習」</strong>：那本筆記本不會讓 AI 變聰明，只是下次你記得翻給它看
-- <strong>沒有「創新」</strong>：這套做法在工程圈叫得出名字、有現成工具，只是改造成「不會寫程式的人也能在 ChatGPT 裡用」</p>
-<p>真正有用的觀念只有一個：<strong>與其每次重新跟 AI 講需求，不如花時間把流程寫成一份穩定的說明書，重複用</strong>。這個習慣比所有「Mesh 架構」的包裝都重要。</p>
-<h2 id="_3">背景<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>研究一篇行銷文，作者把自己設計的 AI 工作流稱為「Mesh 系統」，宣稱靈感來自 Wi-Fi Mesh，主打「跑在原生 ChatGPT/Claude 上、零 API 費用、Memory 會學習、Node 自動協作」。</p>
-<p>拆解後發現：技術本質就是 agentic workflow，包裝得很好讓非工程師易懂，但「自動」「學習」這些用詞超出實際做到的。對沒接觸過 multi-agent 概念的讀者，這套包裝有教育價值；對已經在寫程式的人，直接用 LangGraph / n8n 會靈活十倍。</p>
-<h2 id="_4">相關文章<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../system-design-multi-agent-governance-patterns/">多智能體組織治理：架構模式、記憶策略與防漂移機制</a> — 正規 multi-agent 框架的設計考量</li>
-<li><a href="../general-portable-ai-agent-ecosystem-2026/">可攜式 AI Agent 生態系：GitAgent、OpenClaw、NemoClaw 比較</a> — agent 定義標準化的趨勢</li>
-<li><a href="../general-rag-complete-guide/">RAG 完整指南</a> — 「Memory 學習」迷思背後的實際機制</li>
+<li>後端 polling 每 250ms 固定間隔，<strong>播放暫停時仍在 polling</strong>，可改 event-driven 省 CPU</li>
+<li>Release artifact 目前只有 Linux，macOS / Windows 尚未建置</li>
+<li>Gapless 整合測試只驗證狀態欄位，沒有實際播放音訊的測試</li>
 </ul>
 
 
@@ -3606,7 +3659,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume fbf7ad69-4802-4903-a61c-4b8d8820b842</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume d0cfa80b-f36b-4009-9c73-05db17a28a03</code></p>
 </div>
 
 
