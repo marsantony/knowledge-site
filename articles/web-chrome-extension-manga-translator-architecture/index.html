@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/gaming-ffxiv-gathering-collectables/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/web-chrome-extension-manga-translator-architecture/">
       
       
-        <link rel="prev" href="../gaming-ffxiv-submarine-guide/">
+        <link rel="prev" href="../web-chrome-extension-realtime-subtitles/">
       
       
-        <link rel="next" href="../debugging-gcp-artifact-registry-cost-trap/">
+        <link rel="next" href="../web-mkdocs-material-custom-neumorphic-theme/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>FF14 採集收藏品技巧：技能循環與收藏價值門檻 - Mars 的知識庫</title>
+        <title>Chrome Extension 漫畫圖片翻譯：技術架構與踩坑筆記 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FF14 採集收藏品技巧：技能循環與收藏價值門檻
+              Chrome Extension 漫畫圖片翻譯：技術架構與踩坑筆記
             
           </span>
         </div>
@@ -1076,6 +1076,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1085,11 +1087,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -1110,7 +1112,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1209,10 +1211,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../web-chrome-extension-manga-translator-architecture/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chrome Extension 漫畫圖片翻譯：技術架構與踩坑筆記
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1228,6 +1255,118 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-apirender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. API/Render 圖分離
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-canvas-tainted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 跨域 Canvas Tainted 陷阱
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-gemini-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Gemini 多圖批次 API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-intersectionobserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. IntersectionObserver 記憶體洩漏
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 繞過反右鍵保護
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-sw-lru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. SW 端 LRU 翻譯快取
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1862,8 +2001,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1873,11 +2010,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
@@ -1898,7 +2035,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1969,35 +2106,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FF14 採集收藏品技巧：技能循環與收藏價值門檻
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../gaming-ffxiv-gathering-collectables/" class="md-nav__link">
         
   
   
@@ -2013,251 +2125,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        採集技能一覽
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="採集技能一覽">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        增加收藏價值
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buff" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Buff 技能
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        被動特性
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        耐久回復
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        收藏價值門檻
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        技能循環
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="技能循環">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#90-60" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        等級壓制（如 90 級採 60 級物品）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#400-gp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        400 GP 標準循環
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#800-1000-gp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        800-1000 GP 高效循環
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#standard" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Standard 觸發時
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        實用要點
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="實用要點">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        採集點類型
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        裝備優先度
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        老主顧系統
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        核心原則
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        交納地點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        聖遺物/宇宙工具
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3665,19 +3532,19 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        採集技能一覽
+        背景
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="採集技能一覽">
+    <nav class="md-nav" aria-label="背景">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#1-apirender" class="md-nav__link">
     <span class="md-ellipsis">
       
-        增加收藏價值
+        1. API/Render 圖分離
       
     </span>
   </a>
@@ -3685,10 +3552,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#buff" class="md-nav__link">
+  <a href="#2-canvas-tainted" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Buff 技能
+        2. 跨域 Canvas Tainted 陷阱
       
     </span>
   </a>
@@ -3696,10 +3563,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#3-gemini-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        被動特性
+        3. Gemini 多圖批次 API
       
     </span>
   </a>
@@ -3707,10 +3574,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#4-intersectionobserver" class="md-nav__link">
     <span class="md-ellipsis">
       
-        耐久回復
+        4. IntersectionObserver 記憶體洩漏
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 繞過反右鍵保護
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-sw-lru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. SW 端 LRU 翻譯快取
       
     </span>
   </a>
@@ -3719,161 +3608,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        收藏價值門檻
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        技能循環
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="技能循環">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#90-60" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        等級壓制（如 90 級採 60 級物品）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#400-gp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        400 GP 標準循環
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#800-1000-gp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        800-1000 GP 高效循環
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#standard" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Standard 觸發時
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        實用要點
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="實用要點">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        採集點類型
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        裝備優先度
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        老主顧系統
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        核心原則
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        交納地點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        聖遺物/宇宙工具
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3899,169 +3633,120 @@
       
       
       
-        <a href="../../tags/#tag:ffxiv" class="md-tag">ffxiv</a>
+        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:chrome-extension" class="md-tag">chrome-extension</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:javascript" class="md-tag">javascript</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:performance" class="md-tag">performance</a>
       
     
   </nav>
 
 
 
-  <h1>FF14 採集收藏品技巧：技能循環與收藏價值門檻</h1>
+  <h1>Chrome Extension 漫畫圖片翻譯：技術架構與踩坑筆記</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>收藏品系統</strong>需完成 50 級任務「Inscrutable Tastes」解鎖，之後各版本有額外解鎖任務</li>
-<li><strong>核心循環</strong>：細選（Scrutiny）+ 審慎篩選（Meticulous Prospector）重複 2-3 次，Standard 觸發時改用大膽篩選</li>
-<li><strong>裝備達標判斷</strong>：篩選（Scour）能打到 200 點、細選能打到 250 點就 OK</li>
-<li><strong>GP 門檻</strong>：滿級收藏品理想 964+ GP（1000 GP 循環扣掉採集中回復的 36 GP）</li>
-<li><strong>等級壓制時隨便按</strong>：90 級採 60 級收藏品，任意篩選 3 次就能滿收藏價值</li>
+<li><strong>API 圖與 render 圖必須分離</strong>：送 Gemini 用縮過的 1024px 省 token，渲染用全解析度 base64 才不會把使用者看的圖糊掉</li>
+<li><strong>跨域 Canvas tainted 的解法</strong>：不要從原始 <code>&lt;img&gt;</code> 元素繪到 canvas（會觸發 CORS taint，<code>getImageData</code> 拋 SecurityError），改用 SW fetch 拿到 base64，重新 <code>new Image()</code> 載入到乾淨 canvas</li>
+<li><strong>多圖批次翻譯</strong>：Gemini 單次請求支援多張圖，把 N 張塞進同一個 <code>contents.parts</code>，prompt 要求回傳 <code>[[image1], [image2], ...]</code>，把 20 次 API 呼叫壓到 5 次</li>
+<li><strong>IntersectionObserver 預擷取要記得 disconnect</strong>：每次重複呼叫 <code>startPreCapture</code> 時必須先 <code>observer.disconnect()</code>，否則舊的 observer 會永遠存活造成記憶體洩漏</li>
+<li><strong>繞過反右鍵保護</strong>：用 <code>dblclick</code> + <code>{ capture: true }</code> 在事件捕獲階段攔截，可以繞過站方在 bubble 階段的封鎖</li>
 </ul>
-<h2 id="_2">採集技能一覽<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">增加收藏價值<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>技能</th>
-<th>效果</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>篩選（Scour）</td>
-<td>+最高 200 點，消耗 1 耐久</td>
-<td>穩定基礎技</td>
-</tr>
-<tr>
-<td>大膽篩選（Brazen Prospector）</td>
-<td>+50%~150% 篩選強度（100~300 點），消耗 1 耐久</td>
-<td>賭博型，Standard 觸發時用</td>
-</tr>
-<tr>
-<td>審慎篩選（Meticulous Prospector）</td>
-<td>+75% 篩選強度（最高 150 點），25% 機率不消耗耐久</td>
-<td>穩定+省耐久，主力技</td>
-</tr>
-</tbody>
-</table>
-<h3 id="buff">Buff 技能<a class="headerlink" href="#buff" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>技能</th>
-<th>GP</th>
-<th>效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>細選（Scrutiny）</td>
-<td>200</td>
-<td>下一次篩選額外 +最高 250 點</td>
-</tr>
-<tr>
-<td>收藏品之力（Collector's Focus）</td>
-<td>100</td>
-<td>收藏家直覺觸發率→70%（聖遺物→100%）</td>
-</tr>
-<tr>
-<td>預備接觸（Priming Touch）</td>
-<td>—</td>
-<td>降低 GP 消耗</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_4">被動特性<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>特性</th>
-<th>效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>收藏家直覺</td>
-<td>篩選時機率額外 +最高 100 點（觸發率最高 40%）</td>
-</tr>
-<tr>
-<td>Collector's Standard</td>
-<td>隨機觸發（&lt;20%）：審慎提升到 100% 篩選強度，大膽下限也提升到 100%</td>
-</tr>
-<tr>
-<td>Collector's High Standard（Lv.100）</td>
-<td>Standard 觸發時加強版：大膽上限 150%、審慎保耐久率升至 65%</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_5">耐久回復<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>石工的理智 / 農夫的智慧：300 GP，耐久 +1（每個採集點限用一次）。</p>
-<h2 id="_6">收藏價值門檻<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>用途</th>
-<th>最低門檻</th>
-<th>建議目標</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>工票交納</td>
-<td>依物品不同</td>
-<td>越高越好（分三檔）</td>
-</tr>
-<tr>
-<td>老主顧</td>
-<td>240</td>
-<td>600+（最高檔）</td>
-</tr>
-<tr>
-<td>精選（靈砂）</td>
-<td>400</td>
-<td>1000（有額外機率）</td>
-</tr>
-<tr>
-<td>昇華收藏品</td>
-<td>1000</td>
-<td>1000（保證稀有靈砂）</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_7">技能循環<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<h3 id="90-60">等級壓制（如 90 級採 60 級物品）<a class="headerlink" href="#90-60" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>篩選 → 篩選 → 篩選 → 收集（隨便按都滿）
+<h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>開發一個翻譯外文漫畫圖片的 Chrome Extension（Manifest V3）：Gemini API 做 OCR + 翻譯，Canvas 替換 <code>img.src</code>。流程踩了很多坑，記下幾個非顯而易見的設計決策。</p>
+<h3 id="1-apirender">1. API/Render 圖分離<a class="headerlink" href="#1-apirender" title="Permanent link">&para;</a></h3>
+<p><strong>問題</strong>：一開始用同一份 base64 同時送 API 和渲染，結果 Gemini 上限大、要省 token，所以縮成 1024px—<strong>但渲染也用 1024px → 翻譯後使用者看到的圖整個糊掉</strong>。</p>
+<p><strong>解法</strong>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>原圖（2000px）─保留─→ Canvas 渲染（全解析度）
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>      │                      ↑
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>      └─ 縮 1024px ─→ Gemini API ─→ bbox (0-1000)
 </code></pre></div>
-<h3 id="400-gp">400 GP 標準循環<a class="headerlink" href="#400-gp" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>細選 + 審慎篩選 → 細選 + 審慎篩選 → 判斷收藏價值 → 收集
+<p>Gemini 回的 bbox 是 0-1000 比例，除以 1000 就是 0-1 ratio，<strong>天然適配任意解析度</strong>，所以 API 用縮圖、render 用原圖完全沒問題。</p>
+<p>實作上要在 SW 加一個 <code>fetch-image-full</code> 訊息類型，用原始 URL 拿全解析度 base64 給渲染用。</p>
+<h3 id="2-canvas-tainted">2. 跨域 Canvas Tainted 陷阱<a class="headerlink" href="#2-canvas-tainted" title="Permanent link">&para;</a></h3>
+<p>跨域圖片（站台用獨立 CDN 服務圖片時很常見）一旦繪到 canvas，canvas 變 tainted，<code>getImageData</code> 拋 SecurityError，無法做背景色取樣。</p>
+<p><strong>錯誤做法</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">ctx</span><span class="p">.</span><span class="nx">drawImage</span><span class="p">(</span><span class="nx">originalImgElement</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// tainted!</span>
+</code></pre></div></p>
+<p><strong>正確做法</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// SW 端</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">blob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">blob</span><span class="p">());</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">base64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">blobToBase64</span><span class="p">(</span><span class="nx">blob</span><span class="p">);</span><span class="w">  </span><span class="c1">// 透過 SW 繞過 CORS</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">return</span><span class="w"> </span><span class="nx">base64</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1">// Content script 端</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">tempImg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Image</span><span class="p">();</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nx">tempImg</span><span class="p">.</span><span class="nx">crossOrigin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;anonymous&#39;</span><span class="p">;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nx">tempImg</span><span class="p">.</span><span class="nx">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">drawImage</span><span class="p">(</span><span class="nx">tempImg</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// clean canvas</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="nx">tempImg</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">base64</span><span class="p">;</span><span class="w">  </span><span class="c1">// base64 不受 CORS 約束</span>
+</code></pre></div></p>
+<h3 id="3-gemini-api">3. Gemini 多圖批次 API<a class="headerlink" href="#3-gemini-api" title="Permanent link">&para;</a></h3>
+<p>把多張圖塞進同一次 API 呼叫（Gemini 單次支援最多 3,600 張）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nx">contents</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nx">parts</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="nx">buildBatchPrompt</span><span class="p">(</span><span class="nx">sourceLang</span><span class="p">,</span><span class="w"> </span><span class="nx">targetLang</span><span class="p">,</span><span class="w"> </span><span class="nx">n</span><span class="p">)</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="p">...</span><span class="nx">imagesBase64Array</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">b64</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">inlineData</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">mimeType</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}))</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="p">]</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p">}],</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nx">generationConfig</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">responseMimeType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">};</span>
 </code></pre></div>
-- 800 且無 Standard：篩選 → 收集
-- 800 且有 Standard：審慎篩選 → 收集
-- ≥850：審慎篩選 → 收集
-- 1000：直接收集</p>
-<h3 id="800-1000-gp">800-1000 GP 高效循環<a class="headerlink" href="#800-1000-gp" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>細選 + 審慎篩選 × 3 → 石工的理智（+1 耐久）→ 收集 × 剩餘耐久
+<p>Prompt 關鍵句：「Output a JSON array of exactly N arrays (one per image, in order)」並提供範例 <code>[[image1 regions], [image2 regions], ...]</code>。</p>
+<p>20 張圖原本要 20 次網路往返，批次 4 張/次 → 5 次。</p>
+<h3 id="4-intersectionobserver">4. IntersectionObserver 記憶體洩漏<a class="headerlink" href="#4-intersectionobserver" title="Permanent link">&para;</a></h3>
+<p>預擷取功能用 IntersectionObserver 在圖進 viewport 前先 capture base64：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">preCaptureObserver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">  </span><span class="c1">// 模組層儲存</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">startPreCapture</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">preCaptureObserver</span><span class="p">)</span><span class="w"> </span><span class="nx">preCaptureObserver</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">();</span><span class="w">  </span><span class="c1">// 重複呼叫先清舊的</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nx">preCaptureObserver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">IntersectionObserver</span><span class="p">(...);</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">img</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">images</span><span class="p">)</span><span class="w"> </span><span class="nx">preCaptureObserver</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="nx">img</span><span class="p">);</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="standard">Standard 觸發時<a class="headerlink" href="#standard" title="Permanent link">&para;</a></h3>
-<p>螢幕有特效提示 → 立刻改用大膽篩選或審慎篩選，不要浪費（觸發率 &lt;20%）。</p>
-<h2 id="_8">實用要點<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<h3 id="_9">採集點類型<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>一般收藏品</strong>：隨時可採，固定位置</li>
-<li><strong>限時收藏品</strong>：特定艾歐澤亞時間出現，查鬧鐘準時到場</li>
-<li><strong>幻影採集點</strong>：特定時段出現，採完精選出靈砂</li>
-<li><strong>傳說採集點</strong>：需購買筆記解鎖，獎勵最好</li>
-</ul>
-<h3 id="_10">裝備優先度<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>鑑別力（Perception）&gt; 獲得力（Gathering）&gt; GP（至少 800+，理想 964+）</p>
-<h3 id="_11">老主顧系統<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>所有老主顧共用 12 次/週限額，優先交還沒滿信賴的 NPC。每個版本都有新的老主顧 NPC 可解鎖。</p>
-<h3 id="_12">核心原則<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p>達到門檻後，<strong>採集數量優先於品質</strong>——多收集一個物品的價值通常大於把收藏價值從 800 推到 1000。</p>
-<h2 id="_13">交納地點<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
-<p>收藏品鑑定人分布在各主城和擴充區域城市（利姆薩、格里達尼亞、烏爾達哈、莫多納、田園郡、神拳痕、游末邦、拉札漢、九號解決方案）。</p>
-<h2 id="_14">聖遺物/宇宙工具<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
-<p>Lv.90 聖遺物 / Lv.100 宇宙工具提供收藏家直覺觸發率 +20%，採低等級收藏品效果特別好。最新 7.3 採集點仍需足夠裝等的正規工具。</p>
+<p>如果忘了 disconnect，每次 PJAX 導航觸發 <code>observeChanges</code> 都會新增一個 observer，舊的還在背景跑—典型的 memory leak。</p>
+<h3 id="5">5. 繞過反右鍵保護<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>某些站方在 contextmenu 事件上掛 preventDefault 阻擋右鍵選單。改用 <code>dblclick</code> + capture phase 繞過：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;dblclick&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">tagName</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;IMG&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nx">e</span><span class="p">.</span><span class="nx">stopImmediatePropagation</span><span class="p">();</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nx">translateSingleImage</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">},</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w">  </span><span class="c1">// capture: true 在事件捕獲階段就接住</span>
+</code></pre></div>
+<p>關鍵是第三個參數 <code>true</code> 啟用 capture phase—事件從 document 往下傳，比站方在 bubble 階段掛的 listener 早觸發。</p>
+<h3 id="6-sw-lru">6. SW 端 LRU 翻譯快取<a class="headerlink" href="#6-sw-lru" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">translationCache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">();</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">CACHE_MAX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">200</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">cacheSet</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">translationCache</span><span class="p">.</span><span class="nx">size</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">CACHE_MAX</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nx">translationCache</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="nx">translationCache</span><span class="p">.</span><span class="nx">keys</span><span class="p">().</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span><span class="w">  </span><span class="c1">// FIFO 淘汰</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="nx">translationCache</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">);</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">}</span>
+</code></pre></div>
+<p><code>Map</code> 保留插入順序，<code>keys().next().value</code> 就是最舊的—簡單實現 LRU。Cache key 用「base64 長度 + 前 200 字元」當 hash，避免對 MB 級字串算 SHA。</p>
 
 
 
@@ -4080,7 +3765,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 2ed7c230-a7f8-42c0-b9db-ddb99ccc9b61</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 3329e8d4-e8bd-467d-8f6b-787327d213dc</code></p>
 </div>
 
 
