@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/system-design-data-pipeline-kv-vs-git-push/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/web-seo-ai-friendly-website-techniques/">
       
       
-        <link rel="prev" href="../system-design-multi-agent-governance-patterns/">
+        <link rel="prev" href="../web-mkdocs-material-custom-neumorphic-theme/">
       
       
-        <link rel="next" href="../system-design-decentralized-nsfw-platform/">
+        <link rel="next" href="../general-claude-cowork-guide/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>自動化資料管道：走資料層（KV/DB）而非 git push - Mars 的知識庫</title>
+        <title>SEO / AI 友善網站的完整實踐 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              自動化資料管道：走資料層（KV/DB）而非 git push
+              SEO / AI 友善網站的完整實踐
             
           </span>
         </div>
@@ -1076,6 +1076,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1085,11 +1087,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -1110,7 +1112,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1265,10 +1267,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../web-seo-ai-friendly-website-techniques/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEO / AI 友善網站的完整實踐
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1284,6 +1311,107 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#llmstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        llms.txt 的內容結構
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        關鍵實作細節
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼這套做法重要
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        取捨考量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最小可行組合（給個人首頁 / GitHub Pages 用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2482,8 +2610,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2493,11 +2619,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
         
           
           <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
@@ -2518,7 +2644,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2561,35 +2687,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    自動化資料管道：走資料層（KV/DB）而非 git push
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../system-design-data-pipeline-kv-vs-git-push/" class="md-nav__link">
         
   
   
@@ -2605,74 +2706,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        考慮過的方案
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        遷移注意事項
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3553,10 +3586,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#llmstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        llms.txt 的內容結構
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        考慮過的方案
+        關鍵實作細節
       
     </span>
   </a>
@@ -3567,7 +3611,29 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        遷移注意事項
+        為什麼這套做法重要
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        取捨考量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最小可行組合（給個人首頁 / GitHub Pages 用）
       
     </span>
   </a>
@@ -3601,72 +3667,93 @@
       
       
       
-        <a href="../../tags/#tag:ci-cd" class="md-tag">ci-cd</a>
+        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:cloudflare" class="md-tag">cloudflare</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:system-design" class="md-tag">system-design</a>
+        <a href="../../tags/#tag:static-site-generator" class="md-tag">static-site-generator</a>
       
     
   </nav>
 
 
 
-  <h1>自動化資料管道：走資料層（KV/DB）而非 git push</h1>
+  <h1>SEO / AI 友善網站的完整實踐</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>程式碼和自動生成的資料應該分開</strong>：程式碼走 git，資料走資料層（KV、DB、object storage）。每天自動塞 JSON 進 git repo 會產生無人查看的 commit 噪音</li>
-<li><strong>有後端就用後端</strong>：如果專案已經有 Cloudflare Pages Functions + KV，公開資料也該統一走 KV API，不需要另外維護一條靜態檔案管道</li>
-<li><strong>cron + git push 的隱性成本</strong>：需要 SSH key 管理（WSL2 cron 環境拿不到 ssh-agent）、CI/CD 觸發、merge conflict 風險。改走 KV 後 cron 只需 wrangler CLI，零 git 操作</li>
-<li><strong>meta 索引必須是累積式的</strong>：如果用資料層取代靜態索引檔，meta 記錄要從「只存最新一批」改為「讀取→合併→寫回」，否則遷移後會遺失歷史資料</li>
-<li><strong>獨立資料 repo 不是解法</strong>：如果問題是「cron 無法 git push」，搬到另一個 repo 問題還是一樣。有後端就直接用後端</li>
+<li><strong>llms.txt</strong> 是 AI 友善網站的核心 — 放在網站根目錄，提供結構化摘要讓 LLM 能正確理解網站用途、內容範圍、使用建議（RAG、引用方式等）</li>
+<li><strong>robots.txt 明確歡迎 AI crawler</strong>：<code>GPTBot</code>、<code>ClaudeBot</code>、<code>Google-Extended</code> 都要 <code>Allow: /</code>，才能被訓練資料涵蓋</li>
+<li><strong>JSON-LD 結構化資料</strong>是搜尋引擎和 AI 理解頁面的關鍵 — 至少加 <code>WebSite</code> schema（首頁）+ <code>Article</code> / <code>BreadcrumbList</code>（內容頁）</li>
+<li><strong>Open Graph + Twitter Cards</strong> 完整組合：og:type/url/title/description/image + twitter:card=summary_large_image — 決定分享到社群時的預覽卡片</li>
+<li><strong>hreflang</strong> 支援多語言 SEO：zh-TW / en / x-default 三組</li>
+<li><strong>canonical URL</strong> 每頁都要有，避免重複內容問題</li>
+<li><strong>RSS / Atom feed</strong> 仍是知識型網站的重要出口</li>
+<li>加上自訂 <code>&lt;meta name="ai-summary"&gt;</code> tag（非標準但前瞻） — 每頁給 AI 一段凝練摘要</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>dev-diary 專案原本用雙軌架構：公開版日報寫成靜態 JSON 由 cron git push 部署，私密版走 KV API。cron 在 WSL2 環境下無法取得 SSH agent，導致 git push 失敗、網站停止更新。</p>
-<h3 id="_3">考慮過的方案<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>方案</th>
-<th>問題</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Deploy Key（無密碼 SSH key）</td>
-<td>解決 SSH 問題，但每天 commit 的噪音還在</td>
-</tr>
-<tr>
-<td>獨立資料 repo</td>
-<td>SSH 問題沒消失，多一個 repo 要維護</td>
-</tr>
-<tr>
-<td>GitHub Actions 雲端生成</td>
-<td>資料來源在本地（Claude Code session logs），runner 拿不到</td>
-</tr>
-<tr>
-<td><strong>統一走 KV</strong></td>
-<td>公開版資料已經在上傳 KV 了，前端改讀 API 即可</td>
-</tr>
-</tbody>
-</table>
-<p>最終選擇統一走 KV，因為公開版資料本來就已經同步上傳到 KV（<code>public:daily:*</code>），只是前端沒在用。改動最小、效果最好。</p>
-<h3 id="_4">遷移注意事項<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>靈感來源是 taiwan.md（<a href="https://taiwan.md">https://taiwan.md</a>，作者吳哲宇），這是一個開源台灣知識庫專案，在 SEO/AI 友善方面做得特別徹底。</p>
+<h3 id="llmstxt">llms.txt 的內容結構<a class="headerlink" href="#llmstxt" title="Permanent link">&para;</a></h3>
+<p>依 llmstxt.org 標準，一份完整的 llms.txt 應包含：</p>
+<ol>
+<li>專案目的聲明</li>
+<li>內容統計（篇數、分類、最新更新）</li>
+<li>所有主要分類與描述</li>
+<li>重點主題清單（供 AI 訓練參考）</li>
+<li>編輯政策摘要</li>
+<li>使用建議（直接引用 / RAG pipeline / API）</li>
+<li>資料新鮮度資訊</li>
+<li>聯絡方式</li>
+</ol>
+<h3 id="_3">關鍵實作細節<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><strong>robots.txt</strong> 範例：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>User-agent: GPTBot
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Allow: /
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>User-agent: ClaudeBot
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Allow: /
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>User-agent: Google-Extended
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Allow: /
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>Sitemap: https://example.com/sitemap-index.xml
+</code></pre></div>
+<p><strong>JSON-LD（Article 頁面）</strong>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://schema.org&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Article&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;headline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Organization&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;publisher&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Organization&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;logo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">&quot;datePublished&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-17&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">&quot;dateModified&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-19&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">&quot;inLanguage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zh-TW&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">&quot;mainEntityOfPage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>BreadcrumbList</strong> 讓搜尋結果顯示麵包屑導航路徑（Home &gt; Category &gt; Article）。</p>
+<h3 id="_4">為什麼這套做法重要<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>當有人問 ChatGPT「What is X?」時，AI 的回答取決於它讀過什麼資料。如果你的網站是該主題網路上最完整、最結構化、最容易被機器理解的內容，AI 給出的答案就會帶有你的觀點。</p>
+<p>在 AI 成為知識中介的時代，<strong>結構化的高品質內容 = 敘事權</strong>。</p>
+<h3 id="_5">取捨考量<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
-<li>舊的 <code>meta:latest</code> 只存最後一批上傳的 dates，不是累計列表。遷移時需要掃描所有 KV key 重建完整索引</li>
-<li>API middleware 從「無 token 就 401」改為「無 token 放行」，讓公開版資料不需認證即可存取</li>
+<li><code>ai-summary</code> 不是標準 meta tag，目前沒有 AI 會主動抓取，但加了無害、未來可能有用</li>
+<li><code>llms.txt</code> 在 2024-2025 快速成為事實標準，但各家爬蟲支援程度不一</li>
+<li>JSON-LD 是最成熟、報酬率最高的投資 — Google Search Console 會直接顯示 rich result 的錯誤</li>
 </ul>
+<h3 id="github-pages">最小可行組合（給個人首頁 / GitHub Pages 用）<a class="headerlink" href="#github-pages" title="Permanent link">&para;</a></h3>
+<p>依優先度：</p>
+<ol>
+<li>JSON-LD（<code>Person</code> + <code>WebSite</code>）</li>
+<li>Open Graph + Twitter Cards</li>
+<li>llms.txt</li>
+<li>canonical + robots.txt</li>
+<li>sitemap.xml</li>
+<li>RSS feed（如果有時序性內容）</li>
+</ol>
 
 
 
@@ -3685,7 +3772,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 857abe79-a1a0-440c-a2c2-1b79bcadc7b3</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 6c72f35e-248b-4851-a433-83cbbf611629</code></p>
 </div>
 
 
