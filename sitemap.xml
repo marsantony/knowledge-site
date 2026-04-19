@@ -2,322 +2,326 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://marsantony.github.io/knowledge-site/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/tags/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/automation-cdp-existing-session-detection-risk/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/automation-discord-bot-wait-for-pattern/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/claude-code-1m-extended-context/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/claude-code-awesome-skills-and-composio/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/claude-code-builtin-auto-allow-commands/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
+    </url>
+    <url>
+         <loc>https://marsantony.github.io/knowledge-site/articles/claude-code-hooks-skills-triggers/</loc>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/claude-code-knowledge-article-session-traceability/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/claude-code-permission-modes/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/claude-code-session-jsonl-format/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/claude-code-sharing-conversations/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/claude-code-skill-as-workflow-gate/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/claude-code-skills-vs-plugins/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/claude-code-vscode-auto-attach-context/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/debugging-gcp-artifact-registry-cost-trap/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/debugging-windows-usb-plug-unplug-monitoring/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/dev-tools-better-agent-terminal-vs-vscode/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/dev-tools-cli-tools-for-ai-agents/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/dev-tools-dotnet-packages-config-to-packagereference/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/dev-tools-github-branch-protection-free-plan/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/dev-tools-image-hosting-best-practices/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/dev-tools-knowledge-website-frameworks/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/dev-tools-linux-package-managers-for-ai-agents/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/dev-tools-powershell-upgrade-methods/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/dev-tools-repo-public-security-scan/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/dev-tools-ssh-over-port-443/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/dev-tools-stt-services-and-postprocessing/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/dev-tools-uv-run-project-flag/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/gaming-ffxiv-crafting-tools-and-apis/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/gaming-ffxiv-gathering-collectables/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/gaming-ffxiv-submarine-guide/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/general-ai-app-monetization-strategies/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/general-anthropic-tos-oauth-ban-2026/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/general-claude-cowork-guide/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/general-knowledge-base-tagging/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/general-mcp-architecture-and-security/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/general-mcp-is-dead-debate-and-alternatives/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/general-mesh-agent-system-marketing-vs-reality/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/general-personal-algorithm-landscape-2026/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/general-portable-ai-agent-ecosystem-2026/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/general-rag-complete-guide/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/general-system-design-learning-path/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/general-taiwan-etf-dca-retirement/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/general-worldmonitor-osint-dashboard/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-advent-of-agents-evaluation/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-ai-becoming-vs-achievement-framework/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-ai-coding-skill-formation-anthropic-study/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-ai-coding-tools-evidence-vs-hype/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-ai-impact-swe-career-framework/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-android-notification-listener-service/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-autoresearch-agent-feedback-loop/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-csharp-inheritance-virtual-required/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-csharp-oce-cancellation-patterns/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-decentralized-ai-compute-market/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-devops-ai-disruption-analysis/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-dotnet-backgroundservice-testing-timeprovider/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-dotnet-di-lifetime-best-practices/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-erc-8004-trustless-agent-identity/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-knuth-claude-cycles-collaboration/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-nosql-database-types/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-probiotics-selection-guide/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-rust-ownership-and-comparison/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/learning-test-coverage-strategy/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/security-auth-middleware-public-fallback/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/security-bff-pkce-dotnet8-implementation/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/security-bff-token-storage-architecture/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/security-llm-prompt-injection-defense/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/security-oauth2-client-credentials-vs-auth-code/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/security-web-anti-bot-mechanisms/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/system-design-data-pipeline-kv-vs-git-push/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/system-design-decentralized-nsfw-platform/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/system-design-dotnet-backgroundservice-retry-yield/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/system-design-event-registration-time-gate/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/system-design-gmail-digest-architecture/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/system-design-multi-agent-governance-patterns/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/system-design-two-phase-ai-judgment/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/web-bootstrap-4-to-5-migration/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/web-chrome-extension-realtime-subtitles/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/web-css-brushed-metal-background/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/web-mkdocs-material-custom-neumorphic-theme/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
 </urlset>

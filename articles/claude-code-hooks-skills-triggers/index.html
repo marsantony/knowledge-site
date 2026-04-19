@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/claude-code-vscode-auto-attach-context/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/claude-code-hooks-skills-triggers/">
       
       
-        <link rel="prev" href="../claude-code-skills-vs-plugins/">
+        <link rel="prev" href="../claude-code-knowledge-article-session-traceability/">
       
       
-        <link rel="next" href="../claude-code-permission-modes/">
+        <link rel="next" href="../dev-tools-ssh-over-port-443/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>VSCode 擴充功能的檔案自動附加：現況與 Workaround - Mars 的知識庫</title>
+        <title>Claude Code 三大自動化機制：Hooks、Skills、Triggers 差異 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              VSCode 擴充功能的檔案自動附加：現況與 Workaround
+              Claude Code 三大自動化機制：Hooks、Skills、Triggers 差異
             
           </span>
         </div>
@@ -509,35 +509,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    VSCode 擴充功能的檔案自動附加：現況與 Workaround
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../claude-code-vscode-auto-attach-context/" class="md-nav__link">
         
   
   
@@ -553,46 +528,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -714,10 +649,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../claude-code-hooks-skills-triggers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code 三大自動化機制：Hooks、Skills、Triggers 差異
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -733,6 +693,118 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三者差異表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什麼時候該寫 hook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hook_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什麼時候不該寫 hook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-config-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update-config skill 的定位
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        取捨觀察
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        官方文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3241,6 +3313,78 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三者差異表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什麼時候該寫 hook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hook_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什麼時候不該寫 hook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-config-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        update-config skill 的定位
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        取捨觀察
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        官方文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3265,53 +3409,121 @@
       
       
       
-        <a href="../../tags/#tag:cowork" class="md-tag">cowork</a>
+        <a href="../../tags/#tag:automation" class="md-tag">automation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:skills" class="md-tag">skills</a>
       
     
   </nav>
 
 
 
-  <h1>VSCode 擴充功能的檔案自動附加：現況與 Workaround</h1>
+  <h1>Claude Code 三大自動化機制：Hooks、Skills、Triggers 差異</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Claude Code VSCode 擴充功能會<strong>自動附加當前開啟的檔案和選取文字</strong>作為 context，目前沒有全域設定可關閉</li>
-<li>點對話框的<strong>眼睛圖示</strong>可隱藏 context，且<strong>同一 session 內會持續隱藏</strong>，不需每則訊息重複操作</li>
-<li>開新 session 時 toggle 會重置，需要重新點一次</li>
-<li>Claude Code Hooks 無法解決這個問題——Hooks 攔截的是 tool calls，不是 IDE 的 UI 行為</li>
-<li>直接修改擴充功能打包檔（<code>~/.vscode/extensions/anthropic.claude-code-*/</code>）技術上可行，但每次更新會被覆蓋</li>
-<li>社群已有 Feature Request：<a href="https://github.com/anthropics/claude-code/issues/24726">#24726</a>、<a href="https://github.com/anthropics/claude-code/issues/23968">#23968</a></li>
+<li><strong>Hooks</strong>：事件驅動、純被動。Claude Code 內部事件（SessionStart、PreToolUse、Stop 等）觸發，設在 <code>settings.json</code> 的 <code>hooks</code> 欄位，幕後自動跑</li>
+<li><strong>Skills</strong>：主/被動皆可。使用者 <code>/skill-name</code> 手動叫，或 Claude 依對話判斷自動載入，用於多步驟工作流程</li>
+<li><strong>Triggers（= Scheduled Agents）</strong>：時間驅動、純被動。靠 cron / GitHub Actions 排程，定期執行遠端 agent，用 <code>/schedule</code> 設定</li>
+<li><strong>判斷原則</strong>：無腦自動化（不需 Claude 思考）用 hook；需要判斷或多步驟用 skill；定時任務用 trigger</li>
+<li><strong>入口工具</strong>：寫 hook、改權限、設環境變數都透過 <code>update-config</code> skill 動 <code>settings.json</code>；改 theme/model 等簡單項用內建 <code>Config</code> tool</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>使用 Claude Code VSCode sidebar 時，每次送出訊息都會自動附加當前檔案，有時會帶入不相關的 context。想找到預設關閉的方法，但分析後發現各層面都行不通：</p>
+<p>初學 Claude Code 時很容易把 hooks、skills、triggers 混為一談，尤其「一個主動一個被動」這種二元分法其實不準確——skills 同時支援兩種模式。</p>
+<h3 id="_3">三者差異表<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>方案</th>
-<th>不可行原因</th>
+<th></th>
+<th>觸發來源</th>
+<th>主/被動</th>
+<th>典型用途</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Claude Code Hooks（SessionStart）</td>
-<td>Hooks 只能跑 shell 指令，無法操控 VSCode webview UI</td>
+<td>Hooks</td>
+<td>Claude Code 內部事件</td>
+<td>純被動</td>
+<td>政策執行、自動核准、操作記錄、格式化</td>
 </tr>
 <tr>
-<td>VSCode Settings 覆蓋</td>
-<td>擴充功能未暴露此設定項</td>
+<td>Skills</td>
+<td>使用者輸入 <code>/xxx</code> 或 Claude 自動選用</td>
+<td>雙向（可鎖為純手動）</td>
+<td>多步驟工作流、部署、commit</td>
 </tr>
 <tr>
-<td>直接改擴充功能 JS</td>
-<td>更新後覆蓋，維護成本高</td>
-</tr>
-<tr>
-<td>自製中間層擴充功能</td>
-<td>Claude Code webview 通訊是內部的，外部擴充功能無法攔截</td>
+<td>Triggers</td>
+<td>cron / GitHub Actions 排程</td>
+<td>純被動</td>
+<td>定時報表、每日摘要</td>
 </tr>
 </tbody>
 </table>
-<p>目前最務實的做法就是養成習慣：每次開新 session 點一下眼睛圖示。</p>
+<h3 id="hook">什麼時候該寫 hook<a class="headerlink" href="#hook" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>情境</th>
+<th>Hook 類型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自動核准常用安全指令（<code>git status</code>、<code>ls</code>）</td>
+<td><code>PreToolUse</code></td>
+</tr>
+<tr>
+<td>危險指令攔截（<code>rm -rf /</code>）</td>
+<td><code>PreToolUse</code></td>
+</tr>
+<tr>
+<td>Claude 停下時跳通知</td>
+<td><code>Stop</code></td>
+</tr>
+<tr>
+<td>進專案自動載入環境</td>
+<td><code>SessionStart</code></td>
+</tr>
+<tr>
+<td>編輯 <code>.py</code> 後自動跑 <code>ruff format</code></td>
+<td><code>PostToolUse</code></td>
+</tr>
+<tr>
+<td>記錄所有 Bash 指令到 log</td>
+<td><code>PostToolUse</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="hook_1">什麼時候不該寫 hook<a class="headerlink" href="#hook_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>多步驟工作流（例：commit 前跑 simplify 審查）→ <strong>改用 skill</strong>，把邏輯包進去更簡潔可靠</li>
+<li>需要跟 Claude 對話、判斷的任務 → <strong>skill</strong></li>
+<li>一次性的指令 → 直接叫 Claude 做</li>
+</ul>
+<h3 id="update-config-skill">update-config skill 的定位<a class="headerlink" href="#update-config-skill" title="Permanent link">&para;</a></h3>
+<p>這是 Claude Code 內建 skill（不是使用者自己寫的），專門處理 <code>settings.json</code> / <code>settings.local.json</code> 的修改：</p>
+<ul>
+<li>加 hook（「以後每次 Claude 停下時跳通知」）</li>
+<li>加權限（「允許 npm test 不要每次問」）</li>
+<li>搬移設定（「把這個權限搬到全域」）</li>
+<li>設環境變數（「設 DEBUG=true」）</li>
+<li>Hook 除錯</li>
+</ul>
+<p>當使用者說「<strong>從今以後 X</strong>」、「<strong>每次 Y 都 Z</strong>」這類需求時，memory 做不到（memory 只是給 Claude 讀的筆記，不會自動執行），必須寫 hook——而 hook 要透過 <code>update-config</code> 加進 settings.json。</p>
+<h3 id="_4">取捨觀察<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>Hooks 強在「無條件執行」，skills 強在「彈性判斷」。Anthropic 把兩者分開而非合併，是因為事件驅動（hook）和意圖驅動（skill）的責任邊界不同——hook 是 harness 層的政策，skill 是 agent 層的能力。搞混會導致：該寫 hook 的地方用 skill（Claude 可能忘了用），該寫 skill 的地方用 hook（自動化過於僵化、難以除錯）。</p>
+<h3 id="_5">官方文件<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Hooks：https://code.claude.com/docs/en/hooks.md</li>
+<li>Skills：https://code.claude.com/docs/en/skills.md</li>
+</ul>
 
 
 
@@ -3330,7 +3542,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 5d8b1e0a-3574-4120-a8d1-207ba3898c48</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 22e17a75-2fe4-40c5-9094-6c5a6f8ba15f</code></p>
 </div>
 
 
