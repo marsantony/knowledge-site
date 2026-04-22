@@ -3712,6 +3712,20 @@
 <li><code>userType: "internal"</code> 的 user 訊息是 tool_result，不是使用者實際輸入</li>
 <li>Thinking blocks 有 <code>signature</code> 欄位，不應公開</li>
 <li><strong>Export 工具會看到自己的 tool calls</strong>：JSONL 是 append-only 且 tool_use 在發起時就寫入，所以從 JSONL 跑 export 的腳本，讀到的最後幾筆會包含「export 自己正在執行」的 Bash 呼叫。處理方式：找到觸發 export 的 user message（例如 <code>&lt;command-name&gt;/share-chat&lt;/command-name&gt;</code>），從那筆截斷——比事後清理 trailing tool-only assistant entry 更可靠</li>
+<li><strong>多次呼叫同一個 skill 要截「最後一次」觸發點</strong>：同一個 session 可能重複呼叫 <code>/share-chat</code>（或任何會匯出自身內容的 skill），若沿用「遇到第一個觸發就 break」的寫法，第二次匯出會在前次的觸發點就停——中間整段對話全部遺失。實作上反向掃描 entries，遇到第一個匹配即 break，語義是「找最後一個」，且通常 O(1) 就結束（使用者剛觸發 skill，匹配就在尾端）
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 反向掃描找最後一次觸發</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">last_trigger_idx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">entry</span> <span class="o">=</span> <span class="n">entries</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">if</span> <span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;user&quot;</span> <span class="ow">or</span> <span class="n">is_internal_user_message</span><span class="p">(</span><span class="n">entry</span><span class="p">):</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="k">continue</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">content</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="p">[])</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">text_parts</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">extract_text_from_content</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="s2">&quot;share-chat&lt;/command-name&gt;&quot;</span> <span class="ow">in</span> <span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">text_parts</span><span class="p">):</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="n">last_trigger_idx</span> <span class="o">=</span> <span class="n">i</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        <span class="k">break</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1"># 主 loop 只處理 entries[:last_trigger_idx]</span>
+</code></pre></div></li>
 </ul>
 <h2 id="_4">背景<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>建 <code>/share-chat</code> skill 時需要解析 JSONL 格式，逆向工程了 Claude Code 的 session 儲存結構。JSONL 是 append-only 的 JSON Lines 格式，每個 entry 有 <code>parentUuid</code> 串成對話鏈。</p>
@@ -3733,7 +3747,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume fbf7ad69-4802-4903-a61c-4b8d8820b842</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 6694fa56-7f41-4868-85e6-3c688df35cb5</code></p>
 </div>
 
 
