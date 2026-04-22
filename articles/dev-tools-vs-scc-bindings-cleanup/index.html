@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/general-translation-tool-copyright/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/dev-tools-vs-scc-bindings-cleanup/">
       
       
-        <link rel="prev" href="../general-ai-short-video-generation-2026/">
+        <link rel="prev" href="../dev-tools-aspnet-stylecop-classic-cleanup/">
       
       
-        <link rel="next" href="../gaming-ffxiv-crafting-tools-and-apis/">
+        <link rel="next" href="../web-bootstrap-4-to-5-migration/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>翻譯工具的著作權法律分析（瀏覽器擴充功能、OCR 翻譯） - Mars 的知識庫</title>
+        <title>老 ASP.NET 專案遷 Git 後 Visual Studio 一直跳 source control provider 警告 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              翻譯工具的著作權法律分析（瀏覽器擴充功能、OCR 翻譯）
+              老 ASP.NET 專案遷 Git 後 Visual Studio 一直跳 source control provider 警告
             
           </span>
         </div>
@@ -683,6 +683,8 @@
                 
   
   
+    
+  
   
   
     
@@ -692,11 +694,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -717,7 +719,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1124,10 +1126,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../dev-tools-vs-scc-bindings-cleanup/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    老 ASP.NET 專案遷 Git 後 Visual Studio 一直跳 source control provider 警告
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1143,6 +1170,129 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三種殘留形狀與對應處理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sak-placeholder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SAK placeholder 的歷史背景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#net-framework-451" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼這問題在 .NET Framework 4.5.1 老專案特別常見
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD 影響澄清
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        診斷流程（SOP）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        按「是」快速解決的坑
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        參考
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1413,8 +1563,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1424,11 +1572,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -1449,7 +1597,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1968,35 +2116,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    翻譯工具的著作權法律分析（瀏覽器擴充功能、OCR 翻譯）
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../general-translation-tool-copyright/" class="md-nav__link">
         
   
   
@@ -2012,107 +2135,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        三層法律緩衝
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vs-ocr" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        文字翻譯 vs 圖片 OCR 翻譯的法律差異
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#google-translate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        為什麼沒人告沉浸式翻譯/Google Translate
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        對開發者的具體建議
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        參考案例
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3757,7 +3779,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三層法律緩衝
+        三種殘留形狀與對應處理
       
     </span>
   </a>
@@ -3765,10 +3787,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#vs-ocr" class="md-nav__link">
+  <a href="#sak-placeholder" class="md-nav__link">
     <span class="md-ellipsis">
       
-        文字翻譯 vs 圖片 OCR 翻譯的法律差異
+        SAK placeholder 的歷史背景
       
     </span>
   </a>
@@ -3776,10 +3798,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#google-translate" class="md-nav__link">
+  <a href="#net-framework-451" class="md-nav__link">
     <span class="md-ellipsis">
       
-        為什麼沒人告沉浸式翻譯/Google Translate
+        為什麼這問題在 .NET Framework 4.5.1 老專案特別常見
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD 影響澄清
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        診斷流程（SOP）
       
     </span>
   </a>
@@ -3790,18 +3834,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        對開發者的具體建議
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        參考案例
+        按「是」快速解決的坑
       
     </span>
   </a>
@@ -3810,6 +3843,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        參考
+      
+    </span>
+  </a>
   
 </li>
       
@@ -3835,138 +3879,141 @@
       
       
       
-        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
+        <a href="../../tags/#tag:csharp" class="md-tag">csharp</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:chrome-extension" class="md-tag">chrome-extension</a>
+        <a href="../../tags/#tag:git" class="md-tag">git</a>
       
     
   </nav>
 
 
 
-  <h1>翻譯工具的著作權法律分析（瀏覽器擴充功能、OCR 翻譯）</h1>
+  <h1>老 ASP.NET 專案遷 Git 後 Visual Studio 一直跳 source control provider 警告</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>翻譯屬「改作」</strong>，理論上是著作權人的專屬權利（台灣著作權法 §28、日本 §27），但<strong>個人使用例外</strong>讓擴充功能級別的翻譯實際合法</li>
-<li><strong>沉浸式翻譯為何沒事</strong>：不散布、是工具不是出版商、機器翻譯本身不產生新著作權；同樣邏輯適用 Google Translate 二十年沒被告</li>
-<li><strong>圖片翻譯比文字翻譯風險略高一點</strong>：上傳圖到 Gemini API 嚴格說是「重製」，但 Authors Guild v. Google（2015）確立「功能性目的的暫時複製」可構成合理使用</li>
-<li><strong>工具開發者責任的核心保護傘</strong>：Sony v. Universal（1984）的「大量非侵權用途」原則 + Cox v. Sony Music（2026）窄化了 contributory infringement</li>
-<li><strong>真正的實務風險不是著作權法</strong>：(1) Chrome Web Store 政策禁止明顯為盜版設計的擴充 (2) Grokster 引誘原則—不要在行銷時主打盜版用途 (3) Gemini API ToS 條款</li>
+<li>警告對話框「The source control provider associated with this solution could not be found」來自 <code>.sln</code> / <code>.csproj</code> 裡殘留的 <strong>MSSCCI 綁定 tag</strong>（<code>&lt;SccProjectName&gt;</code>、<code>&lt;SccLocalPath&gt;</code> 等），通常是從 TFVC/VSS/AnkhSVN/Perforce 遷 Git 時沒清乾淨</li>
+<li><strong>Git 不走 MSSCCI</strong>，走 VS SCC Git provider，完全不讀這些 tag — 所以「明明在用 Git 卻一直跳警告」很正常</li>
+<li><code>SAK</code> = <strong>"Should Already Know"</strong>，VS 的 placeholder，表示值由 provider 執行期查找。即使值是 <code>SAK</code>（而非真實路徑），tag 本身的存在依然觸發警告</li>
+<li>只清 <code>.sln</code> 不夠 — VS 存檔時會從 <code>.csproj</code> <strong>重新同步</strong>回 <code>.sln</code>。必須同時清所有 project 檔</li>
+<li><strong>Web Site Project 特例</strong>（專案類型 GUID <code>{E24C65DC-7377-472B-9ABA-BC803B73C61A}</code>，無 <code>.csproj</code>）：SCC 存在 <code>.sln</code> 的 <code>ProjectSection(WebSiteProperties)</code> 裡，schema 硬規定輸出 <code>SccProjectName</code> / <code>SccLocalPath</code> / <code>SccAuxPath</code>，<strong>無法刪除 tag，只能把值設為 <code>""</code></strong>。這是能達到的最乾淨狀態</li>
+<li>驗收標準是「警告對話框不再跳」，<strong>不是</strong> tag 消失 — 特別是 Web Site Project</li>
+<li>MSBuild、<code>dotnet build</code>、Azure Pipelines、GitHub Actions 全部<strong>忽略</strong>這些 tag，清掉不會影響 CI/CD</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>研究一個翻譯外文漫畫圖片的 Chrome Extension 在不同散布方式下的法律風險：自用、開源、上架三種情境如何判讀。</p>
-<h3 id="_3">三層法律緩衝<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><strong>Layer 1 — 個人使用例外（三個司法管轄區都有）</strong></p>
-<table>
-<thead>
-<tr>
-<th>國家</th>
-<th>條文</th>
-<th>重點</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>日本</td>
-<td>§30</td>
-<td>私人/家族使用含改作合法。2021 修法擴大盜版下載罰則時明確排除：trivial 數量、衍生作品、incidental 截圖</td>
-</tr>
-<tr>
-<td>台灣</td>
-<td>§51 + §65</td>
-<td>合理範圍內個人/家庭非商業使用可重製，再以四要素分析</td>
-</tr>
-<tr>
-<td>美國</td>
-<td>17 USC §107</td>
-<td>無明文私人例外，但 fair use 四要素分析下，個人觀看用途、不散布、無市場替代效果 → 通常通過</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Layer 2 — Overlay 翻譯不留檔不散布</strong></p>
-<p>擴充功能的翻譯只在使用者瀏覽器 session 內存在，沒有檔案被儲存或分享。日本 2021 修法中，「串流觀看盜版」明確不違法（只罰下載/儲存）—瀏覽器 overlay 比較接近「觀看」而非「下載」。</p>
-<p><strong>Layer 3 — 工具製造者 vs 使用者責任分離</strong></p>
+<p>清理老 ASP.NET Framework 4.5.1 專案時，即使已經遷到 Git、VS 的 Plug-in Selection 也設成 Git，每次開 solution 還是跳這個警告。實測排查後發現有三種不同的殘留形狀，處理路徑完全不同。</p>
+<h3 id="_3">三種殘留形狀與對應處理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><strong>A. <code>GlobalSection(TeamFoundationVersionControl)</code>（solution 層級）</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GlobalSection(TeamFoundationVersionControl) = preSolution
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    SccNumberOfProjects = 2
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    SccEnterpriseProvider = {XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    SccTeamFoundationServer = ...
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    ...
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>EndGlobalSection
+</code></pre></div>
+<p>處理：整段從 <code>.sln</code> 刪掉。若 <code>SccEnterpriseProvider</code> 有值，TFS workspace mapping 可能還在（<code>tf workfold</code> 檢查並 unmap）。</p>
+<p><strong>B. <code>.csproj</code> 內的 <code>&lt;Scc*&gt;</code> tag（專案層級）</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;PropertyGroup&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&lt;SccProjectName&gt;</span>SAK<span class="nt">&lt;/SccProjectName&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&lt;SccLocalPath&gt;</span>SAK<span class="nt">&lt;/SccLocalPath&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&lt;SccAuxPath&gt;</span>SAK<span class="nt">&lt;/SccAuxPath&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&lt;SccProvider&gt;</span>SAK<span class="nt">&lt;/SccProvider&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">&lt;/PropertyGroup&gt;</span>
+</code></pre></div>
+<p>處理：四個 tag 整組刪（不是清空 value，是刪 tag 本身）。若 PropertyGroup 因此變空就整組刪。</p>
+<p>若只清 <code>.sln</code> 不清 <code>.csproj</code> → VS 下次存檔會在 <code>.sln</code> 重建出<strong>沒有 <code>SccEnterpriseProvider</code></strong> 的 <code>GlobalSection(TeamFoundationVersionControl)</code> — 那是因為 VS 從 <code>.csproj</code> 聚合上來的「最小」section。這個現象是「project 檔還有殘留」的明確信號。</p>
+<p><strong>C. <code>ProjectSection(WebSiteProperties)</code> 內的 SCC 欄位（Web Site Project 專屬）</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Project(&quot;{E24C65DC-7377-472B-9ABA-BC803B73C61A}&quot;) = &quot;WebSite1&quot;, &quot;WebSite1\&quot;, &quot;{...}&quot;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    ProjectSection(WebSiteProperties) = preProject
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        SccProjectName = &quot;SAK&quot;
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        SccLocalPath = &quot;SAK&quot;
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        SccAuxPath = &quot;SAK&quot;
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        ...
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    EndProjectSection
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>EndProject
+</code></pre></div>
+<p>Web Site Project 沒有 <code>.csproj</code>，「專案」就是一個資料夾含 <code>web.config</code>。所有 SCC 資訊內嵌在 <code>.sln</code> 的 <code>ProjectSection</code>。</p>
+<p><strong>關鍵</strong>：Web Site Project 的 <code>.sln</code> 序列化 schema <strong>硬編碼輸出這三個 <code>Scc*</code> 欄位</strong>，無法刪除。唯一能做的是把值設成 <code>""</code>：
+- 值為 <code>"SAK"</code> → 觸發找 provider → 跳警告
+- 值為 <code>""</code> → VS 寫回 <code>""</code>，但<strong>不跳警告</strong> ← 這是最乾淨狀態</p>
+<p>每次存檔 VS 會把 <code>""</code> 寫回來，這是正常 schema 行為，不是清理失敗。<strong>驗收條件改用「警告不跳」，別期待空 tag 會消失</strong>。</p>
+<h3 id="sak-placeholder">SAK placeholder 的歷史背景<a class="headerlink" href="#sak-placeholder" title="Permanent link">&para;</a></h3>
+<p>早期 VS 會把實際 source control 路徑（<code>\\server\share\project</code>、TFS URL）寫死在專案檔，造成：
+- 不同開發者 clone 下來路徑不一樣，每次 open 都 diff
+- 內部伺服器 URL 外洩到公開 repo</p>
+<p>所以 Microsoft 引入 <code>SAK</code> 佔位符 — 意思是「這個值由 SCC provider 執行期自己算，不要寫死」。但這個機制只對當年主流的 MSSCCI provider 有意義；對 Git 完全無用，且 tag 存在就會觸發 provider 查找。</p>
+<h3 id="net-framework-451">為什麼這問題在 .NET Framework 4.5.1 老專案特別常見<a class="headerlink" href="#net-framework-451" title="Permanent link">&para;</a></h3>
+<p>不是框架版本導致 VS 重寫 SCC tag（MSBuild / runtime 根本不碰這些 tag），而是相關性：</p>
 <ul>
-<li>Sony v. Universal（1984）：工具有大量非侵權用途 → 開發者不擔連帶責任</li>
-<li>MGM v. Grokster（2005）：但若<strong>主動引誘</strong>侵權（行銷時主打盜版用途）會破功</li>
-<li>Cox v. Sony Music（2026）：最高院再次窄化 contributory infringement 範圍</li>
+<li>Pre-SDK-style <code>.csproj</code> 格式會把 <code>&lt;Scc*&gt;</code> 寫進 PropertyGroup，SDK-style 不會</li>
+<li>當年主流是 TFVC / VSS，遷 Git 才會留下殘骸</li>
+<li>專案結構散落多個檔案（<code>.csproj</code>、<code>.sln</code>、<code>*.vssscc</code> sidecar），容易漏清</li>
 </ul>
-<h3 id="vs-ocr">文字翻譯 vs 圖片 OCR 翻譯的法律差異<a class="headerlink" href="#vs-ocr" title="Permanent link">&para;</a></h3>
+<h3 id="cicd">CI/CD 影響澄清<a class="headerlink" href="#cicd" title="Permanent link">&para;</a></h3>
+<p>常見擔憂：「我們有 Azure DevOps Pipeline，少了這些 tag 會不會掛？」</p>
+<p>完全不會。以下工具<strong>全部忽略</strong>SCC tag：</p>
 <table>
 <thead>
 <tr>
-<th>維度</th>
-<th>文字翻譯（沉浸式翻譯）</th>
-<th>圖片翻譯（漫畫翻譯）</th>
+<th>工具</th>
+<th>是否讀 SCC tag</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>被「複製」的東西</td>
-<td>DOM 文字節點（瀏覽器已下載）</td>
-<td>圖片像素（必須送 OCR API 處理）</td>
+<td>MSBuild</td>
+<td>否</td>
 </tr>
 <tr>
-<td>重製動作</td>
-<td>極輕微</td>
-<td>較明確—圖片上傳到第三方 server</td>
+<td><code>dotnet build</code> / <code>dotnet publish</code></td>
+<td>否</td>
 </tr>
 <tr>
-<td>衍生作品輸出</td>
-<td>翻譯文字 overlay</td>
-<td>翻譯文字 overlay（結果同，路徑異）</td>
+<td>Azure DevOps Pipelines</td>
+<td>否</td>
 </tr>
 <tr>
-<td>風險</td>
-<td>低</td>
-<td>略高</td>
+<td>GitHub Actions</td>
+<td>否</td>
+</tr>
+<tr>
+<td>NuGet</td>
+<td>否</td>
 </tr>
 </tbody>
 </table>
-<p>雖然圖片上傳是個技術上的「重製」動作，但 Authors Guild v. Google（2015 第二巡迴）確立：暫時、功能性目的的複製可以是合理使用（Google Books 數位化全書都過了 fair use）。</p>
-<h3 id="google-translate">為什麼沒人告沉浸式翻譯/Google Translate<a class="headerlink" href="#google-translate" title="Permanent link">&para;</a></h3>
-<p>法律理論上要主張「使用者已合法觀看的文字，被工具暫時翻譯給該使用者個人看，造成著作權損害」—這個論證很難成立。法院二十年來都不太願意把著作權責任延伸到這個範圍。</p>
-<h3 id="_4">對開發者的具體建議<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>情境</th>
-<th>風險</th>
-<th>注意</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>自己用</td>
-<td>幾乎為零</td>
-<td>個人使用例外完全覆蓋</td>
-</tr>
-<tr>
-<td>開源放 GitHub</td>
-<td>低</td>
-<td>描述中性化，寫「翻譯漫畫網站圖片」而非「翻譯盜版漫畫」</td>
-</tr>
-<tr>
-<td>上架 Chrome Web Store</td>
-<td>中</td>
-<td>嚴禁在 listing 點名盜版站，否則 Google 會下架</td>
-</tr>
-</tbody>
-</table>
-<p>日本出版商（集英社、講談社）執法目標是<strong>盜版站本身</strong>和<strong>散布翻譯的 scanlation 群組</strong>，從未告過翻譯工具開發者—CODA 也是聚焦於封鎖盜版站。</p>
-<h3 id="_5">參考案例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Pipeline 取原始碼走 Git protocol，build 走 MSBuild target — 沒有任何一條路徑會讀 <code>&lt;SccProjectName&gt;</code>。</p>
+<h3 id="sop">診斷流程（SOP）<a class="headerlink" href="#sop" title="Permanent link">&para;</a></h3>
+<p>從最快到最慢：</p>
+<ol>
+<li><strong>確認 VS Plug-in Selection</strong>：<code>工具 → 選項 → 原始檔控制</code> 必須是 <code>Git</code> 或 <code>None</code>，不能是 <code>Visual Studio Team Foundation Server</code></li>
+<li><strong>看跳回來的段落形狀</strong>：<code>GlobalSection(TeamFoundationVersionControl)</code> / <code>ProjectSection(WebSiteProperties)</code> / <code>.csproj</code> 內的 <code>&lt;Scc*&gt;</code> — 對應三種處理路徑</li>
+<li>
+<p><strong>PowerShell 全掃描</strong>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Force</span> <span class="n">-Include</span> <span class="p">`</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  <span class="p">*.</span><span class="n">sln</span><span class="p">,*.</span><span class="n">csproj</span><span class="p">,*.</span><span class="n">vbproj</span><span class="p">,*.</span><span class="n">vcxproj</span><span class="p">,*.</span><span class="n">proj</span><span class="p">,`</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="p">*.</span><span class="n">csproj</span><span class="p">.</span><span class="n">user</span><span class="p">,*.</span><span class="n">vssscc</span><span class="p">,*.</span><span class="n">vspscc</span><span class="p">,</span><span class="n">MSSCCPRJ</span><span class="p">.</span><span class="n">SCC</span> <span class="p">|</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  <span class="nb">Select-String</span> <span class="n">-Pattern</span> <span class="s1">&#39;Scc|TeamFoundation&#39;</span> <span class="n">-List</span> <span class="p">|</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Path</span> <span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>TFS workspace 檢查</strong>：<code>tf workfold</code>（指令不存在代表沒裝 TFVC client，排除這條路）</p>
+</li>
+<li><strong>清 VS 快取</strong>：刪 <code>.vs/</code> 資料夾、<code>*.suo</code> 檔</li>
+</ol>
+<h3 id="_4">按「是」快速解決的坑<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>警告對話框有「是(Y)/否(N)」選項，按「是」會讓 VS 幫你解除綁定。但實測常常只清 value、保留 tag（<code>&lt;SccProjectName&gt;&lt;/SccProjectName&gt;</code>），多專案 solution 更容易清不乾淨。要手動檢查檔案補刪 tag 本身。</p>
+<h2 id="_5">參考<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Sony v. Universal City Studios（1984, US SCOTUS）</li>
-<li>Authors Guild v. Google（2015, 2nd Cir）</li>
-<li>MGM v. Grokster（2005, US SCOTUS）</li>
-<li>Cox v. Sony Music（2026, US SCOTUS）</li>
-<li>Japan 2021 著作權法修正案</li>
+<li>完整 code review 筆記：<a href="https://gist.github.com/marsantony/b0ca6eb5623415f571ac673248d12b4e">GitHub Gist</a></li>
+<li><a href="https://camerondwyer.com/2012/11/07/how-to-permanently-remove-tfs-source-control-binding-from-visual-studio-solutions-vs2012/">How to Permanently Remove TFS Source Control Bindings — Cameron Dwyer</a></li>
+<li><a href="https://developercommunity.visualstudio.com/t/17100-Preview-20---The-source-control/10615985">VS 17.x Git plug-in 不被記住 bug — Developer Community #10615985</a></li>
 </ul>
 
 
@@ -3986,7 +4033,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 3329e8d4-e8bd-467d-8f6b-787327d213dc</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 824288a0-3451-4273-83dd-ea625e37010f</code></p>
 </div>
 
 
