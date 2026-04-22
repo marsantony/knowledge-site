@@ -729,6 +729,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#skipautopermissionprompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        skipAutoPermissionPrompt 與「直接拒絕不彈窗」現象
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#effort-level" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1258,6 +1269,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-tools-github-gist-anchor-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Gist 章節 Anchor 連結格式與跨 Gist 目錄
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-tools-aspnet-stylecop-classic-cleanup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    老 ASP.NET 專案清理 Settings.StyleCop 的正確順序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1470,6 +1537,34 @@
     
   
     SEO / AI 友善網站的完整實踐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-aspnet-webform-301-redirect-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASP.NET WebForm 301 Redirect 三種寫法比較與踩雷
   
 
     
@@ -3590,6 +3685,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-csharp-idisposable-dispose-vs-null/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDisposable 實作與 Dispose vs = null 的真相
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3783,6 +3906,17 @@
     <span class="md-ellipsis">
       
         Auto Mode 的安全機制（深入）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipautopermissionprompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        skipAutoPermissionPrompt 與「直接拒絕不彈窗」現象
       
     </span>
   </a>
@@ -4102,11 +4236,82 @@
 - Auto mode 仍會擋：下載執行程式、敏感資料外傳、production deploy、大量刪除、權限修改
 - 與 bypass mode 差別：bypass 是零防線，auto 有智能安全層
 - 不是零風險：隔離環境（Container/VM）跑 untrusted 任務仍建議用 <code>bypass + sandbox</code> 組合</p>
+<h3 id="skipautopermissionprompt"><code>skipAutoPermissionPrompt</code> 與「直接拒絕不彈窗」現象<a class="headerlink" href="#skipautopermissionprompt" title="Permanent link">&para;</a></h3>
+<p>Auto mode 下有時會遇到：AI 執行某個命令時<strong>沒彈 permission 視窗</strong>，卻直接收到 "Permission for this action has been denied" 的錯誤訊息。這不是 bug，是 <code>skipAutoPermissionPrompt: true</code> + Auto mode 的組合刻意設計。</p>
+<p><strong>設定位置：</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;permissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;defaultMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;auto&quot;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">&quot;sandbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">&quot;autoAllowBashIfSandboxed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="nt">&quot;skipAutoPermissionPrompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>三個設定互動的結果：</strong></p>
+<table>
+<thead>
+<tr>
+<th>動作</th>
+<th style="text-align: center;">sandbox 內？</th>
+<th>skipAutoPermissionPrompt 影響</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls</code> / <code>cat</code> 等讀取</td>
+<td style="text-align: center;">✓</td>
+<td>無影響</td>
+<td>自動過</td>
+</tr>
+<tr>
+<td>沒加 <code>dangerouslyDisableSandbox</code> 的外網請求</td>
+<td style="text-align: center;">✗（sandbox 擋網路）</td>
+<td>—</td>
+<td>sandbox 拒</td>
+</tr>
+<tr>
+<td>加 <code>dangerouslyDisableSandbox: true</code> 跑外部動作</td>
+<td style="text-align: center;"><strong>✗ 脫離 sandbox</strong></td>
+<td><strong>啟動</strong>：不彈視窗</td>
+<td><strong>直接拒絕，附 reason 給 Claude 回頭問使用者</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>設計意圖：</strong>「不要用 UI 彈窗打斷我，讓 AI 在對話裡跟我確認即可」。所以使用者看到的「直接擋掉」其實是 Auto Mode 的 ask-and-wait 機制，被拒絕是觸發器，Claude 下一步該在對話裡問使用者。</p>
+<p><strong>典型踩雷情境：</strong><code>gh gist create</code> 建私密 gist（預設就是 secret，不是 public），搭 <code>dangerouslyDisableSandbox: true</code> 繞過 sandbox 網路限制，會被 Auto mode 的 data-exfiltration 防線（system reminder 規定「post to chat platforms / share internal docs 需要明確授權」）攔下。risk judge 有時會把「建 secret gist」誤判成「建 public gist」給錯誤理由，但結果是擋下——使用者明確授權後才放行。</p>
+<p><strong>解法選項：</strong></p>
+<table>
+<thead>
+<tr>
+<th>場景</th>
+<th>解法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>使用者對話內明確說「授權發 gist」</td>
+<td>當輪放行</td>
+</tr>
+<tr>
+<td>重複性操作想免打擾</td>
+<td><code>permissions.allow</code> 加 <code>"Bash(gh gist create:*)"</code></td>
+</tr>
+<tr>
+<td>不想走 AI 確認、想彈 UI 點擊</td>
+<td>把 <code>skipAutoPermissionPrompt</code> 改 <code>false</code>（會被打斷變多）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>為什麼設計成 AI 確認而非 UI 彈窗</strong>：Auto Mode 本身的核心訴求就是「少打斷使用者」，持續彈 UI 跟 Auto Mode 精神衝突。改用「被擋的動作附上 reason 塞回 Claude context」這條路，Claude 可以在對話裡用自然語言跟使用者確認，一次說明情境 + 給多個選項（直接跑 / 加 allow rule / 改 skipAutoPermissionPrompt），比 UI 單次 Y/N 資訊量更高。</p>
 <h3 id="effort-level">Effort Level（思考深度）設定<a class="headerlink" href="#effort-level" title="Permanent link">&para;</a></h3>
 <p>除了權限模式，<code>effortLevel</code> 控制模型的 reasoning budget，也可持久化：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;effortLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xhigh&quot;</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;effortLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xhigh&quot;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
 </code></pre></div>
 <table>
 <thead>
@@ -4146,7 +4351,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume ff4df479-14bd-4d3e-b6fe-d8902da614e3</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume f7c4bda8-aece-4285-8641-759515069af7</code></p>
 </div>
 
 
