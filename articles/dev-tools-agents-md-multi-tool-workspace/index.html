@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-csharp-idisposable-dispose-vs-null/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/dev-tools-agents-md-multi-tool-workspace/">
       
       
-        <link rel="prev" href="../learning-dotnet-backgroundservice-testing-timeprovider/">
+        <link rel="prev" href="../dev-tools-vs-scc-bindings-cleanup/">
       
       
-        <link rel="next" href="../../tags/">
+        <link rel="next" href="../web-bootstrap-4-to-5-migration/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>IDisposable 實作與 Dispose vs = null 的真相 - Mars 的知識庫</title>
+        <title>AGENTS.md：Claude Code + Codex 共存的 workspace 結構 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IDisposable 實作與 Dispose vs = null 的真相
+              AGENTS.md：Claude Code + Codex 共存的 workspace 結構
             
           </span>
         </div>
@@ -683,6 +683,8 @@
                 
   
   
+    
+  
   
   
     
@@ -692,11 +694,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -717,7 +719,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1152,10 +1154,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../dev-tools-agents-md-multi-tool-workspace/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGENTS.md：Claude Code + Codex 共存的 workspace 結構
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1171,6 +1198,101 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推薦結構
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agentsmd-vs-claudemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AGENTS.md vs CLAUDE.md
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        「共用資料夾」的迷思
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        加 Codex 進來的取捨
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        延伸閱讀
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3043,8 +3165,6 @@
                 
   
   
-    
-  
   
   
     
@@ -3054,11 +3174,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
         
           
           <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
@@ -3079,7 +3199,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3626,35 +3746,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    IDisposable 實作與 Dispose vs = null 的真相
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../learning-csharp-idisposable-dispose-vs-null/" class="md-nav__link">
         
   
   
@@ -3670,129 +3765,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dispose-gc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dispose 跟 GC 管的根本不是同一件事
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#null" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        只 = null 會少做什麼
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dispose-10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dispose 的 10 件事（按重要性）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#null_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        = null 何時真的有差
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dispose" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        最小可用的 Dispose 範本
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        三個老專案常見的坑
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        一句話總結
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3884,88 +3856,60 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dispose-gc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dispose 跟 GC 管的根本不是同一件事
-      
-    </span>
-  </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#null" class="md-nav__link">
-    <span class="md-ellipsis">
       
-        只 = null 會少做什麼
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dispose-10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dispose 的 10 件事（按重要性）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#null_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        = null 何時真的有差
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dispose" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        最小可用的 Dispose 範本
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        三個老專案常見的坑
+        推薦結構
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#agentsmd-vs-claudemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AGENTS.md vs CLAUDE.md
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        一句話總結
+        「共用資料夾」的迷思
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#codex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        加 Codex 進來的取捨
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        延伸閱讀
+      
+    </span>
+  </a>
   
 </li>
       
@@ -3991,154 +3935,110 @@
       
       
       
-        <a href="../../tags/#tag:csharp" class="md-tag">csharp</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:performance" class="md-tag">performance</a>
+        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
       
     
   </nav>
 
 
 
-  <h1>IDisposable 實作與 Dispose vs = null 的真相</h1>
+  <h1>AGENTS.md：Claude Code + Codex 共存的 workspace 結構</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>using</code> 語句要求型別實作 <code>IDisposable</code>，沒實作直接編譯錯 CS1674</li>
-<li><strong>Dispose 管的是 unmanaged resource（DB connection、file handle、socket、event 訂閱），不是記憶體</strong>；managed memory 是 GC 的工作，Dispose 對此無能為力</li>
-<li><code>_conn = null</code> 不能取代 <code>Dispose()</code> — 前者只讓 GC 未來可以回收 200 bytes 的物件，但 connection pool 的 slot 仍被占用到 finalizer 跑完</li>
-<li>對區域變數設 <code>= null</code> 在 release build 幾乎完全沒效果，JIT 的 liveness analysis 已經處理</li>
-<li><code>Dispose()</code> 裡設 field <code>= null</code> 的<strong>真正價值是防呆</strong>（配合 <code>_disposed</code> flag 讓未來方法 throw <code>ObjectDisposedException</code>），不是幫 GC</li>
-<li>包裝 <code>SqlConnection</code> 的 Dispose 只要轉發 <code>_conn?.Dispose()</code>，不需要 finalizer（因為 <code>SqlConnection</code> 自己會處理 unmanaged handle）</li>
+<li><strong>AGENTS.md</strong> 是業界推進的跨 AI 工具標準（Codex、Cursor、Aider 等原生讀取），Claude Code 也支援</li>
+<li>不要把 workspace 拆成 <code>codex/</code> 和 <code>claude/</code> 兩邊——它們操作同一份程式碼，拆開只會增加維護成本</li>
+<li>全域設定留在 home dir（<code>~/.claude/</code>、<code>~/.codex/</code>），<strong>不要搬進 workspace</strong></li>
+<li>最乾淨的做法：<strong>AGENTS.md 當主檔，CLAUDE.md symlink 過去</strong>，避免雙寫</li>
+<li>「共用資料夾」（skills、prompt、knowledge）多半不需要單獨建——既有的 knowledge-base repo 就夠</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>自己寫 DBConnection 包裝類別、要能配合 <code>using</code> 使用時，IDisposable 實作的深度因情境而異。常見迷思：「Dispose 不是也要等 GC 才真的釋放嗎？跟 <code>= null</code> 不就一樣嗎？」</p>
-<h3 id="dispose-gc">Dispose 跟 GC 管的根本不是同一件事<a class="headerlink" href="#dispose-gc" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌────────────────────────────────────────────────┐
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│  Managed Memory（記憶體本身）                   │
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  例：物件本體、byte[]、string                   │
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│  → 由 GC 管。Dispose 對此無能為力              │
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├────────────────────────────────────────────────┤
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│  Unmanaged Resource（不是記憶體）              │
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│  例：DB connection、file handle、socket、lock  │
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│  → GC 不管。只有 Dispose / finalizer 在管      │
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>└────────────────────────────────────────────────┘
+<p>把 OpenAI Codex CLI 加進已有的 Claude Code workspace 時，第一直覺常常是按工具切目錄：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>workspace/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── codex/        ← Codex 設定
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── claude/       ← Claude 設定
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── projects/     ← 各 repo
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└── shared/       ← 兩邊共用
 </code></pre></div>
-<p>關鍵例子：<code>SqlConnection</code> 物件本體才 200 bytes，不重要。但<strong>它持有的 connection slot 是伺服器資源</strong>，每個 slot 都珍貴。GC 回收那 200 bytes 的時機不影響服務運作；connection slot 有沒有釋放<strong>直接決定服務會不會崩</strong>。</p>
-<h3 id="null">只 <code>= null</code> 會少做什麼<a class="headerlink" href="#null" title="Permanent link">&para;</a></h3>
-<p><code>conn = null</code> 只是放開 reference。GC 未來某個時間點發現物件不可達 → 呼叫 finalizer → finalizer 裡才關 connection。時間可能幾秒也可能幾分鐘。這段期間：</p>
+<p>這個結構有兩個根本問題：</p>
+<ol>
+<li><strong>兩個工具操作的是同一份程式碼</strong>——拆 <code>projects/</code> 等於拆程式碼，從此每次切換工具都要 sync</li>
+<li><strong>「共用資料夾」很難真的共用</strong>——skills、slash commands 兩邊機制不同，沒辦法用同一份檔案</li>
+</ol>
+<h2 id="_3">推薦結構<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>workspace/
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── CLAUDE.md       → symlink 到 AGENTS.md
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── AGENTS.md       ← 主檔，所有 AI 工具讀這個
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── .claude/        ← workspace 級的 Claude 設定
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├── .codex/         ← workspace 級的 Codex 設定（如果有）
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>├── projects/       ← 共用，兩個 AI 對同一份 repo 工作
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>└── imports/
+</code></pre></div>
+<p><strong>全域設定</strong>留在 home dir：<code>~/.claude/</code>、<code>~/.codex/</code>，不搬進 workspace。</p>
+<h2 id="agentsmd-vs-claudemd">AGENTS.md vs CLAUDE.md<a class="headerlink" href="#agentsmd-vs-claudemd" title="Permanent link">&para;</a></h2>
+<p>AGENTS.md 是 OpenAI、Cursor、Aider 等工具在推的<strong>跨 AI 共通指令標準</strong>——一個檔案、所有工具讀。Claude Code 也認得。</p>
+<p>避免雙寫的做法：</p>
+<ol>
+<li>把現有的 <code>CLAUDE.md</code> 內容搬到 <code>AGENTS.md</code></li>
+<li><code>CLAUDE.md</code> 改成 symlink → <code>AGENTS.md</code></li>
+<li>之後只維護 AGENTS.md</li>
+</ol>
+<p>如果原本有 <code>claude-config</code> 之類的 repo 在管 CLAUDE.md，可以同步改名 <code>agents-config</code>，語意更通用。</p>
+<h2 id="_4">「共用資料夾」的迷思<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>直覺會想開一個 <code>shared/</code> 給兩個 AI 共用，但實際盤點：</p>
 <table>
 <thead>
 <tr>
-<th>沒釋放的東西</th>
-<th>後果</th>
+<th>共用對象</th>
+<th>真的能共用嗎</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>DB Connection</td>
-<td>Connection pool 滿 → 服務拒絕新請求</td>
+<td>Skills / slash commands</td>
+<td>機制不同，各自維護</td>
 </tr>
 <tr>
-<td>File Handle</td>
-<td>檔案被鎖 → 其他程式打不開</td>
+<td>Prompt / 知識文件</td>
+<td>已經有 knowledge-base repo，不用再建</td>
 </tr>
 <tr>
-<td>Network Socket</td>
-<td>TCP 連線卡在 ESTABLISHED → 端口耗盡</td>
+<td>規範文件</td>
+<td>AGENTS.md 本身就是</td>
 </tr>
 <tr>
-<td><strong>Event 訂閱</strong></td>
-<td>Subscriber 永遠活著（被 publisher 透過 event 持有），<strong>經典 memory leak</strong></td>
-</tr>
-<tr>
-<td>StreamWriter buffer</td>
-<td>沒 flush → <strong>資料直接遺失</strong></td>
+<td>程式碼</td>
+<td>在 projects/ 就好</td>
 </tr>
 </tbody>
 </table>
-<h3 id="dispose-10">Dispose 的 10 件事（按重要性）<a class="headerlink" href="#dispose-10" title="Permanent link">&para;</a></h3>
-<ol>
-<li>關閉底層 resource（<code>Close()</code> / <code>Dispose()</code>）</li>
-<li>轉發 Dispose 給內部 IDisposable 成員</li>
-<li><strong>取消事件訂閱</strong>（<code>event -= handler</code>）← 常見 memory leak 源</li>
-<li>停掉 timer、取消 CancellationTokenSource</li>
-<li>Flush buffer（StreamWriter 等）</li>
-<li>釋放 unmanaged memory / handle</li>
-<li>歸還 pool 物件（ArrayPool 等）</li>
-<li><code>GC.SuppressFinalize(this)</code>（有 finalizer 才需要）</li>
-<li>設 <code>_disposed = true</code> flag（供後續方法檢查）</li>
-<li>設 field = null（大部分情況可省略）</li>
-</ol>
-<h3 id="null_1"><code>= null</code> 何時真的有差<a class="headerlink" href="#null_1" title="Permanent link">&para;</a></h3>
-<p>JIT 的 liveness analysis 在 release build 會處理大部分情況：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">void</span><span class="w"> </span><span class="nf">Method</span><span class="p">()</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">big</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="p">[</span><span class="mi">100</span><span class="n">_000_000</span><span class="p">];</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">UseIt</span><span class="p">(</span><span class="n">big</span><span class="p">);</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="c1">// ← JIT 從這行之後就認為 big 不可達</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">SomethingElse</span><span class="p">();</span><span class="w">    </span><span class="c1">// GC 跑的話 big 已經可被回收</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="n">big</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span><span class="w">         </span><span class="c1">// ← 多此一舉，release build 優化掉</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
-</code></pre></div>
-<p>真正有意義的場景：<strong>長命物件持有短命大物件的 field</strong>。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Service</span><span class="w">  </span><span class="c1">// 活整個 app lifetime</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kt">byte</span><span class="p">[]</span><span class="w"> </span><span class="n">_buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="p">[</span><span class="mi">100</span><span class="n">_000_000</span><span class="p">];</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">DoneUsingBuffer</span><span class="p">()</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="n">_buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span><span class="w">  </span><span class="c1">// ✅ 有意義，不然 100MB 跟著 Service 活到天荒地老</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
-</code></pre></div>
-<p>其他情境（static field、closure 抓到大物件）類似邏輯。</p>
-<h3 id="dispose">最小可用的 Dispose 範本<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
-<p>包裝 <code>SqlConnection</code> 給 <code>using</code> 用：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">DBConnection</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IDisposable</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">SqlConnection</span><span class="w"> </span><span class="n">_conn</span><span class="p">;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">DBConnection</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">connStr</span><span class="p">)</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="n">_conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SqlConnection</span><span class="p">(</span><span class="n">connStr</span><span class="p">);</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="n">_conn</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">SqlCommand</span><span class="w"> </span><span class="nf">CreateCommand</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">sql</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SqlCommand</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span><span class="w"> </span><span class="n">_conn</span><span class="p">);</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Dispose</span><span class="p">()</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">        </span><span class="n">_conn</span><span class="o">?.</span><span class="n">Dispose</span><span class="p">();</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">        </span><span class="n">_conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="p">}</span>
-</code></pre></div>
-<p>不需要完整 Dispose Pattern、不需要 finalizer、不需要 <code>GC.SuppressFinalize</code>（除非日後可能被繼承）。老專案要的是<strong>能動、會關、不 leak</strong>。</p>
-<h3 id="_3">三個老專案常見的坑<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><strong>1. 只實作但沒轉發 → connection leak</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Dispose</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// 空的！底下 SqlConnection 永遠不關</span>
-</code></pre></div>
-→ Connection pool 滿，服務掛掉。</p>
-<p><strong>2. Dispose 裡拋 exception</strong></p>
-<p>應該<strong>吞掉非關鍵例外</strong>，不要讓 <code>using</code> 結束時再丟新 exception 蓋掉原本 try 內的真正錯誤：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Dispose</span><span class="p">()</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">_conn</span><span class="o">?.</span><span class="n">Close</span><span class="p">();</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* 刻意吞掉 */</span><span class="w"> </span><span class="p">}</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="n">_conn</span><span class="o">?.</span><span class="n">Dispose</span><span class="p">();</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
-</code></pre></div>
-<p><strong>3. 重複 Dispose 沒防護</strong></p>
-<p><code>Dispose()</code> 規格要求<strong>可被呼叫多次不拋錯</strong>。用 <code>_disposed</code> flag 擋第二次以後的呼叫。</p>
-<h3 id="_4">一句話總結<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>GC 管 memory，Dispose 管「不是 memory 的東西」。兩者都「等 GC 回收 managed memory」是對的，但 Dispose 處理的是 GC 本來就不處理的那一層。</p>
-</blockquote>
+<p>所以<strong>不需要單獨開「共用資料夾」</strong>，反而會增加維護成本。</p>
+<h2 id="codex">加 Codex 進來的取捨<a class="headerlink" href="#codex" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>加分</th>
+<th>扣分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cross-check（兩邊互抓盲點）</td>
+<td>兩套設定要維護</td>
+</tr>
+<tr>
+<td>不同模型對某些任務強弱不同</td>
+<td>Token 兩邊燒，雙訂閱成本</td>
+</tr>
+<tr>
+<td>主副手切換有彈性</td>
+<td>Context 不共享，同一任務要重新 onboarding</td>
+</tr>
+</tbody>
+</table>
+<p>實務原則：<strong>主力一個、副手一個</strong>，不要兩個都當主力會精神分裂。日常用 Claude Code，遇到瓶頸或想驗證再切 Codex。</p>
+<h2 id="_5">延伸閱讀<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>跨工具互審的實際流程，見「Multi-Agent Cross-Review：用 PR 讓 Claude 和 Codex 互審」。</p>
 
 
 
@@ -4157,7 +4057,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume f7c4bda8-aece-4285-8641-759515069af7</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 1a8cdf3f-9c09-4156-b884-9c3b8ce7ba68</code></p>
 </div>
 
 
