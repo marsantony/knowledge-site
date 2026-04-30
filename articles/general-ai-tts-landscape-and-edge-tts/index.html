@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/security-bff-token-storage-architecture/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/general-ai-tts-landscape-and-edge-tts/">
       
       
-        <link rel="prev" href="../security-auth-middleware-public-fallback/">
+        <link rel="prev" href="../general-ai-short-video-generation-2026/">
       
       
-        <link rel="next" href="../security-oauth2-client-credentials-vs-auth-code/">
+        <link rel="next" href="../general-translation-tool-copyright/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>BFF 模式的 Token 儲存策略與「記住我」實作 - Mars 的知識庫</title>
+        <title>AI TTS 生態與 YT 小說頻道的免費量產 pipeline - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              BFF 模式的 Token 儲存策略與「記住我」實作
+              AI TTS 生態與 YT 小說頻道的免費量產 pipeline
             
           </span>
         </div>
@@ -1441,6 +1441,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1450,11 +1452,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -1475,7 +1477,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1994,10 +1996,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../general-ai-tts-landscape-and-edge-tts/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI TTS 生態與 YT 小說頻道的免費量產 pipeline
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2013,6 +2040,101 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#50" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        成本對照（一本 50 萬字小說）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSML 多角色配音
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        風險
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        開源 TTS 橫評
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        雲端付費方案的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2453,8 +2575,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2464,11 +2584,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
         
           
           <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
@@ -2489,7 +2609,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2588,35 +2708,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    BFF 模式的 Token 儲存策略與「記住我」實作
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../security-bff-token-storage-architecture/" class="md-nav__link">
         
   
   
@@ -2632,107 +2727,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        前端存了什麼？
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#worker-kv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        後端（Worker KV）存了什麼？
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        安全防線分層
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cors-curl" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CORS 擋不住 curl
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        「記住我」的取捨
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3798,74 +3792,68 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#50" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        成本對照（一本 50 萬字小說）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSML 多角色配音
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        風險
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        開源 TTS 橫評
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        雲端付費方案的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         背景
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        前端存了什麼？
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#worker-kv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        後端（Worker KV）存了什麼？
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        安全防線分層
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cors-curl" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CORS 擋不住 curl
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        「記住我」的取捨
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3891,99 +3879,131 @@
       
       
       
-        <a href="../../tags/#tag:javascript" class="md-tag">javascript</a>
+        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:oauth" class="md-tag">oauth</a>
+        <a href="../../tags/#tag:automation" class="md-tag">automation</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:security" class="md-tag">security</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:system-design" class="md-tag">system-design</a>
+        <a href="../../tags/#tag:python" class="md-tag">python</a>
       
     
   </nav>
 
 
 
-  <h1>BFF 模式的 Token 儲存策略與「記住我」實作</h1>
+  <h1>AI TTS 生態與 YT 小說頻道的免費量產 pipeline</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>短命的給前端（access_token → sessionStorage），長命的藏後端（refresh_token → Worker KV）</strong>，中間用無意義的 session_id 串起來</li>
-<li>session_id 本質上是 refresh_token 的代理鑰匙，但攻擊者拿到它仍需經過你的 Worker，你可以加 rate limit、IP 檢查、隨時撤銷</li>
-<li>XSS 偷到 access_token 最多撐 4 小時自動失效；偷到 refresh_token 則等於永久控制帳號——這是 BFF 和 Implicit Grant 的根本差異</li>
-<li><strong>「記住我」的實作</strong>就是一行的差別：勾了 session_id 存 localStorage（持久），沒勾存 sessionStorage（關分頁即消失）</li>
-<li>sessionStorage 在同 origin + 同 tab 下，即使經過外部 redirect（如 Twitch OAuth 跳轉）也會保留</li>
+<li><strong>edge-tts 是「不付錢」的最大答案</strong>：rany2 寫的 Python 套件，逆向工程 Edge 朗讀的 WebSocket API，<strong>呼叫到的就是 Azure Neural TTS</strong>（曉曉、雲希、曉伊、曉晨等頂級神經語音），不需 Microsoft 帳號、不需 API key、無公開字數限制</li>
+<li>命令：<code>edge-tts --voice zh-CN-XiaoxiaoNeural --text "..." --write-media out.mp3 --write-subtitles out.srt</code>，<strong>直接輸出 mp3 + SRT 字幕</strong></li>
+<li><strong>三檔位實作</strong>：(1) 不寫程式 → 剪映/CapCut 內建 AI 朗讀；(2) 技術宅 → edge-tts + ffmpeg 批次；(3) 要差異化聲線 → GPT-SoVITS 本地克隆</li>
+<li><strong>開源 TTS 商用三強</strong>：GPT-SoVITS（MIT、5 秒 zero-shot 克隆）、CosyVoice（Apache 2.0、情緒/方言控制最強）、F5-TTS。<strong>Fish-Speech 和 ChatTTS 因 license 問題不建議商用</strong></li>
+<li><strong>量產 pipeline</strong>：txt → Python 切章 → edge-tts 批次 → ffmpeg 合靜態圖 + 字幕 + BGM → youtube-upload 自動上傳，<strong>全自動、零成本、VPS 24 小時跑</strong></li>
+<li>現成開源整合：<a href="https://github.com/AIDC-AI/Pixelle-Video">Pixelle-Video</a>（阿里）、<a href="https://github.com/chatfire-AI/huobao-drama">火宝短剧</a>，內建 edge-tts</li>
 </ul>
-<h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>在為 Twitch OAuth proxy（BFF pattern）加入「記住我」功能時，重新梳理了整個 token 儲存的安全模型。</p>
-<h3 id="_3">前端存了什麼？<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="50">成本對照（一本 50 萬字小說）<a class="headerlink" href="#50" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>儲存位置</th>
-<th>內容</th>
-<th>特性</th>
+<th>方案</th>
+<th>成本</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>sessionStorage</td>
-<td>access_token</td>
-<td>關分頁就消失，效期約 4 小時</td>
+<td>ElevenLabs</td>
+<td>~$300+ USD</td>
 </tr>
 <tr>
-<td>localStorage 或 sessionStorage</td>
-<td>session_id（UUID）</td>
-<td>依「記住我」選擇，本身不含任何權限</td>
+<td>Azure 官方 SDK</td>
+<td>第一個月 50 萬字免費，之後 ~$8 USD</td>
+</tr>
+<tr>
+<td><strong>edge-tts</strong></td>
+<td><strong>$0，無上限</strong></td>
+</tr>
+<tr>
+<td>GPT-SoVITS（本地）</td>
+<td>$0 + 顯卡電費 + 訓練時間</td>
 </tr>
 </tbody>
 </table>
-<h3 id="worker-kv">後端（Worker KV）存了什麼？<a class="headerlink" href="#worker-kv" title="Permanent link">&para;</a></h3>
-<p>refresh_token 從頭到尾不出現在前端。Worker 用 session_id 作為 key，在 KV 中存放 refresh_token、username、建立時間。</p>
-<h3 id="_4">安全防線分層<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>同源政策</strong>：別的網站讀不到你的 localStorage / sessionStorage</li>
-<li><strong>CORS 白名單</strong>：Worker 只接受特定 origin 的請求</li>
-<li><strong>Token 短命</strong>：即使 access_token 被偷，4 小時後自動失效</li>
-<li><strong>掌控權在你手上</strong>：session_id 被偷，攻擊者必須經過你的 Worker，你可以加 rate limit、異常偵測、隨時刪除該 session</li>
-</ol>
-<h3 id="cors-curl">CORS 擋不住 curl<a class="headerlink" href="#cors-curl" title="Permanent link">&para;</a></h3>
-<p>CORS 是瀏覽器端的機制，攻擊者可以用 curl 偽造 Origin header 繞過。所以 session_id 的安全主要靠「攻擊者拿不到它」（同源政策保護），而非靠 CORS。</p>
-<h3 id="_5">「記住我」的取捨<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h2 id="ssml">SSML 多角色配音<a class="headerlink" href="#ssml" title="Permanent link">&para;</a></h2>
+<p>edge-tts 支援 SSML，能在同一個輸出裡切換音色做「多人配音」：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;voice</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;zh-CN-XiaoxiaoNeural&quot;</span><span class="nt">&gt;</span>「你是誰？」她問。<span class="nt">&lt;/voice&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">&lt;voice</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;zh-CN-YunxiNeural&quot;</span><span class="nt">&gt;</span>「我是路過的。」<span class="nt">&lt;/voice&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">&lt;voice</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;zh-CN-XiaoyiNeural&quot;</span><span class="nt">&gt;</span>旁白繼續。<span class="nt">&lt;/voice&gt;</span>
+</code></pre></div>
+<p>旁白與對話分音色就能拉開與「單音色靜態圖」頻道的品質差距。</p>
+<h2 id="_2">風險<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>edge-tts 是反向工程</strong>，微軟可隨時改 API 把整套打死。重要商業案不該依賴</li>
+<li><strong>YT 對 AI 量產內容廣告變現審查越來越嚴</strong>（2024 起），純 TTS + 靜態圖很難開廣告</li>
+<li><strong>網文版權</strong>：未授權直接讀的頻道很多，被檢舉下架是常態，比技術問題更要命</li>
+<li><strong>聲音克隆名人/聲優</strong>：人格權民事風險，中國有實際告案</li>
+</ul>
+<h2 id="tts">開源 TTS 橫評<a class="headerlink" href="#tts" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>session_id 存 sessionStorage</th>
-<th>session_id 存 localStorage</th>
+<th>模型</th>
+<th>特色</th>
+<th>License</th>
+<th>適合</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>關分頁 = 登出，最安全</td>
-<td>關分頁後再開可自動恢復登入</td>
+<td>GPT-SoVITS</td>
+<td>5 秒 zero-shot 克隆、1 分鐘 fine-tune、跨語言</td>
+<td>MIT</td>
+<td>客製聲線</td>
 </tr>
 <tr>
-<td>使用者每次都要重新授權</td>
-<td>只需授權一次</td>
+<td>CosyVoice（阿里）</td>
+<td>情緒/方言/哭腔控制最強，支援 stream</td>
+<td>Apache 2.0</td>
+<td>對話多、需要表演</td>
+</tr>
+<tr>
+<td>F5-TTS</td>
+<td>速度快、流暢度好</td>
+<td>商用 OK</td>
+<td>短句</td>
+</tr>
+<tr>
+<td>Fish-Speech</td>
+<td>訓練資料 72 萬小時、13 語言</td>
+<td>License 收緊</td>
+<td>不建議商用</td>
+</tr>
+<tr>
+<td>ChatTTS</td>
+<td>對話場景優化</td>
+<td>非商用</td>
+<td>別用</td>
 </tr>
 </tbody>
 </table>
-<p>業界標準做法是在登入按鈕旁加 checkbox，讓使用者自己選擇。實作上在 OAuth redirect 前將偏好存入 sessionStorage，callback 頁面讀取後決定 session_id 的儲存位置。</p>
+<p>GPT-SoVITS 在中文圈最普及，有 Windows 一鍵整合包，雙擊 <code>go-webui.bat</code> 啟動 WebUI。</p>
+<h2 id="_3">雲端付費方案的位置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><a href="https://moyin.com/">魔音工坊</a>、訊飛配音、九錘配音這類年費 200~900 人民幣的服務，主要客群是：(1) 短影音團隊不想搞技術 (2) 要商用級正版授權 (3) 要真人錄音庫。<strong>在「不想付錢」這條路上不重要</strong>。</p>
+<h2 id="_4">背景<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>研究 YT 小說朗讀頻道實際用什麼 TTS 技術。原本以為是「CP 值高的付費服務」，深入查才發現整個生態是建立在 edge-tts 這套<strong>完全免費</strong>的反向工程方案上——絕大多數每天上傳幾集的量產頻道根本不付錢。</p>
+<p>技術選型的關鍵是區分兩個場景：
+- <strong>離線批次生成</strong>（YT 頻道做法）：edge-tts 一條龍最香，品質直接對標 Azure Neural
+- <strong>線上即時朗讀</strong>（網頁閱讀器做法）：Web Speech API 純前端、零成本、零延遲</p>
+<p>兩條路的工具完全不同。</p>
 
 
 
@@ -4002,7 +4022,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume b80e2607-57e6-4501-b243-81131e06120a</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume ba04fff0-c129-4b86-a023-485c073ecd35</code></p>
 </div>
 
 
