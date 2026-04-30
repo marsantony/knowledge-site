@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/security-web-anti-bot-mechanisms/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/dev-tools-git-backport-and-merge-strategies/">
       
       
-        <link rel="prev" href="../automation-cloudflare-crawl-api/">
+        <link rel="prev" href="../dev-tools-agents-md-multi-tool-workspace/">
       
       
-        <link rel="next" href="../security-llm-prompt-injection-defense/">
+        <link rel="next" href="../web-bootstrap-4-to-5-migration/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Web 反爬蟲機制分層解析：從 User-Agent 到 TLS 指紋 - Mars 的知識庫</title>
+        <title>Backport、Cherry-pick 與 Merge 策略：多版本並行下的實務 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Web 反爬蟲機制分層解析：從 User-Agent 到 TLS 指紋
+              Backport、Cherry-pick 與 Merge 策略：多版本並行下的實務
             
           </span>
         </div>
@@ -683,6 +683,8 @@
                 
   
   
+    
+  
   
   
     
@@ -692,11 +694,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -717,7 +719,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1180,10 +1182,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../dev-tools-git-backport-and-merge-strategies/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backport、Cherry-pick 與 Merge 策略：多版本並行下的實務
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1199,6 +1226,162 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backport 是什麼
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cherry-pick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cherry-pick 該不該存在的辯論
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Flow 的侷限
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多版本並行的核心判斷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hotfix-ticket-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hotfix 應從 ticket 出發，不是 commit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hotfix-main-branch-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hotfix 應從 main 開 branch，不直接 commit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merge 三種方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squash-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼業界偏向 squash merge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebase-fast-forward" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        例外：rebase + fast-forward 派
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        工具選擇建議
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2537,8 +2720,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2548,11 +2729,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
         
           
           <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
@@ -2573,7 +2754,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2588,35 +2769,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Web 反爬蟲機制分層解析：從 User-Agent 到 TLS 指紋
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../security-web-anti-bot-mechanisms/" class="md-nav__link">
         
   
   
@@ -2632,96 +2788,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#http" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        為什麼你的 HTTP 請求會被擋
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        各層級的偵測與繞過
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        工具選型
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        內容萃取工具比較
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3883,10 +3949,32 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#http" class="md-nav__link">
+  <a href="#backport" class="md-nav__link">
     <span class="md-ellipsis">
       
-        為什麼你的 HTTP 請求會被擋
+        Backport 是什麼
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cherry-pick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cherry-pick 該不該存在的辯論
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Flow 的侷限
       
     </span>
   </a>
@@ -3897,7 +3985,62 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        各層級的偵測與繞過
+        多版本並行的核心判斷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hotfix-ticket-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hotfix 應從 ticket 出發，不是 commit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hotfix-main-branch-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hotfix 應從 main 開 branch，不直接 commit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merge 三種方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squash-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼業界偏向 squash merge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebase-fast-forward" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        例外：rebase + fast-forward 派
       
     </span>
   </a>
@@ -3908,18 +4051,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        工具選型
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        內容萃取工具比較
+        工具選擇建議
       
     </span>
   </a>
@@ -3953,7 +4085,7 @@
       
       
       
-        <a href="../../tags/#tag:python" class="md-tag">python</a>
+        <a href="../../tags/#tag:git" class="md-tag">git</a>
       
     
       
@@ -3963,108 +4095,152 @@
         <a href="../../tags/#tag:security" class="md-tag">security</a>
       
     
-      
-      
-      
-      
-        <a href="../../tags/#tag:web-scraping" class="md-tag">web-scraping</a>
-      
-    
   </nav>
 
 
 
-  <h1>Web 反爬蟲機制分層解析：從 User-Agent 到 TLS 指紋</h1>
+  <h1>Backport、Cherry-pick 與 Merge 策略：多版本並行下的實務</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>現代反爬蟲不只看 User-Agent，分為 6 層：UA 檢查 → Header 完整性 → TLS 指紋（JA3/JA4）→ JS Challenge → CAPTCHA → IP 信譽</li>
-<li><strong>TLS 指紋是 Cloudflare 的主要偵測手段</strong>：Client Hello 中的 cipher suites、extensions、elliptic curves 順序會洩漏你的 HTTP client 身份，改 User-Agent 沒用</li>
-<li>curl_cffi 是目前最佳方案：把 curl 底層 SSL 換成 BoringSSL（Chrome 用的），TLS 指紋與真正的 Chrome 一模一樣，Python 一行 <code>requests.get(url, impersonate="chrome")</code> 搞定</li>
-<li>trafilatura（F1 0.958）是最佳的內容萃取工具，自動移除 hidden elements、boilerplate、navigation，輸出乾淨 markdown</li>
-<li>分層策略最有效：curl_cffi（毫秒級）→ cookie warming retry → headless browser（秒級），90% 的 403 在第一層就解決</li>
+<li><strong>Backport</strong> 是把新版本的修復「往回搬」到舊版本，常見於 LTS、生產環境穩定優先、客戶卡在舊版的場景。Cherry-pick 是它的常用工具，但兩者不等價</li>
+<li>Cherry-pick 不是 GOTO——它是「在不同命脈之間搬運修補」的專用工具。<strong>問題不在它存在，而在被誤用</strong>（用來代替正常 merge / rebase workflow）</li>
+<li><strong>Git Flow 假設只有一個 production 版本在線上</strong>，這個前提在「多版本並行維護」的現實場景下不成立。所以 backport / cherry-pick 不是 Git Flow 沒考慮，而是 Git Flow 的範圍之外</li>
+<li>多版本維護的核心判斷：<strong>版本之間結構夠相似（同物種）→ merge / cherry-pick；架構已經分歧（不同物種）→ 各自獨立實作</strong></li>
+<li>兩種主流 backport 模式：<strong>Fix old, merge up</strong>（PostgreSQL 風格，從最舊修起往新合併）vs <strong>Fix new, backport down</strong>（Linux Kernel 風格，main 寫 canonical fix 再往下 cherry-pick）</li>
+<li><strong>Hotfix 應該從 ticket / CVE 出發，不是從 commit 出發</strong>。每個版本的 hotfix branch 各自獨立，靠 commit message convention（<code>[CVE-2026-1234]</code>）和 advisory 文件串起來</li>
+<li><strong>Hotfix 從 main 開 branch 而不是直接 commit</strong>：留 PR review 機會、留 CI 跑、squash merge 後 cherry-pick 來源乾淨</li>
+<li><strong>Squash merge ≈「先 rebase 整理再 merge」的工具自動化版本</strong>：不需要 force push、不需要每個人會 interactive rebase、PR 工具自己壓縮，結果更一致</li>
+<li>Merge commit / squash / rebase 的選擇：<strong>hotfix 與 bug fix 一律 squash</strong>，多人協作的大型 feature 才用 merge commit 保留結構</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="http">為什麼你的 HTTP 請求會被擋<a class="headerlink" href="#http" title="Permanent link">&para;</a></h3>
-<p>每個 HTTPS 連線建立時會做 TLS 握手。Client Hello 封包中包含：支援的加密演算法（cipher suites）、TLS 擴充功能（extensions）、橢圓曲線（elliptic curves）。JA3 技術（Salesforce, 2019）把這些參數串接做 MD5 hash，產生一個唯一的「TLS 指紋」。</p>
-<p>不同 HTTP client 的指紋完全不同。Cloudflare 等 CDN 只要比對 JA3 hash，就知道你是 Chrome、curl、Node.js 還是 Python requests，即使你偽裝了 User-Agent。JA4（2023）是更新版本，加入更多特徵。</p>
-<h3 id="_3">各層級的偵測與繞過<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>整理一次關於 git 工作流的長對話，從「backport 是什麼」一路討論到「為什麼現代企業偏好 squash merge」。核心是一個被忽略的問題：<strong>Git Flow 範本沒有處理多版本並行維護的場景</strong>，而這正是 backport 和 cherry-pick 真正的存在意義。</p>
+<h3 id="backport">Backport 是什麼<a class="headerlink" href="#backport" title="Permanent link">&para;</a></h3>
+<p>把較新版本中的某段變更（通常是 bug 修復、安全性修補，或某些功能）拿到較舊版本的程式碼上。方向跟一般開發流程相反——平常是舊 → 新，backport 是新 → 舊。</p>
+<p>需要 backport 的常見原因：
+- <strong>穩定性優先</strong>：production 用的是經過長期驗證的舊版，升級風險高
+- <strong>相容性問題</strong>：新版可能有 breaking changes，升級成本太大
+- <strong>LTS 版本</strong>：Ubuntu LTS、.NET LTS、Node.js LTS 等，官方承諾在固定期間內持續提供安全性更新
+- <strong>法規或合約限制</strong>：金融、醫療等行業常被限制只能用特定認證版本</p>
+<h3 id="cherry-pick">Cherry-pick 該不該存在的辯論<a class="headerlink" href="#cherry-pick" title="Permanent link">&para;</a></h3>
+<p>反對方觀點：「cherry-pick 就像 GOTO，後面只有更糟糕的版本控制。應該用 branch + merge 與 rebase。」</p>
+<p>Cherry-pick 確實有 GOTO 式的問題：
+- <strong>斷開了歷史脈絡</strong>：被 pick 過去的 commit 變成一個孤立的點，失去原本在 branch 上下文（前後的 commit、討論、PR）
+- <strong>同一個邏輯變更在 git log 出現兩次</strong>，SHA 不同
+- <strong>追蹤困難</strong>：想知道「這個 fix 到底落在哪些版本上」變成要靠 commit message 的注解（<code>(cherry picked from commit abc123)</code>）而不是 git 本身的結構
+- <strong>濫用最致命</strong>：把它當日常 workflow，從 feature branch 撿東西丟到 release，搞得 main 跟 release 分支的歷史完全對不起來</p>
+<p>但「cherry-pick 不該存在」太強了。在 backport 場景下，merge 跟 rebase <strong>解不了</strong>：
+- <strong>Merge?</strong> 把 main merge 進 release-2.x？那會把 v3.0 的整套架構變更全部帶進來。完全不可能
+- <strong>Rebase?</strong> Rebase 是改寫歷史的工具，不是搬運工具。也不可能 rebase 一個已 release 的分支
+- <strong>手動重寫?</strong> 邏輯上跟 cherry-pick 做的事一樣，只是失去 git 幫忙記錄。這比較糟糕，不是更好</p>
+<p>正確認知：cherry-pick 不是 GOTO，它是「在不同命脈之間搬運修補」的<strong>專用工具</strong>。它存在的合理場景：
+- 跨 release 分支 backport 安全修補
+- 把 hotfix 從 production branch 帶回 main
+- ❌ 從 feature branch 撿 commit 給 release（這才是真正的 GOTO 式濫用）
+- ❌ 取代正常的 merge workflow</p>
+<h3 id="git-flow">Git Flow 的侷限<a class="headerlink" href="#git-flow" title="Permanent link">&para;</a></h3>
+<p>Git Flow 處理 production hotfix 的標準作法：從 master 開 hotfix branch → 修 → 同時 merge 回 master 與 develop → 在 master 打 tag。這個流程本身<strong>避開了 cherry-pick</strong>。</p>
+<p>但 Git Flow 假設「<strong>只有一個 production 版本在線上</strong>」。一旦你的場景變成：
+- 客戶 A 用 v2.3、客戶 B 用 v3.1、客戶 C 用 v4.0、develop 在做 v5.0
+- 一個 SQL injection 漏洞發現，<strong>四個版本都中</strong></p>
+<p>Git Flow 沒答案。它的模型裡只有一個 master，但你現在有多條 production 命脈，每條都要修，而且程式碼結構不一樣。Linux Kernel 同時維護 6.1 LTS、5.15 LTS、5.10 LTS、5.4 LTS 也是同樣狀況。</p>
+<h3 id="_3">多版本並行的核心判斷<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><strong>版本之間結構夠相似（同物種）→ 可以 merge 或 cherry-pick。架構已經分歧（不同物種）→ 各自獨立實作。</strong></p>
+<p>兩種主流模式：</p>
+<p><strong>模式 A：Fix old, merge up</strong>（PostgreSQL 風格）</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. 找到最舊的受影響版本（如 release-3.x）
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>2. 在那邊修
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>3. 把 release-3.x merge 進 release-4.x（只帶這個 fix）
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>4. 再 merge 進 main
+</code></pre></div>
+<p>適合版本之間結構夠相似的場景。</p>
+<p><strong>模式 B：Fix new, backport down</strong>（Linux Kernel 風格）</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>1. 在 main 實作 canonical fix
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>2. 對每個受影響的 release branch 評估：
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>   - 結構一樣 → cherry-pick
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>   - 結構小差異 → cherry-pick + 手動調整
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>   - 完全不同物種 → 在那個分支獨立實作不同版本
+</code></pre></div>
+<h3 id="hotfix-ticket-commit">Hotfix 應從 ticket 出發，不是 commit<a class="headerlink" href="#hotfix-ticket-commit" title="Permanent link">&para;</a></h3>
+<p>讓 hotfix「自我合格」的關鍵：認同單位不是 commit，而是 <strong>issue / advisory / ticket</strong>。</p>
+<p>也就是說：
+- <strong>一個 CVE / 一個工單</strong> = 一個邏輯上的 hotfix
+- 安全不同版本上<strong>可以是不同的 commit</strong>，甚至不同的程式碼實作
+- 連結它們的不是 git 結構，是<strong>共用的識別碼跟文件</strong></p>
+<p>實際做法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>CVE-2026-1234: SQL injection in login flow
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├─ release-2.x: commit abc123 (用 SqlCommand 改寫)
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├─ release-3.x: commit def456 (用 EF parameterized query)
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>├─ release-4.x: commit ghi789 (用新版 ORM 的 safe API)
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>└─ main:        commit jkl012 (跟 4.x 同樣方式)
+</code></pre></div>
+<p>讓這個關聯保持<strong>多顯化</strong>：
+1. Commit message 用統一前綴：<code>[CVE-2026-1234]</code>
+2. PR 標題、tag、changelog 都用同樣的識別碼
+3. 維護一份 security advisory 文件，列出受影響版本與修復 commit
+4. Cherry-pick 預設加 <code>-x</code> flag 保留追蹤</p>
+<p>這樣即使是 4 個不同的 commit，仍能用 <code>git log --grep="CVE-2026-1234"</code> 一秒找出全部相關。</p>
+<h3 id="hotfix-main-branch-commit">Hotfix 應從 main 開 branch，不直接 commit<a class="headerlink" href="#hotfix-main-branch-commit" title="Permanent link">&para;</a></h3>
+<p><strong>❌ 直接在 main commit</strong>：等於跳過 PR</p>
+<p><strong>✅ 從 main 開 hotfix/CVE-XXX branch</strong>：
+1. <strong>Code review</strong>：安全修補更該被 review，不是更不該
+2. <strong>CI / 測試</strong>：hotfix branch 可以跑完整 CI 確認測試通過，安全乾淨後才合併進 main
+3. <strong>Cherry-pick 來源乾淨</strong>：squash merge 後 main 上是一個 commit，backport 時只要 cherry-pick 一個 SHA
+4. <strong>語意明確</strong>：<code>hotfix/CVE-2026-1234</code> 這個 branch 名稱本身就在講「這是針對哪個 issue 的修復」</p>
+<h3 id="merge">Merge 三種方式<a class="headerlink" href="#merge" title="Permanent link">&para;</a></h3>
+<p>假設 hotfix branch 上有三個 commit（C1、C2、C3）：</p>
+<p><strong>1. Merge commit（預設）</strong>：建立 merge commit M 連接兩個 branch，main 上實際存在 A、B、D、E、C1、C2、C3、M 全部
+- ✅ 完整保留 hotfix branch 的開發過程
+- ❌ Git log 變得複雜
+- ❌ Backport 麻煩：要 cherry-pick C1、C2、C3 三個 commit，不能漏</p>
+<p><strong>2. Squash merge</strong>：把所有 commit 壓扁成一個新 commit S，C1/C2/C3 在 main 的歷史上<strong>完全消失</strong>
+- ✅ Main 的 git log 超級乾淨，一個 PR = 一個 commit
+- ✅ Backport 超方便：<code>git cherry-pick S</code> 就帶走整包 fix
+- ✅ 不會把 WIP commit、typo fix commit 這種過程細節帶進 main
+- ❌ 失去 branch 上的開發過程細節（但 GitHub PR 頁面永久保存）</p>
+<p><strong>3. Rebase merge</strong>：把 hotfix branch 的 commit 一個一個接到 main 後面，沒有分叉
+- ✅ 線性歷史
+- ❌ Backport 還是要 cherry-pick 多個 commit</p>
+<h3 id="squash-merge">為什麼業界偏向 squash merge<a class="headerlink" href="#squash-merge" title="Permanent link">&para;</a></h3>
+<p>「先 interactive rebase 整理 + merge」在邏輯上跟 squash merge 等價，但：</p>
+<ol>
+<li><strong>Rebase 會改寫 branch 歷史，需要 force push</strong>：覆蓋 remote 上原本的 commit、reviewer 之前看的版本不見、第二人在這 branch 上工作的 commit 會被洗掉</li>
+<li><strong>Interactive rebase 學習門檻高</strong>：要正確使用要懂 pick/squash/fixup/reword/drop、衝突解決、如何中斷/繼續/放棄</li>
+<li><strong>Squash merge 不影響 branch 本身</strong>：branch 上還是 C1、C2、C3，只是 main 多了一個壓縮後的 S。沒有 force push 風險</li>
+<li><strong>流程一致性</strong>：團隊規定「每個 PR 都用 squash merge」，結果都一樣乾淨</li>
+</ol>
+<p>簡單一句：<strong>squash merge 就是把「先 rebase 整理再 merge」這個動作交給 PR 工具上的一個按鈕</strong>，讓團隊不需要每個人都會 rebase。</p>
+<h3 id="rebase-fast-forward">例外：rebase + fast-forward 派<a class="headerlink" href="#rebase-fast-forward" title="Permanent link">&para;</a></h3>
+<p>純粹主義派（Linux Kernel、部分 Google 內部專案）：要求每個 commit 都是 atomic unit、能獨立通過 CI。但這需要團隊每位成員都精練 git，在大部分商業公司不切實際。</p>
+<h3 id="_4">工具選擇建議<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>層級</th>
-<th>偵測方式</th>
-<th>繞過方式</th>
+<th>場景</th>
+<th>建議 merge 方式</th>
+<th>原因</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1. User-Agent</td>
-<td>檢查 UA 字串</td>
-<td>換成 Chrome UA（但只靠這招已不夠）</td>
+<td>Hotfix / bug fix</td>
+<td>Squash</td>
+<td>一個邏輯修復 = 一個 commit，backport 方便</td>
 </tr>
 <tr>
-<td>2. Header 完整性</td>
-<td>檢查 <code>Sec-Fetch-*</code> 等 forbidden headers 的存在、順序、一致性</td>
-<td>模擬完整 Chrome header 集合（順序也要對）</td>
+<td>小型 feature</td>
+<td>Squash</td>
+<td>同上，不需要保留開發過程</td>
 </tr>
 <tr>
-<td>3. TLS 指紋</td>
-<td>JA3/JA4 hash 比對</td>
-<td>curl_cffi / curl-impersonate（改底層 SSL 庫）</td>
+<td>大型 feature（多人協作、希望保留結構）</td>
+<td>Merge commit</td>
+<td>看得出 feature 的 commit 結構</td>
 </tr>
 <tr>
-<td>4. JS Challenge</td>
-<td>Cloudflare Managed Challenge，需執行 JS proof of work</td>
-<td>headless browser（nodriver / Playwright）</td>
-</tr>
-<tr>
-<td>5. CAPTCHA</td>
-<td>Turnstile / reCAPTCHA 互動驗證</td>
-<td>付費解決服務或 invisible mode 自動過</td>
-</tr>
-<tr>
-<td>6. IP 信譽</td>
-<td>速率限制、datacenter IP 偵測</td>
-<td>請求間隔 + 指數退避 + 住宅 IP</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_4">工具選型<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>curl_cffi</strong>：Python binding for curl-impersonate，底層用 BoringSSL，同時模擬 TLS 指紋 + HTTP/2 SETTINGS frame + header 順序。解決第 1-3 層。</li>
-<li><strong>trafilatura</strong>：基於 DOM 結構和文字密度的正文萃取。優勢是確定性（同 input 同 output）且不受 prompt injection 影響（它不是 LLM）。</li>
-<li><strong>nodriver</strong>：undetected-chromedriver 的繼任者，用 CDP 直接控制 Chrome，不注入 WebDriver JavaScript，解決第 4 層。代價是慢（3-5s）且吃 RAM（~300MB）。</li>
-</ul>
-<h3 id="_5">內容萃取工具比較<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>工具</th>
-<th>做法</th>
-<th>適用場景</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>trafilatura</td>
-<td>DOM 結構 + 文字密度分析</td>
-<td>一般網頁（wiki、新聞、blog）</td>
-</tr>
-<tr>
-<td>html2text</td>
-<td>HTML → Markdown 忠實轉換</td>
-<td>技術文件（整頁都是有用內容）</td>
-</tr>
-<tr>
-<td>Readability (Mozilla)</td>
-<td>類似 trafilatura 但 JS 實作</td>
-<td>Node.js 生態</td>
-</tr>
-<tr>
-<td>LLM 摘要</td>
-<td>語意壓縮</td>
-<td>需要安全隔離時（Q-Agent 模式）</td>
+<td>個人 feature branch、commit 已經整理過</td>
+<td>Rebase 或 Merge commit</td>
+<td>看個人偏好</td>
 </tr>
 </tbody>
 </table>
@@ -4086,7 +4262,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 177698fe-5529-4a11-97b5-43e821a36057</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 9cad8d21-9dd3-47c7-b29a-9c13213dea74</code></p>
 </div>
 
 
