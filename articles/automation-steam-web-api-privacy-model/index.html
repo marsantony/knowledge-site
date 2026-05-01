@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/dev-tools-agents-md-multi-tool-workspace/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/automation-steam-web-api-privacy-model/">
       
       
-        <link rel="prev" href="../dev-tools-vs-scc-bindings-cleanup/">
+        <link rel="prev" href="../automation-cloudflare-crawl-api/">
       
       
-        <link rel="next" href="../dev-tools-git-backport-and-merge-strategies/">
+        <link rel="next" href="../security-web-anti-bot-mechanisms/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>AGENTS.md：Claude Code + Codex 共存的 workspace 結構 - Mars 的知識庫</title>
+        <title>Steam Web API 抓不到正在玩的遊戲：隱私模型與 Bot 折衷做法 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AGENTS.md：Claude Code + Codex 共存的 workspace 結構
+              Steam Web API 抓不到正在玩的遊戲：隱私模型與 Bot 折衷做法
             
           </span>
         </div>
@@ -683,8 +683,6 @@
                 
   
   
-    
-  
   
   
     
@@ -694,11 +692,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -719,7 +717,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1154,35 +1152,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AGENTS.md：Claude Code + Codex 共存的 workspace 結構
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../dev-tools-agents-md-multi-tool-workspace/" class="md-nav__link">
         
   
   
@@ -1198,101 +1171,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        推薦結構
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#agentsmd-vs-claudemd" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        AGENTS.md vs CLAUDE.md
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        「共用資料夾」的迷思
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#codex" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        加 Codex 進來的取捨
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        延伸閱讀
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2518,6 +2396,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2527,11 +2407,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
         
           
           <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
@@ -2552,7 +2432,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2651,10 +2531,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../automation-steam-web-api-privacy-model/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Steam Web API 抓不到正在玩的遊戲：隱私模型與 Bot 折衷做法
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2670,6 +2575,96 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steam 隱私模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼隱身不能單獨對好友隱藏
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busy-away" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        折衷方案：Busy / Away
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcp-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        除錯流程：為什麼 GCP log 沒線索
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3940,60 +3935,55 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steam" class="md-nav__link">
+    <span class="md-ellipsis">
       
-        <li class="md-nav__item">
+        Steam 隱私模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        推薦結構
+        為什麼隱身不能單獨對好友隱藏
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#agentsmd-vs-claudemd" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#busy-away" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AGENTS.md vs CLAUDE.md
+        折衷方案：Busy / Away
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#gcp-log" class="md-nav__link">
     <span class="md-ellipsis">
       
-        「共用資料夾」的迷思
+        除錯流程：為什麼 GCP log 沒線索
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#codex" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        加 Codex 進來的取捨
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        延伸閱讀
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4019,110 +4009,130 @@
       
       
       
-        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
+        <a href="../../tags/#tag:api" class="md-tag">api</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:automation" class="md-tag">automation</a>
       
     
   </nav>
 
 
 
-  <h1>AGENTS.md：Claude Code + Codex 共存的 workspace 結構</h1>
+  <h1>Steam Web API 抓不到正在玩的遊戲：隱私模型與 Bot 折衷做法</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>AGENTS.md</strong> 是業界推進的跨 AI 工具標準（Codex、Cursor、Aider 等原生讀取），Claude Code 也支援</li>
-<li>不要把 workspace 拆成 <code>codex/</code> 和 <code>claude/</code> 兩邊——它們操作同一份程式碼，拆開只會增加維護成本</li>
-<li>全域設定留在 home dir（<code>~/.claude/</code>、<code>~/.codex/</code>），<strong>不要搬進 workspace</strong></li>
-<li>最乾淨的做法：<strong>AGENTS.md 當主檔，CLAUDE.md symlink 過去</strong>，避免雙寫</li>
-<li>「共用資料夾」（skills、prompt、knowledge）多半不需要單獨建——既有的 knowledge-base repo 就夠</li>
+<li>Steam Web API <code>GetPlayerSummaries</code> 只需 API Key（無需 OAuth、無需好友），但<strong>回傳內容完全取決於對方 profile 的隱私設定</strong></li>
+<li>抓不到 <code>gameid</code> 的最常見原因：「遊戲詳細資料 (Game details)」沒設成 Public、Steam 顯示為<strong>隱身/離線</strong>、玩的是非 Steam 啟動的遊戲、Steam 客戶端未開啟</li>
+<li>「個人檔案 Public」與「遊戲詳情 Public」是<strong>兩個獨立隱私開關</strong>，常見狀況是 profile 看得到但遊戲資訊看不到</li>
+<li><strong>隱身狀態下 API 跟好友列表看到的是同一份遮罩</strong>，沒有「對 API 顯示在線、對好友顯示離線」的設定</li>
+<li>想讓 Bot 抓得到遊戲又不想被好友密：用 <strong>Busy（請勿打擾）/ Away（離開）+ Game details Public</strong>，技術上仍在線但社交上暗示「不要打擾」</li>
+<li>Cloud Function 在「拿不到 gameid」這條路徑通常是正常 return（不是錯誤），所以 GCP log 看不到根因，要分辨「Steam 沒給」還是「下游 API 失敗」需要直接打 Steam Web API 驗證</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>把 OpenAI Codex CLI 加進已有的 Claude Code workspace 時，第一直覺常常是按工具切目錄：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>workspace/
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── codex/        ← Codex 設定
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── claude/       ← Claude 設定
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── projects/     ← 各 repo
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└── shared/       ← 兩邊共用
-</code></pre></div>
-<p>這個結構有兩個根本問題：</p>
-<ol>
-<li><strong>兩個工具操作的是同一份程式碼</strong>——拆 <code>projects/</code> 等於拆程式碼，從此每次切換工具都要 sync</li>
-<li><strong>「共用資料夾」很難真的共用</strong>——skills、slash commands 兩邊機制不同，沒辦法用同一份檔案</li>
-</ol>
-<h2 id="_3">推薦結構<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>workspace/
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── CLAUDE.md       → symlink 到 AGENTS.md
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── AGENTS.md       ← 主檔，所有 AI 工具讀這個
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── .claude/        ← workspace 級的 Claude 設定
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├── .codex/         ← workspace 級的 Codex 設定（如果有）
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>├── projects/       ← 共用，兩個 AI 對同一份 repo 工作
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>└── imports/
-</code></pre></div>
-<p><strong>全域設定</strong>留在 home dir：<code>~/.claude/</code>、<code>~/.codex/</code>，不搬進 workspace。</p>
-<h2 id="agentsmd-vs-claudemd">AGENTS.md vs CLAUDE.md<a class="headerlink" href="#agentsmd-vs-claudemd" title="Permanent link">&para;</a></h2>
-<p>AGENTS.md 是 OpenAI、Cursor、Aider 等工具在推的<strong>跨 AI 共通指令標準</strong>——一個檔案、所有工具讀。Claude Code 也認得。</p>
-<p>避免雙寫的做法：</p>
-<ol>
-<li>把現有的 <code>CLAUDE.md</code> 內容搬到 <code>AGENTS.md</code></li>
-<li><code>CLAUDE.md</code> 改成 symlink → <code>AGENTS.md</code></li>
-<li>之後只維護 AGENTS.md</li>
-</ol>
-<p>如果原本有 <code>claude-config</code> 之類的 repo 在管 CLAUDE.md，可以同步改名 <code>agents-config</code>，語意更通用。</p>
-<h2 id="_4">「共用資料夾」的迷思<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>直覺會想開一個 <code>shared/</code> 給兩個 AI 共用，但實際盤點：</p>
+<p><code>Twitch_AutoGameStatusUpdate</code> 自動更新 StreamElements 指令的 Bot 一直拿到 <code>{"GameName":""}</code>，原因不是 Cloud Function 壞掉，而是 Steam 那邊的 <code>GetPlayerSummaries</code> 回傳沒有 <code>gameid</code>。</p>
+<h3 id="steam">Steam 隱私模型<a class="headerlink" href="#steam" title="Permanent link">&para;</a></h3>
+<p>API Key 是<strong>服務級金鑰</strong>，不是「以使用者身份」呼叫，所以對方的隱私設定就是唯一的閘門。完整對照表：</p>
 <table>
 <thead>
 <tr>
-<th>共用對象</th>
-<th>真的能共用嗎</th>
+<th>對方狀態</th>
+<th>API 回傳 <code>gameid</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Skills / slash commands</td>
-<td>機制不同，各自維護</td>
+<td>Profile Public + Game details Public + 在玩 Steam 遊戲</td>
+<td>✅ 有</td>
 </tr>
 <tr>
-<td>Prompt / 知識文件</td>
-<td>已經有 knowledge-base repo，不用再建</td>
+<td>Game details 設成 Friends Only / Private</td>
+<td>❌ 沒有</td>
 </tr>
 <tr>
-<td>規範文件</td>
-<td>AGENTS.md 本身就是</td>
+<td>隱身（Invisible）</td>
+<td>❌ 沒有，<code>personastate</code> 為 0（與離線相同）</td>
 </tr>
 <tr>
-<td>程式碼</td>
-<td>在 projects/ 就好</td>
+<td>離線</td>
+<td>❌ 沒有</td>
+</tr>
+<tr>
+<td>玩非 Steam 遊戲（Epic / 原生 / Riot 等）</td>
+<td>❌ Steam 不知道</td>
+</tr>
+<tr>
+<td>Steam 客戶端未開啟</td>
+<td>❌ 沒有</td>
 </tr>
 </tbody>
 </table>
-<p>所以<strong>不需要單獨開「共用資料夾」</strong>，反而會增加維護成本。</p>
-<h2 id="codex">加 Codex 進來的取捨<a class="headerlink" href="#codex" title="Permanent link">&para;</a></h2>
+<p><code>personastate</code> 對應：0=離線/隱身, 1=線上, 2=忙碌, 3=離開, 4=打盹, 5=想交易, 6=想玩, 7=隱身（極少數情境）。實務上 0 跟 7 都會讓 <code>gameid</code> 消失。</p>
+<h3 id="_3">為什麼隱身不能單獨對好友隱藏<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Steam 的隱私設計是「以使用者意圖為準」的單一視角——一旦設成隱身，整個 Steam 對外（含 Web API、好友列表、profile 頁）一律當離線處理。沒有任何官方設定能做到「API 看得到、好友看不到」。</p>
+<p>網路上偶爾有「設隱身 + Game details Public 還是抓得到」的說法，那是某些時期的 bug，不該依賴。</p>
+<h3 id="busy-away">折衷方案：Busy / Away<a class="headerlink" href="#busy-away" title="Permanent link">&para;</a></h3>
+<p>如果 Bot 要穩定抓得到遊戲，又不想在好友列表上被密：</p>
 <table>
 <thead>
 <tr>
-<th>加分</th>
-<th>扣分</th>
+<th>做法</th>
+<th>好友看到</th>
+<th>API 看到</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Cross-check（兩邊互抓盲點）</td>
-<td>兩套設定要維護</td>
+<td>隱身</td>
+<td>離線</td>
+<td>❌</td>
 </tr>
 <tr>
-<td>不同模型對某些任務強弱不同</td>
-<td>Token 兩邊燒，雙訂閱成本</td>
+<td>Busy（請勿打擾）+ Game details Public</td>
+<td>在線、忙碌中</td>
+<td>✅</td>
 </tr>
 <tr>
-<td>主副手切換有彈性</td>
-<td>Context 不共享，同一任務要重新 onboarding</td>
+<td>Away（離開）+ Game details Public</td>
+<td>在線、離開中</td>
+<td>✅</td>
 </tr>
 </tbody>
 </table>
-<p>實務原則：<strong>主力一個、副手一個</strong>，不要兩個都當主力會精神分裂。日常用 Claude Code，遇到瓶頸或想驗證再切 Codex。</p>
-<h2 id="_5">延伸閱讀<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>跨工具互審的實際流程，見「Multi-Agent Cross-Review：用 PR 讓 Claude 和 Codex 互審」。</p>
+<p>技術上仍然在線，但用 Busy / Away 可以社交上暗示「不要打擾」，這也是不少實況主常用的設定。</p>
+<h3 id="gcp-log">除錯流程：為什麼 GCP log 沒線索<a class="headerlink" href="#gcp-log" title="Permanent link">&para;</a></h3>
+<p>對應的 Cloud Function 邏輯（C# / .NET）大致是：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">var</span><span class="w"> </span><span class="n">tokenGameId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jObj</span><span class="p">.</span><span class="n">SelectToken</span><span class="p">(</span><span class="s">&quot;response.players[0].gameid&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tokenGameId</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nf">WriteResultAsync</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">steamId</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="w">  </span><span class="c1">// 回傳 GameName: &quot;&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+</code></pre></div>
+<p>「拿不到 gameid」是合法路徑，不會 throw、不會 LogWarning。所以 <code>gcloud functions logs read</code> 完全看不到。要分辨根因有兩條路：</p>
+<ol>
+<li>
+<p><strong>直接打 Steam Web API</strong>（最快）：
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=&lt;KEY&gt;&amp;format=json&amp;steamids=&lt;ID&gt;
+</code></pre></div>
+   看 <code>response.players[0]</code> 有沒有 <code>gameid</code> 跟 <code>gameextrainfo</code>。沒有就確定是 Steam 那層的問題（隱私 / 離線 / 非 Steam 遊戲）。</p>
+</li>
+<li>
+<p><strong>在 Cloud Function 加 Information log</strong>：
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tokenGameId</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">_logger</span><span class="p">.</span><span class="n">LogInformation</span><span class="p">(</span><span class="s">&quot;No gameid for {SteamId}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">steamId</span><span class="p">);</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
+</code></pre></div>
+   之後 GCP log 就能直接看到頻率，分辨「Steam 沒給」vs「appdetails API 失敗」。</p>
+</li>
+</ol>
 
 
 
@@ -4141,7 +4151,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 1a8cdf3f-9c09-4156-b884-9c3b8ce7ba68</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 58f24efb-6700-4553-966c-349a9d74be0f</code></p>
 </div>
 
 
