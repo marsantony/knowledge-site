@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-knuth-claude-cycles-collaboration/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/web-visitor-tracking-pitfalls/">
       
       
-        <link rel="prev" href="../learning-test-coverage-strategy/">
+        <link rel="prev" href="../web-multi-tab-shared-resource-race/">
       
       
-        <link rel="next" href="../learning-ai-impact-swe-career-framework/">
+        <link rel="next" href="../general-claude-cowork-guide/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>從 Knuth《Claude's Cycles》學到的人機協作方法論 - Mars 的知識庫</title>
+        <title>前端訪客追蹤的三個常見陷阱：IP、session_id、SQL aggregate - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              從 Knuth《Claude's Cycles》學到的人機協作方法論
+              前端訪客追蹤的三個常見陷阱：IP、session_id、SQL aggregate
             
           </span>
         </div>
@@ -1244,6 +1244,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1253,11 +1255,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -1278,7 +1280,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1545,10 +1547,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../web-visitor-tracking-pitfalls/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前端訪客追蹤的三個常見陷阱：IP、session_id、SQL aggregate
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1564,6 +1591,96 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cf-connecting-ip-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        陷阱一：CF-Connecting-IP 才是真實 IP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionstorage-per-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        陷阱二：sessionStorage 是 per-tab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxtwitch_username" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        陷阱三：MAX(twitch_username) 的盲點
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三個陷阱合起來看
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3211,8 +3328,6 @@
                 
   
   
-    
-  
   
   
     
@@ -3222,11 +3337,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
         
           
           <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
@@ -3247,7 +3362,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3402,35 +3517,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    從 Knuth《Claude's Cycles》學到的人機協作方法論
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../learning-knuth-claude-cycles-collaboration/" class="md-nav__link">
         
   
   
@@ -3446,96 +3536,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        探索過程的關鍵轉折
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        引導 AI 的關鍵做法
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#knuth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Knuth 的後續驗證
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        對工作流程的啟發
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4023,10 +4023,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#cf-connecting-ip-ip" class="md-nav__link">
     <span class="md-ellipsis">
       
-        探索過程的關鍵轉折
+        陷阱一：CF-Connecting-IP 才是真實 IP
       
     </span>
   </a>
@@ -4034,10 +4034,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ai" class="md-nav__link">
+  <a href="#sessionstorage-per-tab" class="md-nav__link">
     <span class="md-ellipsis">
       
-        引導 AI 的關鍵做法
+        陷阱二：sessionStorage 是 per-tab
       
     </span>
   </a>
@@ -4045,21 +4045,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#knuth" class="md-nav__link">
+  <a href="#maxtwitch_username" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Knuth 的後續驗證
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        對工作流程的啟發
+        陷阱三：MAX(twitch_username) 的盲點
       
     </span>
   </a>
@@ -4068,6 +4057,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三個陷阱合起來看
+      
+    </span>
+  </a>
   
 </li>
       
@@ -4093,92 +4093,139 @@
       
       
       
-        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
+        <a href="../../tags/#tag:cloudflare" class="md-tag">cloudflare</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:cowork" class="md-tag">cowork</a>
+        <a href="../../tags/#tag:data-visualization" class="md-tag">data-visualization</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:database" class="md-tag">database</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:javascript" class="md-tag">javascript</a>
       
     
   </nav>
 
 
 
-  <h1>從 Knuth《Claude's Cycles》學到的人機協作方法論</h1>
+  <h1>前端訪客追蹤的三個常見陷阱：IP、session_id、SQL aggregate</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>plan.md 即時記錄法</strong>：每次探索後立即更新進度文件，再進行下一步。這是維持 AI 長程推理一致性的關鍵——沒有外化記錄，AI 會在上下文窗口中遺失早期線索</li>
-<li><strong>失敗回顧法</strong>：卡住時不要只「換方向」，先回頭看之前失敗嘗試的輸出，可能藏有被忽略的規律。Claude 在第 30 次探索回顧舊結果時發現了解題關鍵</li>
-<li><strong>結構化探索 &gt; 隨機嘗試</strong>：Claude 的 31 次探索涵蓋了暴力搜尋、數學結構辨識、啟發式搜尋、模擬退火等多種策略，系統性地縮小搜索空間</li>
-<li><strong>人類角色轉變</strong>：從「解題者」變為「審查者 + 推廣者」——AI 負責創造性跳躍，人類負責嚴格驗證、系統化推廣、判斷品質</li>
-<li><strong>多模型協作是新趨勢</strong>：論文後續中，GPT + Claude 雙 Agent 交替協作產出了更簡潔的解法和完整證明</li>
+<li>Cloudflare Worker / Pages Functions 取真實使用者 IP <strong>必用 <code>CF-Connecting-IP</code></strong> header——這是邊緣節點注入的，client 設不了會被 CF 蓋掉，比 <code>X-Forwarded-For</code> 更可靠</li>
+<li><code>sessionStorage</code> 是 <strong>per-tab</strong> 的，拿來當 session_id 會把同一個人開多分頁算成多個獨立訪客；要跨分頁共享同一身份必須用 <code>localStorage</code></li>
+<li>SQL <code>MAX(text_field)</code> 拿來做 session 級 aggregate 時，若 session 第一個 event 在某狀態（如 OAuth）寫入前就送出，整段可能都帶空字串，看起來像「不同人」——MAX('') = ''</li>
+<li>這三個陷阱合起來會讓 dashboard 看起來不準：「同一人多分頁」+「OAuth 完成前的 pageview」會讓 active visitors 多算且部分顯示匿名</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>2026 年 2 月，演算法大師 Donald Knuth 在撰寫《The Art of Computer Programming》新卷時，遇到一個他苦思數週的組合圖論開放問題：將 m³ 頂點有向圖的邊分解為三條 Hamiltonian cycle。他的朋友 Filip Stappers 將問題交給 Claude Opus 4.6，約一小時內經過 31 次探索成功解出奇數 m 的通用構造。</p>
-<h3 id="_3">探索過程的關鍵轉折<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>site-dashboard 是給多個 GitHub Pages 專案用的訪客監控（Cloudflare Worker + D1 + Pages Functions）。某次 dashboard 顯示同一個 IP 的某專案有 3 個活躍訪客，其中 2 個 Twitch username 顯示為空——直覺以為「IP 抓錯」或「真的有別人來」，實際是這三個陷阱組合的結果。</p>
+<h3 id="cf-connecting-ip-ip">陷阱一：CF-Connecting-IP 才是真實 IP<a class="headerlink" href="#cf-connecting-ip-ip" title="Permanent link">&para;</a></h3>
+<p>Cloudflare Worker 取使用者 IP：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;CF-Connecting-IP&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p><code>CF-Connecting-IP</code> 是 Cloudflare 邊緣節點接到 client 連線時寫進去的 header。Client 自己設這個 header <strong>會被 CF 蓋掉</strong>，所以拿到的值永遠是真實 client IP。</p>
+<p>對比之下：</p>
 <table>
 <thead>
 <tr>
-<th>探索</th>
-<th>策略</th>
-<th>結果</th>
+<th>Header</th>
+<th>來源</th>
+<th>可靠性</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>#1</td>
-<td>重新建模為排列分配問題</td>
-<td>奠定數學框架</td>
+<td><code>CF-Connecting-IP</code></td>
+<td>CF 邊緣節點注入</td>
+<td>高</td>
 </tr>
 <tr>
-<td>#2-5</td>
-<td>暴力搜尋、線性函數、蛇形模式</td>
-<td>均失敗，但蛇形模式後來成為線索</td>
+<td><code>X-Forwarded-For</code></td>
+<td>任何 proxy 都可能加</td>
+<td>低（最左邊那個值才是 client，但 client 也能偽造）</td>
 </tr>
 <tr>
-<td>#15</td>
-<td>發明 fiber decomposition（按 i+j+k mod m 分層）</td>
-<td>核心創新</td>
-</tr>
-<tr>
-<td>#27</td>
-<td>3D 蛇形 + 旋轉，只剩 3(m-1) 個衝突</td>
-<td>差一點但無法消除</td>
-</tr>
-<tr>
-<td>#29</td>
-<td>證明此路不通</td>
-<td>果斷放棄</td>
-</tr>
-<tr>
-<td>#30</td>
-<td>回顧舊模擬退火結果，發現每層只依賴單一座標</td>
-<td>解題關鍵</td>
-</tr>
-<tr>
-<td>#31</td>
-<td>寫出通用構造程式，驗證通過</td>
-<td>成功</td>
+<td><code>request.connecting_ip</code></td>
+<td>直接連線（無 proxy）</td>
+<td>在 CF 後面拿到的會是 CF 自己的 IP</td>
 </tr>
 </tbody>
 </table>
-<h3 id="ai">引導 AI 的關鍵做法<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h3>
-<p>Filip 的 system prompt 包含強制記錄指示：</p>
-<blockquote>
-<p>After EVERY exploreXX.py run, IMMEDIATELY update this file [plan.md] before doing anything else. No exceptions.</p>
-</blockquote>
-<p>即便如此，Filip 仍需每隔兩三個程式後反覆提醒 Claude 記錄進度。</p>
-<h3 id="knuth">Knuth 的後續驗證<a class="headerlink" href="#knuth" title="Permanent link">&para;</a></h3>
-<p>Knuth 不是照單全收，而是：親自撰寫嚴格數學證明、推廣發現（定義 generalizable cycle 概念，找出 760 個有效分解）、請 Lean 社群做形式化驗證。</p>
-<h3 id="_4">對工作流程的啟發<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>這些經驗已納入我們的 CLAUDE.md 規範：
-- Research 階段強制即時更新 research.md
-- 卡住時先回顧失敗輸出再換方向</p>
-<p>原始論文：Donald Knuth, "Claude's Cycles", Stanford CS Department, 2026-02-28（revised 2026-03-06）</p>
+<p>只要 worker 跑在 CF 後面，<strong>用 <code>CF-Connecting-IP</code> 就對了</strong>。</p>
+<h3 id="sessionstorage-per-tab">陷阱二：sessionStorage 是 per-tab<a class="headerlink" href="#sessionstorage-per-tab" title="Permanent link">&para;</a></h3>
+<p>這個很容易踩——很多分析腳本拿 <code>sessionStorage</code> 存「session id」：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;_sd_sid&#39;</span><span class="p">);</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">sid</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nx">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">().</span><span class="nx">toString</span><span class="p">(</span><span class="mf">36</span><span class="p">).</span><span class="nx">slice</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">().</span><span class="nx">toString</span><span class="p">(</span><span class="mf">36</span><span class="p">);</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;_sd_sid&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">sid</span><span class="p">);</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</code></pre></div>
+<p><code>sessionStorage</code> 的儲存範圍是 <strong>per-tab/per-window</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>Storage</th>
+<th>作用範圍</th>
+<th>生命期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sessionStorage</code></td>
+<td>單一分頁／視窗（每個分頁各自獨立）</td>
+<td>關分頁就消</td>
+</tr>
+<tr>
+<td><code>localStorage</code></td>
+<td>同 origin 所有分頁共享</td>
+<td>直到使用者清除</td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>同 origin 共享</td>
+<td>自訂 expires</td>
+</tr>
+</tbody>
+</table>
+<p>所以 dashboard 的「活躍訪客」如果 <code>GROUP BY session_id</code>，<strong>同一個人開三個分頁就會被算成三個獨立訪客</strong>，從 dashboard 的角度沒辦法區分「真的三個人」跟「一個人開三個分頁」。</p>
+<p>要算「真實人數」應該 <code>GROUP BY ip_hash</code> 或 <code>GROUP BY twitch_username</code>（如果有登入身份）；想看「分頁／session 數」才用 session_id。兩個指標都有用，但要清楚知道自己在量什麼。</p>
+<h3 id="maxtwitch_username">陷阱三：MAX(twitch_username) 的盲點<a class="headerlink" href="#maxtwitch_username" title="Permanent link">&para;</a></h3>
+<p>要在 session 列表上顯示登入身份，常見寫法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">session_id</span><span class="p">,</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">twitch_username</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">twitch_username</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">events</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">created_at</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">datetime</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;-3 minutes&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">session_id</span>
+</code></pre></div>
+<p><code>MAX</code> 的意圖是「該 session 期間任何 event 帶到的非空 username」，因為空字串排序最小，理論上有任何一筆帶 username 的 event 就會勝出。<strong>但如果整個 session 期間所有 event 的 <code>twitch_username</code> 都是空字串，<code>MAX('')</code> 就是 <code>''</code></strong>，session 顯示為匿名。</p>
+<p>實際情境：</p>
+<ul>
+<li>訪客追蹤腳本用 <code>localStorage.getItem('Twitch_OAuthUsername')</code> 抓登入名</li>
+<li>新分頁開啟瞬間，OAuth flow 還沒完成（callback 還沒寫 localStorage）就送了第一個 pageview event → username 空</li>
+<li>heartbeat 預設 60 秒一次，分頁如果 &lt; 60 秒就被關掉，只送出空字串 pageview，session 整段都是空</li>
+</ul>
+<p>從 dashboard 看就是「這個訪客沒登入」——但其實是時序問題。</p>
+<p>要修這個，server 側的 aggregate 可以改成：同 session_id 從<strong>任何時間</strong>的歷史 row 撈最後一個非空 username（用 window function 或 subquery），不限定 3 分鐘窗口。或在 client 端 OAuth 完成後立刻送一個 heartbeat 補登資訊。</p>
+<h2 id="_3">三個陷阱合起來看<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>把三個放一起：dashboard 顯示「同 IP、3 個 session、其中 2 個匿名」最直覺的解讀是「3 個不同訪客其中 2 個沒登入」，但實際很可能是：</p>
+<ul>
+<li>1 個人開了 3 個分頁（陷阱二：session_id per-tab）</li>
+<li>IP 的確是同一台電腦（陷阱一：CF-Connecting-IP 是準的）</li>
+<li>較早開的分頁有抓到 OAuth username（陷阱三避開），新開的兩個還沒等到 OAuth 完成（陷阱三命中）</li>
+</ul>
+<p>debug visitor tracking 看到「奇怪」數據時，先檢查這三點再下結論。</p>
 
 
 
@@ -4197,7 +4244,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 9315ca7c-9258-4faa-a8e2-1470f9467c90</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 0f312366-66b4-4869-b5c9-d3c6bfc151f3</code></p>
 </div>
 
 

@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/learning-knuth-claude-cycles-collaboration/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/web-multi-tab-shared-resource-race/">
       
       
-        <link rel="prev" href="../learning-test-coverage-strategy/">
+        <link rel="prev" href="../web-speech-synthesis-novel-reader/">
       
       
-        <link rel="next" href="../learning-ai-impact-swe-career-framework/">
+        <link rel="next" href="../web-visitor-tracking-pitfalls/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>從 Knuth《Claude's Cycles》學到的人機協作方法論 - Mars 的知識庫</title>
+        <title>多分頁同時操作共用後端資源的 race 與防呆 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              從 Knuth《Claude's Cycles》學到的人機協作方法論
+              多分頁同時操作共用後端資源的 race 與防呆
             
           </span>
         </div>
@@ -1244,6 +1244,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1253,11 +1255,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -1278,7 +1280,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1517,10 +1519,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../web-multi-tab-shared-resource-race/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    多分頁同時操作共用後端資源的 race 與防呆
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1536,6 +1563,118 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="背景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        觀察到的現象
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        為什麼會互踩
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localstorage-lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        localStorage lock 的限制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastchannel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BroadcastChannel 是更乾淨的解
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-updatedat-race" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug 手法：用 updatedAt 反推 race
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        取捨
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3211,8 +3350,6 @@
                 
   
   
-    
-  
   
   
     
@@ -3222,11 +3359,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
         
           
           <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
@@ -3247,7 +3384,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3402,35 +3539,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    從 Knuth《Claude's Cycles》學到的人機協作方法論
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../learning-knuth-claude-cycles-collaboration/" class="md-nav__link">
         
   
   
@@ -3446,96 +3558,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        探索過程的關鍵轉折
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        引導 AI 的關鍵做法
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#knuth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Knuth 的後續驗證
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        對工作流程的啟發
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4026,29 +4048,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        探索過程的關鍵轉折
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        引導 AI 的關鍵做法
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#knuth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Knuth 的後續驗證
+        觀察到的現象
       
     </span>
   </a>
@@ -4059,7 +4059,40 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        對工作流程的啟發
+        為什麼會互踩
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localstorage-lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        localStorage lock 的限制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcastchannel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BroadcastChannel 是更乾淨的解
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-updatedat-race" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug 手法：用 updatedAt 反推 race
       
     </span>
   </a>
@@ -4068,6 +4101,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        取捨
+      
+    </span>
+  </a>
   
 </li>
       
@@ -4093,92 +4137,160 @@
       
       
       
-        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
+        <a href="../../tags/#tag:api" class="md-tag">api</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:cowork" class="md-tag">cowork</a>
+        <a href="../../tags/#tag:automation" class="md-tag">automation</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:javascript" class="md-tag">javascript</a>
       
     
   </nav>
 
 
 
-  <h1>從 Knuth《Claude's Cycles》學到的人機協作方法論</h1>
+  <h1>多分頁同時操作共用後端資源的 race 與防呆</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>plan.md 即時記錄法</strong>：每次探索後立即更新進度文件，再進行下一步。這是維持 AI 長程推理一致性的關鍵——沒有外化記錄，AI 會在上下文窗口中遺失早期線索</li>
-<li><strong>失敗回顧法</strong>：卡住時不要只「換方向」，先回頭看之前失敗嘗試的輸出，可能藏有被忽略的規律。Claude 在第 30 次探索回顧舊結果時發現了解題關鍵</li>
-<li><strong>結構化探索 &gt; 隨機嘗試</strong>：Claude 的 31 次探索涵蓋了暴力搜尋、數學結構辨識、啟發式搜尋、模擬退火等多種策略，系統性地縮小搜索空間</li>
-<li><strong>人類角色轉變</strong>：從「解題者」變為「審查者 + 推廣者」——AI 負責創造性跳躍，人類負責嚴格驗證、系統化推廣、判斷品質</li>
-<li><strong>多模型協作是新趨勢</strong>：論文後續中，GPT + Claude 雙 Agent 交替協作產出了更簡潔的解法和完整證明</li>
+<li>純前端工具如果靠 <code>setInterval</code> 週期性 PUT 同一個後端資源（如 SE command），使用者開多分頁就會互相覆蓋，從外部看像「沒更新」</li>
+<li><code>localStorage</code> 做 lock 沒那麼簡單——必須加 timestamp + heartbeat，否則分頁被強制關閉時 lock 殘留，新分頁永遠開不起來</li>
+<li><code>BroadcastChannel</code> API 是更乾淨的跨分頁協調方式：舊分頁關閉時 channel 自動失效，新分頁 ping 沒人回就接管，零延遲</li>
+<li>StreamElements API 沒提供 audit log，但 command 物件的 <code>updatedAt</code> 是天然的監控點——<code>updatedAt</code> 在 GET 前幾秒被刷新就是另一個來源 PUT 過的鐵證</li>
+<li>Debug 多分頁互踩用 console snippet：每 N 秒 GET 後端資源、diff <code>updatedAt</code> 變動頻率，比改程式碼快</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>2026 年 2 月，演算法大師 Donald Knuth 在撰寫《The Art of Computer Programming》新卷時，遇到一個他苦思數週的組合圖論開放問題：將 m³ 頂點有向圖的邊分解為三條 Hamiltonian cycle。他的朋友 Filip Stappers 將問題交給 Claude Opus 4.6，約一小時內經過 31 次探索成功解出奇數 m 的通用構造。</p>
-<h3 id="_3">探索過程的關鍵轉折<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_3">觀察到的現象<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><code>Twitch_AutoGameStatusUpdate</code> 是純前端 GitHub Pages 工具，每 5 分鐘從 Steam 抓當前遊戲名、PUT 到 StreamElements 更新 <code>!遊戲</code> 指令。某次發現：Steam 已經換成新遊戲，但 SE command reply 維持舊遊戲，看起來「沒更新」。</p>
+<p>從工具自己的 log 反推：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>4:42:45 完整流程結束
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>4:42:45 {SE command JSON, reply: 「昏迷3：血脈」, updatedAt: &quot;2026-05-06T08:42:38Z&quot;}
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>4:42:44 {GameName: &quot;Batomon Showdown Demo&quot;}
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>4:42:44 完整流程開始
+</code></pre></div>
+<p>兩個關鍵線索：</p>
+<ol>
+<li>流程沒走到 PUT（缺第四筆 log），代表 <code>commandJson.reply === templateFullReply</code> 判定為相等</li>
+<li>GET 回來的 command <code>updatedAt</code> 比 GET 本身早 <strong>6 秒</strong>——也就是這個分頁開始流程之前 6 秒，<strong>有人剛 PUT 過</strong></li>
+</ol>
+<p>5 分鐘間隔的循環不可能 6 秒前先 PUT 一次再 GET。<strong>這 6 秒就是另一個分頁留下的指紋</strong>。</p>
+<p>確認多分頁來源用 site-dashboard 的 visitor tracking（同一個 origin、同一個 IP、3 個 <code>_sd_sid</code> session_id）。</p>
+<h3 id="_4">為什麼會互踩<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>每個分頁啟動「自動更新」後各自跑 5 分鐘 setTimeout 循環，對同一個 SE command 做 PUT。如果其中一個分頁 <code>#gameName</code> input 有殘留自訂值，另一個沒有：</p>
 <table>
 <thead>
 <tr>
-<th>探索</th>
-<th>策略</th>
-<th>結果</th>
+<th>分頁</th>
+<th>currentGameName 來源</th>
+<th>tick 行為</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>#1</td>
-<td>重新建模為排列分配問題</td>
-<td>奠定數學框架</td>
+<td>A</td>
+<td>Steam API</td>
+<td>PUT 成 <code>Batomon Showdown Demo</code></td>
 </tr>
 <tr>
-<td>#2-5</td>
-<td>暴力搜尋、線性函數、蛇形模式</td>
-<td>均失敗，但蛇形模式後來成為線索</td>
-</tr>
-<tr>
-<td>#15</td>
-<td>發明 fiber decomposition（按 i+j+k mod m 分層）</td>
-<td>核心創新</td>
-</tr>
-<tr>
-<td>#27</td>
-<td>3D 蛇形 + 旋轉，只剩 3(m-1) 個衝突</td>
-<td>差一點但無法消除</td>
-</tr>
-<tr>
-<td>#29</td>
-<td>證明此路不通</td>
-<td>果斷放棄</td>
-</tr>
-<tr>
-<td>#30</td>
-<td>回顧舊模擬退火結果，發現每層只依賴單一座標</td>
-<td>解題關鍵</td>
-</tr>
-<tr>
-<td>#31</td>
-<td>寫出通用構造程式，驗證通過</td>
-<td>成功</td>
+<td>B</td>
+<td>input 殘留值</td>
+<td>PUT 回「昏迷3：血脈」</td>
 </tr>
 </tbody>
 </table>
-<h3 id="ai">引導 AI 的關鍵做法<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h3>
-<p>Filip 的 system prompt 包含強制記錄指示：</p>
-<blockquote>
-<p>After EVERY exploreXX.py run, IMMEDIATELY update this file [plan.md] before doing anything else. No exceptions.</p>
-</blockquote>
-<p>即便如此，Filip 仍需每隔兩三個程式後反覆提醒 Claude 記錄進度。</p>
-<h3 id="knuth">Knuth 的後續驗證<a class="headerlink" href="#knuth" title="Permanent link">&para;</a></h3>
-<p>Knuth 不是照單全收，而是：親自撰寫嚴格數學證明、推廣發現（定義 generalizable cycle 概念，找出 760 個有效分解）、請 Lean 社群做形式化驗證。</p>
-<h3 id="_4">對工作流程的啟發<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>這些經驗已納入我們的 CLAUDE.md 規範：
-- Research 階段強制即時更新 research.md
-- 卡住時先回顧失敗輸出再換方向</p>
-<p>原始論文：Donald Knuth, "Claude's Cycles", Stanford CS Department, 2026-02-28（revised 2026-03-06）</p>
+<p>兩邊輪流蓋來蓋去，使用者打 <code>!遊戲</code> 看到的是「最後 PUT 贏」的隨機結果。</p>
+<h3 id="localstorage-lock">localStorage lock 的限制<a class="headerlink" href="#localstorage-lock" title="Permanent link">&para;</a></h3>
+<p>直覺解法：分頁啟動循環時往 localStorage 寫 lock，新分頁讀到就拒絕。<strong>但這個樸素版本壞掉</strong>：</p>
+<ul>
+<li>分頁被直接關閉（不按停止鈕）→ <code>beforeunload</code> 不一定有機會跑（手機、瀏覽器強制關、當機）→ lock 殘留 → <strong>新分頁永遠被鎖死</strong></li>
+<li>「關掉全部開新的」→ 同上情境，新分頁開不起來</li>
+</ul>
+<p>要真的可用必須加 heartbeat：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// lock value 帶 lastHeartbeat</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">// 跑循環的分頁每 10 秒更新一次</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">// 新分頁檢查 now - lastHeartbeat &lt; 30s 才拒絕</span>
+</code></pre></div>
+<p>代價：使用者「關掉開新的」要等 30 秒才能接管，體驗差。</p>
+<h3 id="broadcastchannel">BroadcastChannel 是更乾淨的解<a class="headerlink" href="#broadcastchannel" title="Permanent link">&para;</a></h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel">BroadcastChannel API</a> 是同 origin 跨分頁即時通訊標準，現代瀏覽器都支援。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">BroadcastChannel</span><span class="p">(</span><span class="s1">&#39;AutoGameUpdate_&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">channelId</span><span class="p">);</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">// 啟動時：</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nx">ch</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;who-running?&#39;</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">// 等 200ms，若收到 &#39;i-am-running&#39; 就拒絕啟動，否則接管</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nx">ch</span><span class="p">.</span><span class="nx">onmessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;who-running?&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">#isRunning</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nx">ch</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;i-am-running&#39;</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">};</span>
+</code></pre></div>
+<p>關鍵優勢：分頁關閉時 BroadcastChannel 物件自動死掉，新分頁 ping 沒人回就直接接管，<strong>零延遲</strong>、不用 timestamp、不會殘留。</p>
+<p>唯一無法處理的：兩個分頁在同一毫秒同時點啟動，雙方都還沒進 <code>isRunning</code> 互問都沒人回——但這種 race window 極短且結果不會比現況更糟。</p>
+<h3 id="debug-updatedat-race">Debug 手法：用 updatedAt 反推 race<a class="headerlink" href="#debug-updatedat-race" title="Permanent link">&para;</a></h3>
+<p>StreamElements 沒給使用者公開的 API audit log，dashboard 只有 chat 端的 Activity Feed。但每個 command 物件都有 <code>updatedAt</code>，每次 PUT 都會刷新——<strong>這就是天然 audit timestamp</strong>。</p>
+<p>在分頁 console 跑（用工具自己已有的 JWT 跟 channel/command id）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">jwt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;JWTKey&#39;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">sel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;channel&#39;</span><span class="p">).</span><span class="nx">selectedOptions</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sel</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">seChannel</span><span class="p">,</span><span class="w"> </span><span class="nx">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sel</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">seCommand</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nx">setInterval</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`https://api.streamelements.com/kappa/v2/bot/commands/</span><span class="si">${</span><span class="nx">ch</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">cmd</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">      </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bearer &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">jwt</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="p">});</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">updatedAt</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">last</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">toLocaleTimeString</span><span class="p">(),</span><span class="w"> </span><span class="s1">&#39;updatedAt:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">updatedAt</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;reply:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">reply</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/【.*?】/</span><span class="p">)</span><span class="o">?</span><span class="p">.[</span><span class="mf">0</span><span class="p">]);</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="nx">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">updatedAt</span><span class="p">;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="mf">5000</span><span class="p">);</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="p">})();</span>
+</code></pre></div>
+<p>每 5 秒 poll、只在 <code>updatedAt</code> 變動時印——正常一個分頁循環應該是 5 分鐘才一筆，多分頁互踩會看到短時間內 reply 在不同遊戲名之間來回切換，直接抓現行犯。比改程式碼加 log 快很多。</p>
+<p>注意只 GET 不 PUT，但會吃 JWT 額度，跑幾分鐘看完關掉就好。</p>
+<h2 id="_5">取捨<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>適用情境</th>
+<th>缺點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不防呆，靠 UI 提示</td>
+<td>工具是給少數人用、信任使用者</td>
+<td>真的多分頁時還是壞</td>
+</tr>
+<tr>
+<td>localStorage + heartbeat</td>
+<td>不想加新 API 依賴</td>
+<td>「關掉開新的」延遲 30 秒；邏輯複雜</td>
+</tr>
+<tr>
+<td>BroadcastChannel</td>
+<td>大多數現代場景</td>
+<td>同毫秒同啟動會雙方放行（極低機率）</td>
+</tr>
+<tr>
+<td>改成 server side 排程（cron + Worker）</td>
+<td>真正的長期解</td>
+<td>需要後端，純前端工具失去「免後端」的賣點</td>
+</tr>
+</tbody>
+</table>
+<p>純前端工具最務實組合：<strong>自動循環時忽略「自訂值」這類容易卡住的 input</strong> + <strong>頁面 title 顯示 🟢 狀態給肉眼防呆</strong> + <strong>真的擔心再加 BroadcastChannel</strong>。</p>
 
 
 
@@ -4197,7 +4309,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 9315ca7c-9258-4faa-a8e2-1470f9467c90</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 0f312366-66b4-4869-b5c9-d3c6bfc151f3</code></p>
 </div>
 
 
