@@ -827,6 +827,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude-code-effort-levels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code Effort 等級與 ultracode 模式
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4159,6 +4187,7 @@
 <li>找當前 session：取該目錄下最近修改的 <code>.jsonl</code> 檔</li>
 <li>Subagent 對話存在 <code>&lt;session-uuid&gt;/subagents/agent-&lt;agent-id&gt;.jsonl</code></li>
 <li>另有 <code>~/.claude/history.jsonl</code> 存所有 session 的 metadata（display text、timestamp、sessionId）</li>
+<li><code>assistant</code> 行的 <code>message.usage</code> 記錄該 turn 的 <code>output_tokens</code> 與 cache token，可程式化統計 token 成本與不同 effort 的開銷（見「Claude Code Effort 等級與 ultracode 模式」一文）</li>
 </ul>
 <h2 id="jsonl-entry-types">JSONL Entry Types<a class="headerlink" href="#jsonl-entry-types" title="Permanent link">&para;</a></h2>
 <p>每行是一個 JSON 物件，主要欄位：<code>type</code>、<code>uuid</code>、<code>sessionId</code>、<code>timestamp</code>、<code>parentUuid</code></p>
@@ -4179,7 +4208,7 @@
 <tr>
 <td><code>assistant</code></td>
 <td>Claude 回應</td>
-<td><code>message.content[]</code>（含 <code>text</code>、<code>thinking</code>、<code>tool_use</code>）、<code>message.model</code></td>
+<td><code>message.content[]</code>（含 <code>text</code>、<code>thinking</code>、<code>tool_use</code>）、<code>message.model</code>、<code>message.usage</code></td>
 </tr>
 <tr>
 <td><code>progress</code></td>
@@ -4251,7 +4280,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 6694fa56-7f41-4868-85e6-3c688df35cb5</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume ebc43c6e-1a8f-48c8-9e34-417081ce9faf</code></p>
 </div>
 
 

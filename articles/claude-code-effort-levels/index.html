@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/system-design-decentralized-nsfw-platform/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/claude-code-effort-levels/">
       
       
-        <link rel="prev" href="../system-design-data-pipeline-kv-vs-git-push/">
+        <link rel="prev" href="../claude-code-session-title-customization/">
       
       
-        <link rel="next" href="../system-design-gmail-digest-architecture/">
+        <link rel="next" href="../dev-tools-ssh-over-port-443/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>去平台化成人內容社群：技術可行，瓶頸在金流與法律 - Mars 的知識庫</title>
+        <title>Claude Code Effort 等級與 ultracode 模式 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              去平台化成人內容社群：技術可行，瓶頸在金流與法律
+              Claude Code Effort 等級與 ultracode 模式
             
           </span>
         </div>
@@ -318,6 +318,8 @@
                 
   
   
+    
+  
   
   
     
@@ -327,11 +329,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -352,7 +354,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -731,10 +733,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../claude-code-effort-levels/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Code Effort 等級與 ultracode 模式
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -750,6 +777,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        各檔位怎麼選
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-jsonl-efforttoken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用 session JSONL 實測 effort／token 成本
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3014,8 +3103,6 @@
                 
   
   
-    
-  
   
   
     
@@ -3025,11 +3112,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
         
           
           <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
@@ -3050,7 +3137,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3121,35 +3208,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    去平台化成人內容社群：技術可行，瓶頸在金流與法律
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../system-design-decentralized-nsfw-platform/" class="md-nav__link">
         
   
   
@@ -3165,85 +3227,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        現有技術方案比較
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        核心洞察：問題不在技術層
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        比較可行的折衷模式
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4115,49 +4098,32 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
+        各檔位怎麼選
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-jsonl-efforttoken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用 session JSONL 實測 effort／token 成本
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         背景
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        現有技術方案比較
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        核心洞察：問題不在技術層
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        比較可行的折衷模式
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4183,79 +4149,86 @@
       
       
       
-        <a href="../../tags/#tag:monetization" class="md-tag">monetization</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:security" class="md-tag">security</a>
-      
-    
-      
-      
-      
-      
-        <a href="../../tags/#tag:system-design" class="md-tag">system-design</a>
+        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
       
     
   </nav>
 
 
 
-  <h1>去平台化成人內容社群：技術可行，瓶頸在金流與法律</h1>
+  <h1>Claude Code Effort 等級與 ultracode 模式</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>技術面完全可行</strong>：ActivityPub（Mastodon）、IPFS/Arweave、Nostr 等協議都已證明可以承載 NSFW 內容，Mastodon 上已有運作中的 NSFW instance</li>
-<li><strong>真正的瓶頸是金流</strong>：Visa/Mastercard 會直接對平台施壓（OnlyFans 2021 事件），加密貨幣支付可繞過但大幅降低用戶基數和創作者收入穩定性</li>
-<li><strong>法律責任無法去中心化</strong>：年齡驗證、CSAM 過濾需要可歸責主體，大多數國家法律要求有人負責。每個 node 營運者都可能承擔法律風險</li>
-<li><strong>內容審核兩難</strong>：完全無審核 → 非法內容湧入 → 執法關注 → 污名化整個網路；有審核 → 需要人力成本 → 回到「誰來管」的老問題</li>
-<li><strong>務實方向是聯邦式架構</strong>：每個 instance 有自己的規則和法律主體，內容可跨 instance 流通，兼顧去中心化與合規</li>
+<li>Effort 等級由低到高：<code>low</code> / <code>medium</code> / <code>high</code> / <code>xhigh</code> / <code>max</code>，控制模型「思考多深」。<code>xhigh</code> 只有較新的 Opus 機型支援；Haiku 不支援 effort 參數。</li>
+<li><code>ultracode</code> <strong>不是 effort 等級</strong>，而是 Claude Code 特有的 session 模式 ＝ <code>xhigh</code> ＋ 自動 multi-agent workflow 編排，是最耗 token 的火力模式。</li>
+<li><code>xhigh</code> 是「想得更深」，<code>max</code> 是「不設 token 上限」——兩者方向不同。<code>max</code> 在結構化／日常任務上常 overthinking，邊際效益低。</li>
+<li>settings.json 的 <code>effortLevel</code> 規範值只到 <code>low/medium/high/xhigh</code>；<code>max</code> 與 <code>ultracode</code> 是 session-only，用 <code>/effort</code> 臨時切換（寫進 settings 即便能跑也屬非規範，未來可能被 schema 驗證擋掉）。</li>
+<li>Opus 4.8 的預設 effort 是 <code>high</code>（前一代預設是 <code>xhigh</code>）。官方把預設降回 high，等於暗示 high 已足以應付多數任務——沿用舊機型的高檔位習慣容易變成 over-provision。</li>
 </ul>
-<h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">現有技術方案比較<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_2">各檔位怎麼選<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>技術</th>
-<th>優勢</th>
-<th>限制</th>
+<th>檔位</th>
+<th>適用場景</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>ActivityPub/Mastodon</td>
-<td>已有成熟生態、聯邦式治理</td>
-<td>Instance 營運者仍需承擔法律責任</td>
+<td><code>low</code></td>
+<td>短、範圍明確、延遲敏感的任務</td>
 </tr>
 <tr>
-<td>IPFS/Arweave</td>
-<td>內容無法被單一平台下架</td>
-<td>也無法下架非法內容，法律風險極高</td>
+<td><code>medium</code></td>
+<td>成本／品質平衡，標準 bug fix、重構</td>
 </tr>
 <tr>
-<td>Nostr</td>
-<td>純 relay 架構、無中央審核</td>
-<td>金流整合困難、discovery 弱</td>
+<td><code>high</code></td>
+<td>複雜推理、寫程式、agentic 任務（新版 Opus 預設）</td>
+</tr>
+<tr>
+<td><code>xhigh</code></td>
+<td>長時間 agentic 工作、長代理鏈、反覆工具呼叫</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td>frontier 難題、安全關鍵、跑能力標竿；日常任務多半浪費</td>
+</tr>
+<tr>
+<td><code>ultracode</code></td>
+<td>大型重構、全庫掃描——會自動開 workflow，最貴</td>
 </tr>
 </tbody>
 </table>
-<h3 id="_4">核心洞察：問題不在技術層<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>成人內容平台被「去平台化」的壓力來源：</p>
-<ol>
-<li><strong>金流管道</strong>（Visa/Mastercard）— 有權拒絕為特定類型商家處理交易</li>
-<li><strong>法律合規</strong>（各國法規）— 要求平台主動過濾非法內容並有可歸責主體</li>
-<li><strong>App Store 政策</strong>（Apple/Google）— 禁止 NSFW 內容的 app 上架</li>
-</ol>
-<p>這三個都不是純技術能解決的問題，所以 IPFS、blockchain 等技術方案只解決了「內容儲存」，沒解決「可持續營運」。</p>
-<h3 id="_5">比較可行的折衷模式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><strong>選擇心法</strong>：把 settings 底盤設在「日常夠用又省」的 <code>high</code>（或想多留推理餘量就 <code>xhigh</code>），難題時用 <code>/effort max</code>、大型多檔案工作用 <code>/effort ultracode</code> 當「臨時按鈕」。從低檔升上去只要一個指令、成本極低；長期掛 <code>max</code> 則是每個 turn 都付頂價。</p>
+<h2 id="session-jsonl-efforttoken">用 session JSONL 實測 effort／token 成本<a class="headerlink" href="#session-jsonl-efforttoken" title="Permanent link">&para;</a></h2>
+<p>Effort 主要影響 thinking／output token 的量。要量化「某檔位對你實際任務值不值得」，可直接讀 session JSONL 的 <code>message.usage</code>：</p>
 <ul>
-<li><strong>聯邦式架構</strong>（Mastodon 模式）：分散法律風險，每個 instance 自行決定合規策略</li>
-<li><strong>創作者自主託管 + 聚合發現層</strong>：內容在創作者自己的空間，平台只做索引</li>
-<li><strong>多平台分散風險</strong>：不依賴單一平台，但也不完全去中心化</li>
+<li>每個 <code>assistant</code> 行的 <code>message.usage</code> 含 <code>output_tokens</code>、<code>cache_read_input_tokens</code>、<code>cache_creation_input_tokens</code>。</li>
+<li><strong>重要限制</strong>：thinking blocks 的明文<strong>未持久化</strong>進 JSONL（只留 <code>signature</code>），所以無法直接秤 thinking token，只能用 <code>output_tokens</code> 旁證——比較「含 thinking 的 turn」與「不含的 turn」平均 output 落差。</li>
 </ul>
+<p>通用統計範例（跑自己的 transcript，<code>fromjson?</code> 容錯跳過壞行）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>~/.claude/projects/&lt;project-path&gt;
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cat<span class="w"> </span>*.jsonl<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-R<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;fromjson? | select(.type==&quot;assistant&quot; and .message.usage) |</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="s1">  [ (.message.usage.output_tokens // 0),</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="s1">    (if ([.message.content[]? | select(.type==&quot;thinking&quot;)] | length) &gt; 0 then 1 else 0 end)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="s1">  ] | @tsv&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span>-F<span class="s1">&#39;\t&#39;</span><span class="w"> </span><span class="s1">&#39;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="s1">  { n++; o+=$1; if($2) t++; if($1&lt;500) s++ }</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="s1">  END {</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="s1">    printf &quot;turns=%d  output=%.2fM  avg=%.0f tok\n&quot;, n, o/1e6, o/n</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="s1">    printf &quot;含 thinking 的 turn=%d，短回應(&lt;500 tok)=%d (%.0f%%)\n&quot;, t, s, s*100/n</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="s1">  }&#39;</span>
+</code></pre></div>
+<p>觀察重點：</p>
+<ul>
+<li><strong>短回應佔比高</strong> → 很多 turn 根本不需要深思，調高檔位也沒差，是降檔的訊號。</li>
+<li><strong>含 thinking turn 的 output 倍率</strong> → 若只略高於不含的，代表深思開銷不大，高檔位的邊際效益有限。</li>
+<li>output 成本 ＝ <code>output_tokens</code> × 該機型 output 單價（依當期官方定價）。</li>
+</ul>
+<h2 id="_3">背景<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Effort 越高，思考越深，但越貴也越慢——沒有「越高越好」。新版 Opus 把預設從 <code>xhigh</code> 降到 <code>high</code>，反映「模型變強後，達到同等品質需要的思考量下降」；繼續沿用舊機型時代的高檔位，往往是花了頂價卻拿到差不多的結果。</p>
+<p>實務上比起長期把 settings 掛在最高檔，更划算的做法是把底盤設低一階（<code>high</code>／<code>xhigh</code>），用 <code>/effort</code> 在難題當下臨時拉高。判斷該不該降檔，不必靠感覺——把自己的 transcript 跑一次上面的統計，短回應佔比與 thinking 開銷會直接告訴你高檔位有沒有被浪費。</p>
 
 
 
@@ -4274,7 +4247,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume c4a0d376-0b05-47c0-badf-801259630392</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume ebc43c6e-1a8f-48c8-9e34-417081ce9faf</code></p>
 </div>
 
 
