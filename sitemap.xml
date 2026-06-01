@@ -25,6 +25,10 @@
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
+         <loc>https://marsantony.github.io/knowledge-site/articles/automation-twitch-chat-monitor-eventsub/</loc>
+         <lastmod>2026-06-01</lastmod>
+    </url>
+    <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/claude-code-1m-extended-context/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
@@ -366,6 +370,10 @@
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/security-wsl2-kernel-cve-patch-workflow/</loc>
+         <lastmod>2026-06-01</lastmod>
+    </url>
+    <url>
+         <loc>https://marsantony.github.io/knowledge-site/articles/system-design-cloudflare-durable-objects-long-connections/</loc>
          <lastmod>2026-06-01</lastmod>
     </url>
     <url>
