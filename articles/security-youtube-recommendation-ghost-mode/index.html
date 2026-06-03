@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/web-multi-tab-shared-resource-race/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/security-youtube-recommendation-ghost-mode/">
       
       
-        <link rel="prev" href="../web-speech-synthesis-novel-reader/">
+        <link rel="prev" href="../automation-twitch-chat-monitor-eventsub/">
       
       
-        <link rel="next" href="../web-visitor-tracking-pitfalls/">
+        <link rel="next" href="../security-context7-injection-risk-and-alternatives/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>多分頁同時操作共用後端資源的 race 與防呆 - Mars 的知識庫</title>
+        <title>YouTube 幽靈觀看：在登入狀態下讓單次觀看不進演算法 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              多分頁同時操作共用後端資源的 race 與防呆
+              YouTube 幽靈觀看：在登入狀態下讓單次觀看不進演算法
             
           </span>
         </div>
@@ -1300,8 +1300,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1311,11 +1309,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -1336,7 +1334,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1575,35 +1573,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    多分頁同時操作共用後端資源的 race 與防呆
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../web-multi-tab-shared-resource-race/" class="md-nav__link">
         
   
   
@@ -1619,118 +1592,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        觀察到的現象
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        為什麼會互踩
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#localstorage-lock" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        localStorage lock 的限制
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#broadcastchannel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        BroadcastChannel 是更乾淨的解
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debug-updatedat-race" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Debug 手法：用 updatedAt 反推 race
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        取捨
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2900,6 +2761,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2909,11 +2772,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
         
           
           <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
@@ -2934,7 +2797,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2949,10 +2812,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../security-youtube-recommendation-ghost-mode/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YouTube 幽靈觀看：在登入狀態下讓單次觀看不進演算法
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2968,6 +2856,184 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三條鏈心智模型
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#youtube" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YouTube 推薦吃哪些訊號
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ping-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        遙測 ping 架構（攻擊①的目標）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        手法清單（由實用安全 → 極端）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="手法清單（由實用安全 → 極端）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ping1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        招式 1：精準攔截遙測 ping（攻擊①，最安全）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-cookie2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        招式 2：拔掉身分 cookie（攻擊②，幽靈核心）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3embed-youtube-nocookie-2-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        招式 3：embed / youtube-nocookie 隔離（攻擊②的另一 context，有陷阱）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-visitordata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        招式 4：堵住 visitorData 指紋（幽靈盲點，必補）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        招式 5：第三方前端（核選項）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        招式 6：事後清除（攻擊③，補救非預防）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-potoken-botguard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026 殘酷現實：PoToken / BotGuard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        綜合配方（會動且不踩雷）
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4237,25 +4303,58 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        觀察到的現象
+        三條鏈心智模型
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#youtube" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YouTube 推薦吃哪些訊號
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ping-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        遙測 ping 架構（攻擊①的目標）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        為什麼會互踩
+        手法清單（由實用安全 → 極端）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="手法清單（由實用安全 → 極端）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ping1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        招式 1：精準攔截遙測 ping（攻擊①，最安全）
       
     </span>
   </a>
@@ -4263,10 +4362,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#localstorage-lock" class="md-nav__link">
+  <a href="#2-cookie2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        localStorage lock 的限制
+        招式 2：拔掉身分 cookie（攻擊②，幽靈核心）
       
     </span>
   </a>
@@ -4274,10 +4373,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#broadcastchannel" class="md-nav__link">
+  <a href="#3embed-youtube-nocookie-2-context" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BroadcastChannel 是更乾淨的解
+        招式 3：embed / youtube-nocookie 隔離（攻擊②的另一 context，有陷阱）
       
     </span>
   </a>
@@ -4285,10 +4384,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#debug-updatedat-race" class="md-nav__link">
+  <a href="#4-visitordata" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Debug 手法：用 updatedAt 反推 race
+        招式 4：堵住 visitorData 指紋（幽靈盲點，必補）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        招式 5：第三方前端（核選項）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        招式 6：事後清除（攻擊③，補救非預防）
       
     </span>
   </a>
@@ -4301,10 +4422,21 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#2026-potoken-botguard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026 殘酷現實：PoToken / BotGuard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        取捨
+        綜合配方（會動且不踩雷）
       
     </span>
   </a>
@@ -4333,160 +4465,185 @@
       
       
       
-        <a href="../../tags/#tag:api" class="md-tag">api</a>
+        <a href="../../tags/#tag:chrome-extension" class="md-tag">chrome-extension</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:automation" class="md-tag">automation</a>
+        <a href="../../tags/#tag:security" class="md-tag">security</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:javascript" class="md-tag">javascript</a>
+        <a href="../../tags/#tag:social-media" class="md-tag">social-media</a>
       
     
   </nav>
 
 
 
-  <h1>多分頁同時操作共用後端資源的 race 與防呆</h1>
+  <h1>YouTube 幽靈觀看：在登入狀態下讓單次觀看不進演算法</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>純前端工具如果靠 <code>setInterval</code> 週期性 PUT 同一個後端資源（如 SE command），使用者開多分頁就會互相覆蓋，從外部看像「沒更新」</li>
-<li><code>localStorage</code> 做 lock 沒那麼簡單——必須加 timestamp + heartbeat，否則分頁被強制關閉時 lock 殘留，新分頁永遠開不起來</li>
-<li><code>BroadcastChannel</code> API 是更乾淨的跨分頁協調方式：舊分頁關閉時 channel 自動失效，新分頁 ping 沒人回就接管，零延遲</li>
-<li>StreamElements API 沒提供 audit log，但 command 物件的 <code>updatedAt</code> 是天然的監控點——<code>updatedAt</code> 在 GET 前幾秒被刷新就是另一個來源 PUT 過的鐵證</li>
-<li>Debug 多分頁互踩用 console snippet：每 N 秒 GET 後端資源、diff <code>updatedAt</code> 變動頻率，比改程式碼快</li>
+<li><strong>YouTube 沒有「這一支影片不要算」的官方單片開關</strong>。官方最細顆粒度只有：全域暫停歷史，或事後刪除單支歷史。要做到「這次觀看不污染首頁」必須靠 Chrome extension 繞過。</li>
+<li><strong>心智模型「三條鏈」</strong>：要不被演算法記錄，本質是斬斷三條鏈之一——①回報鏈（觀看進度有沒有上報伺服器）、②身分鏈（上報內容能不能綁到你）、③儲存鏈（已記下的能不能事後清掉）。真正的幽靈是同時斬斷 ①+②。</li>
+<li><strong>最重的訊號是 watch time，不是「點了沒」</strong>。攔掉 <code>/api/stats/watchtime</code>（+<code>heartbeat</code>）就拿到約 80% 效果，且因為沒動到 player/BotGuard 那條鏈，<strong>不會觸發 bot 檢查</strong>——這是 2026 年最安全的做法。</li>
+<li><strong>拔 auth cookie（攻擊②）才是「正常登入下當幽靈」的核心</strong>：用 <code>declarativeNetRequest</code> 的 <code>modifyHeaders</code> 只對 <code>/api/stats</code>、<code>log_event</code> 請求移除 <code>Cookie</code>（或精準拔 <code>SAPISID</code>/<code>__Secure-3PAPISID</code>/<code>SID</code>），你的分頁仍是登入狀態，但這次請求匿名。<strong>鐵律：別動 <code>/youtubei/v1/player</code> 請求</strong>，否則踩到 PoToken/BotGuard。</li>
+<li><strong>2026 殘酷現實</strong>：YouTube 已全面導入 PoToken（Proof-of-Origin Token）+ BotGuard，2025/10 改為 video-bound。naive 拔光 cookie / 亂改請求越來越容易觸發「Sign in to confirm you're not a bot」、403、甚至 IP/帳號被限。Invidious 等前端就因此頻繁壞掉。</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">觀察到的現象<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><code>Twitch_AutoGameStatusUpdate</code> 是純前端 GitHub Pages 工具，每 5 分鐘從 Steam 抓當前遊戲名、PUT 到 StreamElements 更新 <code>!遊戲</code> 指令。某次發現：Steam 已經換成新遊戲，但 SE command reply 維持舊遊戲，看起來「沒更新」。</p>
-<p>從工具自己的 log 反推：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>4:42:45 完整流程結束
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>4:42:45 {SE command JSON, reply: 「昏迷3：血脈」, updatedAt: &quot;2026-05-06T08:42:38Z&quot;}
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>4:42:44 {GameName: &quot;Batomon Showdown Demo&quot;}
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>4:42:44 完整流程開始
-</code></pre></div>
-<p>兩個關鍵線索：</p>
-<ol>
-<li>流程沒走到 PUT（缺第四筆 log），代表 <code>commandJson.reply === templateFullReply</code> 判定為相等</li>
-<li>GET 回來的 command <code>updatedAt</code> 比 GET 本身早 <strong>6 秒</strong>——也就是這個分頁開始流程之前 6 秒，<strong>有人剛 PUT 過</strong></li>
-</ol>
-<p>5 分鐘間隔的循環不可能 6 秒前先 PUT 一次再 GET。<strong>這 6 秒就是另一個分頁留下的指紋</strong>。</p>
-<p>確認多分頁來源用 site-dashboard 的 visitor tracking（同一個 origin、同一個 IP、3 個 <code>_sd_sid</code> session_id）。</p>
-<h3 id="_4">為什麼會互踩<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>每個分頁啟動「自動更新」後各自跑 5 分鐘 setTimeout 循環，對同一個 SE command 做 PUT。如果其中一個分頁 <code>#gameName</code> input 有殘留自訂值，另一個沒有：</p>
+<p>需求：在 YouTube 正常登入狀態下，偶爾想偷看一支影片但<strong>不要污染首頁推薦</strong>（怕點一個怪東西首頁就亂跳）。理想介面是「Chrome extension 按一個鍵，這次觀看就不被演算法記錄」。</p>
+<p>研究後的核心認知：演算法的主訊號是 <strong>watch time</strong>（看多久），而非單純的點擊。單純點進去看一兩秒就關，拉力遠比想像小；真正毀首頁的是「整支看完 + 按讚 + 訂閱」。所以要防的是「watch-time 訊號被上報並綁到你」。</p>
+<h2 id="_3">三條鏈心智模型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>分頁</th>
-<th>currentGameName 來源</th>
-<th>tick 行為</th>
+<th>鏈</th>
+<th>是什麼</th>
+<th>攻擊方式</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>A</td>
-<td>Steam API</td>
-<td>PUT 成 <code>Batomon Showdown Demo</code></td>
+<td>① 回報鏈</td>
+<td>觀看進度有沒有上報伺服器</td>
+<td>攔截 telemetry ping</td>
 </tr>
 <tr>
-<td>B</td>
-<td>input 殘留值</td>
-<td>PUT 回「昏迷3：血脈」</td>
+<td>② 身分鏈</td>
+<td>上報內容能不能綁到「你」</td>
+<td>拔 auth cookie / 換 context</td>
+</tr>
+<tr>
+<td>③ 儲存鏈</td>
+<td>已記下的能不能事後清掉</td>
+<td>刪歷史 / 自動刪除</td>
 </tr>
 </tbody>
 </table>
-<p>兩邊輪流蓋來蓋去，使用者打 <code>!遊戲</code> 看到的是「最後 PUT 贏」的隨機結果。</p>
-<h3 id="localstorage-lock">localStorage lock 的限制<a class="headerlink" href="#localstorage-lock" title="Permanent link">&para;</a></h3>
-<p>直覺解法：分頁啟動循環時往 localStorage 寫 lock，新分頁讀到就拒絕。<strong>但這個樸素版本壞掉</strong>：</p>
+<p>「正常登入下當幽靈」＝人留在登入狀態（不登出），但這次操作不署名 → 重點是攻擊②，最好搭配①。</p>
+<h2 id="youtube">YouTube 推薦吃哪些訊號<a class="headerlink" href="#youtube" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>訊號</th>
+<th>影響力</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Watch time</td>
+<td>🔴 最大</td>
+<td>真正灌爆演算法的是「看多久」</td>
+</tr>
+<tr>
+<td>Watch history</td>
+<td>🔴 大</td>
+<td>進到歷史就被當參考</td>
+</tr>
+<tr>
+<td>按讚/訂閱/分享</td>
+<td>🔴 大</td>
+<td>明確正向訊號</td>
+</tr>
+<tr>
+<td>Search history</td>
+<td>🟠 中</td>
+<td>比觀看影響小</td>
+</tr>
+<tr>
+<td>Impression（縮圖點擊/hover）</td>
+<td>🟡 小</td>
+<td>點了哪些縮圖也會記</td>
+</tr>
+<tr>
+<td>Google 帳號活動</td>
+<td>背景</td>
+<td>跨服務活動</td>
+</tr>
+</tbody>
+</table>
+<p>官方沒有 per-video「排除演算法」選項；最接近的「Not interested」只是回饋訊號，不是移除。</p>
+<h2 id="ping-1">遙測 ping 架構（攻擊①的目標）<a class="headerlink" href="#ping-1" title="Permanent link">&para;</a></h2>
+<p>YouTube playback 期間打出的 ping（內部 endpoint，皆來自社群逆向，無官方文件）：</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>報什麼</th>
+<th>對推薦的份量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/stats/watchtime</code></td>
+<td><strong>核心</strong>。帶 <code>cpn</code>（client playback nonce，把一個播放 session 的所有 ping 串起來）、<code>st</code>/<code>et</code>（看了哪幾段的起訖時間陣列）、<code>cmt</code>（目前秒數）</td>
+<td>🔴 最重</td>
+</tr>
+<tr>
+<td><code>/youtubei/v1/player/heartbeat</code></td>
+<td>「你還在看嗎」存在確認</td>
+<td>🟠 中</td>
+</tr>
+<tr>
+<td><code>/api/stats/playback</code>、<code>/api/stats/atr</code></td>
+<td>播放開始、engagement</td>
+<td>🟡 中低</td>
+</tr>
+<tr>
+<td><code>/youtubei/v1/log_event</code></td>
+<td>通用事件（走 binary path）</td>
+<td>🟡 雜訊多</td>
+</tr>
+</tbody>
+</table>
+<p><code>cpn</code> 是一個 client 端產生、每個 ping 都回傳的 nonce，讓伺服器無狀態地把分散的事件串成一次播放。<code>watchtime</code> 就是「你看了哪段、看多久」的真相來源——這支歸零，觀看幾乎隱形。QoE/playback 那些主要餵畫質統計，對推薦影響小。</p>
+<h2 id="_4">手法清單（由實用安全 → 極端）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1-ping1">招式 1：精準攔截遙測 ping（攻擊①，最安全）<a class="headerlink" href="#1-ping1" title="Permanent link">&para;</a></h3>
+<p>用 <code>declarativeNetRequest</code> 在「幽靈模式」開啟時封鎖 <code>watchtime</code> + <code>heartbeat</code>（這正是開源 extension <code>sauercrowd/youtube-incognito-mode</code> 的做法，它封鎖 <code>/api/stats/watchtime</code>、<code>/youtubei/v1/log_event</code>、<code>/youtubei/v1/player/heartbeat</code>，規則 filter <code>xmlhttprequest</code>）。觀看進度沒回報 → 無法計入有效觀看。零 bot 風險、體驗無損。</p>
+<blockquote>
+<p>進階：比起「全擋」（YouTube 可能偵測到 session 異常斷掉），更幽靈的是讓 ping 出去但<strong>內容歸零</strong>——改寫 <code>st</code>/<code>et</code> 回報一個「0 秒觀看」，看起來像滑過去沒看。個人自用全擋已夠。</p>
+</blockquote>
+<h3 id="2-cookie2">招式 2：拔掉身分 cookie（攻擊②，幽靈核心）<a class="headerlink" href="#2-cookie2" title="Permanent link">&para;</a></h3>
+<p><code>declarativeNetRequest</code> 的 <code>modifyHeaders</code>，對 stats/youtubei 請求移除 <code>Cookie</code> header，或精準只拔鑑權的 <code>SAPISID</code>/<code>__Secure-3PAPISID</code>/<code>SID</code>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;modifyHeaders&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;requestHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nt">&quot;header&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cookie&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;operation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;remove&quot;</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;urlFilter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;youtube.com/api/stats&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;resourceTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;xmlhttprequest&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>請求照常送達但伺服器看不到「這是你」→ 當匿名流量。你 youtube.com 分頁<strong>仍是登入狀態</strong>（只改特定請求 header，沒登出）。<strong>鐵律：別碰 <code>/youtubei/v1/player</code> 請求</strong>（那是 BotGuard 那條鏈）。</p>
+<h3 id="3embed-youtube-nocookie-2-context">招式 3：embed / youtube-nocookie 隔離（攻擊②的另一 context，有陷阱）<a class="headerlink" href="#3embed-youtube-nocookie-2-context" title="Permanent link">&para;</a></h3>
+<p><code>youtube-nocookie.com</code> iframe 理論上不帶 cookie，但<strong>重大陷阱</strong>：只要你在另一分頁登入了 YouTube，privacy-enhanced 模式就失效、仍會關聯；且按下播放後它仍設 cookie、用 localStorage 存裝置 ID。單純 embed <strong>不足以</strong>在同時登入時當幽靈，必須搭招式 2。</p>
+<h3 id="4-visitordata">招式 4：堵住 visitorData 指紋（幽靈盲點，必補）<a class="headerlink" href="#4-visitordata" title="Permanent link">&para;</a></h3>
+<p>就算拔了 auth cookie 變匿名，YouTube 還有 <code>VISITOR_INFO1_LIVE</code> cookie + <code>visitorData</code>（匿名訪客識別碼），會在「匿名的你」身上累積影子檔案，日後若該識別碼又出現在登入 session 有被串回的風險。要徹底幽靈，拔 cookie 時一併清掉/輪替 <code>VISITOR_INFO1_LIVE</code>。</p>
+<h3 id="5">招式 5：第三方前端（核選項）<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>Piped / FreeTube / Grayjay 透過自己的伺服器代理抓影片，瀏覽器不直接碰 googlevideo，零帳號關聯（Piped 連影片內容都走它 server）。真帳號在主瀏覽器照常登入，這是完全獨立的觀看管道。Invidious 自 2025 後不穩。代價：不在原 YouTube 介面/演算法生態裡。</p>
+<h3 id="63">招式 6：事後清除（攻擊③，補救非預防）<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<p>My Activity 設自動刪除（最短 3 個月）長期壓低足跡；看完自動刪單支歷史（可寫進 extension）。⚠️ Mozilla 審計指刪歷史效果有限，且有「已上報→embedding 已更新」的時間差。</p>
+<h2 id="2026-potoken-botguard">2026 殘酷現實：PoToken / BotGuard<a class="headerlink" href="#2026-potoken-botguard" title="Permanent link">&para;</a></h2>
 <ul>
-<li>分頁被直接關閉（不按停止鈕）→ <code>beforeunload</code> 不一定有機會跑（手機、瀏覽器強制關、當機）→ lock 殘留 → <strong>新分頁永遠被鎖死</strong></li>
-<li>「關掉全部開新的」→ 同上情境，新分頁開不起來</li>
+<li>2024 起 YouTube 全面導入 <strong>PoToken（Proof-of-Origin Token）+ BotGuard</strong>：播放請求要附 BotGuard 挑戰算出的 token，證明是真瀏覽器/真人。<strong>2025/10 改為 video-bound PoToken</strong>（綁影片而非綁 visitorData）。</li>
+<li>後果：naive 拔光 cookie 或亂改請求越來越容易觸發「Sign in to confirm you're not a bot」、403、IP/帳號被限。</li>
+<li>這改寫了安全排序：<strong>招式 1（只攔 stats ping）最安全</strong>（沒動 player/BotGuard 鏈）；<strong>招式 2（拔 cookie）風險中等</strong>，務必只拔 <code>/api/stats</code>、<code>log_event</code>，別動 <code>/youtubei/v1/player</code>。</li>
+<li>延伸閱讀：本庫 <a href="../security-web-anti-bot-mechanisms/">Web 反爬蟲機制分層解析</a> 解釋 BotGuard 這類 JS challenge 的定位。</li>
 </ul>
-<p>要真的可用必須加 heartbeat：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// lock value 帶 lastHeartbeat</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">// 跑循環的分頁每 10 秒更新一次</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">// 新分頁檢查 now - lastHeartbeat &lt; 30s 才拒絕</span>
-</code></pre></div>
-<p>代價：使用者「關掉開新的」要等 30 秒才能接管，體驗差。</p>
-<h3 id="broadcastchannel">BroadcastChannel 是更乾淨的解<a class="headerlink" href="#broadcastchannel" title="Permanent link">&para;</a></h3>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel">BroadcastChannel API</a> 是同 origin 跨分頁即時通訊標準，現代瀏覽器都支援。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">BroadcastChannel</span><span class="p">(</span><span class="s1">&#39;AutoGameUpdate_&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">channelId</span><span class="p">);</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">// 啟動時：</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nx">ch</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;who-running?&#39;</span><span class="w"> </span><span class="p">});</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">// 等 200ms，若收到 &#39;i-am-running&#39; 就拒絕啟動，否則接管</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nx">ch</span><span class="p">.</span><span class="nx">onmessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;who-running?&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">#isRunning</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nx">ch</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;i-am-running&#39;</span><span class="w"> </span><span class="p">});</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">};</span>
-</code></pre></div>
-<p>關鍵優勢：分頁關閉時 BroadcastChannel 物件自動死掉，新分頁 ping 沒人回就直接接管，<strong>零延遲</strong>、不用 timestamp、不會殘留。</p>
-<p>唯一無法處理的：兩個分頁在同一毫秒同時點啟動，雙方都還沒進 <code>isRunning</code> 互問都沒人回——但這種 race window 極短且結果不會比現況更糟。</p>
-<h3 id="debug-updatedat-race">Debug 手法：用 updatedAt 反推 race<a class="headerlink" href="#debug-updatedat-race" title="Permanent link">&para;</a></h3>
-<p>StreamElements 沒給使用者公開的 API audit log，dashboard 只有 chat 端的 Activity Feed。但每個 command 物件都有 <code>updatedAt</code>，每次 PUT 都會刷新——<strong>這就是天然 audit timestamp</strong>。</p>
-<p>在分頁 console 跑（用工具自己已有的 JWT 跟 channel/command id）：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">jwt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;JWTKey&#39;</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">sel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;channel&#39;</span><span class="p">).</span><span class="nx">selectedOptions</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sel</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">seChannel</span><span class="p">,</span><span class="w"> </span><span class="nx">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sel</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">seCommand</span><span class="p">;</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nx">setInterval</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`https://api.streamelements.com/kappa/v2/bot/commands/</span><span class="si">${</span><span class="nx">ch</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">cmd</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">      </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bearer &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">jwt</span><span class="w"> </span><span class="p">}</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="p">});</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">updatedAt</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">last</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">toLocaleTimeString</span><span class="p">(),</span><span class="w"> </span><span class="s1">&#39;updatedAt:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">updatedAt</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;reply:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">reply</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/【.*?】/</span><span class="p">)</span><span class="o">?</span><span class="p">.[</span><span class="mf">0</span><span class="p">]);</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="nx">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">d</span><span class="p">.</span><span class="nx">updatedAt</span><span class="p">;</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="mf">5000</span><span class="p">);</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="p">})();</span>
-</code></pre></div>
-<p>每 5 秒 poll、只在 <code>updatedAt</code> 變動時印——正常一個分頁循環應該是 5 分鐘才一筆，多分頁互踩會看到短時間內 reply 在不同遊戲名之間來回切換，直接抓現行犯。比改程式碼加 log 快很多。</p>
-<p>注意只 GET 不 PUT，但會吃 JWT 額度，跑幾分鐘看完關掉就好。</p>
-<h2 id="_5">取捨<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>方案</th>
-<th>適用情境</th>
-<th>缺點</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>不防呆，靠 UI 提示</td>
-<td>工具是給少數人用、信任使用者</td>
-<td>真的多分頁時還是壞</td>
-</tr>
-<tr>
-<td>localStorage + heartbeat</td>
-<td>不想加新 API 依賴</td>
-<td>「關掉開新的」延遲 30 秒；邏輯複雜</td>
-</tr>
-<tr>
-<td>BroadcastChannel</td>
-<td>大多數現代場景</td>
-<td>同毫秒同啟動會雙方放行（極低機率）</td>
-</tr>
-<tr>
-<td>改成 server side 排程（cron + Worker）</td>
-<td>真正的長期解</td>
-<td>需要後端，純前端工具失去「免後端」的賣點</td>
-</tr>
-</tbody>
-</table>
-<p>純前端工具最務實組合：<strong>自動循環時忽略「自訂值」這類容易卡住的 input</strong> + <strong>頁面 title 顯示 🟢 狀態給肉眼防呆</strong> + <strong>真的擔心再加 BroadcastChannel</strong>。</p>
+<h2 id="_5">綜合配方（會動且不踩雷）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>主力</strong>：攔 <code>watchtime</code> + <code>heartbeat</code>（80% 效果、零 bot 風險、體驗無損）</li>
+<li><strong>加強</strong>：對 <code>/api/stats</code>、<code>log_event</code> 拔 auth cookie + 輪替 <code>VISITOR_INFO1_LIVE</code>（殘餘訊號也匿名）</li>
+<li><strong>保險</strong>：看完自動刪該支歷史（漏網補刀）</li>
+<li><strong>徹底斷又不在意介面</strong> → 用 Piped/FreeTube 當第二管道</li>
+</ol>
+<p><strong>天花板</strong>：沒有 100% 隱形。<code>/youtubei/v1/player</code> 載入影片那一刻、IP、device fingerprint 都還在。這套是把最重的 watch-time 訊號歸零 + 讓殘餘訊號匿名，實務上足以「這次觀看不污染首頁」，但非密碼學等級隱形。</p>
+<p><strong>風險/取捨</strong>：篡改遙測技術上違反 YouTube ToS（個人自用風險低）；拔 cookie/改 header 在 PoToken 時代可能偶發 bot 檢查——所以「只碰 stats、不碰 player」是鐵律。</p>
+<blockquote>
+<p>相關：想從「替代資料源」角度奪回演算法控制權（RSS/Bluesky custom feed），見 <a href="../general-personal-algorithm-landscape-2026/">Personal Algorithm：使用者自主演算法生態系研究</a>。本文是相反方向——不換平台，只讓單次觀看在原平台隱形。</p>
+</blockquote>
 
 
 
@@ -4505,7 +4662,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 0f312366-66b4-4869-b5c9-d3c6bfc151f3</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 20a3445b-8e31-487b-9a30-d10633ea26bd</code></p>
 </div>
 
 
