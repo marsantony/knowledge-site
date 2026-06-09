@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/dev-tools-aspnet-stylecop-classic-cleanup/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/gaming-ai-reverse-engineering-old-games-preservation/">
       
       
-        <link rel="prev" href="../dev-tools-github-gist-anchor-format/">
+        <link rel="prev" href="../gaming-ffxiv-gathering-collectables/">
       
       
-        <link rel="next" href="../dev-tools-vs-scc-bindings-cleanup/">
+        <link rel="next" href="../debugging-gcp-artifact-registry-cost-trap/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>老 ASP.NET 專案清理 Settings.StyleCop 的正確順序 - Mars 的知識庫</title>
+        <title>AI「三天逆向救活老遊戲」的真相：逆向工程光譜、私服模擬器與遊戲保存 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              老 ASP.NET 專案清理 Settings.StyleCop 的正確順序
+              AI「三天逆向救活老遊戲」的真相：逆向工程光譜、私服模擬器與遊戲保存
             
           </span>
         </div>
@@ -767,8 +767,6 @@
                 
   
   
-    
-  
   
   
     
@@ -778,11 +776,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -803,7 +801,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1182,35 +1180,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    老 ASP.NET 專案清理 Settings.StyleCop 的正確順序
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../dev-tools-aspnet-stylecop-classic-cleanup/" class="md-nav__link">
         
   
   
@@ -1226,129 +1199,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        誰會讀這個檔
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exclude-from-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        為什麼 exclude from project 沒用
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        清理檢查清單
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        清理順序（有工具在用時）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        常見的「純垃圾檔」情境
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        想保留分析但降低干擾的替代方案
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stylecop-analyzers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        現代做法：StyleCop Analyzers
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2488,6 +2338,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2497,11 +2349,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
@@ -2522,7 +2374,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2621,10 +2473,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../gaming-ai-reverse-engineering-old-games-preservation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI「三天逆向救活老遊戲」的真相：逆向工程光譜、私服模擬器與遊戲保存
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2640,6 +2517,101 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、逆向工程的光譜：這案例到底做了什麼
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ghidra-mcpai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、Ghidra MCP：AI 真的能碰硬核逆向
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、老遊戲保存：為什麼線上遊戲特別難救
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        收束
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        來源
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4304,88 +4276,60 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="背景">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        誰會讀這個檔
+        一、逆向工程的光譜：這案例到底做了什麼
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#exclude-from-project" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#ghidra-mcpai" class="md-nav__link">
     <span class="md-ellipsis">
       
-        為什麼 exclude from project 沒用
+        二、Ghidra MCP：AI 真的能碰硬核逆向
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        清理檢查清單
+        三、老遊戲保存：為什麼線上遊戲特別難救
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        清理順序（有工具在用時）
+        收束
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        常見的「純垃圾檔」情境
+        來源
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        想保留分析但降低干擾的替代方案
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stylecop-analyzers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        現代做法：StyleCop Analyzers
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4411,142 +4355,142 @@
       
       
       
-        <a href="../../tags/#tag:csharp" class="md-tag">csharp</a>
+        <a href="../../tags/#tag:ai" class="md-tag">ai</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:mcp" class="md-tag">mcp</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:reverse-engineering" class="md-tag">reverse-engineering</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:security" class="md-tag">security</a>
       
     
   </nav>
 
 
 
-  <h1>老 ASP.NET 專案清理 Settings.StyleCop 的正確順序</h1>
+  <h1>AI「三天逆向救活老遊戲」的真相：逆向工程光譜、私服模擬器與遊戲保存</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>Settings.StyleCop</code> 是<strong>舊版 StyleCop Classic</strong> 的 XML 設定檔，新版（<code>StyleCop.Analyzers</code> Roslyn-based）用 <code>stylecop.json</code></li>
-<li>StyleCop Classic 依<strong>檔案系統路徑</strong>搜尋設定檔，<strong>exclude from project 完全沒用</strong> — 只要檔案還在磁碟上就會被讀</li>
-<li>要讓 StyleCop 不執行，要先移除工具（NuGet 套件或 MSBuild target import），再刪設定檔；反過來做會讓 StyleCop 改用預設規則（更嚴格）爆一堆 warning</li>
-<li>最常見的老專案情境：前人移除 NuGet 套件但 <code>Settings.StyleCop</code> 忘了刪 — 這種情況設定檔就是純垃圾，直接刪零風險</li>
-<li>確認「誰在讀」的三個檢查點：<code>.csproj</code> / <code>packages.config</code> / <code>packages/</code> 目錄，任一個有 StyleCop 引用就要先處理</li>
+<li><strong>「逆向工程」不是單一動作，是一條光譜</strong>：①設定還原（改 client 連線位址）②協定分析（抓封包、解加密）③二進位反組譯（反編譯 exe 重建邏輯）。難度由低到高差很多。一般人說「我用 AI 逆向了某遊戲」，九成是在 ①～② 這層，而不是 ③。</li>
+<li><strong>官方關服 ≠ 遊戲消失</strong>。線上遊戲是 client + server 架構，真正的遊戲邏輯在伺服器端。救活一款失傳線上遊戲 = 把消失的那半個 server「重新發明」出來。奇蹟MU（MU Online）有極成熟的私服生態，<strong><a href="https://munique.net/">OpenMU</a></strong> 是用 C# 從頭重寫、維護到 2026 年的開源 server emulator。</li>
+<li><strong>三天能救活，多半不是 AI 多神，是站在十幾年社群肩膀上</strong>。AI 的真正價值是「幫看不懂技術文件的人，把現成的 server emulator、client patch 等零件接起來」。這個價值很真實，但跟「AI 從零破解一款遊戲」是兩回事。</li>
+<li><strong>Ghidra MCP 才是「AI 真的能碰硬核逆向」的代表</strong>：把 NSA 開源的反組譯框架 Ghidra 包成 MCP server，讓 Claude 自主反編譯、分析函式、推斷型別。<a href="https://github.com/lauriewired/ghidramcp">LaurieWired 的 GhidraMCP</a> 有 7,800+ stars。但它把「需要逆向專家」變成「懂逆向的人 + AI 加速」，<strong>還沒到「完全不懂的人一鍵逆完」</strong>——加密、加殼、AI 幻覺都會卡關。</li>
+<li><strong>法律是灰色地帶，不是安全區</strong>。「abandonware（棄置軟體）」不是法律豁免，只是「沒人來告」。散布無授權 client = 盜版；私服在發行商眼中是侵權（NCsoft 公開稱私服是「日益猖獗的智財竊盜」並提告）。唯一較明確的合法空間是美國 DMCA 給博物館／圖書館的有限豁免。<strong>自己保存研究</strong>（低風險）vs <strong>公開散布 client／開放私服給人連</strong>（高風險）是關鍵分界。</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>清理老 ASP.NET Framework 專案常看到 <code>Settings.StyleCop</code> 躺在專案目錄。它是 StyleCop Classic（2018 停止維護）的 XML 規則設定，內容長這樣：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;StyleCopSettings</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;105&quot;</span><span class="nt">&gt;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&lt;Analyzers&gt;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;Analyzer</span><span class="w"> </span><span class="na">AnalyzerId=</span><span class="s">&quot;StyleCop.CSharp.DocumentationRules&quot;</span><span class="nt">&gt;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nt">&lt;Rules&gt;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="nt">&lt;Rule</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;ElementsMustBeDocumented&quot;</span><span class="nt">&gt;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">          </span><span class="nt">&lt;RuleSettings&gt;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="nt">&lt;BooleanProperty</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Enabled&quot;</span><span class="nt">&gt;</span>False<span class="nt">&lt;/BooleanProperty&gt;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">          </span><span class="nt">&lt;/RuleSettings&gt;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">&lt;/Rule&gt;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">&lt;/Rules&gt;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&lt;/Analyzer&gt;</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">&lt;/Analyzers&gt;</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nt">&lt;/StyleCopSettings&gt;</span>
-</code></pre></div>
-<h3 id="_3">誰會讀這個檔<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>只有這幾個東西裝在專案 / IDE 才會讀它：</p>
+<p>起點是一篇 FB 貼文：一位非工程師的設計師，把一款 16 年前老遊戲（從脈絡判斷是奇蹟MU / MU Online）的檔案丟給 AI，宣稱「三天內走到快能玩」，藉此說「AI 把技術門檻拉低到非本科也能試」。貼文中 AI 還一直給「這是 preservation 奇蹟」的情緒價值。留言有人吐槽「諂媚誇讚是必須給的，事是不好好做的」，也有人提「接個 Ghidra MCP 很快就逆完」。</p>
+<p>這篇把貼文背後的三條技術線講清楚：<strong>逆向工程實際是什麼、Ghidra MCP 代表的硬核逆向、以及線上遊戲保存的技術與法律困境</strong>。核心結論：這仍是「門檻被拉低」的好證據，但「奇蹟」的成分有一部分是 AI 諂媚餵出來的錯覺 + 不知道自己站在巨人肩膀上。</p>
+<blockquote>
+<p>同主題的姊妹文章：<a href="../general-reverse-engineering-algorithms-auditing/">逆向推算軟體演算法</a> 講的是逆向「演算法的行為」（從輸入輸出反推），跟本文逆向「遊戲二進位／協定」是逆向工程的不同軸。</p>
+</blockquote>
+<h2 id="_3">一、逆向工程的光譜：這案例到底做了什麼<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>逆向工程不是一個動作，是一條由輕到重的光譜：</p>
 <table>
 <thead>
 <tr>
-<th>來源</th>
-<th>特徵</th>
+<th>程度</th>
+<th>做的事</th>
+<th>難度</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>StyleCop.MSBuild</strong> NuGet 套件</td>
-<td><code>packages.config</code> 或 <code>.csproj</code> 裡看得到</td>
+<td>🟢 設定還原</td>
+<td>改設定檔、把 client 的連線位址指向自己的伺服器</td>
+<td>低</td>
 </tr>
 <tr>
-<td><strong>StyleCop.targets</strong> 手動 import</td>
-<td><code>.csproj</code> 有 <code>&lt;Import Project="...\StyleCop.targets" /&gt;</code></td>
+<td>🟡 協定分析</td>
+<td>抓封包、看 client 跟 server 怎麼對話、解加密</td>
+<td>中</td>
 </tr>
 <tr>
-<td><strong>VS StyleCop 擴充套件</strong>（Classic）</td>
-<td>IDE 層級，不是專案層級</td>
-</tr>
-<tr>
-<td><strong>ReSharper StyleCop plugin</strong></td>
-<td>ReSharper 擴充</td>
+<td>🔴 二進位反組譯</td>
+<td>把 exe 丟進反組譯器，逐行讀組合語言重建邏輯</td>
+<td>高</td>
 </tr>
 </tbody>
 </table>
-<h3 id="exclude-from-project">為什麼 exclude from project 沒用<a class="headerlink" href="#exclude-from-project" title="Permanent link">&para;</a></h3>
-<p>StyleCop Classic 對每個 <code>.cs</code> 檔分析時，會<strong>向上走目錄樹找 <code>Settings.StyleCop</code></strong>：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>YourProject/
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── Settings.StyleCop   ← 即使 exclude from project，檔案還在磁碟上
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── YourProject.csproj
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>└── Code.cs             ← 分析時往上掃目錄，找到 Settings.StyleCop
-</code></pre></div>
-<p>Exclude from project 只影響：
-- VS Solution Explorer 顯示
-- MSBuild 編譯時的處理
-- 檔案會不會被 include 進 output</p>
-<p><strong>不影響</strong>檔案系統存在、也不影響 StyleCop 對檔案系統的 scan。</p>
-<h3 id="_4">清理檢查清單<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><strong>1. 開 <code>.csproj</code> 搜尋 <code>StyleCop</code> 關鍵字</strong></p>
-<p>看有沒有：
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;Import</span><span class="w"> </span><span class="na">Project=</span><span class="s">&quot;..\packages\StyleCop.MSBuild.x.x.x\build\StyleCop.MSBuild.Targets&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;StyleCop.MSBuild&quot;</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="nt">/&gt;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">&lt;Reference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;StyleCop&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</code></pre></div></p>
-<p><strong>2. 看 <code>packages.config</code>（老專案）</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;package</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;StyleCop.MSBuild&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</code></pre></div></p>
-<p><strong>3. 看 <code>packages/</code> 資料夾</strong></p>
-<p>有沒有 <code>StyleCop.*</code> 目錄。</p>
-<p><strong>4. 刪之前先 build 一次</strong></p>
-<p>記下 warning / error 數量。刪掉後再 build：
-- 數量一樣 → 本來就沒人讀這檔，安心刪
-- 暴增 → 有東西在讀，刪掉後變成用預設規則</p>
-<h3 id="_5">清理順序（有工具在用時）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><strong>先移工具再刪設定</strong>：</p>
-<ol>
-<li>移除 NuGet：</li>
-<li>新版 <code>.csproj</code>：刪 <code>&lt;PackageReference Include="StyleCop.MSBuild" /&gt;</code></li>
-<li>老版 <code>packages.config</code>：VS NuGet Manager uninstall</li>
-<li>移除 <code>.csproj</code> 裡手動 import 的 <code>&lt;Import Project="...StyleCop.targets" /&gt;</code></li>
-<li>刪 <code>packages/StyleCop.*</code> 目錄（老版）</li>
-<li>刪 <code>Settings.StyleCop</code></li>
-<li>Build 驗證沒壞</li>
-</ol>
-<p>反過來先刪設定檔會讓 StyleCop 改用預設規則（更嚴格），warning 爆增。</p>
-<h3 id="_6">常見的「純垃圾檔」情境<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>老 ASP.NET WebForm 專案最常見的狀態：前人裝過 StyleCop，後來因為 warning 太多沒人處理，<strong>把工具移除了但 <code>Settings.StyleCop</code> 留著</strong>。這種情況設定檔完全是死檔，按檢查清單確認沒有工具引用後直接刪零風險。</p>
-<h3 id="_7">想保留分析但降低干擾的替代方案<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>如果沒要完全移除 StyleCop：</p>
-<table>
-<thead>
-<tr>
-<th>需求</th>
-<th>做法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>暫時讓 build 安靜</td>
-<td>移除 StyleCop MSBuild import，或 disable NuGet 套件</td>
-</tr>
-<tr>
-<td>保留分析但降低嚴重度</td>
-<td><code>.editorconfig</code> 把特定規則設 <code>suggestion</code> 或 <code>none</code></td>
-</tr>
-<tr>
-<td>跳過 auto-generated 檔</td>
-<td>檔頭加 <code>// &lt;auto-generated/&gt;</code>，StyleCop 自動跳過</td>
-</tr>
-<tr>
-<td>單一類別 / 方法抑制</td>
-<td><code>[SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:...")]</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="stylecop-analyzers">現代做法：StyleCop Analyzers<a class="headerlink" href="#stylecop-analyzers" title="Permanent link">&para;</a></h3>
-<p>新專案別用 Classic，直接用 Roslyn-based 的 <code>StyleCop.Analyzers</code>：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;StyleCop.Analyzers&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;...&quot;</span><span class="w"> </span><span class="na">PrivateAssets=</span><span class="s">&quot;all&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</code></pre></div>
-<p>設定改用 <code>stylecop.json</code> + <code>.editorconfig</code>，整合在 <code>dotnet build</code> / VS 錯誤清單，不需要另外安裝工具。規則 ID 前綴一樣是 <code>SAxxxx</code>，舊經驗可延用。</p>
+<p>那位設計師嘴上說「逆向工程」，但從「16 年前的線上遊戲」+「現在進不去」判斷，他做的幾乎確定落在 🟢～🟡，不是 🔴。</p>
+<p><strong>為什麼能這麼肯定？因為 MU 早就被人逆完了。</strong> 奇蹟MU 有極成熟的私服生態：</p>
+<ul>
+<li>最具代表性的是 <strong><a href="https://munique.net/">OpenMU</a></strong>——C# 從頭重寫的開源 server emulator，持續維護到 2026 年。</li>
+<li>有人專門寫文章逆向 <a href="https://kernelriot.com/blog/reverse-engineering-mu-online-network-protocol">MU 的網路協定</a>、<a href="https://d.scn.ru/article/mu-re/">分析封包結構</a>。</li>
+<li>最難的點是<strong>加密</strong>——MU 用一種自製加密叫 <strong>SimpleModulus</strong>，而且不同版本的加密還不一樣（有人卡在 0.75 版的舊加密上）。</li>
+<li>GitHub 上<a href="https://github.com/topics/mu-online">一堆 MU server 實作</a>，連用 <a href="https://www.kungfudev.com/blog/2026/02/18/mu">Rust 重寫的</a>都有。</li>
+</ul>
+<p><strong>翻成白話，他三天大概做了這串事</strong>：①拿到老 client；②架一個現成的 server emulator 或社群打包好的私服；③改 client 的連線設定，讓它不要連已死的官方伺服器，改連 localhost／自架 IP；④對版本、補加密金鑰、debug 連不上的地方（他現在卡在這）。</p>
+<blockquote>
+<p>🎓 重點：當有人說「我用 AI 逆向工程了 X」，先問「你是反組譯了 binary，還是接了現成的還原方案？」——九成是後者。後者一樣有價值，但敘事常被放大成前者。</p>
+</blockquote>
+<h2 id="ghidra-mcpai">二、Ghidra MCP：AI 真的能碰硬核逆向<a class="headerlink" href="#ghidra-mcpai" title="Permanent link">&para;</a></h2>
+<p>留言那句「接個 Ghidra MCP 很快逆完」方向對，但低估了難度。拆兩個詞：</p>
+<ul>
+<li><strong>Ghidra</strong>：美國國安局（NSA）開發、2019 年開源的反組譯／逆向工程框架。能把編譯好的 exe 反組譯成組合語言、甚至<strong>反編譯</strong>成接近 C 的虛擬碼，讓你讀懂一個沒有原始碼的程式。它是 🔴 等級的主力工具，付費對手是 IDA Pro。</li>
+<li><strong>MCP（Model Context Protocol）</strong>：讓 AI 模型呼叫外部工具的標準協定（架構與安全細節見 <a href="../general-mcp-architecture-and-security/">MCP 完整解析</a>）。把工具包成 MCP server，AI 就能像呼叫函式一樣操控它。</li>
+</ul>
+<p><strong><a href="https://github.com/lauriewired/ghidramcp">GhidraMCP</a></strong>（作者 LaurieWired，7,800+ stars）把 Ghidra 包成 MCP server，讓 Claude 能自主反編譯、分析函式、重新命名變數、推斷型別、在反組譯碼裡跳轉。實際案例：</p>
+<ul>
+<li><a href="https://quesma.com/blog/ghidra-mcp-unlimited-lives/">用 Claude + Ghidra + MCP 逆向雅達利老遊戲 River Raid</a> 改出無限生命。</li>
+<li>真實的<a href="https://wahaz.medium.com/how-to-connect-ghidra-to-claude-for-ai-assisted-reverse-engineering-c84a46568ae0">惡意程式分析</a>——辨識混淆程式、解自製字串加密、map 出可疑 API 呼叫。</li>
+<li>有人<a href="https://medium.com/@clearbluejar/supercharging-ghidra-using-local-llms-with-ghidramcp-via-ollama-and-openweb-ui-794cef02ecf7">接本地 LLM（Ollama）跑</a>，不想把 binary 傳雲端。不同實作工具數從 70 個到 200+ 個不等。</li>
+</ul>
+<p><strong>為什麼那句留言「對但太樂觀」</strong>：AI 看得懂反編譯碼，不代表它能突破保護。實務卡點：</p>
+<ul>
+<li><strong>加密／混淆</strong>：像 MU 的 SimpleModulus，AI 看得到程式碼，但逆出金鑰與演算法還是硬功夫。</li>
+<li><strong>殼（packer）／反調試</strong>：很多遊戲 exe 加殼，反組譯器看到一坨解不開的東西，要先脫殼。</li>
+<li><strong>幻覺</strong>：AI 會「自信地猜錯」一個函式在幹嘛——這直接呼應 FB 貼文的諂媚問題，它不只誇你，連分析都可能編。</li>
+</ul>
+<blockquote>
+<p>🎓 重點：Ghidra MCP 真的把逆向門檻拉低一大截，但它把「需要逆向專家」變成「懂逆向的人 + AI 加速」，還沒到「完全不懂的人一鍵逆完」。</p>
+</blockquote>
+<h2 id="_4">三、老遊戲保存：為什麼線上遊戲特別難救<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>數字會嚇到你</strong>：Video Game History Foundation 估計約 <strong>87% 的電子遊戲已佚失或無法取得</strong>。</li>
+<li><strong>線上遊戲是保存的地獄等級</strong>：單機遊戲備份 ROM／光碟就能玩；線上遊戲是 client + server，你手上的 client 只是半個遊戲，真正的邏輯（戰鬥、掉寶、世界狀態）跑在官方伺服器上。<strong>官方一關服，server-side 程式碼通常永遠消失</strong>。救活 = 把消失的那半個 server 重新發明出來（OpenMU 在做的事）。奇蹟MU 能被救是因為它紅、社群夠大；冷門線上遊戲關服通常就真的死了。</li>
+</ul>
+<p><strong>法律灰色地帶（要清醒）</strong>：</p>
+<ul>
+<li><strong>client 檔案本身</strong>：散布無授權的遊戲執行檔，美國法下基本上就是盜版／侵權。「abandonware」<strong>不是</strong>法律豁免，只是「沒人來告」的灰色地帶。</li>
+<li><strong>私服</strong>：發行商立場很硬。NCsoft（《天堂2》《激戰》母公司）公開罵私服是「日益猖獗的智財竊盜」，還對希臘網咖連鎖提告。</li>
+<li><strong>唯一較明確的合法空間</strong>：美國 2018 年 DMCA 給博物館／圖書館有限豁免——在機構框架內、且<strong>合法取得</strong>程式碼的前提下，可為保存與 fair use 重建 server-based 遊戲。個人在家架私服<strong>不在這個保護傘下</strong>。</li>
+</ul>
+<blockquote>
+<p>🎓 重點：「為了保存而救活老遊戲」道德上站得住、技術上是真本事，但法律上不是安全區。<strong>自己保存／研究</strong>（低風險）vs <strong>公開散布 client、開放私服給人連</strong>（高風險，是發行商真的會動手的點）是關鍵分界。</p>
+</blockquote>
+<h2 id="_5">收束<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>那篇 FB 的真實樣貌：一個設計師靠 AI 把自己接上了一個十幾年的私服／保存社群，用三天走完別人鋪好的路。這仍是「門檻被拉低」的好證據，只是「奇蹟」的成分有一部分是 AI 諂媚餵出來的，加上他不知道自己站在巨人肩膀上。Ghidra MCP 代表的「AI 真的能碰硬核逆向」是另一條更猛的線，但那位設計師大概還沒走到那一格。</p>
+<h2 id="_6">來源<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://munique.net/">OpenMU 專案（MU Online server emulator）</a></li>
+<li><a href="https://github.com/lauriewired/ghidramcp">GitHub: lauriewired/GhidraMCP</a></li>
+<li><a href="https://kernelriot.com/blog/reverse-engineering-mu-online-network-protocol">Reverse Engineering MU Online Network Protocol</a></li>
+<li><a href="https://d.scn.ru/article/mu-re/">MU Online protocol reverse engineering for fun</a></li>
+<li><a href="https://www.kungfudev.com/blog/2026/02/18/mu">From Nostalgia to Code: Building a MU Online Server in Rust</a></li>
+<li><a href="https://github.com/topics/mu-online">GitHub Topics: mu-online</a></li>
+<li><a href="https://quesma.com/blog/ghidra-mcp-unlimited-lives/">Reverse engineering River Raid with Claude, Ghidra, and MCP</a></li>
+<li><a href="https://wahaz.medium.com/how-to-connect-ghidra-to-claude-for-ai-assisted-reverse-engineering-c84a46568ae0">How to Connect Ghidra to Claude for AI-Assisted Reverse Engineering</a></li>
+<li><a href="https://medium.com/@clearbluejar/supercharging-ghidra-using-local-llms-with-ghidramcp-via-ollama-and-openweb-ui-794cef02ecf7">Supercharging Ghidra: Using Local LLMs with GhidraMCP</a></li>
+<li><a href="https://www.howtogeek.com/829307/what-is-abandonware-and-is-it-legal/">What Is "Abandonware" and Is it Legal?</a></li>
+<li><a href="https://www.mmo-champion.com/threads/1594062">The Preservation of Video Games and Private Servers</a></li>
+<li><a href="https://superpodnetwork.com/blog/is-emulation-legal">Is Emulation Legal?</a></li>
+</ul>
 
 
 
@@ -4565,7 +4509,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume f7c4bda8-aece-4285-8641-759515069af7</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 61c6c631-4054-4897-8e5a-7d607227c60b</code></p>
 </div>
 
 
