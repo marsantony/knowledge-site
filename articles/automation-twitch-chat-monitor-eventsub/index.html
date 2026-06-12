@@ -2608,6 +2608,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debugging-wrangler-unpinned-version-ci-auth-error/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI 部署突然認證失敗？凶手是沒鎖版本的 wrangler,不是 token
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4285,6 +4313,11 @@
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>唯讀監聽聊天用「匿名 IRC」最簡單</strong>:連 <code>wss://irc-ws.chat.twitch.tv:443</code>(在 Workers fetch 要用 <code>https://</code> scheme),送 <code>NICK justinfan&lt;亂數&gt;</code> + <code>JOIN #channel</code>,即可收到該公開頻道每則 <code>PRIVMSG</code>——<strong>不需 token、不需對方授權、對方無感</strong>(不進觀眾數/聊天者名單)。記得回 <code>PONG</code> 應付 <code>PING</code> 保活,並解析 IRCv3 tags 取 <code>display-name</code> / <code>tmi-sent-ts</code>。</li>
+<li><strong>【上線後架構升級】單靠 IRC 長連線必有漏失 → 改「雙路徑互為備援」</strong>:Durable Object 的對外 WS 會被平台隨時回收(idle 約 2 分鐘,且 close event 不保證觸發),斷線期間的聊天全漏。解法是即時路徑(IRC,秒級)+ 補漏路徑(alarm 每 2 分鐘 REST 輪詢 <a href="https://recent-messages.robotty.de/">recent-messages</a> 拉最近訊息):IRC 掛 → poll 補回(最壞延遲 = poll 間隔);poll 掛 → IRC 照跑;<strong>兩者同時掛才會漏</strong>。實測驗收:斷線恢復從最壞 30 分縮到 ≤2 分,連部署造成的斷線漏失都被重啟後首輪 poll 救回。</li>
+<li><strong>recent-messages.robotty.de</strong>(Chatterino 生態的聊天歷史服務,開源 Rust、可自架):<code>GET /api/v2/recent-messages/&lt;login&gt;?limit=N</code> 回 <strong>raw IRC lines</strong>(含完整 IRCv3 tags → 既有 IRC parser 直接重用,零新解析邏輯)。兩個雷:冷頻道第一次請求回 <code>channel_not_joined</code> 並觸發服務端 join(約 1 分鐘後才有資料)→ 監聽啟動時先打一次「預熱」;主播可向該服務 opt-out → 該頻道永遠 <code>channel_not_joined</code>,程式要能降級成純 IRC 模式。</li>
+<li><strong>雙路徑去重要做兩層</strong>,各防不同的重複:</li>
+<li><strong>poll watermark 用 <code>(tmi-sent-ts, 訊息 id)</code> 複合鍵</strong>——同一毫秒可能多則訊息,只比 timestamp 會在邊界漏掉或重複;watermark 遺失時(升級部署、storage 異常)以「最近一輪」為起點,<strong>絕不能從 0 回放整段歷史</strong></li>
+<li><strong>link-level seen 表存 DO storage 而非記憶體</strong>——DO 隨時被回收,in-memory <code>Set</code> 會蒸發導致同連結重複記錄(上線前沒想到、靠事故才發現的 bug);寫入要批次化(一輪 poll 寫一次),別每條連結整包重寫</li>
 <li><strong>Twitch 官方現在推薦 EventSub <code>channel.chat.message</code>、不鼓勵 IRC</strong>(IRC 屬逆風但仍可用)。但 EventSub 讀聊天門檻較高:WebSocket transport 要 user token(<code>user:read:chat</code>)、webhook transport 還要 <code>user:bot</code> + 對方授權 <code>channel:bot</code> 或把你設成 mod。<strong>要「零授權、對方無感」唯讀</strong> → 匿名 IRC 仍是最低摩擦路徑;要「官方、未來保固」→ 走 EventSub WebSocket + 一個 reader 帳號的 user token。</li>
 <li><strong>開台偵測用 EventSub <code>stream.online</code> / <code>stream.offline</code> webhook</strong>(app access token / client_credentials,<strong>免使用者授權</strong>,只需 broadcaster 的 public user id)。關鍵雷:<strong><code>stream.online</code> 不回溯補發</strong>——訂閱當下若對方已在播,不會觸發;要另外用 Helix <code>GET /streams?user_id=</code> 查當前狀態並主動啟動。</li>
 <li><strong>EventSub webhook 驗章</strong>:<code>HMAC-SHA256(secret, messageId + timestamp + rawBody)</code>,比對 <code>Twitch-Eventsub-Message-Signature: sha256=&lt;hex&gt;</code>。務必驗「<strong>原始 body</strong>」(JSON.parse 之前的字串)、用常數時間比對、加時間戳重放保護(&gt;10 分拒絕)。<code>webhook_callback_verification</code> 要回 challenge 字串訂閱才會 enabled。<strong>secret 是建訂閱時用 <code>transport.secret</code> 傳給 Twitch</strong>(不是在 dev console 填欄位)。</li>
@@ -4302,6 +4335,7 @@
 <p>讀聊天的方法比較過三條路:① 匿名 IRC(零授權、對方無感,但官方逆風)、② EventSub WebSocket + reader 帳號 user token(官方推薦、對方無感,但要管 token 刷新)、③ EventSub webhook + app token(要對方把 bot 設 mod)。因為想「完全不動用個人帳號、零痕跡」,選了 ①,並把讀聊天邏輯隔離成一個模組,未來 IRC 真被關時好切到 EventSub。</p>
 <p>也評估過繞 Streamlabs:其 API/Socket 只給 donation/訂閱等警報事件、<strong>沒有一般聊天訊息</strong>,且要對方交出 socket token——繞不過 Twitch 的授權模型,直接排除。</p>
 <p>oEmbed 的覆蓋度落差是最大的「期待管理」點:以為 FB/IG/Threads 都能 oEmbed,實際上 Meta 系要 App token + 審核、Threads 根本沒有。所以彙整品質天生分層:影音平台(oEmbed)最準、新聞(og/JSON-LD)其次、登入牆社群最弱。</p>
+<p>上線十天後發現漏記事故:DO 被平台回收 + close event 沒觸發,30 分鐘保險 alarm 成了最壞漏失窗口(覆蓋率一度只剩 ~20%)。當時評估過搬去其他免費平台(Koyeb free 不睡眠但資源小、Oracle Always Free 有 idle 回收條款、Fly.io 新帳號已無免費方案),最後決定不搬家、改混合架構:既然 serverless 的長連線天生 best-effort,就把「完整性」交給可重放的 REST 補漏路徑,DO 只負責「即時性」。這個「即時路徑 + 補漏路徑互為備援」的形狀,適用任何「監聽外部串流、漏失代價高」的 serverless 場景——前提是該生態存在像 recent-messages 這種可重放的歷史 API。</p>
 <p>延伸閱讀:同次建置的「Cloudflare Workers + Durable Objects 維持長連線」整理了 DO 計費、outbound WS 要用 https、部署會重啟 DO 等底層踩雷。</p>
 
 
@@ -4321,7 +4355,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 7c105b60-0702-4693-b496-0e7cf5f65042</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 435b597a-de30-4af8-bb4b-cecaf31b6f55</code></p>
 </div>
 
 

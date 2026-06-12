@@ -2608,6 +2608,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../debugging-wrangler-unpinned-version-ci-auth-error/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI 部署突然認證失敗？凶手是沒鎖版本的 wrangler,不是 token
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4283,7 +4311,17 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">resp</span><span class="p">.</span><span class="nx">webSocket</span><span class="p">;</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nx">ws</span><span class="p">.</span><span class="nx">accept</span><span class="p">();</span>
 </code></pre></div></li>
-<li><strong>Durable Object 的「對外(client)」WebSocket 無法 hibernate</strong> → 連線期間一直 pinned 在記憶體、<strong>按連線時長計費</strong>。Hibernation 只支援 DO 當 server(<code>ctx.acceptWebSocket()</code> 接收的連線)。免費 DO 額度 <strong>13,000 GB-s/天</strong>;DO 固定 128MB(0.128GB)→ 單一 instance 掛滿 24h ≈ 11,000 GB-s/天(剛好在內),多 instance 是「所有同時連線時數總和」≈ 28 instance-小時/天。</li>
+<li><strong>Durable Object 的「對外(client)」WebSocket 無法 hibernate</strong> → 活著期間 pinned 在記憶體、<strong>按連線時長計費</strong>(但 pinned ≠ 不會被回收,見下一點)。Hibernation 只支援 DO 當 server(<code>ctx.acceptWebSocket()</code> 接收的連線)。免費 DO 額度 <strong>13,000 GB-s/天</strong>;DO 固定 128MB(0.128GB)→ 單一 instance 掛滿 24h ≈ 11,000 GB-s/天(剛好在內),多 instance 是「所有同時連線時數總和」≈ 28 instance-小時/天。</li>
+<li><strong>【實測修正】outbound WS「掛著」不代表 DO 會活著</strong>——平台隨時可能回收 DO,連線在線也一樣:WS 無 inbound 流量時約 <strong>70–140 秒</strong>(實測 ~126s)就被 idle 回收;有流量可活數百秒到十幾分鐘,但仍會被收走。更麻煩的是回收路徑有兩種、<strong>隨機出現且與流量無關</strong>:</li>
+<li><strong>graceful</strong>:ws <code>close</code> event 會觸發 → <code>onClose</code> 還來得及排一個短重連 alarm</li>
+<li><strong>abrupt</strong>:<code>onClose</code> <strong>根本不執行</strong>,連線無聲消失 → 只能靠「事先排好的 storage alarm」兜底</li>
+<li>設計鐵律:<strong>不能依賴 close event</strong>;必須維持恆定節奏的保險 alarm,<strong>alarm 間隔 = 最壞漏失窗口</strong>(30 分鐘的保險 alarm 實測曾讓覆蓋率掉到 ~20%,縮到 2 分鐘後斷線自癒 ≤2 分)。alarm handler 全包 try/finally,<code>finally</code> 裡必 <code>setAlarm</code>,否則 handler 一 throw alarm 鏈就斷、服務死透。副作用:短 alarm 讓 DO 在事件期間近乎常駐 → duration ≈ 事件時數,要重算免費額度(上面的 28 instance-小時/天)。</li>
+<li>通則:<strong>serverless 平台上 push(webhook)可靠、pull(自己掛長連線)只能當 best-effort</strong>——零漏失要靠另一條不依賴連線、可重放的補漏路徑(REST 輪詢歷史),長連線只負責即時性。</li>
+<li><strong>觀測技巧(查「DO 什麼時候死的」必備)</strong>:</li>
+<li>Workers Logs 的 <code>wallTimeMs</code> = 該 invocation context 的<strong>實際存活時間</strong> → 「事件時間 + wallTimeMs」可精算 DO 被回收的時刻(例如某次 905 秒的 context 反推出 abrupt 死亡點)</li>
+<li>dashboard 上 messageTemplate 是「純 ISO 時間戳」的 info log = alarm 事件本身</li>
+<li><strong><code>wrangler tail</code> 對長壽 DO context 的事件要等 context 結束才 flush</strong>——tail 一片安靜不代表 DO 沒在動,別誤判</li>
+<li><code>wrangler kv key list/get</code> <strong>預設讀本地 miniflare</strong>,查線上資料必須加 <code>--remote</code>,不加會拿到空清單而誤判</li>
 <li><strong>免費方案只支援 SQLite-backed DO</strong>:migration 要 <code>"migrations": [{ "tag": "v1", "new_sqlite_classes": ["MyClass"] }]</code>。instance 數量無上限(免費限 100 個 <em>class</em>),「每個邏輯實體一個 instance」(<code>idFromName(key)</code>)是官方標準用法,各自隔離、單執行緒。不要把多個實體塞進一個 DO(會序列化 + 單點故障)。</li>
 <li><strong>每次部署 Worker 會重啟所有 DO</strong>——記憶體狀態與連線都丟失,只能靠持久化的 alarm 重連(最久要等到下個排程 alarm)。對策:<strong>CI 守門,只有 Worker 程式/設定變更才部署</strong>,純文件/設定腳本/CI 變更跳過,避免無謂斷線:
   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Decide whether to deploy</span>
@@ -4305,6 +4343,7 @@
 <p>要在 Cloudflare 上做「在某事件期間維持一條長連線(IRC / WebSocket)」的服務時,純 request-scoped 的 Worker 做不到——必須有東西「掛著」,這正是 Durable Object 的用途。</p>
 <p>決策一度卡在「免費嗎」:DO 對外 WS 無法 hibernate、按時長計費,聽起來會燒錢。但實際算下來,免費 13,000 GB-s/天 ÷ 0.128GB ≈ 28 instance-小時/天,對「只在事件期間連線」的單一/少量 instance 綽綽有餘,反而比「自己維護一台 always-on VM」省事且零維運。關鍵是 <strong>outbound WS 不能 hibernate</strong> 這點要先知道,否則會誤以為能像 server-side WS 那樣幾乎免費。</p>
 <p>開發過程最反直覺的兩個雷:(1) <code>fetch</code> 對外 WS 一定要 <code>https://</code>,寫 <code>wss://</code> 會在執行期炸(本機/單元測試測不到,要靠 <code>wrangler tail</code> 才看得到);(2) 每次 <code>wrangler deploy</code> 都會重啟 DO、斷掉連線,頻繁部署時會以為「功能壞了」,其實是部署造成的短暫斷線。後者用 CI path 守門解掉:文件/設定腳本變更不再觸發部署。</p>
+<p>上線十天後的後續(漏記事故的完整根因):原本假設「連線掛著 DO 就活著」,被七天完整 log 推翻——DO 連著 outbound WS 照樣被平台回收,且 <code>close</code> event 不保證觸發(graceful / abrupt 兩種死法隨機出現)。靠 30 分鐘保險 alarm 的版本最壞漏失 30 分鐘。修正後的心智模型:<strong>DO 上的長連線是「隨時會蒸發的快取」,不是「常駐連線」</strong>;所有「斷線重連」邏輯都要假設 onClose 不會跑,完整性交給獨立的補漏路徑(應用層做法見 Twitch 監聽篇的混合架構)。回收時刻的鑑識全靠 <code>wallTimeMs</code>——這個欄位平常沒人看,查 DO 生命週期時是唯一的真相來源。</p>
 <p>相關:[oEmbed/EventSub 那篇的 Twitch 應用案例]、CI 守門同樣適用任何「部署會中斷服務」的 Worker。</p>
 
 
@@ -4324,7 +4363,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 7c105b60-0702-4693-b496-0e7cf5f65042</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 435b597a-de30-4af8-bb4b-cecaf31b6f55</code></p>
 </div>
 
 
