@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/claude-code-knowledge-article-session-traceability/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/security-dangerous-c-string-functions/">
       
       
-        <link rel="prev" href="../claude-code-skill-as-workflow-gate/">
+        <link rel="prev" href="../security-bypassing-memory-protections-rop-ret2libc/">
       
       
-        <link rel="next" href="../claude-code-hooks-skills-triggers/">
+        <link rel="next" href="../security-youtube-recommendation-ghost-mode/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>知識庫文章與對話的 Session ID 可追溯性 - Mars 的知識庫</title>
+        <title>C 危險字串函式與安全替代 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              知識庫文章與對話的 Session ID 可追溯性
+              C 危險字串函式與安全替代
             
           </span>
         </div>
@@ -318,8 +318,6 @@
                 
   
   
-    
-  
   
   
     
@@ -329,11 +327,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -354,7 +352,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -621,35 +619,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    知識庫文章與對話的 Session ID 可追溯性
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../claude-code-knowledge-article-session-traceability/" class="md-nav__link">
         
   
   
@@ -665,68 +638,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        批次回填既有文章的技巧
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkdocs-material-template-override" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MkDocs Material Template Override
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2990,6 +2901,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2999,11 +2912,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
         
           
           <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
@@ -3024,7 +2937,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3123,10 +3036,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../security-dangerous-c-string-functions/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C 危險字串函式與安全替代
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3142,6 +3080,46 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4434,28 +4412,6 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        批次回填既有文章的技巧
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkdocs-material-template-override" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MkDocs Material Template Override
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         背景
       
     </span>
@@ -4485,50 +4441,44 @@
       
       
       
-        <a href="../../tags/#tag:knowledge-management" class="md-tag">knowledge-management</a>
+        <a href="../../tags/#tag:learning" class="md-tag">learning</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:mkdocs" class="md-tag">mkdocs</a>
+        <a href="../../tags/#tag:security" class="md-tag">security</a>
       
     
   </nav>
 
 
 
-  <h1>知識庫文章與對話的 Session ID 可追溯性</h1>
+  <h1>C 危險字串函式與安全替代</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>每篇知識庫文章在 frontmatter 加上 <code>session_id</code>，記錄產出該文章的 Claude Code 對話 UUID</li>
-<li>回看原始對話：<code>claude --resume &lt;session_id&gt;</code></li>
-<li><code>/save-knowledge</code> skill 已內建自動取得當前 session ID 的步驟，不需手動操作</li>
-<li>MkDocs Material template override 在文章底部顯示 <code>📎 源對話：claude --resume &lt;session_id&gt;</code>，方便從網頁直接複製指令</li>
-<li>Session ID 是本機 UUID，僅對本機有意義，公開無安全風險</li>
+<li><strong>根因</strong>：C 字串沒有內建長度資訊、以 <code>\0</code> 結尾，而許多標準函式<strong>不檢查目標 buffer 大小</strong>——這正是 stack buffer overflow 的源頭。</li>
+<li><strong>危險函式清單</strong>：</li>
+<li><code>gets()</code>：完全無法限制長度，危險到已在 <strong>C11 從標準移除</strong>。永遠別用。</li>
+<li><code>strcpy()</code> / <code>strcat()</code>：複製/串接直到來源的 <code>\0</code>，完全不管目標 buffer 多大。</li>
+<li><code>sprintf()</code>：格式化輸出無長度上限，使用者可控的 <code>%s</code> 很容易爆。</li>
+<li><code>scanf("%s", buf)</code>：同樣無界，遇到長輸入直接溢位。</li>
+<li><strong>安全替代（含陷阱）</strong>：</li>
+<li><code>snprintf()</code>：取代 <code>sprintf</code>。保證 NUL 結尾；回傳值是「本來會寫入的長度」，可用來偵測截斷。</li>
+<li><code>strncpy()</code>：有界，但<strong>不保證 NUL 結尾</strong>——當來源剛好填滿目標時不會補 <code>\0</code>，後續讀取會越界。且它會把目標剩餘空間全部填 0（非效能友善）。用它一定要自己手動補 <code>buf[n-1] = '\0'</code>。</li>
+<li><code>strlcpy()</code> / <code>strlcat()</code>（BSD 起源，glibc 要 <strong>2.38+</strong> 才內建）：有界且保證 NUL 結尾，語意比 <code>strncpy</code> 直覺，是較推薦的選擇。</li>
+<li><strong>縱深防禦（編譯器與語言層）</strong>：</li>
+<li><code>_FORTIFY_SOURCE=2</code>（或 3）：對「編譯期已知大小」的 buffer 自動插入執行期邊界檢查，搭配 <code>-O2</code> 啟用。</li>
+<li><code>-fstack-protector-strong</code>：插入 stack canary。</li>
+<li><code>-Wformat-security</code>：抓危險的 format string 用法。</li>
+<li>從根本消除：用 <strong>Rust</strong> 等記憶體安全語言，這類問題在編譯期就被擋掉。</li>
+<li><strong>結論</strong>：修 buffer overflow 的根本解不是「關防護」，而是<strong>源頭就用「有界 + 保證 NUL 結尾」的 API</strong>，再疊上編譯器縱深防禦。</li>
 </ul>
-<h2 id="_2">批次回填既有文章的技巧<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>67 篇既有文章透過以下策略自動配對 session ID：</p>
-<ol>
-<li><strong>取得每篇文章的 git commit 訊息與時間戳</strong>（<code>git log -1 --format="%at|%s" -- &lt;article&gt;</code>）</li>
-<li><strong>用 commit 訊息在 session JSONL 中搜尋</strong>（<code>grep -l "&lt;commit_msg&gt;" ~/.claude/projects/&lt;project&gt;/*.jsonl</code>）</li>
-<li><strong>用時間戳篩選正確 session</strong> — 優先選 commit 後 1 小時內修改的 JSONL 檔</li>
-<li><strong>內容驗證</strong> — 確認 session JSONL 中包含該文章檔名（出現次數 &gt; 0 才算配對成功）</li>
-</ol>
-<p>結果：67 篇全部配對成功，其中 62 篇時間精確、5 篇時間模糊但內容驗證通過。</p>
-<h2 id="mkdocs-material-template-override">MkDocs Material Template Override<a class="headerlink" href="#mkdocs-material-template-override" title="Permanent link">&para;</a></h2>
-<p>在文章底部顯示 session 資訊的最簡做法：</p>
-<ul>
-<li>建立 <code>docs/overrides/main.html</code>，用 <code>{% extends "base.html" %}</code> 覆寫 <code>content</code> block</li>
-<li>透過 <code>page.meta.session_id</code> 讀取 frontmatter 的 session ID</li>
-<li><code>mkdocs.yml</code> 加上 <code>custom_dir: docs/overrides</code></li>
-<li>CSS 用 <code>user-select: all</code> 讓使用者一鍵全選指令文字</li>
-</ul>
-<h2 id="_3">背景<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>知識庫文章是從對話中萃取的摘要，但有時需要回看完整對話脈絡（例如確認取捨的討論過程、查看被省略的細節）。加上 session ID 後，文章與原始對話之間有了明確的連結，不再需要靠記憶或搜尋來找對話。</p>
-<p>配對策略利用了 Claude Code 的兩個特性：(1) <code>/save-knowledge</code> 的 git commit 訊息包含文章標題，(2) session JSONL 完整記錄了所有工具呼叫，包括 git commit 的輸出。兩者交叉比對就能精確定位。</p>
+<h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>這是 buffer overflow 系列的「防禦／根因」篇，與〈入門〉〈Shellcode 機制〉〈繞過記憶體防護〉互補：前幾篇講攻擊怎麼運作與演化，這篇回答「那一開始為什麼會有這個洞、怎麼從源頭堵住」。</p>
+<p>一個容易誤會的點：<code>strncpy</code> 名字裡有個 <code>n</code> 看起來很安全，其實它是<strong>最容易誤用</strong>的函式之一——「有界」不等於「安全」，因為它不保證字串結尾。真正的安全來自「有界 <strong>且</strong> 保證 NUL 結尾」的語意（<code>snprintf</code>、<code>strlcpy</code>），加上編譯器層的 <code>_FORTIFY_SOURCE</code> 與現代語言的記憶體安全保證。</p>
 
 
 
@@ -4547,7 +4497,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume afc24c7e-d31e-48d1-a35b-8032b0d830e5</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume a04102b8-ee74-46d4-8338-f054b7b98f31</code></p>
 </div>
 
 

@@ -373,7 +373,15 @@
          <lastmod>2026-06-19</lastmod>
     </url>
     <url>
+         <loc>https://marsantony.github.io/knowledge-site/articles/security-bypassing-memory-protections-rop-ret2libc/</loc>
+         <lastmod>2026-06-19</lastmod>
+    </url>
+    <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/security-context7-injection-risk-and-alternatives/</loc>
+         <lastmod>2026-06-19</lastmod>
+    </url>
+    <url>
+         <loc>https://marsantony.github.io/knowledge-site/articles/security-dangerous-c-string-functions/</loc>
          <lastmod>2026-06-19</lastmod>
     </url>
     <url>
@@ -382,6 +390,10 @@
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/security-oauth2-client-credentials-vs-auth-code/</loc>
+         <lastmod>2026-06-19</lastmod>
+    </url>
+    <url>
+         <loc>https://marsantony.github.io/knowledge-site/articles/security-shellcode-fundamentals/</loc>
          <lastmod>2026-06-19</lastmod>
     </url>
     <url>

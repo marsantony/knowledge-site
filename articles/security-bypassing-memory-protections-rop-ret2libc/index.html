@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/claude-code-knowledge-article-session-traceability/">
+        <link rel="canonical" href="https://marsantony.github.io/knowledge-site/articles/security-bypassing-memory-protections-rop-ret2libc/">
       
       
-        <link rel="prev" href="../claude-code-skill-as-workflow-gate/">
+        <link rel="prev" href="../security-shellcode-fundamentals/">
       
       
-        <link rel="next" href="../claude-code-hooks-skills-triggers/">
+        <link rel="next" href="../security-dangerous-c-string-functions/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>知識庫文章與對話的 Session ID 可追溯性 - Mars 的知識庫</title>
+        <title>繞過記憶體防護：ret2libc 與 ROP - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              知識庫文章與對話的 Session ID 可追溯性
+              繞過記憶體防護：ret2libc 與 ROP
             
           </span>
         </div>
@@ -318,8 +318,6 @@
                 
   
   
-    
-  
   
   
     
@@ -329,11 +327,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -354,7 +352,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -621,35 +619,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    知識庫文章與對話的 Session ID 可追溯性
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../claude-code-knowledge-article-session-traceability/" class="md-nav__link">
         
   
   
@@ -665,68 +638,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        重點
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        批次回填既有文章的技巧
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkdocs-material-template-override" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MkDocs Material Template Override
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        背景
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2990,6 +2901,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2999,11 +2912,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
         
           
           <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
@@ -3024,7 +2937,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3095,10 +3008,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../security-bypassing-memory-protections-rop-ret2libc/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    繞過記憶體防護：ret2libc 與 ROP
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3114,6 +3052,46 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重點
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        背景
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4434,28 +4412,6 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        批次回填既有文章的技巧
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mkdocs-material-template-override" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        MkDocs Material Template Override
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         背景
       
     </span>
@@ -4485,50 +4441,73 @@
       
       
       
-        <a href="../../tags/#tag:knowledge-management" class="md-tag">knowledge-management</a>
+        <a href="../../tags/#tag:learning" class="md-tag">learning</a>
       
     
       
       
       
       
-        <a href="../../tags/#tag:mkdocs" class="md-tag">mkdocs</a>
+        <a href="../../tags/#tag:linux" class="md-tag">linux</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:security" class="md-tag">security</a>
       
     
   </nav>
 
 
 
-  <h1>知識庫文章與對話的 Session ID 可追溯性</h1>
+  <h1>繞過記憶體防護：ret2libc 與 ROP</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>每篇知識庫文章在 frontmatter 加上 <code>session_id</code>，記錄產出該文章的 Claude Code 對話 UUID</li>
-<li>回看原始對話：<code>claude --resume &lt;session_id&gt;</code></li>
-<li><code>/save-knowledge</code> skill 已內建自動取得當前 session ID 的步驟，不需手動操作</li>
-<li>MkDocs Material template override 在文章底部顯示 <code>📎 源對話：claude --resume &lt;session_id&gt;</code>，方便從網頁直接複製指令</li>
-<li>Session ID 是本機 UUID，僅對本機有意義，公開無安全風險</li>
+<li><strong>核心轉變：從「注入新碼」到「重用既有碼」</strong>。NX/DEP 讓注入的 shellcode 無法執行後，攻擊者改用 <strong>code-reuse attack</strong>——不帶新程式碼，而是把程式裡「本來就可執行」的片段拼起來達成目的。</li>
+<li><strong>ret2libc（繞 NX）</strong>：把 return address 設成 libc 中 <code>system()</code> 的位址，並在 stack 上擺好參數（指向 <code>"/bin/sh"</code> 字串）。函式返回時等於直接呼叫 <code>system("/bin/sh")</code>。因為 libc 本來就是可執行記憶體，NX 擋不住。</li>
+<li><strong>ROP / Return-Oriented Programming（更通用）</strong>：把許多以 <code>ret</code> 結尾的小片段（<strong>gadget</strong>，如 <code>pop rdi; ret</code>）串成鏈。stack 上排一連串 gadget 位址，每個 gadget 做一點小事（設暫存器、寫記憶體）後 <code>ret</code> 進下一個。足夠的 gadget 組合是<strong>圖靈完備</strong>的，能組出任意邏輯——用來應付比 NX 更嚴格的防護。</li>
+<li><strong>ASLR（位址隨機化）的剋星：info leak</strong>。ROP/ret2libc 都需要知道 libc 或 binary 的實際位址，但 ASLR 每次隨機化。對策是先透過資訊洩漏（format string 漏洞、未初始化記憶體、洩漏的指標等）算出某模組的 base address，再據此修正所有 gadget 位址。</li>
+<li><strong>Stack Canary 的剋星：洩漏或暴力</strong>。需先洩漏 canary 值（再把它原封寫回），或在 fork-based server（每次 fork 出的子行程共用同一 canary）下逐 byte 暴力破解。</li>
+<li><strong>軍備競賽仍在繼續</strong>：<strong>PIE</strong>（連主程式也隨機化）、<strong>RELRO</strong>（GOT 唯讀，擋 GOT 改寫）、<strong>CFI / Intel CET shadow stack</strong>（硬體強制 return address 完整性，讓 ROP 大幅變難）。認知重點：<strong>現代 exploit 幾乎都是「資訊洩漏 + code reuse」的組合技</strong>，1970 年代那種純 stack smashing + shellcode 早已不可行。</li>
 </ul>
-<h2 id="_2">批次回填既有文章的技巧<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>67 篇既有文章透過以下策略自動配對 session ID：</p>
-<ol>
-<li><strong>取得每篇文章的 git commit 訊息與時間戳</strong>（<code>git log -1 --format="%at|%s" -- &lt;article&gt;</code>）</li>
-<li><strong>用 commit 訊息在 session JSONL 中搜尋</strong>（<code>grep -l "&lt;commit_msg&gt;" ~/.claude/projects/&lt;project&gt;/*.jsonl</code>）</li>
-<li><strong>用時間戳篩選正確 session</strong> — 優先選 commit 後 1 小時內修改的 JSONL 檔</li>
-<li><strong>內容驗證</strong> — 確認 session JSONL 中包含該文章檔名（出現次數 &gt; 0 才算配對成功）</li>
-</ol>
-<p>結果：67 篇全部配對成功，其中 62 篇時間精確、5 篇時間模糊但內容驗證通過。</p>
-<h2 id="mkdocs-material-template-override">MkDocs Material Template Override<a class="headerlink" href="#mkdocs-material-template-override" title="Permanent link">&para;</a></h2>
-<p>在文章底部顯示 session 資訊的最簡做法：</p>
-<ul>
-<li>建立 <code>docs/overrides/main.html</code>，用 <code>{% extends "base.html" %}</code> 覆寫 <code>content</code> block</li>
-<li>透過 <code>page.meta.session_id</code> 讀取 frontmatter 的 session ID</li>
-<li><code>mkdocs.yml</code> 加上 <code>custom_dir: docs/overrides</code></li>
-<li>CSS 用 <code>user-select: all</code> 讓使用者一鍵全選指令文字</li>
-</ul>
-<h2 id="_3">背景<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>知識庫文章是從對話中萃取的摘要，但有時需要回看完整對話脈絡（例如確認取捨的討論過程、查看被省略的細節）。加上 session ID 後，文章與原始對話之間有了明確的連結，不再需要靠記憶或搜尋來找對話。</p>
-<p>配對策略利用了 Claude Code 的兩個特性：(1) <code>/save-knowledge</code> 的 git commit 訊息包含文章標題，(2) session JSONL 完整記錄了所有工具呼叫，包括 git commit 的輸出。兩者交叉比對就能精確定位。</p>
+<h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>這是 buffer overflow 系列的第三篇，承接〈入門〉與〈Shellcode 機制〉。入門篇假設「關掉所有防護」來理解最基本的機制；這篇回答「防護打開後，攻擊技術怎麼演化」。</p>
+<p>理解這條演化線，比死記單一技術更有價值——它是一場<strong>防護 vs. 繞過的軍備競賽</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>防護</th>
+<th>擋住什麼</th>
+<th>繞過思路</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NX / DEP</td>
+<td>注入的 shellcode 無法執行</td>
+<td>ret2libc / ROP（重用既有可執行碼）</td>
+</tr>
+<tr>
+<td>ASLR</td>
+<td>位址不可預測</td>
+<td>info leak 先算出 base，再修正位址</td>
+</tr>
+<tr>
+<td>Stack Canary</td>
+<td>覆蓋 return address 會被偵測</td>
+<td>洩漏 canary 或暴力破解</td>
+</tr>
+<tr>
+<td>PIE / RELRO / CET</td>
+<td>進一步收緊上述各點</td>
+<td>需更強的洩漏原語與更複雜的鏈</td>
+</tr>
+</tbody>
+</table>
+<p>防禦面的啟示：<strong>沒有單一防護是萬靈丹</strong>，現代系統靠多層防護疊加，把攻擊成本（需要的漏洞原語數量、可靠性）墊高到不划算。從源頭消除溢位（見〈C 危險字串函式與安全替代〉）仍是最根本的解法。</p>
 
 
 
@@ -4547,7 +4526,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume afc24c7e-d31e-48d1-a35b-8032b0d830e5</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume a04102b8-ee74-46d4-8338-f054b7b98f31</code></p>
 </div>
 
 
