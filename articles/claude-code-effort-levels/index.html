@@ -27,7 +27,7 @@
     
     
       
-        <title>Claude Code Effort 等級與 ultracode 模式 - Mars 的知識庫</title>
+        <title>Claude Code Effort 等級、ultracode 與 Fable 選擇 - Mars 的知識庫</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Claude Code Effort 等級與 ultracode 模式
+              Claude Code Effort 等級、ultracode 與 Fable 選擇
             
           </span>
         </div>
@@ -750,7 +750,7 @@
   <span class="md-ellipsis">
     
   
-    Claude Code Effort 等級與 ultracode 模式
+    Claude Code Effort 等級、ultracode 與 Fable 選擇
   
 
     
@@ -768,7 +768,7 @@
   <span class="md-ellipsis">
     
   
-    Claude Code Effort 等級與 ultracode 模式
+    Claude Code Effort 等級、ultracode 與 Fable 選擇
   
 
     
@@ -818,6 +818,17 @@
     <span class="md-ellipsis">
       
         各檔位怎麼選
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effort-fable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        加 effort 還是換 Fable
       
     </span>
   </a>
@@ -4632,6 +4643,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#effort-fable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        加 effort 還是換 Fable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#session-jsonl-efforttoken" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4682,22 +4704,23 @@
 
 
 
-  <h1>Claude Code Effort 等級與 ultracode 模式</h1>
+  <h1>Claude Code Effort 等級、ultracode 與 Fable 選擇</h1>
 
 <h2 id="_1">重點<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Effort 等級由低到高：<code>low</code> / <code>medium</code> / <code>high</code> / <code>xhigh</code> / <code>max</code>，控制模型「思考多深」。<code>xhigh</code> 只有較新的 Opus 機型支援；Haiku 不支援 effort 參數。</li>
-<li><code>ultracode</code> <strong>不是 effort 等級</strong>，而是 Claude Code 特有的 session 模式 ＝ <code>xhigh</code> ＋ 自動 multi-agent workflow 編排，是最耗 token 的火力模式。</li>
-<li><code>xhigh</code> 是「想得更深」，<code>max</code> 是「不設 token 上限」——兩者方向不同。<code>max</code> 在結構化／日常任務上常 overthinking，邊際效益低。</li>
-<li>settings.json 的 <code>effortLevel</code> 規範值只到 <code>low/medium/high/xhigh</code>；<code>max</code> 與 <code>ultracode</code> 是 session-only，用 <code>/effort</code> 臨時切換（寫進 settings 即便能跑也屬非規範，未來可能被 schema 驗證擋掉）。</li>
-<li>Opus 4.8 的預設 effort 是 <code>high</code>（前一代預設是 <code>xhigh</code>）。官方把預設降回 high，等於暗示 high 已足以應付多數任務——沿用舊機型的高檔位習慣容易變成 over-provision。</li>
+<li>Effort 等級由低到高：<code>low</code> / <code>medium</code> / <code>high</code> / <code>xhigh</code> / <code>max</code>，控制模型「思考多深」。Opus 4.6／Sonnet 4.6 沒有 <code>xhigh</code>（設了會降成 <code>high</code>）；Haiku 4.5 不支援 effort。</li>
+<li><strong>每個模型的預設檔位不同，而且刻度是各自校準的</strong>：Opus 4.7 預設 <code>xhigh</code>、Opus 4.8 預設 <code>high</code>、<strong>Opus 5.5／Sonnet 5.5／Haiku 5.5 預設 <code>medium</code></strong>。官方說 Opus 5.5 @ <code>medium</code> 已追平或超過 Opus 5 @ <code>high</code>，換新模型時要「從 <code>medium</code> 開始，不要沿用舊檔位」。</li>
+<li><code>max</code> 是最深的推理等級，但官方警告它「邊際效益遞減、容易 overthinking」，建議先測過再大範圍採用。settings.json 的 <code>effortLevel</code> 不接受 <code>max</code>，只能用 <code>/effort max</code>（僅當前 session）或 <code>CLAUDE_CODE_EFFORT_LEVEL</code> 環境變數。</li>
+<li><code>ultracode</code> <strong>不是 effort 等級</strong>，而是讓 Claude 對大型任務自動編排 workflow 的開關，跑在當前 session 的 effort 上（<code>claude --effort ultracode</code> 會從 <code>xhigh</code> 起跳）。要長期開啟用 <code>"ultracode": true</code> 設定，<code>effortLevel</code> 與環境變數不接受它。</li>
+<li>只有某一題想多想一點時，在 prompt 裡寫 <code>ultrathink</code> 就好，只影響那個 turn，不會改動 session 的檔位。</li>
 <li><strong>新機型（如 Opus 5.5）不吃 settings.json 頂層的 <code>effortLevel</code></strong>，要寫在 <code>modelSettings.&lt;model-id&gt;.effortLevel</code>。<code>/effort</code> 本身就是寫這裡，詳見下方。</li>
+<li>「加 effort」跟「換 Fable」是兩回事：官方說 Opus 5.5 在多數工作上已與 Fable 5.1 同級，Fable 留給模糊、大型、一次做不完的任務，詳見下方。</li>
 </ul>
 <h2 id="effortlevel-modelsettings">頂層 <code>effortLevel</code> 與 <code>modelSettings</code><a class="headerlink" href="#effortlevel-modelsettings" title="Permanent link">&para;</a></h2>
 <p>以 Claude Code 2.1.310 查執行檔的結果：</p>
 <ul>
 <li>頂層 <code>effortLevel</code> 被當成「舊版相容值」，只套用到一份<strong>寫死的舊機型清單</strong>，<code>claude-opus-5-5</code> 不在裡面。</li>
-<li>解析順序：<code>modelSettings[目前的 model]</code> → 預設值 → 只有目前 model 在舊清單裡才輪到頂層 <code>effortLevel</code>。</li>
+<li>解析順序：明確指定（<code>CLAUDE_CODE_EFFORT_LEVEL</code>、<code>--effort</code>、<code>/effort</code>）優先，其次是 <code>modelSettings[目前的 model]</code>，最後是模型預設值；只有目前 model 在舊清單裡，頂層 <code>effortLevel</code> 才會生效。</li>
 <li>所以在 Opus 5.5 上，真正生效的是 <code>modelSettings</code> 那段；頂層那行對它沒有作用。</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
@@ -4707,8 +4730,9 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
 </code></pre></div>
-<p><strong>容易踩的雷</strong>：看到兩處值一樣，會以為 <code>modelSettings</code> 是重複設定而刪掉——刪了之後 Opus 5.5 就回到預設檔位。曾經有三個審查 agent 看同一份設定，兩個判定「多餘」，直到查執行檔才確認要保留。換新機型時，也要記得檢查 <code>modelSettings</code> 有沒有對應的 model id。</p>
+<p><strong>容易踩的雷</strong>：看到兩處值一樣，會以為 <code>modelSettings</code> 是重複設定而刪掉——刪了之後 Opus 5.5 就回到預設的 <code>medium</code>。曾經有三個審查 agent 看同一份設定，兩個判定「多餘」，直到查執行檔才確認要保留。換新機型時，也要記得檢查 <code>modelSettings</code> 有沒有對應的 model id。</p>
 <h2 id="_2">各檔位怎麼選<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>官方 model-config 文件給的建議：</p>
 <table>
 <thead>
 <tr>
@@ -4719,31 +4743,102 @@
 <tbody>
 <tr>
 <td><code>low</code></td>
-<td>短、範圍明確、延遲敏感的任務</td>
+<td>每個結果都會親自看的快速來回：腦力激盪、初稿、rename 之類的小改動</td>
 </tr>
 <tr>
 <td><code>medium</code></td>
-<td>成本／品質平衡，標準 bug fix、重構</td>
+<td>範圍清楚的日常工程，例如實作新功能（Opus 5.5 預設）</td>
 </tr>
 <tr>
 <td><code>high</code></td>
-<td>複雜推理、寫程式、agentic 任務（新版 Opus 預設）</td>
+<td>需要驗證、容易有邊界情況的工作，例如修既有 codebase 的 bug</td>
 </tr>
 <tr>
 <td><code>xhigh</code></td>
-<td>長時間 agentic 工作、長代理鏈、反覆工具呼叫</td>
+<td>更深的推理、花更多 token；長時間無人看管的 agentic 工作</td>
 </tr>
 <tr>
 <td><code>max</code></td>
-<td>frontier 難題、安全關鍵、跑能力標竿；日常任務多半浪費</td>
+<td>讓 Claude 自己慢慢啃的難題，例如找資安漏洞；邊際效益遞減</td>
 </tr>
 <tr>
 <td><code>ultracode</code></td>
-<td>大型重構、全庫掃描——會自動開 workflow，最貴</td>
+<td>大型重構、全庫掃描——會自動開 workflow，最耗 token</td>
 </tr>
 </tbody>
 </table>
-<p><strong>選擇心法</strong>：把 settings 底盤設在「日常夠用又省」的 <code>high</code>（或想多留推理餘量就 <code>xhigh</code>），難題時用 <code>/effort max</code>、大型多檔案工作用 <code>/effort ultracode</code> 當「臨時按鈕」。從低檔升上去只要一個指令、成本極低；長期掛 <code>max</code> 則是每個 turn 都付頂價。</p>
+<p>官方也提到，在 Opus 5.5 與 Fable 5.1 上，檔位越高，模型會測更多邊界情況、驗證更多、自己做更多決定；檔位越低，越快交出一個起點。</p>
+<p><strong>選擇心法</strong>：</p>
+<ul>
+<li>底盤設在模型預設或高一階，難題時用 <code>/effort</code> 或 <code>ultrathink</code> 臨時拉高。從低檔升上去只要一個指令；長期掛 <code>max</code> 則是每個 turn 都付頂價。</li>
+<li>Claude Code 是 agentic 的，一個任務會發很多次請求、每次都帶 thinking，同樣檔位的總消耗比網頁聊天多很多。不必因為「在寫程式」就把檔位調得比網頁版高。</li>
+<li><strong>訂閱制下 effort 的成本是額度，不是錢</strong>。如果每週額度一直用不完，長期掛 <code>xhigh</code> 換取更多驗證也合理，代價只剩回應變慢；開始撞到額度上限再降檔即可。用 API key 計費時則是真金白銀，降檔更有感。</li>
+</ul>
+<h2 id="effort-fable">加 effort 還是換 Fable<a class="headerlink" href="#effort-fable" title="Permanent link">&para;</a></h2>
+<p>Fable 5.1 是 Claude Code 裡能力最強的模型（<code>/model fable</code>；<code>best</code> alias 在可用時也會指向 Fable，否則指向 Opus）。但它不是任何方案的預設，原因很實際：</p>
+<p><strong>能力差距沒有想像中大</strong>。Anthropic 發表 Opus 5.5 時說它「在大多數工作上與 Fable 5.1 同級」，發表文列出的 benchmark 中 Opus 5.5 每一項都高於 Fable 5.1（官方也提醒 benchmark 差距不是實際差異的可靠指標）。</p>
+<p><strong>計費規則不同</strong>（依 Claude Help Center，2026-09-02 更新）：</p>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>Fable 怎麼算</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max、Team／Enterprise premium seat</td>
+<td>包含在方案內，但最多只能用掉<strong>每週額度的 50%</strong>，而且消耗得比其他模型快；到上限後改用 usage credits 或換模型</td>
+</tr>
+<tr>
+<td>Pro、Team／Enterprise standard seat</td>
+<td>不含在方案額度內，從第一個請求就扣 usage credits</td>
+</tr>
+<tr>
+<td>API、用量計費的 Enterprise</td>
+<td>照 API 價（2026-10 時 Fable 5.1 每百萬 token 輸入 $10／輸出 $50，Opus 5.5 是 $4／$20）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>容易踩的雷</strong>：互動模式下，Fable 要扣 usage credits 前 Claude Code 會先跳確認；但<strong>非互動模式（<code>claude -p</code>）與沒有提示的 SDK 程式會直接扣，不會問</strong>。腳本或 cron 裡指定 Fable 前要先想清楚。</p>
+<p><strong>什麼時候值得換 Fable</strong>（官方建議）：</p>
+<ul>
+<li>根因不明的調查、線上事故除錯、架構決策這類模糊問題，額外的調查與驗證才有回報。</li>
+<li>比一次坐下來能做完的範圍更大的任務——平常會自己拆成好幾塊的工作，可以整包交給它。</li>
+<li>用法上：描述想要的結果而不是步驟，讓它自己規劃；不必提醒它驗證，它會自己做。</li>
+</ul>
+<p><strong>另一個要注意的地方</strong>：Fable 的安全分類器擋下請求時會自動 fallback——生物類降到 Opus 5，<strong>資安類降到 Opus 4.8</strong>。所以做資安相關工作時，指定 Fable 反而可能被降到更舊的模型。</p>
+<p><strong>判斷流程</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>狀況</th>
+<th>做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>這一題想多想一點</td>
+<td><code>ultrathink</code></td>
+</tr>
+<tr>
+<td>這個 session 的工作整體偏難</td>
+<td><code>/effort xhigh</code></td>
+</tr>
+<tr>
+<td>長時間、大範圍的多檔案工作</td>
+<td><code>/effort ultracode</code></td>
+</tr>
+<tr>
+<td>問題本身模糊、大型、要一路查到底</td>
+<td><code>/model fable</code></td>
+</tr>
+<tr>
+<td>想一步到位都用最高</td>
+<td>不建議：<code>max</code> 容易想太多，Fable 會快速吃掉額度</td>
+</tr>
+</tbody>
+</table>
 <h2 id="session-jsonl-efforttoken">用 session JSONL 實測 effort／token 成本<a class="headerlink" href="#session-jsonl-efforttoken" title="Permanent link">&para;</a></h2>
 <p>Effort 主要影響 thinking／output token 的量。要量化「某檔位對你實際任務值不值得」，可直接讀 session JSONL 的 <code>message.usage</code>：</p>
 <ul>
@@ -4769,8 +4864,10 @@
 <li>output 成本 ＝ <code>output_tokens</code> × 該機型 output 單價（依當期官方定價）。</li>
 </ul>
 <h2 id="_3">背景<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>Effort 越高，思考越深，但越貴也越慢——沒有「越高越好」。新版 Opus 把預設從 <code>xhigh</code> 降到 <code>high</code>，反映「模型變強後，達到同等品質需要的思考量下降」；繼續沿用舊機型時代的高檔位，往往是花了頂價卻拿到差不多的結果。</p>
-<p>實務上比起長期把 settings 掛在最高檔，更划算的做法是把底盤設低一階（<code>high</code>／<code>xhigh</code>），用 <code>/effort</code> 在難題當下臨時拉高。判斷該不該降檔，不必靠感覺——把自己的 transcript 跑一次上面的統計，短回應佔比與 thinking 開銷會直接告訴你高檔位有沒有被浪費。</p>
+<p>Effort 越高，思考越深，但越貴也越慢——沒有「越高越好」。官方預設一路從 Opus 4.7 的 <code>xhigh</code>、Opus 4.8 的 <code>high</code>，降到 Opus 5.5 的 <code>medium</code>，反映「模型變強後，達到同等品質需要的思考量下降」；繼續沿用舊機型時代的高檔位，往往是花了頂價卻拿到差不多的結果。</p>
+<p>實務上比起長期把 settings 掛在最高檔，更划算的做法是把底盤設在預設或高一階，用 <code>/effort</code> 在難題當下臨時拉高。判斷該不該降檔，不必靠感覺——把自己的 transcript 跑一次上面的統計，短回應佔比與 thinking 開銷會直接告訴你高檔位有沒有被浪費。訂閱制下額度用不完的話，維持較高的底盤也是合理選擇。</p>
+<p>這次整理的起點是：「網頁版用 Opus 5.5 high，Claude Code 該用 <code>xhigh</code>、<code>max</code>，還是直接換 Fable？」結論是 Claude Code 的底盤跟網頁版差不多即可（<code>high</code>，額度充裕可掛 <code>xhigh</code>），<code>max</code> 不當預設，Fable 當成處理特定任務的臨時選項，而不是一步到位的解法。</p>
+<p>參考資料：<a href="https://code.claude.com/docs/en/model-config">Claude Code docs — Model configuration</a>、<a href="https://www.anthropic.com/news/claude-opus-5-5">Anthropic — Introducing Claude Opus 5.5</a>、<a href="https://support.claude.com/en/articles/15424964-claude-fable-5-promotional">Claude Help Center — Claude Fable 5</a>。</p>
 
 
 
@@ -4789,7 +4886,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 0201282d-9344-4f34-aa61-f3f6a48c3c0d</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume d37276d2-cd8d-4800-882d-c4d39f5a6264</code></p>
 </div>
 
 
