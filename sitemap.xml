@@ -413,6 +413,18 @@
          <lastmod>2026-11-17</lastmod>
     </url>
     <url>
+         <loc>https://marsantony.github.io/knowledge-site/articles/security-gcp-llmjacking-self-audit/</loc>
+         <lastmod>2026-11-17</lastmod>
+    </url>
+    <url>
+         <loc>https://marsantony.github.io/knowledge-site/articles/security-google-api-key-api-restrictions-gemini/</loc>
+         <lastmod>2026-11-17</lastmod>
+    </url>
+    <url>
+         <loc>https://marsantony.github.io/knowledge-site/articles/security-google-oauth-unused-client-deletion-notice/</loc>
+         <lastmod>2026-11-17</lastmod>
+    </url>
+    <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/security-llm-prompt-injection-defense/</loc>
          <lastmod>2026-11-17</lastmod>
     </url>
@@ -526,6 +538,10 @@
     </url>
     <url>
          <loc>https://marsantony.github.io/knowledge-site/articles/web-speech-synthesis-novel-reader/</loc>
+         <lastmod>2026-11-17</lastmod>
+    </url>
+    <url>
+         <loc>https://marsantony.github.io/knowledge-site/articles/web-storage-migration-leftover-secrets-shared-origin/</loc>
          <lastmod>2026-11-17</lastmod>
     </url>
     <url>
