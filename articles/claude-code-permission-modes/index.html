@@ -718,6 +718,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#sandbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sandbox 盲點：系統狀態類檢查會假陰性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#auto-mode" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3711,6 +3722,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-vscode-extension-supply-chain-self-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VS Code 擴充功能被植入木馬時怎麼自查：Claude Code 2.1.313 事件（WSL2 實戰）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4882,6 +4921,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#sandbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sandbox 盲點：系統狀態類檢查會假陰性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#auto-mode" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4936,6 +4986,13 @@
                   
 
   <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:linux" class="md-tag">linux</a>
+      
     
       
       
@@ -5202,6 +5259,46 @@
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>}
 </code></pre></div>
 <p>加入後，該工具的 Bash 指令會走 <code>autoAllowBashIfSandboxed</code> 自動通過，不再跳確認。遇到其他工具的類似問題時，同樣模式處理即可。</p>
+<h3 id="sandbox">Sandbox 盲點：系統狀態類檢查會假陰性<a class="headerlink" href="#sandbox" title="Permanent link">&para;</a></h3>
+<p>Linux 的 sandbox（bubblewrap）除了限制檔案和網路，還會隔離 PID 和網路 namespace。所以在 sandbox 內跑「查系統狀態」的指令，看到的不是真實狀態：</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>sandbox 內實際看到的</th>
+<th>後果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ps -e</code></td>
+<td>只有 sandbox 自己的少數幾個行程（實測 4 個）</td>
+<td>「沒有可疑行程」≠ 真的沒有</td>
+</tr>
+<tr>
+<td><code>crontab -l</code></td>
+<td><code>Permission denied</code></td>
+<td>讀不到 cron</td>
+</tr>
+<tr>
+<td><code>ss</code>／<code>netstat</code></td>
+<td>隔離的 network namespace</td>
+<td>看不到主機上的真實連線</td>
+</tr>
+<tr>
+<td><code>~/.ssh/*</code></td>
+<td>預設被遮蔽</td>
+<td>讀不到 <code>authorized_keys</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>/tmp</code>、<code>~/.config</code> 這類一般檔案路徑則是真實的檔案系統，在 sandbox 內查有效。</p>
+<p><strong>最危險的是 <code>指令 || echo "無"</code> 這種寫法</strong>：錯誤訊息被吞掉，輸出看起來就像「查無異狀」。做入侵檢查、行程或連線診斷時：</p>
+<ol>
+<li><strong>先做正向對照</strong>：<code>ps</code> 看不看得到已知在跑的行程（例如 VS Code server）？<code>crontab -l</code> 看不看得到已知的條目？</li>
+<li>對照失敗就<strong>請使用者在自己的終端機跑</strong>，或用 <code>dangerouslyDisableSandbox</code> 重跑。後者會經過權限審批，auto mode 下也可能被分類器擋下。</li>
+</ol>
+<p>實際案例見 <a href="../security-vscode-extension-supply-chain-self-check/">VS Code 擴充功能被植入木馬時怎麼自查</a>。</p>
 <h3 id="auto-mode">Auto Mode 的安全機制（深入）<a class="headerlink" href="#auto-mode" title="Permanent link">&para;</a></h3>
 <p>Auto mode 不是盲跑，而是「預設放行 + 動態風險攔截」，核心是背景分類器 + 兩層防護：</p>
 <p><strong>分類器本身</strong>
@@ -5331,7 +5428,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume f7c4bda8-aece-4285-8641-759515069af7</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 5982e4e9-ff41-4946-85a3-4c6f49567a1b</code></p>
 </div>
 
 
