@@ -811,6 +811,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../claude-code-opus-motion-graphics-video/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用 Claude 做「AI 影片」：其實是寫程式算出來的動態圖像
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1165,6 +1193,17 @@
     <span class="md-ellipsis">
       
         解法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不只超長音檔：19 分鐘也可能無聲失敗
       
     </span>
   </a>
@@ -5306,6 +5345,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不只超長音檔：19 分鐘也可能無聲失敗
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5701,6 +5751,9 @@
 - 失去字元級時間戳（只有 segment 級，通常 ~30-60 秒一段）
 - SRT 字幕品質會較差（時間戳精度不足）
 - 但轉錄文字內容不受影響，適合只需要逐字稿的場景</p>
+<h3 id="19">不只超長音檔：19 分鐘也可能無聲失敗<a class="headerlink" href="#19" title="Permanent link">&para;</a></h3>
+<p>一支 19 分鐘的 YouTube 影片用預設的 <code>--align</code> 跑，程式在 alignment 階段就結束了：沒有 traceback、沒有 OOM 訊息，也沒有產出 TXT 或 SRT。改用 <code>--no-align</code> 後 18 秒就完成。這次因為沒留下錯誤訊息，<strong>沒有確認是不是 OOM</strong>，但結論一樣：音檔長度超過十幾分鐘，就先考慮 <code>--no-align</code>。</p>
+<p>還有一個讓失敗被藏起來的坑：指令後面接了 <code>| grep -v ... | tail</code> 過濾進度條，整條 pipeline 的 exit code 是最後一個 <code>tail</code> 的，所以轉錄失敗也會顯示 exit 0。判斷成功與否要看<strong>輸出檔有沒有產生</strong>，或是改成把 log 寫進檔案（<code>&gt; run.log 2&gt;&amp;1; echo "exit=$?"</code>）再過濾。</p>
 
 
 
@@ -5719,7 +5772,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume 08d9ff44-4498-4a35-81ec-7d4b48b5f22a</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume c96ea5bd-3a8e-4635-8e00-8b7f4b11f2f8</code></p>
 </div>
 
 
