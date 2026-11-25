@@ -1160,6 +1160,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sensevoice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SenseVoice 中英混合音檔的兩個坑
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2766,6 +2777,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general-ai-user-count-statistics-literacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    「20 億人在用 AI」和「75% 沒用過 AI」怎麼同時成立？判讀 AI 普及率數據的方法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general-ai-era-software-moats-2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 一個週末就能抄走功能之後，還剩什麼護城河（2026）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3400,6 +3467,34 @@
     
   
     用 Cloudflare 監聽 Twitch 聊天室：匿名 IRC + EventSub + oEmbed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automation-fetch-x-post-via-fxtwitter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    抓 X（Twitter）貼文全文：網頁抓取回 402 時改用 fxtwitter API
   
 
     
@@ -5306,6 +5401,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sensevoice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SenseVoice 中英混合音檔的兩個坑
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5407,6 +5513,7 @@
 <li><strong>Whisper 輸出品質差的主因是缺少 post-processing</strong>：成熟工具的流程是 ASR → 統計過濾 → segment 合併 → CPS/CPL 字幕控制 → 輸出</li>
 <li><strong>CTC 架構（如 SenseVoice）天生較少幻覺</strong>：非自回歸模型無法在靜音時「憑空生成」文字</li>
 <li><strong>ASR + LLM 兩階段是現代語音工具的標準架構</strong>（Typeless、Wispr Flow 等），LLM 負責去填充詞、修正 code-switching、加標點</li>
+<li><strong>SenseVoice 輸出的英文段落沒有空格</strong>（例如 <code>It'smuchmorecomplicated</code>），中英混合的音檔潤稿時要補空格</li>
 </ul>
 <h2 id="_2">背景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>為 Chrome Extension 即時字幕功能評估各 STT 服務，同時研究如何提升 faster-whisper 轉錄品質。發現問題不只在引擎選擇，更在於後處理流程。</p>
@@ -5736,6 +5843,12 @@
 - 偵測口語自我修正，只保留最終意圖
 - 自動加標點、修正 code-switching</p>
 <p>注意：zero-shot LLM 校正有時會過度修正，最佳做法是只對 ASR 低信心片段做 LLM 校正。</p>
+<h3 id="sensevoice">SenseVoice 中英混合音檔的兩個坑<a class="headerlink" href="#sensevoice" title="Permanent link">&para;</a></h3>
+<p>實際用 SenseVoice 轉一支開頭約 17 秒是英文原音、其餘是中文旁白的影片，觀察到：</p>
+<ul>
+<li><strong>英文段落的字詞之間完全沒有空格</strong>：輸出像 <code>It'smuchmorecomplicatedandIthinkpeoplerealize...</code>，標點還在，但空格全部消失。中文部分不受影響。後處理時要把英文段落重新斷詞，可以交給 LLM 潤稿處理，或直接手動補。</li>
+<li><strong>表頭的語言偵測結果不能代表整支影片</strong>：這支影片主體是中文，表頭卻顯示 <code>Detected language: en (confidence: 1.00)</code>。中英混合的影片別拿這個欄位判斷整體語言。</li>
+</ul>
 <hr />
 <h2 id="cuda-oom-alignment">長音檔 CUDA OOM 與 Alignment<a class="headerlink" href="#cuda-oom-alignment" title="Permanent link">&para;</a></h2>
 <h3 id="_6">問題<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
@@ -5772,7 +5885,7 @@
                 
 
 <div class="session-reference">
-  <p class="session-text">📎 源對話：<code>claude --resume c96ea5bd-3a8e-4635-8e00-8b7f4b11f2f8</code></p>
+  <p class="session-text">📎 源對話：<code>claude --resume 9f28d6f5-cd43-462a-abdc-fa098a904361</code></p>
 </div>
 
 
